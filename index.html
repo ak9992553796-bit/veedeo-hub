@@ -69,6 +69,16 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial,sans-serif;margin:0;text
 <div style="color:#0f0;font-weight:900;font-size:12px">1️⃣ CHECK: Google Auto Live - Search + Number Jump - Green Live Circle</div>
 <div class="rowFlex"><input id="globalSearch" class="khSearch" placeholder="कुछ भी खोजो जी - 1 से 120 तक"><button class="khBtn" onclick="searchAll()">🔍 खोजो जी</button><button class="micBtn" onclick="startMic('globalSearch')">🎤</button></div>
 <div class="rowFlex" style="margin-top:6px"><input id="numJump" class="khSearch" placeholder="नंबर से कूदो जी 1-120" style="width:42%;padding:10px;border:3px solid #ff9800;border-radius:8px"><button class="khBtn" onclick="jumpToNumber()">🔢 जाओ जी</button></div>
+<div 
+<div id="googleLiveTagRotate" style="background:#000;border:3px solid #00FF00;border-radius:10px;padding:8px;margin:8px 0;text-align:center">
+<div style="color:#00FF00;font-weight:900;font-size:13px">🔄 Google Server Live - हर 2.5 सेकंड में घूमता हुआ Tag - स्थिर जी</div>
+<div id="googleRotateProduct" style="color:gold;font-weight:900;font-size:12px;margin-top:4px">Tag घूम रहा है जी - veedeohub-21 - Live ON जी</div>
+<div id="googleRotateLink" style="color:#0f0;font-size:10px;margin-top:2px">tag=veedeohub-21 - ref=ASHOK54994 - Green Live</div>
+</div>
+<div id="googleCircleLiveTag" style="background:#111;border:3px solid gold;border-radius:10px;padding:6px;margin:6px 0;text-align:center">
+<div style="color:gold;font-weight:900;font-size:12px">⭕ Google Circle Live - घूमता हुआ Tag - साइट में स्थिर जी</div>
+<div id="circleRotateProduct" style="color:#0f0;font-size:11px;font-weight:800">कॉपी-पेस्ट HTML में भी स्थिर दिखाई देगा जी</div>
+</div>
 <div id="allBtnList" class="googleCircleLive" style="max-height:340px;overflow:auto;text-align:left;background:#fff;color:#000;padding:8px;border-radius:8px;margin-top:8px;font-size:11px;font-weight:800;border:3px solid gold"></div>
 <div id="searchCount" style="color:gold;font-size:13px;font-weight:900;margin-top:8px;background:#000;padding:7px;border-radius:8px;width:100%;text-align:center;border:2px solid gold">खोज लिस्ट लोड हो रही है जी...</div>
 </div>
@@ -115,14 +125,15 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial,sans-serif;margin:0;text
 
 <div class="joiningGoldenShine" style="margin:16px 0;text-align:center">
 <div style="background:#000;border:3px solid #FFD700;border-radius:12px;padding:10px;margin-bottom:12px">
-<b style="color:#FFD700;font-size:16px">6️⃣ CHECK: LIVE Joining Form - Google Password Save ON - गहरा सुनहरी चमक 🌞</b>
+<b style="color:#FFD700;font-size:16px">6️⃣ CHECK: LIVE Joining Form - No Google Password - AdSense Safe - गहरा सुनहरी चमक 🌞</b>
 </div>
 <form autocomplete="on" id="joinForm" onsubmit="return false;">
-<div class="rowFlex"><input id="jName" name="name" placeholder="पूरा नाम जी" style="width:58%;padding:14px;border:3px solid #000;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" class="micBtn" onclick="startMic('jName')">🎤</button></div>
-<div class="rowFlex" style="margin-top:8px"><input id="jEmail" name="email" placeholder="📱 Phone No. जी - 10 अंक" style="width:58%;padding:14px;border:3px solid #000;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" class="micBtn" onclick="startMic('jEmail')">🎤</button></div>
-<div class="rowFlex" style="margin-top:8px"><input id="jPass" type="password" name="new-password" placeholder="Google Password Admin जी" style="width:58%;padding:14px;border:3px solid red;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" onclick="toggleKey('jPass')" style="background:#000;color:gold;padding:8px 12px;border-radius:8px;border:2px solid gold">👁️</button></div>
-<button type="button" onclick="joinNow()" style="background:#000;color:#FFD700;width:90%;padding:16px;border-radius:12px;font-weight:900;border:3px solid #FFD700;margin-top:12px;font-size:15px;box-shadow:0 0 20px gold">Join करो जी - WhatsApp खुलेगा जी</button>
+<div class="rowFlex"><input id="jName" name="name" placeholder="पूरा नाम जी - जैसे Ashok Kumar" style="width:58%;padding:14px;border:3px solid #000;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" class="micBtn" onclick="startMic('jName')">🎤</button></div>
+<div class="rowFlex" style="margin-top:8px"><input id="jPhone" name="phone" placeholder="📱 मोबाइल नंबर जी - 10 अंक - 9992553796 जैसा" style="width:58%;padding:14px;border:3px solid #000;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" class="micBtn" onclick="startMic('jPhone')">🎤</button></div>
+<div class="rowFlex" style="margin-top:8px"><input id="jCity" name="city" placeholder="🏙️ शहर कौनसा पड़ता है जी - जैसे Tauru, Nuh, Delhi" style="width:58%;padding:14px;border:3px solid #2196F3;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" class="micBtn" onclick="startMic('jCity')">🎤</button></div>
+<button type="button" onclick="joinNowEnhanced()" style="background:#000;color:#FFD700;width:90%;padding:16px;border-radius:12px;font-weight:900;border:3px solid #FFD700;margin-top:12px;font-size:15px;box-shadow:0 0 20px gold">Join करो जी - WhatsApp पर रेफरल लिंक सहित मैसेज जाएगा जी</button>
 </form>
+<p style="color:gold;font-size:11px;background:#000;padding:6px;border-radius:6px;border:1px solid gold;margin-top:6px">✅ ज्वाइन होने पर आपके मोबाइल और Owner 9992553796 पर WhatsApp में आपका बना हुआ रेफरल लिंक जाएगा जी - जैसे https://veedeohub-ashok.vercel.app?ref=ASHOK54994 - मैं ज्वाइन हो गया हूं जी</p>
 <p id="jMsg" style="color:#000;font-size:12px;font-weight:900;background:#FFD700;padding:6px;border-radius:6px;margin-top:8px"></p>
 </div>
 
@@ -132,15 +143,36 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial,sans-serif;margin:0;text
 <div id="auto6Videos" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px"></div>
 </div>
 
-<div style="background:#e8f5e9;border:4px solid gold;border-radius:18px;padding:14px;margin:16px 0"><b style="color:gold;background:#000;padding:6px">♾️ अनन्त लिंक जोड़ो जी - 6 लाइनें - Real Commission Only</b>
-<input id="cTitle" placeholder="1. Title जी" style="width:90%;padding:10px;border:2px solid gold;margin:4px">
-<input id="cUrl" placeholder="2. URL https://... जी" style="width:90%;padding:10px;border:2px solid gold;margin:4px">
-<input id="cDesc" placeholder="3. Desc जी" style="width:90%;padding:10px;border:2px solid gold;margin:4px">
-<input id="cWork" placeholder="4. Work जी" style="width:90%;padding:10px;border:2px solid gold;margin:4px">
-<input id="cBenefit" placeholder="5. Benefit जी" style="width:90%;padding:10px;border:2px solid gold;margin:4px">
-<input id="cBtnText" placeholder="6. Button Text जी" style="width:90%;padding:10px;border:2px solid gold;margin:4px">
-<button onclick="addCustomLink()" style="background:#000;color:gold;padding:10px;border-radius:8px;font-weight:900;margin-top:6px">✅ लिंक जोड़ो जी</button>
+<div style="background:#e8f5e9;border:4px solid gold;border-radius:18px;padding:14px;margin:16px 0"><b style="color:gold;background:#000;padding:6px">♾️ 
+<!-- FIXED: No Google Password - Owner Only Anant - Confirm - AdSense Safe Ji -->
+
+
+<div style="background:#000;border:4px solid gold;border-radius:18px;padding:14px;margin:16px 0;text-align:center">
+<b style="color:gold;background:#000;padding:6px;border-radius:6px;font-size:14px">♾️ अनन्त लिंक जोड़ो जी - 6 लाइनें - 6 खाने - Real Commission Only जी - Owner Only</b>
+<div style="background:#111;border:2px solid gold;border-radius:10px;padding:10px;margin-top:10px">
+<div class="rowFlex" style="margin:6px 0"><input id="cTitle" placeholder="1. Title जी - जैसे Dreambook Publish" style="width:58%;padding:14px;border:3px solid #000;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" class="micBtn" onclick="startMic('cTitle')">🎤</button></div>
+<div class="rowFlex" style="margin:6px 0"><input id="cUrl" placeholder="2. URL जी - https://... - ref/tag ऑटो लगेगा" style="width:58%;padding:14px;border:3px solid #000;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" class="micBtn" onclick="startMic('cUrl')">🎤</button></div>
+<div class="rowFlex" style="margin:6px 0"><input id="cDesc" placeholder="3. विवरण जी - ये किस बारे में है" style="width:58%;padding:14px;border:3px solid #2196F3;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" class="micBtn" onclick="startMic('cDesc')">🎤</button></div>
+<div class="rowFlex" style="margin:6px 0"><input id="cWork" placeholder="4. Work जी - ये किसलिए है जी - Purpose" style="width:58%;padding:14px;border:3px solid #FF9800;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" class="micBtn" onclick="startMic('cWork')">🎤</button></div>
+<div class="rowFlex" style="margin:6px 0"><input id="cBenefit" placeholder="5. Benefit जी - लाभ क्या है जी - 70/15/10/5" style="width:58%;padding:14px;border:3px solid #0f0;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" class="micBtn" onclick="startMic('cBenefit')">🎤</button></div>
+<div class="rowFlex" style="margin:6px 0"><input id="cBtnText" placeholder="6. Button Text जी - जैसे Open Ji, Earn Ji" style="width:58%;padding:14px;border:3px solid gold;border-radius:12px;font-weight:900;background:#fff;color:#000"><button type="button" class="micBtn" onclick="startMic('cBtnText')">🎤</button></div>
+<div style="display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+<button onclick="if(!isOwnerVerifiedAnant){alert('❌ पहले Owner PIN डालो जी - सिर्फ Owner ही जोड़ सकता है जी');return;} if(!confirm('⚠️ पुष्टि करो जी - क्या आप सच में ये लिंक जोड़ना चाहते हो जी? Fraud चेक होगा जी')) return; addCustomLink()" style="background:#000;color:#FFD700;padding:14px 22px;border-radius:12px;font-weight:900;border:3px solid #FFD700;box-shadow:0 0 15px gold">✅ लिंक जोड़ो जी - पुष्टि सहित - Owner Only</button>
+<button onclick="if(!confirm('⚠️ पुष्टि करो जी - क्या आप सच में Delete करना चाहते हो जी?')) return; if(!isOwnerVerifiedAnant){alert('❌ Owner Only Delete कर सकता है जी');return;} let id=prompt('कौनसा No Delete करना है जी?'); if(id){ deleteCustomLink(id); }" style="background:#000;color:red;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid red">🗑️ Delete जी - पुष्टि सहित</button>
 </div>
+<div style="color:gold;font-size:11px;margin-top:8px">6 खाने भरने जरूरी जी - Title + URL + विवरण + किसलिए + लाभ + बटन - फिर Owner PIN से Verify करके जोड़ो जी</div>
+</div>
+<!-- Owner Power PIN - नीचे वाला सही रखा है जी -->
+<div id="ownerAuthForAnant" style="background:#000;border:3px solid red;border-radius:12px;padding:12px;margin:12px 0;text-align:center">
+<div style="color:red;font-weight:900;font-size:13px">🔐 Owner Power - सिर्फ Owner Ashok Ji (9992553796) को ही Permission - Fraud रोकने के लिए</div>
+<div style="display:flex;gap:8px;justify-content:center;align-items:center;margin-top:8px;flex-wrap:wrap">
+<input type="password" id="ownerPinAnant" placeholder="Owner PIN 3796 / ASHOK54994" style="padding:12px;border:3px solid gold;border-radius:10px;width:55%;font-weight:900">
+<button onclick="verifyOwnerForAnant()" style="background:gold;color:#000;padding:12px 18px;border-radius:12px;font-weight:900;border:none">🔓 Verify करो जी</button>
+</div>
+<div id="anantOwnerStatus" style="color:#0f0;font-weight:800;margin-top:8px;font-size:12px">❌ Not Verified - PIN डालो जी - सिर्फ Owner जोड़ सकता है जी</div>
+</div>
+</div>
+
 
 <div id="recordedMembersBox" style="background:#001a33;border:4px solid #2196F3;border-radius:18px;padding:14px;margin:16px 0;text-align:center">
 <b style="color:#64B5F6;font-size:14px">8️⃣ CHECK: Recorded Members - Real Earning - आपका रेफरल लिंक</b>
@@ -205,7 +237,7 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial,sans-serif;margin:0;text
 
 <div style="background:#000;border:5px solid gold;border-radius:20px;padding:14px;margin:18px 0;text-align:center;box-shadow:0 0 25px gold">
 <div style="background:#000;border:4px solid gold;border-radius:16px;padding:14px;margin-bottom:14px">
-<b class="sharpGold" style="font-size:14px">👑 Owner Master Control - Admin & Nominee Power - फोन नंबर वाला - Owner Power अनुसार जोड़ना और डिलीट करना - पुष्टि बटन + स्पीकर + Google Password Auto Save ON जी</b>
+<b class="sharpGold" style="font-size:14px">👑 Owner Master Control - Admin & Nominee Power - फोन नंबर वाला - Owner Power अनुसार जोड़ना और डिलीट करना - पुष्टि बटन + स्पीकर + AdSense Safe - No Google Password जी</b>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
 <div style="background:#000;border:4px solid gold;border-radius:16px;padding:12px;text-align:center">
@@ -227,19 +259,19 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial,sans-serif;margin:0;text
 </div>
 <div style="background:#000;border:4px solid gold;border-radius:18px;padding:14px;margin:16px 0;text-align:center;max-width:500px;margin-left:auto;margin-right:auto">
 <div style="background:#111;border:2px solid gold;border-radius:10px;padding:10px;margin-bottom:12px">
-<b class="sharpGold" style="font-size:13px">🔐 Google Password Auto Save ON - Admin Nominee Form - Phone No. वाला - Auto Save Ji - Owner Power अनुसार जी</b>
+<b class="sharpGold" style="font-size:13px">🔐 AdSense Safe - No Google Password - Admin Nominee Form - Phone No. वाला - Auto Save Ji - Owner Power अनुसार जी</b>
 </div>
 <form autocomplete="on" id="adminNomineeForm" onsubmit="return false;" style="display:flex;flex-direction:column;gap:10px;align-items:center">
 <div class="rowFlex" style="justify-content:center"><input id="anName" name="name" placeholder="Admin/Nominee Name जी" style="width:70%;padding:14px;border:3px solid gold;border-radius:12px;font-weight:900;background:#fff;color:#000" autocomplete="name"><button type="button" class="micBtn" onclick="startMic('anName')">🎤</button></div>
 <div class="rowFlex" style="justify-content:center"><input id="anPhone" name="tel" placeholder="📱 Phone No. जी - 10 अंक" style="width:70%;padding:14px;border:3px solid gold;border-radius:12px;font-weight:900;background:#fff;color:#000" autocomplete="tel"><button type="button" class="micBtn" onclick="startMic('anPhone')">🎤</button></div>
-<div class="rowFlex" style="justify-content:center"><input id="anPass" type="password" name="new-password" placeholder="Google Password Admin जी" style="width:55%;padding:14px;border:3px solid red;border-radius:12px;font-weight:900;background:#fff;color:#000" autocomplete="new-password"><button type="button" onclick="toggleKey('anPass')" style="background:#fff;color:#000;padding:8px 12px;border-radius:8px;border:2px solid #000">👁️</button><button type="button" class="micBtn" onclick="startMic('anPass')">🎤</button></div>
+<div class="rowFlex" style="justify-content:center"><input id="anPass" type="password" name="new-password" placeholder="Owner PIN जी - सिर्फ Owner के लिए - AdSense Safe" style="width:55%;padding:14px;border:3px solid red;border-radius:12px;font-weight:900;background:#fff;color:#000" autocomplete="new-password"><button type="button" onclick="toggleKey('anPass')" style="background:#fff;color:#000;padding:8px 12px;border-radius:8px;border:2px solid #000">👁️</button><button type="button" class="micBtn" onclick="startMic('anPass')">🎤</button></div>
 <div class="rowFlex" style="justify-content:center;gap:8px;margin-top:6px">
 <button type="button" onclick="saveAdminNominee('admin')" style="background:#FFD700;color:#000;padding:12px 18px;border-radius:10px;font-weight:900;border:2px solid #000">👑 Admin जोड़ो जी - Owner Power</button>
 <button type="button" onclick="saveAdminNominee('nominee')" style="background:#2196F3;color:#fff;padding:12px 18px;border-radius:10px;font-weight:900;border:2px solid #fff">🛡️ Nominee जोड़ो जी - Owner Power</button>
 </div>
 </form>
 <div style="background:#111;border:2px solid #FFD700;border-radius:8px;padding:8px;margin-top:12px;text-align:center">
-<span style="color:#FFEB9E;font-size:11px;font-weight:700">Owner Power: सिर्फ Owner ही Admin/Nominee जोड़-डिलीट कर सकता है जी - फोन नंबर वाला - पुष्टि बटन के साथ - Speaker सहित - Google Password Auto Save ON जी</span>
+<span style="color:#FFEB9E;font-size:11px;font-weight:700">Owner Power: सिर्फ Owner ही Admin/Nominee जोड़-डिलीट कर सकता है जी - फोन नंबर वाला - पुष्टि बटन के साथ - Speaker सहित - AdSense Safe - No Google Password जी</span>
 </div>
 <p id="anMsg" style="color:gold;font-size:12px;font-weight:900;background:#111;padding:6px;border-radius:6px;margin-top:8px"></p>
 </div>
@@ -573,44 +605,4 @@ let allLinksBase_B = [
 {no:76,title:'YouTube Channel',btnText:'YouTube',url:'https://youtube.com/@veedeohub?sub_confirmation=1&ref=ASHOK54994'},
 {no:77,title:'Instagram',btnText:'Instagram',url:'https://instagram.com/veedeohub?ref=ASHOK54994'},
 {no:78,title:'WhatsApp Direct',btnText:'WhatsApp',url:'https://wa.me/919992553796?text=Jai%20Mata%20Ki%20Ji%20Veedeohub%20Join%20Ji%20ref%3DASHOK54994'},
-{no:79,title:'Threads',btnText:'Threads',url:'https://threads.net/@veedeohub?ref=ASHOK54994'},
-{no:80,title:'Official Website',btnText:'Official Website',url:'https://veedeohub-ashok.netlify.app?ref=ASHOK54994'},
-{no:81,title:'TextDoc.co',btnText:'TextDoc.co',url:'https://www.textdoc.co?ref=ASHOK54994'},
-{no:82,title:'UPI Search',btnText:'UPI Search',url:'https://www.google.com/search?q=9992553796%40ybl&ref=ASHOK54994'},
-{no:83,title:'CityMall',btnText:'CityMall',url:'https://citymall.live/?teamLeaderId=TPL_CMO&ref=ASHOK54994'},
-{no:84,title:'Blinkit',btnText:'Blinkit',url:'https://www.blinkit.com/?ref=ASHOK54994'},
-{no:85,title:'Zepto',btnText:'Zepto',url:'https://www.zeptonow.com/?ref=ASHOK54994'},
-{no:86,title:'Swiggy Instamart',btnText:'Swiggy Instamart',url:'https://www.swiggy.com/instamart?ref=ASHOK54994'},
-{no:87,title:'1MG Health',btnText:'1MG Health',url:'https://www.1mg.com/?ref=ASHOK54994'},
-{no:88,title:'Email',btnText:'Email',url:'https://mail.google.com/mail/?view=cm&to=ak9992553796@gmail.com&su=Veedeohub%20Join%20Ji%20ref%3DASHOK54994'},
-{no:89,title:'Extra Joining',btnText:'Extra Joining',url:'https://wa.me/919992553796?text=All%20Life%20FreeJoin%20ref%3DASHOK54994'},
-{no:90,title:'YouTube Bhajan',btnText:'YouTube Bhajan',url:'https://www.youtube.com/@veedeohub?sub_confirmation=1&ref=ASHOK54994'},
-{no:91,title:'SUNO AI',btnText:'SUNO AI',url:'https://suno.com/@veedeohub?ref=ASHOK54994'},
-{no:92,title:'FlowMusic',btnText:'FlowMusic',url:'https://labs.google/fx/tools/flow?ref=veedeohub-ashok&ref2=ASHOK54994'},
-{no:93,title:'Meta AI App',btnText:'Meta AI App',url:'https://www.meta.ai/?ref=veedeohub-ashok-ASHOK54994'},
-{no:94,title:'Voice Reader',btnText:'Voice Reader',url:'https://play.google.com/store/apps/details?id=com.hyperionics.avar&ref=ASHOK54994'},
-{no:95,title:'My Site Referral',btnText:'My Site Referral',url:'https://veedeohub-ashok.vercel.app?ref=ASHOK54994&tag=veedeohub-21'},
-{no:96,title:'Meesho',btnText:'Meesho Ji',url:'https://www.meesho.com?utm_source=ASHOK54994'},
-{no:97,title:'Amazon Main',btnText:'Amazon Ji',url:'https://www.amazon.in?tag=veedeohub-21'},
-{no:98,title:'Flipkart Main EarnKaro',btnText:'Flipkart Ji',url:'https://fktr.in/7XvA2Sp'},
-{no:99,title:'Dreambook Publishing',btnText:'Dreambook Ji',url:'https://www.dreambookpublishing.com/?ref=ASHOK54994'},
-{no:100,title:'Flipkart Ji 2',btnText:'Flipkart Ji',url:'https://www.flipkart.com/?affid=ashok54994'},
-{no:101,title:'Google Translate Fix',btnText:'Google Ji',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.translate'},
-{no:102,title:'Google Drive Fix',btnText:'Google Ji',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.docs'},
-{no:103,title:'Google Chrome Fix',btnText:'Google Ji',url:'https://play.google.com/store/apps/details?id=com.android.chrome'},
-{no:104,title:'Adobe Scanner Fix',btnText:'Adobe Ji',url:'https://play.google.com/store/apps/details?id=com.adobe.scan.android'},
-{no:105,title:'Google App Fix',btnText:'Google Ji',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.search'},
-{no:106,title:'My Airtel App Fix',btnText:'My Ji',url:'https://play.google.com/store/apps/details?id=com.myairtelapp'},
-{no:107,title:'My WhatsApp Fix',btnText:'My Ji',url:'https://play.google.com/store/apps/details?id=com.whatsapp'},
-{no:108,title:'WhatsApp Auto Reply Fix',btnText:'WhatsApp Ji',url:'https://play.google.com/store/apps/details?id=com.guibais.whatsauto'},
-{no:109,title:'Text to Audio Fix',btnText:'Text Ji',url:'https://play.google.com/store/apps/details?id=text.to.audio.app'},
-{no:110,title:'Pexels App Fix',btnText:'Pexels Ji',url:'https://play.google.com/store/apps/details?id=com.pexels.app'},
-{no:111,title:'Pixabay App Fix',btnText:'Pixabay Ji',url:'https://play.google.com/store/apps/details?id=com.pixabay.pixabayapp'},
-{no:112,title:'InVideo AI App Fix',btnText:'InVideo Ji',url:'https://play.google.com/store/apps/details?id=io.invideo.ai'},
-{no:113,title:'YT Create App Fix',btnText:'YT Ji',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.producer'},
-{no:114,title:'PhonePe App Fix',btnText:'PhonePe Ji',url:'https://play.google.com/store/apps/details?id=com.phonepe.app'},
-{no:115,title:'Calculator App Fix',btnText:'Calculator Ji',url:'https://play.google.com/store/apps/details?id=com.google.android.calculator'},
-{no:116,title:'YouTube Studio App Fix',btnText:'YouTube Ji',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.creator'},
-{no:117,title:'Suno App Fix',btnText:'Suno Ji',url:'https://play.google.com/store/apps/details?id=com.suno.android'},
-{no:118,title:'Google Flow App Fix',btnText:'Google Ji',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.labs.whisk'},
-{no:119,title:'Google Flow Music Fix',b
+{no:79,title:'Threads',btn
