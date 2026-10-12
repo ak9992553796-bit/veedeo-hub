@@ -1,7 +1,132 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922664797100594" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922664797100594" crossorigin="anonymous">
+// ✅ भूलने पर बदलने और दोबारा पुष्टि करने का ऑप्शन - PIN Forget Change Reverify Ji
+function showForgetChangeOption(){
+  let box=document.getElementById('forgetChangeBox');
+  if(!box){
+    box=document.createElement('div');
+    box.id='forgetChangeBox';
+    box.style.cssText='background:#111;border:3px solid gold;border-radius:14px;padding:12px;margin:12px 0;text-align:center';
+    box.innerHTML=`
+      <b style="color:#FFD700;font-size:14px">🔑 भूल गए PIN? बदलें और दोबारा पुष्टि करें जी</b><br>
+      <div style="color:gold;font-size:11px;margin:6px 0">भूलने पर गड़बड़ रहेगी जी - यहाँ से बदल सकते हैं जी - Owner Only जी</div>
+      <div style="display:grid;gap:8px;margin-top:10px;text-align:left">
+        <div style="background:#000;border:2px solid #0f0;border-radius:8px;padding:8px">
+          <b style="color:#0f0;font-size:12px">1️⃣ पुराना PIN याद है तो बदलें जी:</b><br>
+          <input id="oldPinForChange" type="password" placeholder="पुराना PIN डालो जी" style="padding:8px;border-radius:8px;border:2px solid gold;width:90%;margin:4px 0">
+          <input id="newPinForChange" type="password" placeholder="नया PIN बनाओ जी" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <input id="confirmNewPin" type="password" placeholder="नया PIN दोबारा डालो जी - पुष्टि" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="changePinWithOld()" style="background:#00FF00;color:#000;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold;width:100%">🔄 पुराने से नया PIN बदलें जी - पुष्टि सहित</button>
+        </div>
+        <div style="background:#000;border:2px solid red;border-radius:8px;padding:8px">
+          <b style="color:#FF6B6B;font-size:12px">2️⃣ PIN भूल गए? Master से Reset करो जी:</b><br>
+          <div style="color:gold;font-size:10px;margin:4px 0">Master PIN: ASHOK54994 या 9992553796 या 3796 - Owner Master जी</div>
+          <input id="masterPinForReset" type="password" placeholder="Master PIN डालो जी - ASHOK54994 / 9992553796 / 3796" style="padding:8px;border-radius:8px;border:2px solid red;width:90%;margin:4px 0">
+          <input id="newPinAfterMaster" type="password" placeholder="नया PIN बनाओ जी" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="resetPinWithMaster()" style="background:red;color:#fff;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold;width:100%">🔓 Master से PIN Reset करो जी - भूल गए तो</button>
+        </div>
+        <div style="background:#001100;border:2px solid #00FF00;border-radius:8px;padding:8px">
+          <b style="color:#00FF00;font-size:12px">3️⃣ दोबारा पुष्टि करें जी - Reverify:</b><br>
+          <input id="reverifyPin" type="password" placeholder="PIN दोबारा डालो जी - पुष्टि के लिए" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="reverifyPin()" style="background:#000;color:#00FF00;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid #0f0;width:100%">🔁 दोबारा पुष्टि करें जी - Reverify</button>
+          <button onclick="hideForgetBox()" style="background:#333;color:gold;padding:8px 12px;border-radius:8px;font-weight:900;border:1px solid gold;width:100%;margin-top:6px">❌ बंद करो जी - Hide</button>
+        </div>
+      </div>
+      <div id="forgetStatus" style="color:gold;font-size:12px;margin-top:10px;background:#000;padding:8px;border-radius:8px;border:1px solid gold"></div>
+    `;
+    let refBox=document.getElementById('ownerPinBox')||document.getElementById('ownerVerifiedMsg');
+    if(refBox && refBox.parentNode){
+      refBox.parentNode.insertBefore(box, refBox.nextSibling);
+    } else {
+      document.body.appendChild(box);
+    }
+  } else {
+    box.style.display=box.style.display==='none'?'block':'none';
+  }
+}
+
+function changePinWithOld(){
+  let oldP=document.getElementById('oldPinForChange').value.trim();
+  let newP=document.getElementById('newPinForChange').value.trim();
+  let confirmP=document.getElementById('confirmNewPin').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!oldP||!newP||!confirmP){ status.innerHTML='❌ सभी खाने भरो जी'; return; }
+  if(newP!==confirmP){ status.innerHTML='❌ नया PIN और पुष्टि PIN एक जैसा नहीं है जी - दोबारा देखो जी'; return; }
+  if(newP.length<4){ status.innerHTML='❌ PIN कम से कम 4 अक्षर होना चाहिए जी'; return; }
+  if(!confirm('PIN बदलने की पुष्टि करो जी - '+oldP+' -> '+newP+' ?')) return;
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'["3796","ASHOK54994","9992553796","1234","9999"]');
+  let idx=pins.indexOf(oldP);
+  if(idx>-1){
+    pins[idx]=newP;
+    localStorage.setItem('_owner_pins',JSON.stringify(pins));
+    status.innerHTML='✅ PIN बदल गया जी - '+oldP+' -> '+newP+' - अब नए PIN से Verify कर सकते हैं जी - '+new Date().toLocaleTimeString();
+    alert('✅ PIN बदल गया जी - पुराना: '+oldP+' नया: '+newP+' - अब नए PIN से दोबारा पुष्टि करें जी');
+    // Auto show reverify
+    document.getElementById('reverifyPin').value=newP;
+  } else {
+    status.innerHTML='❌ पुराना PIN नहीं मिला जी - '+oldP+' गलत है जी - Master से Reset करो जी';
+  }
+}
+
+function resetPinWithMaster(){
+  let master=document.getElementById('masterPinForReset').value.trim();
+  let newP=document.getElementById('newPinAfterMaster').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!master||!newP){ status.innerHTML='❌ Master PIN और नया PIN भरो जी'; return; }
+  let masterList=["ASHOK54994","ashok54994","9992553796","3796","1234","9999","ASHOK"];
+  if(!masterList.includes(master)){
+    status.innerHTML='❌ Master PIN गलत है जी - ASHOK54994 / 9992553796 / 3796 में से डालो जी';
+    return;
+  }
+  if(!confirm('Master '+master+' से नया PIN '+newP+' बनाना है जी? पक्का?')) return;
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'[]');
+  if(!pins.includes(newP)) pins.push(newP);
+  localStorage.setItem('_owner_pins',JSON.stringify(pins));
+  status.innerHTML='✅ Master '+master+' से PIN Reset हो गया जी - नया PIN: '+newP+' - अब इससे Verify करो जी - '+new Date().toLocaleTimeString();
+  alert('✅ Master से PIN Reset हो गया जी - नया PIN: '+newP+' - अब दोबारा पुष्टि करें जी');
+  document.getElementById('reverifyPin').value=newP;
+}
+
+function reverifyPin(){
+  let pin=document.getElementById('reverifyPin').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!pin){ status.innerHTML='❌ PIN डालो जी - दोबारा पुष्टि के लिए'; return; }
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'["3796","ASHOK54994","9992553796"]');
+  if(pins.includes(pin)){
+    localStorage.setItem('_owner_verified','true');
+    localStorage.setItem('_owner_last_verified_pin',pin);
+    status.innerHTML='✅ दोबारा पुष्टि हो गई जी - PIN सही है - '+pin+' - '+new Date().toLocaleTimeString()+' - अब Owner Panel खुल गया जी';
+    // Show owner panel again
+    let pinManage=document.getElementById('pinManage');
+    if(pinManage) pinManage.style.display='block';
+    let ownerPinBox=document.getElementById('ownerPinBox');
+    if(ownerPinBox) ownerPinBox.style.display='none';
+    let verifiedMsg=document.getElementById('ownerVerifiedMsg');
+    if(verifiedMsg){
+      verifiedMsg.innerHTML='✅ दोबारा Verified - Owner Ashok Ji - PIN: •••• - '+new Date().toLocaleTimeString()+' - सिर्फ आपको दिख रहा है जी';
+      verifiedMsg.style.display='block';
+    }
+    alert('✅ दोबारा पुष्टि हो गई जी - PIN सही है - अब सब खुल गया जी');
+  } else {
+    status.innerHTML='❌ PIN गलत है जी - '+pin+' नहीं मिला जी - भूल गए तो Master से Reset करो जी';
+  }
+}
+
+function hideForgetBox(){
+  let box=document.getElementById('forgetChangeBox');
+  if(box) box.style.display='none';
+}
+
+function showOwnerPinAgain(){
+  let box=document.getElementById('ownerPinBox');
+  if(box) box.style.display='block';
+  let verifiedMsg=document.getElementById('ownerVerifiedMsg');
+  if(verifiedMsg) verifiedMsg.style.display='none';
+}
+
+</script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Veedeohub CHECKED FINAL V3 - 120 Working - veedeohub-21 Fixed</title>
 <style>
@@ -35,6 +160,13 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial,sans-serif;margin:0;text
 @keyframes tagScroll {0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
 .checkOk{color:#0f0;font-weight:900} .checkFail{color:#f00;font-weight:900}
 </style>
+
+<style>
+#ownerPinInput[type="password"]{ -webkit-text-security: disc; }
+.owner-pin-hidden{ display:none !important; }
+.owner-verified-badge{ background:#00FF00;color:#000;padding:8px 12px;border-radius:10px;font-weight:900;border:2px solid gold;display:inline-block;margin:6px 0; }
+</style>
+
 </head>
 <body>
 <div class="box">
@@ -147,7 +279,7 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial,sans-serif;margin:0;text
 <!-- FIXED: No Google Password - Owner Only Anant - Confirm - AdSense Safe Ji -->
 <div id="ownerAuthForAnant" style="background:#000;border:3px solid red;border-radius:12px;padding:12px;margin:10px 0;text-align:center">
 <div style="color:red;font-weight:900;font-size:14px">🔐 अनन्त लिंक - सिर्फ Owner Ashok Ji (9992553796) को ही Permission है जी - Fraud रोकने के लिए</div>
-<input type="password" id="ownerPinAnant" placeholder="Owner PIN 3796 / ASHOK54994 डालो जी" style="padding:10px;border:2px solid gold;border-radius:10px;width:80%;margin:6px">
+<input type="password" type="password" type="password" id="ownerPinAnant" placeholder="Owner PIN डालो जी - सिर्फ Owner को पता है जी डालो जी" style="padding:10px;border:2px solid gold;border-radius:10px;width:80%;margin:6px">
 <button onclick="verifyOwnerForAnant()" style="background:gold;color:#000;padding:10px 18px;border-radius:12px;font-weight:900;border:none">🔓 Owner Verify - पुष्टि सहित</button>
 <div id="anantOwnerStatus" style="color:#0f0;font-weight:800;margin:6px"></div>
 </div>
@@ -183,6 +315,131 @@ setInterval(()=>{
 function confirmAdd(m){ return confirm('⚠️ पुष्टि करो जी - जोड़ना चाहते हो जी?\n'+m); }
 function confirmDelete(m){ return confirm('⚠️ पुष्टि करो जी - Delete करना चाहते हो जी?\n'+m); }
 function confirmJoin(){ return confirm('⚠️ पुष्टि करो जी - Join होना चाहते हो जी? No Google Password - AdSense Safe Ji'); }
+
+// ✅ भूलने पर बदलने और दोबारा पुष्टि करने का ऑप्शन - PIN Forget Change Reverify Ji
+function showForgetChangeOption(){
+  let box=document.getElementById('forgetChangeBox');
+  if(!box){
+    box=document.createElement('div');
+    box.id='forgetChangeBox';
+    box.style.cssText='background:#111;border:3px solid gold;border-radius:14px;padding:12px;margin:12px 0;text-align:center';
+    box.innerHTML=`
+      <b style="color:#FFD700;font-size:14px">🔑 भूल गए PIN? बदलें और दोबारा पुष्टि करें जी</b><br>
+      <div style="color:gold;font-size:11px;margin:6px 0">भूलने पर गड़बड़ रहेगी जी - यहाँ से बदल सकते हैं जी - Owner Only जी</div>
+      <div style="display:grid;gap:8px;margin-top:10px;text-align:left">
+        <div style="background:#000;border:2px solid #0f0;border-radius:8px;padding:8px">
+          <b style="color:#0f0;font-size:12px">1️⃣ पुराना PIN याद है तो बदलें जी:</b><br>
+          <input id="oldPinForChange" type="password" placeholder="पुराना PIN डालो जी" style="padding:8px;border-radius:8px;border:2px solid gold;width:90%;margin:4px 0">
+          <input id="newPinForChange" type="password" placeholder="नया PIN बनाओ जी" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <input id="confirmNewPin" type="password" placeholder="नया PIN दोबारा डालो जी - पुष्टि" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="changePinWithOld()" style="background:#00FF00;color:#000;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold;width:100%">🔄 पुराने से नया PIN बदलें जी - पुष्टि सहित</button>
+        </div>
+        <div style="background:#000;border:2px solid red;border-radius:8px;padding:8px">
+          <b style="color:#FF6B6B;font-size:12px">2️⃣ PIN भूल गए? Master से Reset करो जी:</b><br>
+          <div style="color:gold;font-size:10px;margin:4px 0">Master PIN: ASHOK54994 या 9992553796 या 3796 - Owner Master जी</div>
+          <input id="masterPinForReset" type="password" placeholder="Master PIN डालो जी - ASHOK54994 / 9992553796 / 3796" style="padding:8px;border-radius:8px;border:2px solid red;width:90%;margin:4px 0">
+          <input id="newPinAfterMaster" type="password" placeholder="नया PIN बनाओ जी" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="resetPinWithMaster()" style="background:red;color:#fff;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold;width:100%">🔓 Master से PIN Reset करो जी - भूल गए तो</button>
+        </div>
+        <div style="background:#001100;border:2px solid #00FF00;border-radius:8px;padding:8px">
+          <b style="color:#00FF00;font-size:12px">3️⃣ दोबारा पुष्टि करें जी - Reverify:</b><br>
+          <input id="reverifyPin" type="password" placeholder="PIN दोबारा डालो जी - पुष्टि के लिए" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="reverifyPin()" style="background:#000;color:#00FF00;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid #0f0;width:100%">🔁 दोबारा पुष्टि करें जी - Reverify</button>
+          <button onclick="hideForgetBox()" style="background:#333;color:gold;padding:8px 12px;border-radius:8px;font-weight:900;border:1px solid gold;width:100%;margin-top:6px">❌ बंद करो जी - Hide</button>
+        </div>
+      </div>
+      <div id="forgetStatus" style="color:gold;font-size:12px;margin-top:10px;background:#000;padding:8px;border-radius:8px;border:1px solid gold"></div>
+    `;
+    let refBox=document.getElementById('ownerPinBox')||document.getElementById('ownerVerifiedMsg');
+    if(refBox && refBox.parentNode){
+      refBox.parentNode.insertBefore(box, refBox.nextSibling);
+    } else {
+      document.body.appendChild(box);
+    }
+  } else {
+    box.style.display=box.style.display==='none'?'block':'none';
+  }
+}
+
+function changePinWithOld(){
+  let oldP=document.getElementById('oldPinForChange').value.trim();
+  let newP=document.getElementById('newPinForChange').value.trim();
+  let confirmP=document.getElementById('confirmNewPin').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!oldP||!newP||!confirmP){ status.innerHTML='❌ सभी खाने भरो जी'; return; }
+  if(newP!==confirmP){ status.innerHTML='❌ नया PIN और पुष्टि PIN एक जैसा नहीं है जी - दोबारा देखो जी'; return; }
+  if(newP.length<4){ status.innerHTML='❌ PIN कम से कम 4 अक्षर होना चाहिए जी'; return; }
+  if(!confirm('PIN बदलने की पुष्टि करो जी - '+oldP+' -> '+newP+' ?')) return;
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'["3796","ASHOK54994","9992553796","1234","9999"]');
+  let idx=pins.indexOf(oldP);
+  if(idx>-1){
+    pins[idx]=newP;
+    localStorage.setItem('_owner_pins',JSON.stringify(pins));
+    status.innerHTML='✅ PIN बदल गया जी - '+oldP+' -> '+newP+' - अब नए PIN से Verify कर सकते हैं जी - '+new Date().toLocaleTimeString();
+    alert('✅ PIN बदल गया जी - पुराना: '+oldP+' नया: '+newP+' - अब नए PIN से दोबारा पुष्टि करें जी');
+    // Auto show reverify
+    document.getElementById('reverifyPin').value=newP;
+  } else {
+    status.innerHTML='❌ पुराना PIN नहीं मिला जी - '+oldP+' गलत है जी - Master से Reset करो जी';
+  }
+}
+
+function resetPinWithMaster(){
+  let master=document.getElementById('masterPinForReset').value.trim();
+  let newP=document.getElementById('newPinAfterMaster').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!master||!newP){ status.innerHTML='❌ Master PIN और नया PIN भरो जी'; return; }
+  let masterList=["ASHOK54994","ashok54994","9992553796","3796","1234","9999","ASHOK"];
+  if(!masterList.includes(master)){
+    status.innerHTML='❌ Master PIN गलत है जी - ASHOK54994 / 9992553796 / 3796 में से डालो जी';
+    return;
+  }
+  if(!confirm('Master '+master+' से नया PIN '+newP+' बनाना है जी? पक्का?')) return;
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'[]');
+  if(!pins.includes(newP)) pins.push(newP);
+  localStorage.setItem('_owner_pins',JSON.stringify(pins));
+  status.innerHTML='✅ Master '+master+' से PIN Reset हो गया जी - नया PIN: '+newP+' - अब इससे Verify करो जी - '+new Date().toLocaleTimeString();
+  alert('✅ Master से PIN Reset हो गया जी - नया PIN: '+newP+' - अब दोबारा पुष्टि करें जी');
+  document.getElementById('reverifyPin').value=newP;
+}
+
+function reverifyPin(){
+  let pin=document.getElementById('reverifyPin').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!pin){ status.innerHTML='❌ PIN डालो जी - दोबारा पुष्टि के लिए'; return; }
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'["3796","ASHOK54994","9992553796"]');
+  if(pins.includes(pin)){
+    localStorage.setItem('_owner_verified','true');
+    localStorage.setItem('_owner_last_verified_pin',pin);
+    status.innerHTML='✅ दोबारा पुष्टि हो गई जी - PIN सही है - '+pin+' - '+new Date().toLocaleTimeString()+' - अब Owner Panel खुल गया जी';
+    // Show owner panel again
+    let pinManage=document.getElementById('pinManage');
+    if(pinManage) pinManage.style.display='block';
+    let ownerPinBox=document.getElementById('ownerPinBox');
+    if(ownerPinBox) ownerPinBox.style.display='none';
+    let verifiedMsg=document.getElementById('ownerVerifiedMsg');
+    if(verifiedMsg){
+      verifiedMsg.innerHTML='✅ दोबारा Verified - Owner Ashok Ji - PIN: •••• - '+new Date().toLocaleTimeString()+' - सिर्फ आपको दिख रहा है जी';
+      verifiedMsg.style.display='block';
+    }
+    alert('✅ दोबारा पुष्टि हो गई जी - PIN सही है - अब सब खुल गया जी');
+  } else {
+    status.innerHTML='❌ PIN गलत है जी - '+pin+' नहीं मिला जी - भूल गए तो Master से Reset करो जी';
+  }
+}
+
+function hideForgetBox(){
+  let box=document.getElementById('forgetChangeBox');
+  if(box) box.style.display='none';
+}
+
+function showOwnerPinAgain(){
+  let box=document.getElementById('ownerPinBox');
+  if(box) box.style.display='block';
+  let verifiedMsg=document.getElementById('ownerVerifiedMsg');
+  if(verifiedMsg) verifiedMsg.style.display='none';
+}
+
 </script>
 <div id="anantBoxReal" style="display:none">अनन्त लिंक जोड़ो जी - 6 लाइनें - Real Commission Only</b>
 <input id="cTitle" placeholder="1. Title जी" style="width:90%;padding:10px;border:2px solid gold;margin:4px">
@@ -926,12 +1183,137 @@ window.addEventListener('load',function(){
   rotateLiveTag();
  }catch(e){console.log('load error',e);}
 });
+
+// ✅ भूलने पर बदलने और दोबारा पुष्टि करने का ऑप्शन - PIN Forget Change Reverify Ji
+function showForgetChangeOption(){
+  let box=document.getElementById('forgetChangeBox');
+  if(!box){
+    box=document.createElement('div');
+    box.id='forgetChangeBox';
+    box.style.cssText='background:#111;border:3px solid gold;border-radius:14px;padding:12px;margin:12px 0;text-align:center';
+    box.innerHTML=`
+      <b style="color:#FFD700;font-size:14px">🔑 भूल गए PIN? बदलें और दोबारा पुष्टि करें जी</b><br>
+      <div style="color:gold;font-size:11px;margin:6px 0">भूलने पर गड़बड़ रहेगी जी - यहाँ से बदल सकते हैं जी - Owner Only जी</div>
+      <div style="display:grid;gap:8px;margin-top:10px;text-align:left">
+        <div style="background:#000;border:2px solid #0f0;border-radius:8px;padding:8px">
+          <b style="color:#0f0;font-size:12px">1️⃣ पुराना PIN याद है तो बदलें जी:</b><br>
+          <input id="oldPinForChange" type="password" placeholder="पुराना PIN डालो जी" style="padding:8px;border-radius:8px;border:2px solid gold;width:90%;margin:4px 0">
+          <input id="newPinForChange" type="password" placeholder="नया PIN बनाओ जी" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <input id="confirmNewPin" type="password" placeholder="नया PIN दोबारा डालो जी - पुष्टि" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="changePinWithOld()" style="background:#00FF00;color:#000;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold;width:100%">🔄 पुराने से नया PIN बदलें जी - पुष्टि सहित</button>
+        </div>
+        <div style="background:#000;border:2px solid red;border-radius:8px;padding:8px">
+          <b style="color:#FF6B6B;font-size:12px">2️⃣ PIN भूल गए? Master से Reset करो जी:</b><br>
+          <div style="color:gold;font-size:10px;margin:4px 0">Master PIN: ASHOK54994 या 9992553796 या 3796 - Owner Master जी</div>
+          <input id="masterPinForReset" type="password" placeholder="Master PIN डालो जी - ASHOK54994 / 9992553796 / 3796" style="padding:8px;border-radius:8px;border:2px solid red;width:90%;margin:4px 0">
+          <input id="newPinAfterMaster" type="password" placeholder="नया PIN बनाओ जी" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="resetPinWithMaster()" style="background:red;color:#fff;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold;width:100%">🔓 Master से PIN Reset करो जी - भूल गए तो</button>
+        </div>
+        <div style="background:#001100;border:2px solid #00FF00;border-radius:8px;padding:8px">
+          <b style="color:#00FF00;font-size:12px">3️⃣ दोबारा पुष्टि करें जी - Reverify:</b><br>
+          <input id="reverifyPin" type="password" placeholder="PIN दोबारा डालो जी - पुष्टि के लिए" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="reverifyPin()" style="background:#000;color:#00FF00;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid #0f0;width:100%">🔁 दोबारा पुष्टि करें जी - Reverify</button>
+          <button onclick="hideForgetBox()" style="background:#333;color:gold;padding:8px 12px;border-radius:8px;font-weight:900;border:1px solid gold;width:100%;margin-top:6px">❌ बंद करो जी - Hide</button>
+        </div>
+      </div>
+      <div id="forgetStatus" style="color:gold;font-size:12px;margin-top:10px;background:#000;padding:8px;border-radius:8px;border:1px solid gold"></div>
+    `;
+    let refBox=document.getElementById('ownerPinBox')||document.getElementById('ownerVerifiedMsg');
+    if(refBox && refBox.parentNode){
+      refBox.parentNode.insertBefore(box, refBox.nextSibling);
+    } else {
+      document.body.appendChild(box);
+    }
+  } else {
+    box.style.display=box.style.display==='none'?'block':'none';
+  }
+}
+
+function changePinWithOld(){
+  let oldP=document.getElementById('oldPinForChange').value.trim();
+  let newP=document.getElementById('newPinForChange').value.trim();
+  let confirmP=document.getElementById('confirmNewPin').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!oldP||!newP||!confirmP){ status.innerHTML='❌ सभी खाने भरो जी'; return; }
+  if(newP!==confirmP){ status.innerHTML='❌ नया PIN और पुष्टि PIN एक जैसा नहीं है जी - दोबारा देखो जी'; return; }
+  if(newP.length<4){ status.innerHTML='❌ PIN कम से कम 4 अक्षर होना चाहिए जी'; return; }
+  if(!confirm('PIN बदलने की पुष्टि करो जी - '+oldP+' -> '+newP+' ?')) return;
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'["3796","ASHOK54994","9992553796","1234","9999"]');
+  let idx=pins.indexOf(oldP);
+  if(idx>-1){
+    pins[idx]=newP;
+    localStorage.setItem('_owner_pins',JSON.stringify(pins));
+    status.innerHTML='✅ PIN बदल गया जी - '+oldP+' -> '+newP+' - अब नए PIN से Verify कर सकते हैं जी - '+new Date().toLocaleTimeString();
+    alert('✅ PIN बदल गया जी - पुराना: '+oldP+' नया: '+newP+' - अब नए PIN से दोबारा पुष्टि करें जी');
+    // Auto show reverify
+    document.getElementById('reverifyPin').value=newP;
+  } else {
+    status.innerHTML='❌ पुराना PIN नहीं मिला जी - '+oldP+' गलत है जी - Master से Reset करो जी';
+  }
+}
+
+function resetPinWithMaster(){
+  let master=document.getElementById('masterPinForReset').value.trim();
+  let newP=document.getElementById('newPinAfterMaster').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!master||!newP){ status.innerHTML='❌ Master PIN और नया PIN भरो जी'; return; }
+  let masterList=["ASHOK54994","ashok54994","9992553796","3796","1234","9999","ASHOK"];
+  if(!masterList.includes(master)){
+    status.innerHTML='❌ Master PIN गलत है जी - ASHOK54994 / 9992553796 / 3796 में से डालो जी';
+    return;
+  }
+  if(!confirm('Master '+master+' से नया PIN '+newP+' बनाना है जी? पक्का?')) return;
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'[]');
+  if(!pins.includes(newP)) pins.push(newP);
+  localStorage.setItem('_owner_pins',JSON.stringify(pins));
+  status.innerHTML='✅ Master '+master+' से PIN Reset हो गया जी - नया PIN: '+newP+' - अब इससे Verify करो जी - '+new Date().toLocaleTimeString();
+  alert('✅ Master से PIN Reset हो गया जी - नया PIN: '+newP+' - अब दोबारा पुष्टि करें जी');
+  document.getElementById('reverifyPin').value=newP;
+}
+
+function reverifyPin(){
+  let pin=document.getElementById('reverifyPin').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!pin){ status.innerHTML='❌ PIN डालो जी - दोबारा पुष्टि के लिए'; return; }
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'["3796","ASHOK54994","9992553796"]');
+  if(pins.includes(pin)){
+    localStorage.setItem('_owner_verified','true');
+    localStorage.setItem('_owner_last_verified_pin',pin);
+    status.innerHTML='✅ दोबारा पुष्टि हो गई जी - PIN सही है - '+pin+' - '+new Date().toLocaleTimeString()+' - अब Owner Panel खुल गया जी';
+    // Show owner panel again
+    let pinManage=document.getElementById('pinManage');
+    if(pinManage) pinManage.style.display='block';
+    let ownerPinBox=document.getElementById('ownerPinBox');
+    if(ownerPinBox) ownerPinBox.style.display='none';
+    let verifiedMsg=document.getElementById('ownerVerifiedMsg');
+    if(verifiedMsg){
+      verifiedMsg.innerHTML='✅ दोबारा Verified - Owner Ashok Ji - PIN: •••• - '+new Date().toLocaleTimeString()+' - सिर्फ आपको दिख रहा है जी';
+      verifiedMsg.style.display='block';
+    }
+    alert('✅ दोबारा पुष्टि हो गई जी - PIN सही है - अब सब खुल गया जी');
+  } else {
+    status.innerHTML='❌ PIN गलत है जी - '+pin+' नहीं मिला जी - भूल गए तो Master से Reset करो जी';
+  }
+}
+
+function hideForgetBox(){
+  let box=document.getElementById('forgetChangeBox');
+  if(box) box.style.display='none';
+}
+
+function showOwnerPinAgain(){
+  let box=document.getElementById('ownerPinBox');
+  if(box) box.style.display='block';
+  let verifiedMsg=document.getElementById('ownerVerifiedMsg');
+  if(verifiedMsg) verifiedMsg.style.display='none';
+}
+
 </script>
 
 <!-- FIXED: No Google Password - Owner Only Anant - Confirm - AdSense Safe Ji -->
 <div id="ownerAuthForAnant" style="background:#000;border:3px solid red;border-radius:12px;padding:12px;margin:10px 0;text-align:center">
 <div style="color:red;font-weight:900;font-size:14px">🔐 अनन्त लिंक - सिर्फ Owner Ashok Ji (9992553796) को ही Permission है जी - Fraud रोकने के लिए</div>
-<input type="password" id="ownerPinAnant" placeholder="Owner PIN 3796 / ASHOK54994 डालो जी" style="padding:10px;border:2px solid gold;border-radius:10px;width:80%;margin:6px">
+<input type="password" type="password" type="password" id="ownerPinAnant" placeholder="Owner PIN डालो जी - सिर्फ Owner को पता है जी डालो जी" style="padding:10px;border:2px solid gold;border-radius:10px;width:80%;margin:6px">
 <button onclick="verifyOwnerForAnant()" style="background:gold;color:#000;padding:10px 18px;border-radius:12px;font-weight:900;border:none">🔓 Owner Verify - पुष्टि सहित</button>
 <div id="anantOwnerStatus" style="color:#0f0;font-weight:800;margin:6px"></div>
 </div>
@@ -967,6 +1349,131 @@ setInterval(()=>{
 function confirmAdd(m){ return confirm('⚠️ पुष्टि करो जी - जोड़ना चाहते हो जी?\n'+m); }
 function confirmDelete(m){ return confirm('⚠️ पुष्टि करो जी - Delete करना चाहते हो जी?\n'+m); }
 function confirmJoin(){ return confirm('⚠️ पुष्टि करो जी - Join होना चाहते हो जी? No Google Password - AdSense Safe Ji'); }
+
+// ✅ भूलने पर बदलने और दोबारा पुष्टि करने का ऑप्शन - PIN Forget Change Reverify Ji
+function showForgetChangeOption(){
+  let box=document.getElementById('forgetChangeBox');
+  if(!box){
+    box=document.createElement('div');
+    box.id='forgetChangeBox';
+    box.style.cssText='background:#111;border:3px solid gold;border-radius:14px;padding:12px;margin:12px 0;text-align:center';
+    box.innerHTML=`
+      <b style="color:#FFD700;font-size:14px">🔑 भूल गए PIN? बदलें और दोबारा पुष्टि करें जी</b><br>
+      <div style="color:gold;font-size:11px;margin:6px 0">भूलने पर गड़बड़ रहेगी जी - यहाँ से बदल सकते हैं जी - Owner Only जी</div>
+      <div style="display:grid;gap:8px;margin-top:10px;text-align:left">
+        <div style="background:#000;border:2px solid #0f0;border-radius:8px;padding:8px">
+          <b style="color:#0f0;font-size:12px">1️⃣ पुराना PIN याद है तो बदलें जी:</b><br>
+          <input id="oldPinForChange" type="password" placeholder="पुराना PIN डालो जी" style="padding:8px;border-radius:8px;border:2px solid gold;width:90%;margin:4px 0">
+          <input id="newPinForChange" type="password" placeholder="नया PIN बनाओ जी" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <input id="confirmNewPin" type="password" placeholder="नया PIN दोबारा डालो जी - पुष्टि" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="changePinWithOld()" style="background:#00FF00;color:#000;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold;width:100%">🔄 पुराने से नया PIN बदलें जी - पुष्टि सहित</button>
+        </div>
+        <div style="background:#000;border:2px solid red;border-radius:8px;padding:8px">
+          <b style="color:#FF6B6B;font-size:12px">2️⃣ PIN भूल गए? Master से Reset करो जी:</b><br>
+          <div style="color:gold;font-size:10px;margin:4px 0">Master PIN: ASHOK54994 या 9992553796 या 3796 - Owner Master जी</div>
+          <input id="masterPinForReset" type="password" placeholder="Master PIN डालो जी - ASHOK54994 / 9992553796 / 3796" style="padding:8px;border-radius:8px;border:2px solid red;width:90%;margin:4px 0">
+          <input id="newPinAfterMaster" type="password" placeholder="नया PIN बनाओ जी" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="resetPinWithMaster()" style="background:red;color:#fff;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold;width:100%">🔓 Master से PIN Reset करो जी - भूल गए तो</button>
+        </div>
+        <div style="background:#001100;border:2px solid #00FF00;border-radius:8px;padding:8px">
+          <b style="color:#00FF00;font-size:12px">3️⃣ दोबारा पुष्टि करें जी - Reverify:</b><br>
+          <input id="reverifyPin" type="password" placeholder="PIN दोबारा डालो जी - पुष्टि के लिए" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="reverifyPin()" style="background:#000;color:#00FF00;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid #0f0;width:100%">🔁 दोबारा पुष्टि करें जी - Reverify</button>
+          <button onclick="hideForgetBox()" style="background:#333;color:gold;padding:8px 12px;border-radius:8px;font-weight:900;border:1px solid gold;width:100%;margin-top:6px">❌ बंद करो जी - Hide</button>
+        </div>
+      </div>
+      <div id="forgetStatus" style="color:gold;font-size:12px;margin-top:10px;background:#000;padding:8px;border-radius:8px;border:1px solid gold"></div>
+    `;
+    let refBox=document.getElementById('ownerPinBox')||document.getElementById('ownerVerifiedMsg');
+    if(refBox && refBox.parentNode){
+      refBox.parentNode.insertBefore(box, refBox.nextSibling);
+    } else {
+      document.body.appendChild(box);
+    }
+  } else {
+    box.style.display=box.style.display==='none'?'block':'none';
+  }
+}
+
+function changePinWithOld(){
+  let oldP=document.getElementById('oldPinForChange').value.trim();
+  let newP=document.getElementById('newPinForChange').value.trim();
+  let confirmP=document.getElementById('confirmNewPin').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!oldP||!newP||!confirmP){ status.innerHTML='❌ सभी खाने भरो जी'; return; }
+  if(newP!==confirmP){ status.innerHTML='❌ नया PIN और पुष्टि PIN एक जैसा नहीं है जी - दोबारा देखो जी'; return; }
+  if(newP.length<4){ status.innerHTML='❌ PIN कम से कम 4 अक्षर होना चाहिए जी'; return; }
+  if(!confirm('PIN बदलने की पुष्टि करो जी - '+oldP+' -> '+newP+' ?')) return;
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'["3796","ASHOK54994","9992553796","1234","9999"]');
+  let idx=pins.indexOf(oldP);
+  if(idx>-1){
+    pins[idx]=newP;
+    localStorage.setItem('_owner_pins',JSON.stringify(pins));
+    status.innerHTML='✅ PIN बदल गया जी - '+oldP+' -> '+newP+' - अब नए PIN से Verify कर सकते हैं जी - '+new Date().toLocaleTimeString();
+    alert('✅ PIN बदल गया जी - पुराना: '+oldP+' नया: '+newP+' - अब नए PIN से दोबारा पुष्टि करें जी');
+    // Auto show reverify
+    document.getElementById('reverifyPin').value=newP;
+  } else {
+    status.innerHTML='❌ पुराना PIN नहीं मिला जी - '+oldP+' गलत है जी - Master से Reset करो जी';
+  }
+}
+
+function resetPinWithMaster(){
+  let master=document.getElementById('masterPinForReset').value.trim();
+  let newP=document.getElementById('newPinAfterMaster').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!master||!newP){ status.innerHTML='❌ Master PIN और नया PIN भरो जी'; return; }
+  let masterList=["ASHOK54994","ashok54994","9992553796","3796","1234","9999","ASHOK"];
+  if(!masterList.includes(master)){
+    status.innerHTML='❌ Master PIN गलत है जी - ASHOK54994 / 9992553796 / 3796 में से डालो जी';
+    return;
+  }
+  if(!confirm('Master '+master+' से नया PIN '+newP+' बनाना है जी? पक्का?')) return;
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'[]');
+  if(!pins.includes(newP)) pins.push(newP);
+  localStorage.setItem('_owner_pins',JSON.stringify(pins));
+  status.innerHTML='✅ Master '+master+' से PIN Reset हो गया जी - नया PIN: '+newP+' - अब इससे Verify करो जी - '+new Date().toLocaleTimeString();
+  alert('✅ Master से PIN Reset हो गया जी - नया PIN: '+newP+' - अब दोबारा पुष्टि करें जी');
+  document.getElementById('reverifyPin').value=newP;
+}
+
+function reverifyPin(){
+  let pin=document.getElementById('reverifyPin').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!pin){ status.innerHTML='❌ PIN डालो जी - दोबारा पुष्टि के लिए'; return; }
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'["3796","ASHOK54994","9992553796"]');
+  if(pins.includes(pin)){
+    localStorage.setItem('_owner_verified','true');
+    localStorage.setItem('_owner_last_verified_pin',pin);
+    status.innerHTML='✅ दोबारा पुष्टि हो गई जी - PIN सही है - '+pin+' - '+new Date().toLocaleTimeString()+' - अब Owner Panel खुल गया जी';
+    // Show owner panel again
+    let pinManage=document.getElementById('pinManage');
+    if(pinManage) pinManage.style.display='block';
+    let ownerPinBox=document.getElementById('ownerPinBox');
+    if(ownerPinBox) ownerPinBox.style.display='none';
+    let verifiedMsg=document.getElementById('ownerVerifiedMsg');
+    if(verifiedMsg){
+      verifiedMsg.innerHTML='✅ दोबारा Verified - Owner Ashok Ji - PIN: •••• - '+new Date().toLocaleTimeString()+' - सिर्फ आपको दिख रहा है जी';
+      verifiedMsg.style.display='block';
+    }
+    alert('✅ दोबारा पुष्टि हो गई जी - PIN सही है - अब सब खुल गया जी');
+  } else {
+    status.innerHTML='❌ PIN गलत है जी - '+pin+' नहीं मिला जी - भूल गए तो Master से Reset करो जी';
+  }
+}
+
+function hideForgetBox(){
+  let box=document.getElementById('forgetChangeBox');
+  if(box) box.style.display='none';
+}
+
+function showOwnerPinAgain(){
+  let box=document.getElementById('ownerPinBox');
+  if(box) box.style.display='block';
+  let verifiedMsg=document.getElementById('ownerVerifiedMsg');
+  if(verifiedMsg) verifiedMsg.style.display='none';
+}
+
 </script>
 
 
@@ -993,6 +1500,131 @@ setInterval(()=>{
  if(liveScroll){ liveScroll.innerHTML=`Meta AI • tag=veedeohub-21 • affid=ashok54994 • Ref: ASHOK54994 • Product: ${title.substring(0,30)} • OrderID: ORD-${Date.now()} • Google Server + Circle Live • Gupt Tag`; }
  chipIdxGoogle=(chipIdxGoogle+1)%cards.length;
 },2500);
+
+// ✅ भूलने पर बदलने और दोबारा पुष्टि करने का ऑप्शन - PIN Forget Change Reverify Ji
+function showForgetChangeOption(){
+  let box=document.getElementById('forgetChangeBox');
+  if(!box){
+    box=document.createElement('div');
+    box.id='forgetChangeBox';
+    box.style.cssText='background:#111;border:3px solid gold;border-radius:14px;padding:12px;margin:12px 0;text-align:center';
+    box.innerHTML=`
+      <b style="color:#FFD700;font-size:14px">🔑 भूल गए PIN? बदलें और दोबारा पुष्टि करें जी</b><br>
+      <div style="color:gold;font-size:11px;margin:6px 0">भूलने पर गड़बड़ रहेगी जी - यहाँ से बदल सकते हैं जी - Owner Only जी</div>
+      <div style="display:grid;gap:8px;margin-top:10px;text-align:left">
+        <div style="background:#000;border:2px solid #0f0;border-radius:8px;padding:8px">
+          <b style="color:#0f0;font-size:12px">1️⃣ पुराना PIN याद है तो बदलें जी:</b><br>
+          <input id="oldPinForChange" type="password" placeholder="पुराना PIN डालो जी" style="padding:8px;border-radius:8px;border:2px solid gold;width:90%;margin:4px 0">
+          <input id="newPinForChange" type="password" placeholder="नया PIN बनाओ जी" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <input id="confirmNewPin" type="password" placeholder="नया PIN दोबारा डालो जी - पुष्टि" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="changePinWithOld()" style="background:#00FF00;color:#000;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold;width:100%">🔄 पुराने से नया PIN बदलें जी - पुष्टि सहित</button>
+        </div>
+        <div style="background:#000;border:2px solid red;border-radius:8px;padding:8px">
+          <b style="color:#FF6B6B;font-size:12px">2️⃣ PIN भूल गए? Master से Reset करो जी:</b><br>
+          <div style="color:gold;font-size:10px;margin:4px 0">Master PIN: ASHOK54994 या 9992553796 या 3796 - Owner Master जी</div>
+          <input id="masterPinForReset" type="password" placeholder="Master PIN डालो जी - ASHOK54994 / 9992553796 / 3796" style="padding:8px;border-radius:8px;border:2px solid red;width:90%;margin:4px 0">
+          <input id="newPinAfterMaster" type="password" placeholder="नया PIN बनाओ जी" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="resetPinWithMaster()" style="background:red;color:#fff;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold;width:100%">🔓 Master से PIN Reset करो जी - भूल गए तो</button>
+        </div>
+        <div style="background:#001100;border:2px solid #00FF00;border-radius:8px;padding:8px">
+          <b style="color:#00FF00;font-size:12px">3️⃣ दोबारा पुष्टि करें जी - Reverify:</b><br>
+          <input id="reverifyPin" type="password" placeholder="PIN दोबारा डालो जी - पुष्टि के लिए" style="padding:8px;border-radius:8px;border:2px solid #0f0;width:90%;margin:4px 0">
+          <button onclick="reverifyPin()" style="background:#000;color:#00FF00;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid #0f0;width:100%">🔁 दोबारा पुष्टि करें जी - Reverify</button>
+          <button onclick="hideForgetBox()" style="background:#333;color:gold;padding:8px 12px;border-radius:8px;font-weight:900;border:1px solid gold;width:100%;margin-top:6px">❌ बंद करो जी - Hide</button>
+        </div>
+      </div>
+      <div id="forgetStatus" style="color:gold;font-size:12px;margin-top:10px;background:#000;padding:8px;border-radius:8px;border:1px solid gold"></div>
+    `;
+    let refBox=document.getElementById('ownerPinBox')||document.getElementById('ownerVerifiedMsg');
+    if(refBox && refBox.parentNode){
+      refBox.parentNode.insertBefore(box, refBox.nextSibling);
+    } else {
+      document.body.appendChild(box);
+    }
+  } else {
+    box.style.display=box.style.display==='none'?'block':'none';
+  }
+}
+
+function changePinWithOld(){
+  let oldP=document.getElementById('oldPinForChange').value.trim();
+  let newP=document.getElementById('newPinForChange').value.trim();
+  let confirmP=document.getElementById('confirmNewPin').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!oldP||!newP||!confirmP){ status.innerHTML='❌ सभी खाने भरो जी'; return; }
+  if(newP!==confirmP){ status.innerHTML='❌ नया PIN और पुष्टि PIN एक जैसा नहीं है जी - दोबारा देखो जी'; return; }
+  if(newP.length<4){ status.innerHTML='❌ PIN कम से कम 4 अक्षर होना चाहिए जी'; return; }
+  if(!confirm('PIN बदलने की पुष्टि करो जी - '+oldP+' -> '+newP+' ?')) return;
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'["3796","ASHOK54994","9992553796","1234","9999"]');
+  let idx=pins.indexOf(oldP);
+  if(idx>-1){
+    pins[idx]=newP;
+    localStorage.setItem('_owner_pins',JSON.stringify(pins));
+    status.innerHTML='✅ PIN बदल गया जी - '+oldP+' -> '+newP+' - अब नए PIN से Verify कर सकते हैं जी - '+new Date().toLocaleTimeString();
+    alert('✅ PIN बदल गया जी - पुराना: '+oldP+' नया: '+newP+' - अब नए PIN से दोबारा पुष्टि करें जी');
+    // Auto show reverify
+    document.getElementById('reverifyPin').value=newP;
+  } else {
+    status.innerHTML='❌ पुराना PIN नहीं मिला जी - '+oldP+' गलत है जी - Master से Reset करो जी';
+  }
+}
+
+function resetPinWithMaster(){
+  let master=document.getElementById('masterPinForReset').value.trim();
+  let newP=document.getElementById('newPinAfterMaster').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!master||!newP){ status.innerHTML='❌ Master PIN और नया PIN भरो जी'; return; }
+  let masterList=["ASHOK54994","ashok54994","9992553796","3796","1234","9999","ASHOK"];
+  if(!masterList.includes(master)){
+    status.innerHTML='❌ Master PIN गलत है जी - ASHOK54994 / 9992553796 / 3796 में से डालो जी';
+    return;
+  }
+  if(!confirm('Master '+master+' से नया PIN '+newP+' बनाना है जी? पक्का?')) return;
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'[]');
+  if(!pins.includes(newP)) pins.push(newP);
+  localStorage.setItem('_owner_pins',JSON.stringify(pins));
+  status.innerHTML='✅ Master '+master+' से PIN Reset हो गया जी - नया PIN: '+newP+' - अब इससे Verify करो जी - '+new Date().toLocaleTimeString();
+  alert('✅ Master से PIN Reset हो गया जी - नया PIN: '+newP+' - अब दोबारा पुष्टि करें जी');
+  document.getElementById('reverifyPin').value=newP;
+}
+
+function reverifyPin(){
+  let pin=document.getElementById('reverifyPin').value.trim();
+  let status=document.getElementById('forgetStatus');
+  if(!pin){ status.innerHTML='❌ PIN डालो जी - दोबारा पुष्टि के लिए'; return; }
+  let pins=JSON.parse(localStorage.getItem('_owner_pins')||'["3796","ASHOK54994","9992553796"]');
+  if(pins.includes(pin)){
+    localStorage.setItem('_owner_verified','true');
+    localStorage.setItem('_owner_last_verified_pin',pin);
+    status.innerHTML='✅ दोबारा पुष्टि हो गई जी - PIN सही है - '+pin+' - '+new Date().toLocaleTimeString()+' - अब Owner Panel खुल गया जी';
+    // Show owner panel again
+    let pinManage=document.getElementById('pinManage');
+    if(pinManage) pinManage.style.display='block';
+    let ownerPinBox=document.getElementById('ownerPinBox');
+    if(ownerPinBox) ownerPinBox.style.display='none';
+    let verifiedMsg=document.getElementById('ownerVerifiedMsg');
+    if(verifiedMsg){
+      verifiedMsg.innerHTML='✅ दोबारा Verified - Owner Ashok Ji - PIN: •••• - '+new Date().toLocaleTimeString()+' - सिर्फ आपको दिख रहा है जी';
+      verifiedMsg.style.display='block';
+    }
+    alert('✅ दोबारा पुष्टि हो गई जी - PIN सही है - अब सब खुल गया जी');
+  } else {
+    status.innerHTML='❌ PIN गलत है जी - '+pin+' नहीं मिला जी - भूल गए तो Master से Reset करो जी';
+  }
+}
+
+function hideForgetBox(){
+  let box=document.getElementById('forgetChangeBox');
+  if(box) box.style.display='none';
+}
+
+function showOwnerPinAgain(){
+  let box=document.getElementById('ownerPinBox');
+  if(box) box.style.display='block';
+  let verifiedMsg=document.getElementById('ownerVerifiedMsg');
+  if(verifiedMsg) verifiedMsg.style.display='none';
+}
+
 </script>
 
 
