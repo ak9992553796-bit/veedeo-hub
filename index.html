@@ -392,7 +392,18 @@ function autoDetectCompany(title){
  return (title||'Company').split(' ')[0]||'Company';
 }
 function appendLog(entry){
- try{let logEl=document.getElementById('recordedLog');if(!logEring().slice(-8)+'-'+btnNo;
+ try{let logEl=document.getElementById('recordedLog');if(!logEl)return;let color=entry.type.indexOf('Confirmed')>-1?'#0f0':'#FF9800';let line='<div style="border-bottom:1px dashed gold;padding:3px 0;color:'+color+'">⏰ '+entry.time+' | '+entry.type+' | Btn '+entry.btnNo+' | '+entry.app+' | ₹'+(entry.amount||0).toFixed(2)+'</div>';logEl.innerHTML=line+logEl.innerHTML;}catch(e){}
+}
+function recordPendingClick(title, btnNo){
+ try{
+  let pending=JSON.parse(localStorage.getItem('_pending_clicks')||'[]');
+  let entry={time:new Date().toLocaleString(),title:title,btnNo:btnNo,estAmount:5};
+  pending.unshift(entry);if(pending.length>300) pending=pending.slice(0,300);
+  localStorage.setItem('_pending_clicks',JSON.stringify(pending));
+  updateRealWallet();
+  appendLog({time:entry.time,type:'⏳ Pending Click - No Benefit Yet',app:title,btnNo:btnNo,amount:0});
+  let company=autoDetectCompany(title);
+  let fakeOrder='ORD-'+Date.now().toString().slice(-8)+'-'+btnNo;
   let compEl=document.getElementById('realCompany');if(compEl){compEl.value=company;compEl.style.border='3px solid #00ff00';compEl.style.boxShadow='0 0 10px #00ff00';compEl.style.background='#001100';compEl.style.color='#0f0';}
   let orderEl=document.getElementById('realOrderId');if(orderEl){orderEl.value=fakeOrder;orderEl.style.border='3px solid #FFD700';orderEl.style.boxShadow='0 0 10px gold';orderEl.style.background='#fff';}
   let amtEl=document.getElementById('realAmount');if(amtEl){amtEl.placeholder='Auto: '+company+' - Amount लिखो जी';amtEl.style.border='3px solid #00ff00';}
@@ -602,16 +613,4 @@ let allLinksBase_B = [
 {no:116,title:'YouTube Studio App Fix',btnText:'YouTube Ji',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.creator'},
 {no:117,title:'Suno App Fix',btnText:'Suno Ji',url:'https://play.google.com/store/apps/details?id=com.suno.android'},
 {no:118,title:'Google Flow App Fix',btnText:'Google Ji',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.labs.whisk'},
-{no:119,title:'Google Flow Music Fix',btnText:'Google Ji',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.labs.reuben'},
-{no:120,title:'Google Maps Fix',btnText:'Google Ji',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.maps'}
-];
-
-let currentPage=0;let itemsPerPage=10;let showAllMode=true;let filteredLinks=[];
-function renderLinks(){
- try{
-  let c=document.getElementById('linkContainer');let allList=document.getElementById('allBtnList');let searchCount=document.getElementById('searchCount');
-  if(!c)return;c.innerHTML='';
-  let q=(document.getElementById('globalSearch')?document.getElementById('globalSearch').value.toLowerCase().trim():'');
-  let numQ=(document.getElementById('numJump')?document.getElementById('numJump').value.trim():'');
-  let allCombined=allLinksBase.concat(allLinksBase_B);
-  let custom=JSON.parse(localStorage.getItem('_custom_
+{no:119,title:'Google Flow Music Fix',b
