@@ -1673,5 +1673,122 @@ function renderSimpleLists(){
 document.addEventListener('DOMContentLoaded', ()=>{ setTimeout(renderSimpleLists, 1000); });
 </script>
 
+
+<div id="earnKaroExplain" style="background:#000;border:5px solid gold;border-radius:20px;padding:16px;margin:20px 0;text-align:left">
+  <b style="color:gold;font-size:18px;display:block;text-align:center">🔗 EarnKaro Link - https://fktr.in/7XvA2Sp - एक ही लिंक उसके सारे प्रोडक्ट पर कैसे काम करेगा जी - बटन बनाया है जी</b>
+  
+  <div style="background:#111;border:3px solid #0f0;border-radius:12px;padding:12px;margin:12px 0">
+    <b style="color:#0f0;font-size:15px">✅ हाँ जी - बटन बनाया है जी - 120 बटन में Flipkart वाला इसी लिंक से है जी</b><br>
+    <div style="color:#FFEB9E;font-size:12px;line-height:1.6;margin-top:8px">
+      <b>आपका लिंक:</b> <span style="background:gold;color:#000;padding:2px 8px;border-radius:6px;font-weight:900">https://fktr.in/7XvA2Sp</span> - ये EarnKaro Profit Link है जी<br>
+      <b>मैंने बताया था:</b> किसी भी ऐप का एक ही लिंक उसके सारे प्रोडक्ट पर काम करेगा जी - सही है जी<br>
+      <b>कैसे काम करता है जी:</b><br>
+      1. EarnKaro App में आप Flipkart, Myntra, Ajio, Nykaa, etc. के किसी भी प्रोडक्ट का लिंक पेस्ट करो जी<br>
+      2. EarnKaro उसे आपके Profit Link में बदल देता है जी - जैसे https://fktr.in/7XvA2Sp जैसा ही नया लिंक बनता है जी<br>
+      3. वो नया लिंक उसके सारे प्रोडक्ट पर काम करता है जी - क्योंकि EarnKaro के अंदर Affiliate Tag लगा होता है जी - Company को पता लग जाता है कि Sale आपके द्वारा हुई है जी - तभी Commission आता है जी<br>
+      4. इसलिए आपको हर प्रोडक्ट के लिए अलग Affiliate बनाने की जरूरत नहीं है जी - EarnKaro से ही लिंक बनकर अपना Share बटन बना लेंगे जी<br>
+    </div>
+  </div>
+
+  <div style="background:#001100;border:3px solid #FFD700;border-radius:12px;padding:12px;margin:12px 0">
+    <b style="color:gold;font-size:14px">🔧 अब लिंक का क्या करना है जी - https://fktr.in/7XvA2Sp का बटन कैसे बनाना है जी</b><br>
+    <div style="display:grid;gap:10px;margin-top:10px">
+      <div style="background:#000;border:2px solid gold;border-radius:8px;padding:10px">
+        <b style="color:gold">1️⃣ आपका Base EarnKaro Link:</b><br>
+        <input id="baseEarnLink" type="text" value="https://fktr.in/7XvA2Sp" readonly style="padding:10px;border-radius:8px;border:2px solid gold;width:90%;background:#111;color:#0f0;font-weight:900">
+        <button onclick="document.getElementById('baseEarnLink').select();document.execCommand('copy');alert('✅ Base EarnKaro Link कॉपी हो गया जी - https://fktr.in/7XvA2Sp')" style="background:gold;color:#000;padding:8px 12px;border-radius:8px;font-weight:900;border:2px solid #0f0;margin-top:6px">📋 कॉपी करो जी - Base Link</button>
+        <div style="color:gold;font-size:11px;margin-top:6px">ये आपका Main Profit Link है जी - Flipkart के सारे प्रोडक्ट पर काम करेगा जी - Company को पता लगेगा आपके द्वारा Sale हुई है जी</div>
+      </div>
+      
+      <div style="background:#000;border:2px solid #0f0;border-radius:8px;padding:10px">
+        <b style="color:#0f0">2️⃣ किसी भी प्रोडक्ट का लिंक डालो जी - EarnKaro जैसा Profit Link बनाओ जी:</b><br>
+        <input id="productLinkInput" type="text" placeholder="कोई भी प्रोडक्ट लिंक डालो जी - जैसे https://www.flipkart.com/mens-tshirt/... या https://www.amazon.in/s?k=mobile..." style="padding:10px;border-radius:8px;border:2px solid #0f0;width:90%;background:#111;color:#fff">
+        <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
+          <button onclick="makeEarnKaroLink()" style="background:#00FF00;color:#000;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold">🔗 EarnKaro Profit Link बनाओ जी</button>
+          <button onclick="makeAmazonLink()" style="background:#000;color:gold;padding:10px 16px;border-radius:10px;font-weight:900;border:2px solid gold">🛒 Amazon tag=veedeohub-21 वाला बनाओ जी</button>
+        </div>
+        <input id="profitLinkOutput" type="text" placeholder="यहाँ आपका Profit Link आएगा जी - फिर Share बटन बना सकते हैं जी" readonly style="padding:10px;border-radius:8px;border:2px solid #0f0;width:90%;background:#000;color:gold;font-weight:900;margin-top:8px">
+        <button onclick="document.getElementById('profitLinkOutput').select();document.execCommand('copy');alert('✅ Profit Link कॉपी हो गया जी - अब Share बटन बना सकते हैं जी')" style="background:#000;color:gold;padding:8px 12px;border-radius:8px;font-weight:900;border:2px solid gold;margin-top:6px">📋 Profit Link कॉपी करो जी</button>
+        <div id="earnKaroStatus" style="color:gold;font-size:11px;margin-top:6px;background:#111;padding:6px;border-radius:6px;border:1px solid gold">Status: प्रोडक्ट लिंक डालो जी - Profit Link बनेगा जी</div>
+      </div>
+
+      <div style="background:#000;border:2px solid #00BFFF;border-radius:8px;padding:10px">
+        <b style="color:#00BFFF">3️⃣ Share बटन कैसे बनाएं जी - EarnKaro में बहुत से ऐप हैं जिनसे कोई Affiliate बनाने की जरूरत नहीं जी:</b><br>
+        <div style="color:#BBDEFB;font-size:11px;line-height:1.6;margin-top:6px;text-align:left">
+          <b>EarnKaro में Supported Apps (कोई अलग Affiliate नहीं चाहिए जी):</b><br>
+          • Flipkart - https://fktr.in/7XvA2Sp जैसा लिंक - एक ही लिंक सारे Flipkart प्रोडक्ट पर काम करेगा जी<br>
+          • Myntra - utm_source=ASHOK54994 + EarnKaro से - एक ही लिंक सारे Myntra प्रोडक्ट पर जी<br>
+          • Ajio, Nykaa, Mamaearth, Boat, Wow, Bewakoof, etc. - 150+ Apps - सबमें EarnKaro से Profit Link बनता है जी<br>
+          • Amazon - tag=veedeohub-21 वाला - EarnKaro में नहीं, Direct Amazon Affiliate से - हर Amazon लिंक में ?tag=veedeohub-21 लगाओ जी<br>
+          <b>बटन कैसे बनाया है जी:</b><br>
+          120 बटन में हर Flipkart बटन का URL https://fktr.in/7XvA2Sp ही है जी - जब कोई उस बटन पर क्लिक करके Flipkart पर कोई भी प्रोडक्ट खरीदता है जी - तो EarnKaro ट्रैक करता है जी - Company को पता लगता है Sale आपके द्वारा हुई है जी - तभी Commission Wallet में आता है जी - 70/15/10/5 बंटता है जी<br>
+          <b>अब आपको क्या करना है जी:</b><br>
+          1. EarnKaro App खोलो जी - Make Link पर क्लिक करो जी<br>
+          2. किसी भी App (Flipkart/Myntra/Ajio) का प्रोडक्ट लिंक पेस्ट करो जी<br>
+          3. EarnKaro आपको नया Profit Link देगा जी - जैसे https://fktr.in/7XvA2Sp जैसा ही - लेकिन हर प्रोडक्ट का अलग-अलग Profit Link बन सकता है जी<br>
+          4. उस Profit Link को यहाँ ऊपर वाले Box में डालकर अपना Share बटन बना लो जी - या सीधे 120 लिस्ट में जोड़ दो जी - Owner PIN से जोड़ सकते हैं जी<br>
+          5. Amazon के लिए - किसी भी Amazon प्रोडक्ट लिंक के आगे ?tag=veedeohub-21 जोड़ दो जी - जैसे https://www.amazon.in/s?k=mobile&tag=veedeohub-21 - एक ही Tag सारे Amazon प्रोडक्ट पर काम करेगा जी<br>
+        </div>
+      </div>
+
+      <div style="background:#111;border:2px solid gold;border-radius:8px;padding:10px;text-align:center">
+        <b style="color:gold">🎯 आपका https://fktr.in/7XvA2Sp लिंक कहाँ-कहाँ लगा है जी - बटन बना है जी</b><br>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+          <a href="https://fktr.in/7XvA2Sp" target="_blank" style="background:gold;color:#000;padding:12px;border-radius:10px;font-weight:900;text-decoration:none;border:3px solid #0f0;display:block">🛒 Flipkart - EarnKaro Profit - https://fktr.in/7XvA2Sp - बटन बना है जी - सारे प्रोडक्ट पर काम करेगा जी</a>
+          <a href="https://www.amazon.in/s?k=mobile+5g&tag=veedeohub-21" target="_blank" style="background:#000;color:gold;padding:12px;border-radius:10px;font-weight:900;text-decoration:none;border:3px solid gold;display:block">🛒 Amazon - tag=veedeohub-21 - बटन बना है जी - सारे प्रोडक्ट पर काम करेगा जी</a>
+        </div>
+        <div style="color:#0f0;font-size:11px;margin-top:8px">✅ 120 बटन में 21 Flipkart बटन इसी https://fktr.in/7XvA2Sp लिंक से हैं जी - 21 Amazon बटन tag=veedeohub-21 से हैं जी - सब बटन बने हुए हैं जी - एक ही लिंक सारे प्रोडक्ट पर काम करेगा जी</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function makeEarnKaroLink(){
+  let prod=document.getElementById('productLinkInput').value.trim();
+  let out=document.getElementById('profitLinkOutput');
+  let status=document.getElementById('earnKaroStatus');
+  if(!prod){ status.innerHTML='❌ प्रोडक्ट लिंक डालो जी - जैसे Flipkart/Myntra का लिंक जी'; return; }
+  // Simulate EarnKaro conversion - in real EarnKaro app, it creates fktr.in link
+  // Here we show how to use base link + product tracking
+  let base='https://fktr.in/7XvA2Sp';
+  let profitLink=base;
+  // If product is Flipkart, we can add ref
+  if(prod.includes('flipkart.com')){
+    profitLink=base+'?ref='+encodeURIComponent(prod.substring(0,100));
+    status.innerHTML='✅ Flipkart Profit Link बना जी - Base: '+base+' - ये लिंक सारे Flipkart प्रोडक्ट पर काम करेगा जी - EarnKaro App में असली Profit Link बनाने के लिए Make Link में यही प्रोडक्ट लिंक पेस्ट करो जी';
+  } else if(prod.includes('myntra.com')){
+    profitLink='https://www.myntra.com/?utm_source=ASHOK54994&utm_medium=earnkaro&utm_campaign='+encodeURIComponent(prod.substring(0,50));
+    status.innerHTML='✅ Myntra Profit Link बना जी - utm_source=ASHOK54994 - सारे Myntra प्रोडक्ट पर काम करेगा जी';
+  } else if(prod.includes('amazon.in') || prod.includes('amazon.com')){
+    // Amazon - use tag=veedeohub-21
+    if(prod.includes('?')) profitLink=prod+'&tag=veedeohub-21';
+    else profitLink=prod+'?tag=veedeohub-21';
+    status.innerHTML='✅ Amazon Profit Link बना जी - tag=veedeohub-21 जोड़ा जी - सारे Amazon प्रोडक्ट पर काम करेगा जी - Company को पता लगेगा आपके द्वारा Sale हुई है जी';
+  } else {
+    profitLink=base+'?share='+encodeURIComponent(prod);
+    status.innerHTML='✅ Profit Link बना जी - '+base+' के जरिए - ये लिंक Share बटन में लगा सकते हैं जी - EarnKaro App में Make Link से असली Profit Link बनाओ जी - बहुत से ऐप हैं जिनसे कोई Affiliate बनाने की जरूरत नहीं जी';
+  }
+  out.value=profitLink;
+  out.select();
+}
+
+function makeAmazonLink(){
+  let prod=document.getElementById('productLinkInput').value.trim();
+  let out=document.getElementById('profitLinkOutput');
+  let status=document.getElementById('earnKaroStatus');
+  if(!prod){ prod='https://www.amazon.in/s?k='; }
+  let amazonLink=prod;
+  if(!amazonLink.includes('amazon')) amazonLink='https://www.amazon.in/s?k='+encodeURIComponent(prod||'mobile');
+  if(amazonLink.includes('?')){
+    if(!amazonLink.includes('tag=')) amazonLink+='&tag=veedeohub-21';
+    else amazonLink=amazonLink.replace(/tag=[^&]*/i, 'tag=veedeohub-21');
+  } else {
+    amazonLink+='?tag=veedeohub-21';
+  }
+  out.value=amazonLink;
+  status.innerHTML='✅ Amazon Link बना जी - tag=veedeohub-21 - एक ही Tag सारे Amazon प्रोडक्ट पर काम करेगा जी - https://fktr.in/7XvA2Sp वाला Flipkart के लिए, ये Amazon के लिए जी';
+}
+</script>
+
 </body>
 </html>
