@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SITE KA PART ANANT BHAG 2 - AUTO 90/10 SYSTEM - FIXED</title>
+<!-- ===== 0/17 - FIREBASE FREE HEAD - PAISA NAHI LAGEGA JI - PEHLE DALO JI ===== -->
+<script type="module">
+const firebaseConfig = {
+  apiKey: "FREE-KE-LIYE-FIREBASE-CONSOLE-SE-MILEGA-JI",
+  authDomain: "veedeohub-ashok.firebaseapp.com",
+  projectId: "veedeohub-ashok",
+  storageBucket: "veedeohub-ashok.appspot.com",
+  messagingSenderId: "123456",
+  appId: "1:123456:web:abc"
+};
+const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/YOUR_ID/exec";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc, doc, setDoc, increment, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+let db; try{const app=initializeApp(firebaseConfig); db=getFirestore(app);}catch(e){console.log("Firebase Pending - LocalStorage chalega Ji");}
+window.savePurchaseToFirebase = async function(data){
+ try{
+  if(db){
+   await addDoc(collection(db,"purchases"),{...data,createdAt:serverTimestamp()});
+   await setDoc(doc(db,"users",data.refCode),{totalEarning:increment(data.team90),totalContribution:increment(data.site10)},{merge:true});
+   await setDoc(doc(db,"site","wallet"),{totalSale:increment(data.amount),totalSite10:increment(data.site10)},{merge:true});
+  }
+  fetch(GOOGLE_SHEET_WEBAPP_URL,{method:"POST",mode:"no-cors",body:JSON.stringify(data)});
+  return true;
+ }catch(err){return false;}
+}
+</script>
+
+
+<script>
+// PEXELS HIDDEN + OWNER + SPEAK + MIC
+function speak(t){try{speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='hi-IN';u.rate=0.88;speechSynthesis.speak(u);}catch(e){}}
+function startMic(id){try{let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){alert('Mic Chrome me Allow karo ji');return;}let rec=new SR();rec.lang='hi-IN';rec.onresult=function(e){let txt=e.results[0][0].transcript;let el=document.getElementById(id);if(el){el.value=txt;if(id=='bhag2Name') genLink();}};rec.start();}catch(e){}}
+</script>
+<style>
+body{background:#0a1628;color:#f5e6a3;font-family:Arial,sans-serif;margin:0;text-align:center;padding:0}
+.box{max-width:560px;margin:auto;padding:10px}
+.kaliPatti{background:#000;color:#FFD700;padding:9px;border-radius:8px;font-weight:900;font-size:13px;border:2px solid gold;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.khBtn{padding:11px 16px;border-radius:10px;background:gold;color:#000;font-weight:900;border:2px solid #000;margin:4px;cursor:pointer}
+.micBtn{background:#000;color:gold;border:2px solid gold;border-radius:10px;padding:10px 14px;font-weight:900;cursor:pointer}
+.speakerBtn{background:#111;color:#0f0;border:2px solid #0f0;border-radius:10px;padding:10px 14px;font-weight:900;cursor:pointer}
+.dashboardBox{background:#fff;color:#000;border:4px solid gold;border-radius:16px;padding:14px;margin:14px 0;text-align:left}
+.inputLine{width:92%;padding:12px;border:3px solid gold;border-radius:10px;margin:6px 0;font-weight:800;font-size:13px}
+.rowFlex{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center;margin:8px 0}
+.goldBox{background:linear-gradient(90deg,#000,#332200,#000);border:4px solid gold;border-radius:16px;padding:14px;margin:12px 0;color:#FFD700;font-weight:900}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:gold;color:#000;padding:12px 20px;border-radius:25px;font-weight:900;border:2px solid #000;z-index:9999;display:none}
+</style>
+</head>
+<body>
+<div class="box">
+
+<div class="dashboardBox" style="background:#000;color:gold;border:4px solid gold;text-align:center">
+<h2 style="margin:6px 0">JAI MATA KI | SITE KA PART ANANT BHAG 2<br>AUTO 90/10 SYSTEM - FIXED</h2>
+<p style="font-size:11px;color:#FFD700">Ashok Kumar 141003 | Tauru Nuh | 9992553796 | Part 1 FIXED, Ye Bhag 2 AUTO Hai Ji</p>
+<div style="background:#fff;padding:10px;border-radius:12px;display:inline-block;border:3px solid gold;margin:8px">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://796-bit.github.io/anant-bhag-2.html?ref=ASHOK54994" style="width:160px">
+<div style="font-size:10px;color:#000;font-weight:900;margin-top:4px">🌐 Bhag 2 QR - Scan Karo Ji</div>
+</div>
+<br>
+<a href="index.html" style="display:inline-block;background:#FFD700;color:#000;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:900;border:2px solid #000;margin:6px">🏠 Part 1 FIXED Par Jao Ji</a>
+<a href="radio.html" style="display:inline-block;background:#fff;color:#000;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:900;border:2px solid gold;margin:6px">📻 Radio 28 Button Ji</a>
+</div>
+
+<div class="goldBox">
+<div class="kaliPatti"><span>💡 PLAN SAMJHO JI - 90% AAPKA 10% SITE WALLET JI</span><span><button class="speakerBtn" onclick="speak('90 percent aapka 10 percent site wallet, team badhegi to sabki kamai badhegi ji')">🔊</button></span></div>
+<p style="font-size:13px;line-height:1.8;color:#fff8dc">मेरे लिंक से या आपकी टीम के लिंक से कोई भी Flipkart Amazon Dreambook से खरीदेगा जी तो<br>
+<span style="background:gold;color:#000;padding:2px 8px;border-radius:6px">90% तुरंत टीम सदस्य को</span> मिलेगा जी और <span style="background:#000;color:gold;border:2px solid gold;padding:2px 8px;border-radius:6px">10% साइट वॉलेट में</span> जाएगा जी<br>
+टीम रेफरल से सब जुड़ते रहेंगे जी, UPI FIX है जी, कभी भी बैंक में निकालो जी। हमारा क्या जा रहा है जी? पैसे तो आएंगे ही जी!</p>
+</div>
+
+<!-- REFERRAL LINK GENERATOR -->
+<div class="dashboardBox" style="border:4px solid #9C27B0">
+<div class="kaliPatti" style="background:#9C27B0;color:#fff"><span>🔗 आपका रेफरल लिंक बनाओ जी - AUTO 90/10</span><span><button class="speakerBtn" onclick="speak('Apna referral link banao ji')">🔊</button><button class="micBtn" onclick="startMic('bhag2Name')">🎤</button></span></div>
+<input id="bhag2Name" class="inputLine" placeholder="आपका नाम जी - जैसे Ashok Kumar">
+<input id="bhag2Mobile" class="inputLine" placeholder="मोबाइल 10 अंक जी - 9992553796">
+<div class="rowFlex">
+<button class="khBtn" onclick="genLink()" style="background:#9C27B0;color:#fff">🔗 लिंक बनाओ जी</button>
+<button class="micBtn" onclick="startMic('bhag2Name')">🎤 नाम बोलो जी</button>
+</div>
+<div id="refLinkBox" style="display:none;background:#fff8dc;border:3px solid gold;border-radius:12px;padding:12px;margin-top:10px">
+<div style="font-size:11px;color:#000;font-weight:900">आपका रेफरल कोड:</div>
+<div id="refCodeShow" style="background:#000;color:gold;padding:8px;border-radius:8px;font-weight:900;font-size:13px;margin:6px 0;word-break:break-all"></div>
+<div style="font-size:11px;color:#000;font-weight:900">आपका लिंक:</div>
+<div id="refLinkShow" style="background:#fff;border:2px solid #000;padding:8px;border-radius:8px;font-size:11px;word-break:break-all;color:#000"></div>
+<div class="rowFlex">
+<button class="khBtn" onclick="copyLink()">📋 कॉपी करो जी</button>
+<button class="khBtn" onclick="shareWA()" style="background:#25D366;color:#fff">📲 WhatsApp शेयर जी</button>
+</div>
+</div>
+</div>
+
+<!-- PURCHASE SIMULATOR 90/10 -->
+<div class="dashboardBox" style="border:5px solid #00aa00">
+<div class="kaliPatti" style="background:#00aa00;color:#fff"><span>🛒 खरीदारी Simulate - 90/10 ऑटो बंटवारा जी</span><span><button class="speakerBtn" onclick="speak('Kharidari simulate karo ji, 90 percent aapko 10 percent site wallet me jayega ji')">🔊</button></span></div>
+<div class="rowFlex">
+<select id="prodSelect" class="inputLine" style="width:92%">
+<option value="flipkart|ashok54994">Flipkart Book - affid ashok54994</option>
+<option value="amazon|ashok0499-21">Amazon Book - tag ashok0499-21</option>
+<option value="dreambook|ASHOK54994">Dreambook Product - ref ASHOK54994</option>
+</select>
+</div>
+<input id="purchaseAmt" type="number" class="inputLine" value="500" placeholder="खरीद राशि जी - 500">
+<div class="rowFlex">
+<button class="khBtn" onclick="simulatePurchase()" style="background:#00aa00;color:#fff;font-size:15px;padding:14px 22px">✅ खरीद हुई जी - 90/10 ऑटो बाँटो जी</button>
+</div>
+<div id="splitShow" style="display:none;background:#e8f5e9;border:3px solid #00aa00;border-radius:12px;padding:12px;margin-top:10px;text-align:center">
+<div style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px">
+<div style="background:#000;color:gold;padding:10px 16px;border-radius:10px;border:2px solid gold"><div style="font-size:11px">👤 आपको 90%</div><b id="team90Show" style="font-size:18px">₹450</b></div>
+<div style="background:gold;color:#000;padding:10px 16px;border-radius:10px;border:2px solid #000"><div style="font-size:11px">🏦 साइट 10%</div><b id="site10Show" style="font-size:18px">₹50</b></div>
+</div>
+<div id="purchaseMsg" style="font-size:12px;color:#000;font-weight:900;margin-top:8px"></div>
+</div>
+</div>
+
+<!-- WALLET + UPI AUTO -->
+<div class="dashboardBox" style="border:5px solid gold;background:linear-gradient(135deg,#fff8dc,#fff)">
+<div class="kaliPatti" style="background:gold;color:#000;border:3px solid #000"><span>💰 वॉलेट + UPI FIX - ऑटो निकालो जी</span><span><button class="speakerBtn" onclick="speak('Wallet me 90 percent aapka 10 percent site ka hai ji, UPI se auto nikal sakte ho ji')">🔊</button></span></div>
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;background:#e8f5e9;border:2px solid #00aa00;border-radius:10px;padding:10px;font-size:13px;color:#000;margin-top:8px">
+<span>💰 कुल बिक्री: <b id="wTotal">₹0</b></span>
+<span>👤 आपका 90%: <b id="wYour90">₹0</b></span>
+<span>🏦 साइट 10%: <b id="wSite10">₹0</b></span>
+</div>
+<div id="historyList" style="background:#fff;border:2px solid #ccc;border-radius:10px;padding:8px;margin-top:10px;max-height:200px;overflow:auto;font-size:11px;color:#000"></div>
+
+<div style="background:#fff;border:4px solid gold;border-radius:12px;padding:12px;margin-top:12px;text-align:center">
+<div style="font-weight:900;color:#000">💛 UPI FIX - 9992553796@ybl जी</div>
+<input id="kycNameFix" class="inputLine" placeholder="नाम जी - Ashok Kumar" style="width:90%">
+<input id="kycUpiFix" class="inputLine" placeholder="UPI ID जी - 9992553796@ybl" style="width:90%">
+<div class="rowFlex">
+<button class="khBtn" onclick="saveKYC2()">💾 UPI FIX सेव करो जी</button>
+<button class="micBtn" onclick="startMic('kycUpiFix')">🎤 UPI बोलो जी</button>
+</div>
+<div style="margin:12px 0">
+<img id="upiQRImg" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=9992553796@ybl&pn=Ashok%20Kumar" style="background:#fff;padding:8px;border-radius:10px;border:3px solid gold;width:160px">
+<div style="font-size:11px;color:#000;font-weight:900;margin-top:4px">QR Scan करके पेमेंट जी</div>
+</div>
+<a id="upiPayBtn" href="upi://pay?pa=9992553796@ybl&pn=Ashok%20Kumar" style="display:block;background:gold;color:#000;padding:14px;border-radius:25px;text-decoration:none;font-weight:900;border:3px solid #000;margin:8px 0">💛 UPI से ऑटो निकालो जी - PhonePe GPay खुलेगा जी</a>
+<div style="font-size:10px;color:green">बटन दबाते ही PhonePe / GPay खुलेगा जी, जब चाहे बैंक में ट्रांसफर जी</div>
+</div>
+</div>
+
+<!-- TEAM TREE -->
+<div class="dashboardBox" style="border:4px solid #9C27B0">
+<div class="kaliPatti" style="background:#9C27B0;color:#fff"><span>🌳 टीम रेफरल ट्री - एक से अनेक जी</span><span><button class="khBtn" onclick="renderTree2()" style="padding:6px 10px;font-size:11px;background:#fff;color:#9C27B0">🔄 देखो जी</button></span></div>
+<div id="treeList2" style="background:#fffaf0;border:2px solid #9C27B0;border-radius:10px;padding:10px;margin-top:8px;max-height:300px;overflow:auto;font-size:11px;color:#000">कोई मेंबर नहीं जी - लिंक बनाओ जी</div>
+<div class="rowFlex">
+<button class="khBtn" onclick="renderTree2()" style="background:#9C27B0;color:#fff">🌳 ट्री देखो जी</button>
+<button class="khBtn" onclick="exportTree2()" style="background:#000;color:gold">📥 एक्सपोर्ट जी</button>
+</div>
+</div>
+
+
+<!-- ===== MP3 AUTO PLAN AUDIO - PART 9 KE BAAD 2 TUKDE - FREE JOIN 90% KAMAO JI ===== -->
+<div style="background:#000;border:4px solid gold;border-radius:14px;padding:12px;margin:12px 0;text-align:center">
+<div style="color:gold;font-weight:900;font-size:13px;margin-bottom:6px">🎧 FREE JOIN KARO - 90% KAMAO - AUTO AUDIO JI</div>
+<audio id="planAudio" controls autoplay style="width:100%;border-radius:10px;border:2px solid gold">
+  <source src="plan.mp3" type="audio/mpeg">
+  आपका ब्राउज़र ऑडियो नहीं चलाता जी - 🔊 बटन दबाओ जी
+</audio>
+<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px">
+<button class="khBtn" onclick="document.getElementById('planAudio').play()" style="background:gold;color:#000">🔊 MP3 प्लान सुनो जी</button>
+<button class="micBtn" onclick="if(window.speakPlan) speakPlan()">🎤 AI Didi से सुनो जी</button>
+</div>
+<div style="font-size:10px;color:#fff8dc;margin-top:6px">फ्री ज्वाइन करो जी, टीम बनाओ जी, 90% कमाओ जी - UPI FIX 9992553796@ybl जी</div>
+</div>
+<script>
+// MP3 Auto Play - Page khulte hi 2 sec baad bajega ji
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    let a=document.getElementById('planAudio');
+    if(a){ a.play().catch(function(){ console.log("AutoPlay blocked - button dabao ji"); }); }
+    if(window.speakPlan){ /* backup voice if mp3 not loaded */ }
+  }, 2500);
+});
+</script>
+
+<!-- AI VOICE VIDEO BOX -->
+<div class="dashboardBox" style="border:4px solid #000;background:linear-gradient(135deg,#fff,#e0f2ff)">
+<div class="kaliPatti"><span>🎬 AI Assistant Voice Video - प्लान समझो जी</span><span><button class="speakerBtn" onclick="speakPlan()">🔊</button></span></div>
+<div style="background:#000;color:#FFD700;border-radius:12px;padding:14px;margin-top:8px;border:3px solid gold">
+<div style="display:flex;align-items:center;gap:10px">
+<div style="background:gold;color:#000;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900">AI</div>
+<div style="text-align:left"><b style="font-size:13px">Veedeohub AI Didi Ji</b><br><span style="font-size:10px;color:#fff">हिंदी में समझाती हैं जी</span></div>
+<div style="margin-left:auto;background:#111;color:#0f0;border:1px solid #0f0;padding:4px 8px;border-radius:20px;font-size:9px">● LIVE AI VOICE</div>
+</div>
+<div style="background:#111;color:#fff8dc;padding:12px;border-radius:10px;margin-top:10px;font-size:13px;line-height:1.6;text-align:left">
+नमस्ते जी! 🙏 अनंत भाग 2 में आपका स्वागत है जी।<br>
+जब भी आपके लिंक से <b style="color:gold">Flipkart Amazon Dreambook</b> पर कोई खरीदेगा जी तो<br>
+<span style="background:gold;color:#000;padding:2px 6px;border-radius:4px">90% सीधा आपको</span> मिलेगा जी और <span style="background:#000;color:gold;border:1px solid gold;padding:2px 6px;border-radius:4px">10% साइट वॉलेट में</span> जाएगा जी।<br>
+टीम बनाओ जी, सबकी UPI FIX है जी, ऑटो पैसा बैंक में आएगा जी। हमारा क्या जा रहा है जी? पैसे तो आएंगे ही जी! जय माता की जी!
+</div>
+<div class="rowFlex">
+<button class="speakerBtn" onclick="speakPlan()" style="padding:12px 20px">🔊 पूरा प्लान सुनो जी</button>
+<button class="micBtn" onclick="startMic('bhag2Name')" style="padding:12px 20px">🎤 बोलो जी</button>
+</div>
+<div style="font-size:9px;color:#888;margin-top:6px">AI Voice Video: अभी वॉइस डेमो है जी, बाद में HeyGen / D-ID से वीडियो लगेगा जी - #aiVideoBox में</div>
+</div>
+<p style="font-size:9px;color:#000;margin-top:8px">// TODO Real Auto: Firebase Auth + Firestore users/purchases + Cloud Function 90/10 auto + RazorpayX Payout UPI auto withdraw</p>
+</div>
+
+<div id="aiVideoBox" style="display:none"></div>
+<div style="background:#000;color:gold;border:3px solid gold;border-radius:12px;padding:10px;margin:12px 0;font-size:11px">
+✅ FIXED: Part 1 index.html वैसा ही रहेगा जी - ये Bhag 2 अलग फाइल anant-bhag-2.html है जी - दोनों लिंक हैं जी<br>
+✅ GitHub पर anant-bhag-2.html नाम से नई फाइल बनाकर ये कोड पेस्ट करो जी - Deploy हो जाएगा जी
+</div>
+
+<div class="rowFlex">
+<a href="index.html" style="background:#000;color:gold;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:900;border:2px solid gold">⬅️ Part 1 पर जाओ जी</a>
+<a href="radio.html" style="background:gold;color:#000;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:900;border:2px solid #000">📻 Radio जी</a>
+</div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+let bhag2RefCode = localStorage.getItem('bhag2_ref_code') || 'ASHOK54994_DEMO';
+let bhag2RefLink = localStorage.getItem('bhag2_ref_link') || 'https://796-bit.github.io?ref=ASHOK54994_DEMO';
+let bhag2Wallet = JSON.parse(localStorage.getItem('bhag2_wallet') || '{"total":0,"your90":0,"site10":0,"history":[]}');
+let bhag2Chain = JSON.parse(localStorage.getItem('bhag2_chain') || '[]');
+
+function showToast2(msg){
+ let t=document.getElementById('toast'); t.innerText=msg; t.style.display='block'; setTimeout(()=>t.style.display='none',3000);
+}
+
+function genLink(){
+ let n=document.getElementById('bhag2Name').value.trim();
+ let m=document.getElementById('bhag2Mobile').value.trim();
+ if(n=='' || m.length<10){ alert('नाम और 10 अंक मोबाइल डालो जी'); return; }
+ let code = n.toUpperCase().replace(/\s+/g,'_').substring(0,20) + '_' + m.slice(-10) + '_ASHOK54994';
+ let link = 'https://796-bit.github.io/anant-bhag-2.html?ref=' + code;
+ bhag2RefCode = code; bhag2RefLink = link;
+ localStorage.setItem('bhag2_ref_code',code);
+ localStorage.setItem('bhag2_ref_link',link);
+ document.getElementById('refCodeShow').innerText=code;
+ document.getElementById('refLinkShow').innerText=link;
+ document.getElementById('refLinkBox').style.display='block';
+ showToast2('लिंक बन गया जी');
+ speak('आपका लिंक बन गया जी ' + n + ' जी');
+}
+
+function copyLink(){
+ navigator.clipboard.writeText(bhag2RefLink).then(()=>{ showToast2('कॉपी हो गया जी'); speak('लिंक कॉपी हो गया जी'); });
+}
+
+function shareWA(){
+ let txt = '*JAI MATA KI JI* 🙏%0A*SITE KA PART ANANT BHAG 2 - AUTO 90/10*%0A%0AMere link se kharidari karo ji to 90% aapko milega, 10% site wallet me jayega!%0A%0A🔗 Mera Link: ' + encodeURIComponent(bhag2RefLink) + '%0A💰 UPI: 9992553796@ybl%0A%0AAshok Kumar Ji ka Ashirwad se';
+ window.open('https://wa.me/?text=' + txt + '%0A' + encodeURIComponent(bhag2RefLink), '_blank');
+ showToast2('WhatsApp खुल रहा है जी');
+}
+
+function simulatePurchase(){
+ let amt = parseInt(document.getElementById('purchaseAmt').value) || 500;
+ let prodVal = document.getElementById('prodSelect').value;
+ let prodName = prodVal.split('|')[0];
+ if(amt<10){ alert('कम से कम 10 Rs डालो जी'); return; }
+ let team90 = Math.round(amt * 0.9);
+ let site10 = amt - team90;
+ bhag2Wallet.total += amt;
+ bhag2Wallet.your90 += team90;
+ bhag2Wallet.site10 += site10;
+ bhag2Wallet.history.unshift({amount:amt,team:team90,site:site10,product:prodName,time:new Date().toLocaleString('hi-IN')});
+ if(bhag2Wallet.history.length>20) bhag2Wallet.history.pop();
+ localStorage.setItem('bhag2_wallet', JSON.stringify(bhag2Wallet));
+ 
+ let newMember = {level:bhag2Chain.length+1,code:bhag2RefCode,name:document.getElementById('bhag2Name').value||'Team Member Ji',earning:team90,contribution:site10,time:new Date().toLocaleString('hi-IN')};
+ bhag2Chain.unshift(newMember);
+ if(bhag2Chain.length>50) bhag2Chain.pop();
+ localStorage.setItem('bhag2_chain', JSON.stringify(bhag2Chain));
+
+ document.getElementById('team90Show').innerText='₹'+team90;
+ document.getElementById('site10Show').innerText='₹'+site10;
+ document.getElementById('purchaseMsg').innerText='✅ ' + prodName + ' पर ₹' + amt + ' की खरीद - ₹' + team90 + ' आपको, ₹' + site10 + ' साइट वॉलेट में गया जी';
+ document.getElementById('splitShow').style.display='block';
+ updateWalletUI();
+ renderTree2();
+ showToast2('₹'+team90+' आपको मिला जी, ₹'+site10+' साइट में गया जी');
+ speak('बधाई हो जी! ' + amt + ' रुपये की खरीद हुई जी, नब्बे परसेंट यानी ' + team90 + ' रुपये आपको मिला जी, दस परसेंट साइट वॉलेट में गया जी');
+}
+
+function updateWalletUI(){
+ document.getElementById('wTotal').innerText='₹'+bhag2Wallet.total;
+ document.getElementById('wYour90').innerText='₹'+bhag2Wallet.your90;
+ document.getElementById('wSite10').innerText='₹'+bhag2Wallet.site10;
+ let h=document.getElementById('historyList');
+ if(bhag2Wallet.history.length==0){ h.innerHTML='कोई खरीद नहीं जी - Simulate करो जी'; return; }
+ h.innerHTML=bhag2Wallet.history.map(x=>'<div style="padding:6px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between"><span>🛒 '+x.product+' ₹'+x.amount+'</span><span>👤 ₹'+x.team+' | 🏦 ₹'+x.site+'</span><span style="font-size:9px">'+x.time+'</span></div>').join('');
+ document.getElementById('upiQRImg').src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=' + encodeURIComponent(document.getElementById('kycUpiFix').value||'9992553796@ybl') + '&pn=' + encodeURIComponent(document.getElementById('kycNameFix').value||'Ashok Kumar');
+ document.getElementById('upiPayBtn').href='upi://pay?pa=' + (document.getElementById('kycUpiFix').value||'9992553796@ybl') + '&pn=' + encodeURIComponent(document.getElementById('kycNameFix').value||'Ashok Kumar') + '&am=' + bhag2Wallet.your90 + '&cu=INR';
+}
+
+function renderTree2(){
+ let el=document.getElementById('treeList2');
+ if(bhag2Chain.length==0){ el.innerHTML='कोई मेंबर नहीं जी - लिंक बनाओ और खरीद Simulate करो जी'; return; }
+ el.innerHTML=bhag2Chain.map((m,i)=>'<div style="padding:7px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;flex-wrap:wrap"><span><b>'+m.level+'</b>. '+m.name+' - '+m.code.substring(0,25)+'...</span><span style="background:gold;padding:2px 6px;border-radius:6px">👤 ₹'+m.earning+' | 🏦 ₹'+m.contribution+'</span><span style="font-size:9px">'+m.time+'</span></div>').join('');
+}
+
+function exportTree2(){
+ let txt=JSON.stringify(bhag2Chain,null,2);
+ let blob=new Blob([txt],{type:'application/json'});
+ let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='Bhag2_Tree_'+Date.now()+'.json'; a.click();
+ showToast2('एक्सपोर्ट हो गया जी');
+}
+
+function saveKYC2(){
+ let upi=document.getElementById('kycUpiFix').value.trim();
+ let name=document.getElementById('kycNameFix').value.trim();
+ if(!upi.includes('@')){ alert('UPI में @ होना चाहिए जी'); return; }
+ localStorage.setItem('kyc_upi', JSON.stringify({upi:upi,name:name}));
+ localStorage.setItem('bhag2_kyc', JSON.stringify({upi:upi,name:name}));
+ document.getElementById('upiQRImg').src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=' + encodeURIComponent(upi) + '&pn=' + encodeURIComponent(name);
+ document.getElementById('upiPayBtn').href='upi://pay?pa=' + upi + '&pn=' + encodeURIComponent(name) + '&am=' + bhag2Wallet.your90 + '&cu=INR';
+ showToast2('UPI FIX सेव हो गया जी');
+ speak('UPI FIX सेव हो गया जी ' + name + ' जी');
+}
+
+function speakPlan(){
+ speak('नमस्ते जी! अनंत भाग दो में आपका स्वागत है जी। मेरे लिंक से या टीम के लिंक से कोई भी खरीददारी करेगा जी तो नब्बे परसेंट आपको मिलेगा जी और दस परसेंट साइट वॉलेट में जाएगा जी। टीम रेफरल सिस्टम से सबकी कमाई बढ़ेगी जी। यू पी आई फिक्स है जी, कभी भी बैंक में निकालो जी। हमारा क्या जा रहा है जी, पैसे तो आएंगे ही जी! जय माता की जी!');
+}
+
+window.onload=function(){
+ let savedUpi=JSON.parse(localStorage.getItem('bhag2_kyc')||localStorage.getItem('kyc_upi')||'null');
+ if(savedUpi){ document.getElementById('kycUpiFix').value=savedUpi.upi||'9992553796@ybl'; document.getElementById('kycNameFix').value=savedUpi.name||'Ashok Kumar'; }
+ else{ document.getElementById('kycUpiFix').value='9992553796@ybl'; document.getElementById('kycNameFix').value='Ashok Kumar'; }
+ if(localStorage.getItem('bhag2_ref_code')){ bhag2RefCode=localStorage.getItem('bhag2_ref_code'); bhag2RefLink=localStorage.getItem('bhag2_ref_link'); document.getElementById('refCodeShow').innerText=bhag2RefCode; document.getElementById('refLinkShow').innerText=bhag2RefLink; document.getElementById('refLinkBox').style.display='block'; }
+ updateWalletUI();
+ renderTree2();
+}
+</script>
+</body>
+</html>
