@@ -13,4 +13,3 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SAMPLE_FIREBASE_AI_APP_CC57A }}'
           channelId: live
           projectId: sample-firebase-ai-app-cc57a
-          target: veedeo-hub
