@@ -1,11 +1,12 @@
 {
   "hosting": {
-    "site": "veedeo-hub",
     "public": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
-    ]
+      "**/node_modules/**",
+      ".github/**"
+    ],
+    "cleanUrls": true
   }
 }
