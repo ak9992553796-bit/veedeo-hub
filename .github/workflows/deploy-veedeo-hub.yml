@@ -1,16 +1,10 @@
-name: Deploy to Firebase Hosting
+name: Deploy veedeo-hub to Firebase Hosting
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 jobs:
-  build_and_deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_VEEDEO_HUB }}'
-          channelId: live
-          projectId: veedeo-hub
+      - name: Manual Deploy Only - Auto Off
+        run: echo "Firebase Auto Deploy Off - Vercel MAIN is veedeo-hub.vercel.app?ref=9992553796&tag=veedeohub-21"
