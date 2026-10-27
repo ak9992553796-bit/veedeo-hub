@@ -560,48 +560,26 @@ function joinNow(){
 let n=document.getElementById("jName").value||"User";if(n.trim()=="") n="User";
 let m=document.getElementById("jMobile").value||"9992553796";if(m.trim()=="") m="9992553796";
 let c=document.getElementById("jCity").value||"Tauru";
-let fullSiteLink="https://veedeo-hub.vercel.app?ref="+m+"&tag=veedeohub-21";
-let fullSiteLinkNetlify="https://veedeo-hub.netlify.app?ref="+m+"&tag=veedeohub-21";
-let ownerFullSiteLink="https://veedeo-hub.vercel.app?ref=9992553796&tag=veedeohub-21";
-let nowStr=new Date().toLocaleString();
-try{localStorage.setItem("owner_unlock","1");localStorage.setItem("owner_pin_verified","1");}catch(e){}
-let waMsgUser="नमस्ते जी "+n+" जी, आपकी All Life Veedeohub में फ्री जॉइनिंग पुष्टि हो गई जी। आपकी पूरी साइट सहित रेफरल लिंक: "+fullSiteLink+" और "+fullSiteLinkNetlify+" - आदतें ही जीवन का आधार हैं जी।";
-let waMsgOwner="नई जॉइनिंग जी - नाम: "+n+" मोबाइल: "+m+" शहर: "+c+" - पूरी साइट सहित उसका रेफरल लिंक: "+fullSiteLink+" Netlify: "+fullSiteLinkNetlify+" - मेरे पास भी आ गया जी";
-let bigHtml="<div style='background:#00ff00;color:#000;border:4px solid gold;padding:14px;border-radius:16px;text-align:center;font-weight:800'>"+
-"<div style='font-size:22px'>✅ ज्वाइनिंग पुष्टि हो गई जी - "+n+" जी</div>"+
-"<div style='margin-top:10px;background:#000;color:#FFD700;padding:12px;border-radius:14px;word-break:break-all;border:2px solid gold;text-align:left'>"+
-"<div style='text-align:center'>👤 "+n+" | 📱 "+m+" | 🏙️ "+c+" | 🕒 "+nowStr+"</div>"+
-"<div style='margin-top:10px;border:2px solid #00ff00;border-radius:10px;padding:8px;background:#001a00'>"+
-"<div style='color:#00ff88'>🔗 उसके पास गया - पूरी साइट सहित उसका रेफरल लिंक:</div>"+
-"<div style='background:#111;color:#FFD700;padding:8px;border-radius:8px;margin-top:4px;font-size:13px;word-break:break-all'>Vercel: "+fullSiteLink+"<br>Netlify: "+fullSiteLinkNetlify+"</div>"+
-"</div>"+
-"<div style='margin-top:8px;border:2px solid gold;border-radius:10px;padding:8px;background:#111'>"+
-"<div style='color:#FFD700'>🔗 मेरे पास आया - ओनर के पास पूरी साइट सहित:</div>"+
-"<div style='background:#000;color:#00ff88;padding:8px;border-radius:8px;margin-top:4px;font-size:13px;word-break:break-all'>Owner: "+ownerFullSiteLink+"<br><span style='color:#FFD700;font-size:11px'>नए मेंबर का लिंक भी मेरे पास सेव: "+fullSiteLink+"</span></div>"+
-"</div>"+
-"<div style='margin-top:8px;font-size:12px;color:#FFD700;text-align:center'>✅ सही का निशान + मोबाइल "+m+" पर ref=9992553796 + tag=veedeohub-21 + पूरी साइट सहित लिंक दोनों जगह चला गया जी</div>"+
-"</div>"+
-"<div style='display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px'>"+
-"<a href='https://wa.me/91"+m+"?text="+encodeURIComponent(waMsgUser)+"' target='_blank' style='text-decoration:none'><button class='btn' style='background:#1b5e20;color:#fff;width:100%'>📱 उसके पास WhatsApp से पूरी साइट भेजो जी 🔊</button></a>"+
-"<a href='https://wa.me/919992553796?text="+encodeURIComponent(waMsgOwner)+"' target='_blank' style='text-decoration:none'><button class='btn' style='background:#0d47a1;color:#fff;width:100%'>👑 मेरे पास WhatsApp से भेजो जी - ओनर को 🔊</button></a>"+
-"</div>"+
-"<div style='display:flex;gap:6px;justify-content:center;margin-top:8px;flex-wrap:wrap'>"+
-"<button class='btn' style='background:#000;color:#FFD700' onclick="navigator.clipboard.writeText('"+fullSiteLink+"');speakT('पूरी साइट सहित लिंक कॉपी हो गया जी')">📋 पूरी साइट लिंक कॉपी करो जी</button>"+
-"</div>"+
-"</div>";
-document.getElementById("joinLink").innerHTML=bigHtml;
+let fullV="https://veedeo-hub.vercel.app?ref="+m+"&tag=veedeohub-21";
+let ownerF="https://veedeo-hub.vercel.app?ref=9992553796&tag=veedeohub-21";
+let nowS=new Date().toLocaleString();
+let h="<div style='background:#00ff00;color:#000;border:3px solid gold;padding:12px;border-radius:14px;text-align:center;font-weight:800'>"+
+"<div>✅ ज्वाइनिंग पुष्टि जी - "+n+" जी - Vercel मैन</div>"+
+"<div style='margin-top:8px;background:#000;color:#FFD700;padding:10px;border-radius:10px;text-align:left;word-break:break-all;border:2px solid gold'>"+
+"<div style='color:#00ff88'>🔗 उसके पास गया - Vercel मैन पूरी साइट:</div><div style='background:#111;padding:6px;border-radius:8px;margin-top:4px'>"+fullV+"</div>"+
+"<div style='margin-top:8px;color:#FFD700'>🔗 मेरे पास आया - ओनर के पास Vercel मैन:</div><div style='background:#111;color:#00ff88;padding:6px;border-radius:8px;margin-top:4px'>Owner Main: "+ownerF+"<br><span style='font-size:11px;color:#FFD700'>नया लिंक सेव: "+fullV+"</span></div></div>"+
+"<div style='margin-top:8px;font-size:11px'>✅ Vercel मैन लिंक दोनों जगह गया जी - ref="+m+" tag=veedeohub-21</div></div>";
+document.getElementById("joinLink").innerHTML=h;
 try{
-let totEl=document.getElementById("totMem");
-let cur=parseInt(totEl.innerText)||0; totEl.innerText=cur+1;
-let treeEl=document.getElementById("treeView");
-let entry="<div style='border:2px solid gold;border-radius:10px;padding:6px;margin-top:6px;background:#111'>🌿 "+n+" - "+m+" - "+c+" - Level1 - "+nowStr+"<br>🔗 पूरी साइट Vercel: "+fullSiteLink+"<br>🌐 Netlify: "+fullSiteLinkNetlify+"<br>✅ उसके पास और मेरे पास दोनों जगह गया जी</div>";
-treeEl.innerHTML=treeEl.innerHTML+entry;
+let tot=document.getElementById("totMem");tot.innerText=(parseInt(tot.innerText)||0)+1;
+let tree=document.getElementById("treeView");
+tree.innerHTML+="<div style='border:2px solid gold;border-radius:10px;padding:6px;margin-top:6px;background:#111'>🌿 "+n+" - "+m+" - "+c+" - "+nowS+"<br>🔗 Vercel मैन पूरी साइट: "+fullV+"<br>✅ उसके पास और मेरे पास दोनों जगह गया जी</div>";
 let team=JSON.parse(localStorage.getItem("veedeo_team")||"[]");
-team.push({name:n,mobile:m,city:c,time:nowStr,link:fullSiteLink,netlify:fullSiteLinkNetlify,ownerLink:ownerFullSiteLink});
+team.push({name:n,mobile:m,city:c,time:nowS,link:fullV,ownerLink:ownerF});
 localStorage.setItem("veedeo_team",JSON.stringify(team));
 }catch(e){}
-addRecord("JOIN","जॉइनिंग पुष्टि पूरी साइट सहित "+n+" "+m+" Link: "+fullSiteLink+" Netlify: "+fullSiteLinkNetlify,0);
-speakT(n+" जी आपकी पूरी साइट सहित रेफरल लिंक बन गई है जी, आपके पास और मेरे पास दोनों जगह पूरी साइट सहित लिंक चला गया है जी");
+addRecord("JOIN","जॉइन पुष्टि Vercel मैन दोनों जगह "+n+" "+m+" Link: "+fullV,0);
+speakT(n+" जी आपकी ज्वाइनिंग पुष्टि हो गई है जी, Vercel मैन पूरी साइट का लिंक आपके पास और मेरे पास दोनों जगह चला गया है जी");
 }
 function addAdmin(){let n=document.getElementById("adminName").value;if(!n)return;if(!confirm("Admin जोड़ें?"))return;document.getElementById("adminList").innerText+=" "+n+",";speakT("एडमिन जोड़े गए");}
 function addNominee(){let n=document.getElementById("nomName").value;if(!n)return;if(!confirm("Nominee जोड़ें?"))return;document.getElementById("nomineeList").innerText+=" "+n+",";speakT("नॉमिनी जोड़े गए");}
