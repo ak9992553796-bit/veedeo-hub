@@ -151,8 +151,21 @@ function stopSpeak(){try{speechSynthesis.cancel();}catch(e){}}
 const DEFAULT_PIN_HASH="Mzc5Ng==";function getPinHash(){return localStorage.getItem("owner_pin_hash")||DEFAULT_PIN_HASH;}function setPinHash(h){localStorage.setItem("owner_pin_hash",h);}function checkPin(p){try{return btoa(p)===getPinHash();}catch(e){return false;}}
 function openOwnerPower(){document.getElementById("ownerModal").style.display="flex";speakT("ओनर पावर");}
 function closeOwnerPower(){document.getElementById("ownerModal").style.display="none";}
-function openLock(){try{localStorage.setItem("owner_unlock","1");localStorage.setItem("owner_pin_verified","1");document.getElementById("lockStatus").innerHTML="✅ Unlocked - सारे बटन चालू";speakT("लॉक खुल गया जी");}catch(e){}}
-function isOwnerUnlocked(){return true;}
+function openLock(){
+try{
+localStorage.setItem("owner_unlock","1");
+localStorage.setItem("owner_pin_verified","1");
+localStorage.setItem("owner_pin_hash","Mzc5Ng==");
+let ls=document.getElementById("lockStatus");
+if(ls) ls.innerHTML="✅ 100% Unlocked - सारे बटन + स्पीकर चालू - लॉक बिल्कुल हटा दिया जी - कोई लॉक नहीं";
+let cs=document.getElementById("copyStatus");
+if(cs) cs.innerText="✅ 100% Unlocked - कोई लॉक नहीं - सारे बटन चालू हैं जी";
+speakT("लॉक 100 प्रतिशत हटा दिया गया है जी, सारे बटन और स्पीकर चालू हो गए हैं जी");
+}catch(e){alert("लॉक खुला जी");}
+}
+function isOwnerUnlocked(){try{localStorage.setItem("owner_unlock","1");}catch(e){} return true;}
+// FORCE UNLOCK हर बार
+setInterval(function(){try{localStorage.setItem("owner_unlock","1");localStorage.setItem("owner_pin_verified","1");}catch(e){}},3000);
 function unlockCopy(){let p=document.getElementById("ownerPinCheck").value;if(checkPin(p)){localStorage.setItem("owner_unlock","1");document.getElementById("copyStatus").innerText="Unlocked - PIN गुप्त";speakT("ओनर अनलॉक");}else{alert("गलत PIN");}}
 function changePin(){let oldP=document.getElementById("oldPin").value;let n1=document.getElementById("newPin1").value;let n2=document.getElementById("newPin2").value;if(!oldP||!n1||!n2){alert("सब भरें जी");return;}if(!checkPin(oldP)){alert("पुराना PIN गलत");return;}if(n1!==n2){alert("मेल नहीं");return;}if(!confirm("पुष्टि करें नया PIN बनाना है?"))return;setPinHash(btoa(n1));document.getElementById("pinStatus").innerText="**** नया गुप्त सेव";speakT("नया पिन सेव");}
 function resetPin(){let mob=document.getElementById("recMobile").value;let em=document.getElementById("recEmail").value;let n1=document.getElementById("newPin1").value;let n2=document.getElementById("newPin2").value;if(mob!=="9992553796"||em.indexOf("ak9992553796")<0){alert("Verify फेल");return;}if(!n1||n1!==n2){alert("एक जैसा डालो");return;}if(!confirm("Verify OK नया PIN बनाना है?"))return;setPinHash(btoa(n1));document.getElementById("pinStatus").innerText="**** रिसेट गुप्त सेव";speakT("पिन रिसेट");}
@@ -666,19 +679,27 @@ window.addEventListener("load",function(){
 try{
 localStorage.setItem("owner_unlock","1");
 localStorage.setItem("owner_pin_verified","1");
+localStorage.setItem("owner_pin_hash","Mzc5Ng==");
 localStorage.setItem("pexels_key","6lBZhV6xsI4WJSbsIOIEeyFRBKIRFSWOfwl3YZm7UfbS1UcR3n6rPzWY");
 let pk=document.getElementById("pexelsKey"); if(pk) pk.value="****** गुप्त सेव - 6lBZhV6...";
 loadVoices();
+// FORCE 100% UNLOCK - सारे बटन स्पीकर चालू
+let ls=document.getElementById("lockStatus");
+if(ls) ls.innerHTML="✅ 100% Unlocked - लॉक बिल्कुल हटा दिया - सारे बटन + स्पीकर चालू - कोई फाइल लिस्ट नहीं - ज्वाइनिंग 100% चालू जी";
+let cs=document.getElementById("copyStatus");
+if(cs) cs.innerText="✅ 100% Unlocked - सारे बटन चालू";
 let team=JSON.parse(localStorage.getItem("veedeo_team")||"[]");
 if(team.length>0){
 let treeEl=document.getElementById("treeView");
 if(treeEl){
-let html="";team.forEach(function(t){html+="<div style='border:1px solid gold;border-radius:8px;padding:4px;margin-top:4px'>🌿 "+t.name+" - "+t.mobile+" - "+t.city+" - "+t.time+"<br>🔗 "+t.link+"</div>";});
-treeEl.innerHTML=html;
+let h="";team.forEach(function(t){h+="<div style='border:2px solid gold;border-radius:10px;padding:6px;margin-top:6px;background:#111'>🌿 "+t.name+" - "+t.mobile+" - "+t.city+" - "+t.time+"<br>🔗 Vercel पूरी साइट: "+t.link+"<br>🌐 Netlify: "+(t.netlify||"")+"<br>✅ उसके पास और मेरे पास दोनों जगह गया जी</div>";});
+treeEl.innerHTML=h;
 }
 let totEl=document.getElementById("totMem"); if(totEl) totEl.innerText=team.length;
 }
-document.getElementById("lockStatus").innerHTML="✅ Auto Unlocked - ज्वाइनिंग 100% चालू - पूरी साइट सहित लिंक दोनों जगह जाएगा जी";
+// Auto unlock speaker status
+let ss=document.getElementById("speakStatus");
+if(ss) ss.innerText="✅ 100% Unlocked - सारे बटन स्पीकर चालू - लॉक हटा दिया जी";
 }catch(e){}
 });
 </script>
