@@ -567,8 +567,8 @@ let h="<div style='background:#00ff00;color:#000;border:3px solid gold;padding:1
 "<div>✅ ज्वाइनिंग पुष्टि जी - "+n+" जी - Vercel मैन</div>"+
 "<div style='margin-top:8px;background:#000;color:#FFD700;padding:10px;border-radius:10px;text-align:left;word-break:break-all;border:2px solid gold'>"+
 "<div style='color:#00ff88'>🔗 उसके पास गया - Vercel मैन पूरी साइट:</div><div style='background:#111;padding:6px;border-radius:8px;margin-top:4px'>"+fullV+"</div>"+
-"<div style='margin-top:8px;color:#FFD700'>🔗 मेरे पास आया - ओनर के पास Vercel मैन:</div><div style='background:#111;color:#00ff88;padding:6px;border-radius:8px;margin-top:4px'>Owner Main: "+ownerF+"<br><span style='font-size:11px;color:#FFD700'>नया लिंक सेव: "+fullV+"</span></div></div>"+
-"<div style='margin-top:8px;font-size:11px'>✅ Vercel मैन लिंक दोनों जगह गया जी - ref="+m+" tag=veedeohub-21</div></div>";
+"<div style='margin-top:8px;color:#FFD700'>🔗 मेरे पास आया - ओनर के पास Vercel मैन:</div><div style='background:#111;color:#00ff88;padding:6px;border-radius:8px;margin-top:4px'>Owner: "+ownerF+"<br><span style='font-size:11px;color:#FFD700'>नया लिंक सेव: "+fullV+"</span></div></div>"+
+"<div style='margin-top:8px;font-size:12px;background:#111;color:#00ff88;padding:8px;border-radius:8px'>✅ अब आपको WhatsApp पर भी ओनर को सूचना जा रही है जी - चाहे ज्वाइनिंग कहीं से भी हो</div></div>";
 document.getElementById("joinLink").innerHTML=h;
 try{
 let tot=document.getElementById("totMem");tot.innerText=(parseInt(tot.innerText)||0)+1;
@@ -579,7 +579,24 @@ team.push({name:n,mobile:m,city:c,time:nowS,link:fullV,ownerLink:ownerF});
 localStorage.setItem("veedeo_team",JSON.stringify(team));
 }catch(e){}
 addRecord("JOIN","जॉइन पुष्टि Vercel मैन दोनों जगह "+n+" "+m+" Link: "+fullV,0);
-speakT(n+" जी आपकी ज्वाइनिंग पुष्टि हो गई है जी, Vercel मैन पूरी साइट का लिंक आपके पास और मेरे पास दोनों जगह चला गया है जी");
+speakT(n+" जी आपकी ज्वाइनिंग पुष्टि हो गई है जी, Vercel मैन लिंक आपके पास और मेरे पास दोनों जगह चला गया है जी");
+// ===== OWNER KO TURANT PATA CHALEGA - AUTO WHATSAPP =====
+try{
+let ownerMsg="🔔 नई ज्वाइनिंग आई है जी - Vercel मैन%0A%0Aनाम: "+n+"%0Aमोबाइल: "+m+"%0Aशहर: "+c+"%0Aसमय: "+nowS+"%0A%0A🔗 उसकी पूरी साइट लिंक: "+fullV+"%0A%0A👑 Owner Main: "+ownerF+"%0A%0A✅ उसके पास और मेरे पास दोनों जगह गया जी";
+let waOwner="https://wa.me/919992553796?text="+encodeURIComponent("🔔 नई ज्वाइनिंग आई है जी - Vercel मैन
+
+नाम: "+n+"
+मोबाइल: "+m+"
+शहर: "+c+"
+समय: "+nowS+"
+
+🔗 उसकी पूरी साइट लिंक: "+fullV+"
+
+👑 Owner Main: "+ownerF+"
+
+✅ उसके पास और मेरे पास दोनों जगह गया जी");
+window.open(waOwner,"_blank");
+}catch(e){}
 }
 function addAdmin(){let n=document.getElementById("adminName").value;if(!n)return;if(!confirm("Admin जोड़ें?"))return;document.getElementById("adminList").innerText+=" "+n+",";speakT("एडमिन जोड़े गए");}
 function addNominee(){let n=document.getElementById("nomName").value;if(!n)return;if(!confirm("Nominee जोड़ें?"))return;document.getElementById("nomineeList").innerText+=" "+n+",";speakT("नॉमिनी जोड़े गए");}
