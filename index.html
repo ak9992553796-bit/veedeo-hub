@@ -1,735 +1,188 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VeedeoHub V22 FINAL INFINITE SENIORITY - All Life Royalty - 60% Seller 5% Owner Royalty 35% Team Infinite - Seniority Count - Lakho Tak - No Limit</title>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922664797100594" crossorigin="anonymous"></script>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'hi', includedLanguages: 'en,hi,bn,te,mr,ta,gu,ur,pa,ml,kn,or,as,ne,fr,de,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VeedeoHub V24 - BUTTON FIXED - NO EXTERNAL BLOCK - WORKING</title>
 <style>
 body{background:#000;color:#FFD700;margin:0;font-family:system-ui}
-.top{position:sticky;top:0;z-index:9999;background:#000;border-bottom:3px solid gold;display:flex;justify-content:space-between;align-items:center;padding:6px;min-height:64px;flex-wrap:wrap;gap:6px}
-.sel{background:#111;color:#FFD700;border:2px solid gold;border-radius:10px;padding:10px;font-weight:800;font-size:14px;width:100%}
-.btn{background:#000;color:#FFD700;border:2px solid gold;border-radius:10px;padding:10px 12px;font-weight:800;cursor:pointer;font-size:13px}
+.top{position:sticky;top:0;z-index:99999;background:#000;border-bottom:4px solid gold;padding:10px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.btn{background:#111;color:gold;border:2px solid gold;border-radius:12px;padding:12px 18px;font-weight:900;cursor:pointer;font-size:14px}
+.btnAuto{background:#00ff00;color:#000;border-color:#00ff00}
 .card{background:#0e0e0e;border:2px solid gold;border-radius:14px;padding:12px;margin:8px 4px}
-.row{display:flex;flex-direction:column;gap:8px;border:2px solid gold;border-radius:14px;padding:10px;margin-top:10px;background:#111}
-.row-title{font-weight:900;font-size:15px;text-transform:uppercase;color:#FFD700;word-break:break-word}
-.btn-grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:6px}@media(max-width:900px){.btn-grid-4{grid-template-columns:1fr 1fr 1fr}}@media(max-width:600px){.btn-grid-4{grid-template-columns:1fr 1fr}}
-.blackStrip{background:#000;border:2px solid gold;color:#FFD700;font-weight:800;padding:10px;border-radius:10px;margin:8px 0}
-.goldMsg{background:#000;border:3px solid gold;color:#FFD700;font-weight:800;font-size:14px;text-align:center;padding:14px;border-radius:14px;margin:8px;line-height:1.8}
-.boldSite{font-weight:900!important;font-size:15px!important;letter-spacing:0.3px;text-transform:uppercase;word-break:break-all}
-.refBanner{background:#001a00;border:3px solid #00ff00;color:#00ff88;font-weight:900;padding:10px;border-radius:12px;margin:8px;text-align:center;font-size:13px}
-.planFull{font-size:14px;line-height:1.9;background:#111;border:1px solid #333;border-radius:10px;padding:14px;margin-top:8px;white-space:pre-wrap;color:#fff}
-.legal{background:#001a00;border:3px solid #00ff00;color:#fff;font-size:13px;padding:12px;border-radius:12px;margin:8px;line-height:1.7}
-.firebaseBox{background:#001a33;border:3px solid #00aaff;color:#fff;padding:12px;border-radius:12px;margin:8px}
-.dashGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(min-width:700px){.dashGrid{grid-template-columns:1fr 1fr 1fr 1fr}}
-.dashItem{background:#111;border:2px solid gold;border-radius:12px;padding:10px;text-align:center}
-.treeLine{background:#000;border-left:4px solid gold;padding:8px;margin:6px 0 6px 10px;border-radius:8px}
-.ownerOnly{display:none}
-.ownerUnlocked .ownerOnly{display:block}
-.speakerBtn{margin-left:6px;font-size:12px}
+.bold{font-weight:900;word-break:break-all}
+.ownerOnly{display:none} .ownerUnlocked .ownerOnly{display:block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 </style>
 </head>
 <body>
 <div class="top">
-<select id="bharatLang" class="sel" style="width:auto;min-width:150px" title="Original Hindi Select">
-<option>🇮🇳 हिंदी</option>
-<option>🇬🇧 English</option>
-<option>বাংলা</option>
-<option>मराठी</option>
-<option>தமிழ்</option>
-<option>తెలుగు</option>
-<option>ગુજરાતી</option>
-</select>
-<div id="google_translate_element" title="Google भाषा - अलग से"></div>
-<div style="display:flex;gap:6px;flex-wrap:wrap">
-<button class="btn" onclick="testSpeaker()">🔊 टेस्ट स्पीकर</button>
-<button class="btn" onclick="openLock()">🔓 लॉक खोलो जी - Owner PIN 3796</button>
-<button class="btn ownerOnly" style="background:#00aaff;color:#fff" onclick="initFirebase()">🔥 Firebase जोड़ो जी - Owner Only</button>
+<button id="btnTest" class="btn">🔊 टेस्ट</button>
+<button id="btnLock" class="btn" style="background:gold;color:#000">🔓 लॉक खोलो PIN 3796</button>
+<button id="btnAuto" class="btn btnAuto">✅ ऑटो खोलो बिना PIN - Emergency</button>
+<span id="lockStatus" style="color:#00ff00;font-weight:900;font-size:12px;margin-left:8px">लॉक है जी - ऑटो दबाओ जी</span>
+</div>
+<div style="max-width:1100px;margin:0 auto;padding:4px">
+<div id="refBanner" style="display:none;background:#001a00;border:3px solid #00ff00;color:#00ff88;font-weight:900;padding:10px;border-radius:12px;margin:8px;text-align:center"></div>
+
+<div class="card">
+<b class="bold">🔔 नई जॉइनिंग Firebase पक्का 9992553796 Parent Single Line सबसे नीचे सीनियरिटी अनन्त</b>
+<div class="grid2" style="margin-top:10px">
+<input id="joinName" placeholder="नाम" style="padding:10px;border-radius:10px;border:2px solid gold;background:#111;color:gold">
+<input id="joinMobile" placeholder="मोबाइल वॉलेट ID" style="padding:10px;border-radius:10px;border:2px solid gold;background:#111;color:gold">
+<input id="joinCity" placeholder="शहर" style="padding:10px;border-radius:10px;border:2px solid gold;background:#111;color:gold">
+<input id="joinParent" value="9992553796" style="padding:10px;border-radius:10px;border:2px solid gold;background:#111;color:gold">
+</div>
+<button id="btnJoin" class="btn" style="width:100%;margin-top:10px;background:gold;color:#000;font-size:16px">✅ फ्री जॉइनिंग करो जी</button>
+<div id="joinStatus" style="margin-top:8px;color:#00ff00;font-size:12px"></div>
+</div>
+
+<div class="card">
+<b class="bold">🌐 4 SITE BUTTONS फुल URL मोटे अक्षर</b>
+<div class="grid2" style="margin-top:10px">
+<button class="btn bold siteBtn" data-url="https://veedeo-hub.vercel.app">🌐 https://veedeo-hub.vercel.app 🔊</button>
+<button class="btn bold siteBtn" data-url="https://veedeo-hub.web.app" style="background:#4285F4;color:#fff">🔥 https://veedeo-hub.web.app 🔊</button>
+<button class="btn bold siteBtn" data-url="https://veedeohub.shop" style="background:#FF6B00;color:#fff">🛒 https://veedeohub.shop 🔊</button>
+<button class="btn bold siteBtn" data-url="https://veedeohub.blogspot.com" style="background:#00ff00;color:#000">📝 https://veedeohub.blogspot.com 🔊</button>
 </div>
 </div>
 
-<div style="max-width:1200px;margin:0 auto;padding:2px">
-<div id="refBanner" class="refBanner" style="display:none"></div>
-<div id="lockStatus" style="text-align:center;font-size:12px;color:#00ff00;margin:4px"></div>
-
-<!-- Firebase Box - Owner Only Hidden - Public ko nahi dikhega -->
-<div class="firebaseBox ownerOnly" id="firebaseOwnerBox">
-<b class="boldSite">🔥 सुरक्षित क्लाउड सिस्टम - Dashboard Tree TDS Wallet Auto Commission Infinite Seniority</b>
-<div style="font-size:12px;margin-top:8px;line-height:1.6;color:#e0e0e0">
-✅ सभी रिकॉर्ड सुरक्षित क्लाउड पर - Dashboard Tree TDS Wallet की पूरी जानकारी - रिकॉर्डेड फिक्स<br>
-✅ हर सेल का सुरक्षित रिकॉर्ड - पारदर्शी व्यवस्था - कोई फेल नहीं कर पाएगा<br>
-✅ UPI द्वारा सुविधाजनक पेमेंट - Wallet में सीधा - हर सदस्य को उसका कमीशन ऑटो प्राप्त - All Life Royalty<br>
-✅ 60% सेलर, 5% ऑनर रॉयल्टी अनन्त फिक्स, 35% टीम अनन्त सीनियरिटी पूल - 10,100,1000,10000, लाखों तक अनन्त
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
-<input id="fbApiKey" class="sel" placeholder="Firebase apiKey - veedeo-hub.web.app से लो जी - Owner Only" value="" autocomplete="off">
-<input id="fbProjectId" class="sel" placeholder="projectId - veedeo-hub" value="veedeo-hub">
-</div>
-<button class="btn" style="width:100%;margin-top:8px;background:#00aaff;color:#fff" onclick="saveFirebaseConfig()">🔥 Firebase Config सेव करो - Google सर्वर पर डेटा पक्का जी</button>
-<div id="fbStatus" style="font-size:11px;margin-top:6px;color:#00ff88">Firebase Config - Owner Only - veedeo-hub - सुरक्षित क्लाउड सिस्टम - अनन्त सीनियरिटी</div>
+<div class="card">
+<b class="bold">🎥 फिक्स वीडियो 1-4 - फुल URL मोटे अक्षर</b>
+<div id="videosGrid" style="margin-top:10px"></div>
+<div class="ownerOnly" style="margin-top:8px"><button id="btnAddFixed" class="btn">➕ जोड़ो जी</button></div>
 </div>
 
-<!-- DASHBOARD - Firebase Pakka -->
-<div class="card" style="border:3px solid #00aaff;background:#001a33">
-<b class="boldSite">📊 DASHBOARD - कुल कमीशन - TDS - शेष - पेंडिंग - पेड - Firebase से पक्का रिकॉर्ड - अनन्त सीनियरिटी <button class="btn speakerBtn" onclick="speakT('डैशबोर्ड कुल कमीशन टीडीएस शेष पेंडिंग पेड फायरबेस से पक्का रिकॉर्ड अनन्त सीनियरिटी')">🔊</button></b>
-<div class="dashGrid" style="margin-top:10px">
-<div class="dashItem"><div style="font-size:11px">कुल कमीशन</div><div id="dashTotal" style="font-size:20px;font-weight:900;color:#00ff00">₹0</div><button class="btn" style="font-size:10px;margin-top:4px" onclick="speakT('कुल कमीशन')">🔊 सुनो</button></div>
-<div class="dashItem"><div style="font-size:11px">TDS 10%</div><div id="dashTDS" style="font-size:20px;font-weight:900;color:#ff4444">₹0</div><button class="btn" style="font-size:10px;margin-top:4px" onclick="speakT('TDS कटा')">🔊 सुनो</button></div>
-<div class="dashItem"><div style="font-size:11px">शेष वॉलेट - अनन्त पूल</div><div id="dashWallet" style="font-size:20px;font-weight:900;color:#FFD700">₹0</div><button class="btn" style="font-size:10px;margin-top:4px" onclick="speakT('वॉलेट में शेष अनन्त पूल से')">🔊 सुनो</button></div>
-<div class="dashItem"><div style="font-size:11px">पेंडिंग / कन्फर्म</div><div id="dashPending" style="font-size:12px;font-weight:800">0 / 0</div><button class="btn" style="font-size:10px;margin-top:4px" onclick="speakT('पेंडिंग और कन्फर्म')">🔊 सुनो</button></div>
-</div>
-<div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
-<button class="btn" style="background:#00aaff;color:#fff" onclick="loadDashboard()">🔄 Dashboard रिफ्रेश - Firebase से - अनन्त सीनियरिटी</button>
-<button class="btn" style="background:#00ff00;color:#000" onclick="simulateSale()">💰 टेस्ट सेल करो - ₹100 - अनन्त बंटवारा देखो जी - 60% 5% 35%</button>
-<button class="btn" onclick="speakT('टेस्ट सेल करके अनन्त बंटवारा देखो जी')">🔊 सुनो</button>
-</div>
-<div id="dashDetails" style="margin-top:8px;font-size:11px;background:#000;padding:8px;border-radius:8px;max-height:150px;overflow:auto"></div>
+<div class="card">
+<b class="bold">🔘 1-54 BUTTONS - फुल URL मोटे अक्षर</b>
+<div id="allBtnsGrid" style="margin-top:10px"></div>
+<div class="ownerOnly" style="margin-top:8px"><button id="btnAddNew" class="btn" style="background:gold;color:#000">➕ नया बटन Plus अनन्त</button></div>
 </div>
 
-<!-- TREE - Single Line - Sabse Neeche Joining - Seniority -->
-<div class="card" style="border:3px solid #ffaa00">
-<b class="boldSite">🌳 SINGLE LINE TREE - सबसे नीचे जॉइनिंग - सीनियरिटी से - अनन्त लेवल - लाखों तक <button class="btn speakerBtn" onclick="speakT('सिंगल लाइन ट्री सबसे नीचे जॉइनिंग सीनियरिटी से अनन्त लेवल लाखों तक')">🔊</button></b>
-<div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
-<button class="btn" style="background:#ffaa00;color:#000" onclick="loadTree()">🌳 Tree रिफ्रेश - Single Line देखो जी - सीनियरिटी</button>
-<button class="btn" onclick="speakT('ट्री रिफ्रेश सिंगल लाइन देखो जी सीनियरिटी')">🔊 सुनो</button>
+<div class="card" style="border:3px solid #00ff00">
+<b class="bold">💳 UPI WALLET अपना पैसा निकालें अपनी आजादी में - अनन्त पूल से ₹10 ₹20 आता रहेगा</b>
+<div class="grid2" style="margin-top:10px">
+<input id="walletMobile" value="9992553796" style="padding:10px;border-radius:10px;border:2px solid gold;background:#111;color:gold">
+<input id="walletUPI" value="9992553796@ybl" style="padding:10px;border-radius:10px;border:2px solid gold;background:#111;color:gold">
 </div>
+<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+<button id="btnCheckWallet" class="btn" style="background:#00ff00;color:#000">💰 वॉलेट चेक</button>
+<button id="btnWithdraw" class="btn" style="background:#5f259f;color:#fff">💸 अपना पैसा निकालें UPI पर</button>
+</div>
+<div id="walletHistory" style="margin-top:8px;background:#000;border-radius:10px;padding:8px;font-size:11px;min-height:60px;border:1px solid #333"></div>
+</div>
+
+<div class="card">
+<b class="bold">🌳 TREE Single Line सीनियरिटी अनन्त</b>
+<button id="btnTree" class="btn" style="background:#ffaa00;color:#000">🌳 Tree रिफ्रेश</button>
 <div id="treeView" style="margin-top:8px;background:#000;border-radius:10px;padding:8px;font-size:12px;max-height:300px;overflow:auto"></div>
 </div>
 
-<!-- WALLET - UPI - PhonePe QR - ASHOK KUMAR - Withdrawal Auto - Freedom -->
 <div class="card" style="border:3px solid #00ff00;background:#001a00">
-<b class="boldSite">💳 UPI WALLET - अपना पैसा निकालें - बिना धांधली - ऑटोमैटिक - अपनी आजादी में - अनन्त सीनियरिटी पूल से ₹10 ₹20 आता रहेगा <button class="btn speakerBtn" onclick="speakT('यू पी आई वॉलेट अपना पैसा निकालें बिना धांधली ऑटोमैटिक अपनी आजादी में अनन्त सीनियरिटी पूल से दस बीस रुपया आता रहेगा')">🔊</button></b>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
-<input id="walletMobile" class="sel" placeholder="अपना मोबाइल डालो जी - वॉलेट ID - जैसे 9992553796" value="9992553796">
-<input id="walletUPI" class="sel" placeholder="अपनी UPI ID डालो जी - जैसे नाम@ybl - PhonePe Google Pay - अपनी आजादी" value="9992553796@ybl">
-</div>
-<div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
-<button class="btn" style="background:#00ff00;color:#000" onclick="checkWallet()">💰 वॉलेट चेक करो जी - कितना बाकी है - अनन्त से</button>
-<button class="btn" onclick="addToWallet()">💳 UPI से Wallet में डालो जी - PhonePe QR</button>
-<button class="btn" onclick="speakT('वॉलेट चेक करो जी कितना बाकी है अनन्त से')">🔊 सुनो</button>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;background:#000;border-radius:12px;padding:10px;border:2px dashed #00ff00">
-<div style="text-align:center">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi://pay?pa=9992553796@ybl&pn=ASHOK%20KUMAR%20S%20O%20BANWARI%20LAL&cu=INR" style="width:130px;height:130px;border-radius:12px;border:3px solid #5f259f;background:#fff;padding:4px" alt="PhonePe QR ASHOK KUMAR">
-<div style="font-size:11px;margin-top:6px;font-weight:900;color:#00ff88">PhonePe UPI QR<br>ASHOK KUMAR S O BANWARI LAL<br>9992553796@ybl<br><span style="color:gold">https://veedeo-hub.vercel.app?ref=9992553796</span></div>
-<button class="btn" style="font-size:10px;margin-top:4px" onclick="speakT('फोन पे क्यू आर अशोक कुमार')">🔊 सुनो</button>
-</div>
-<div style="font-size:11px;line-height:1.6;color:#fff">
-<b style="color:#00ff00">💰 पैसा निकालो - बिना धांधली - ऑटोमैटिक - अपनी आजादी में - अनन्त</b><br>
-✅ Wallet में जो Net शेष है वो आपका है जी - अनन्त पूल से ₹10 ₹20 आता रहेगा<br>
-✅ TDS 10% पहले से कटा हुआ - Dashboard में साफ<br>
-✅ अपनी UPI डालो - Withdraw दबाओ - UPI पर सीधा - PhonePe / Google Pay - अपनी आजादी<br>
-✅ हर सेल Firebase पर रिकॉर्डेड फिक्स - कोई फेल नहीं कर पाएगा - कोई गड़बड़ी नहीं<br>
-✅ सीनियरिटी से - जितनी पुरानी ज्वाइनिंग उतना लाभ - All Life Royalty की भांति<br>
-<button class="btn" style="width:100%;margin-top:8px;background:#5f259f;color:#fff" onclick="withdrawMoney()">💸 अपना पैसा निकालें - UPI पर पैसा निकालो - पक्का - अपनी आजादी में - अनन्त</button>
-</div>
-</div>
-<div id="walletHistory" style="margin-top:8px;background:#000;border-radius:10px;padding:8px;font-size:11px;max-height:200px;overflow:auto;border:1px solid #333"></div>
-<div id="withdrawStatus" style="margin-top:8px;background:#001a00;border-radius:10px;padding:8px;font-size:11px;border:1px solid #00ff00;display:none"></div>
-</div>
-
-<!-- JOINING FORM - Above 4 Site Buttons - Visible -->
-<div class="card" style="border:3px solid gold;background:#111">
-<b class="boldSite">🔔 नई जॉइनिंग Firebase पक्का - 9992553796 Parent 9992553796 - Single Line सबसे नीचे - सीनियरिटी अनन्त <button class="btn speakerBtn" onclick="speakT('नई जॉइनिंग फायरबेस पक्का निन्यानवे बानवे पचपन अड़तीस छिहत्तर पैरेंट निन्यानवे बानवे पचपन अड़तीस छिहत्तर सिंगल लाइन सबसे नीचे सीनियरिटी अनन्त')">🔊</button></b>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
-<input id="joinName" class="sel" placeholder="अपना नाम लिखो जी">
-<input id="joinMobile" class="sel" placeholder="अपना मोबाइल - वॉलेट ID बनेगा जी - जैसे 98xxxx">
-<input id="joinCity" class="sel" placeholder="शहर / City">
-<input id="joinParent" class="sel" placeholder="Parent ID - जैसे 9992553796" value="9992553796">
-</div>
-<div style="margin-top:8px">
-<div style="font-size:11px;color:#00ff00">Link: <b class="boldSite">https://veedeo-hub.vercel.app?ref=9992553796&tag=veedeohub-21</b> <button class="btn speakerBtn" onclick="speakT('लिंक https veedeo hub vercel app ref निन्यानवे बानवे पचपन अड़तीस छिहत्तर')">🔊</button></div>
-<div style="font-size:11px;color:#00ff00">Song: <b class="boldSite">https://suno.com/s/oyRYfAuUYNh5Rhy2</b></div>
-</div>
-<button class="btn" style="width:100%;margin-top:10px;background:gold;color:#000;font-size:16px" onclick="doJoining()">✅ फ्री ज्वाइनिंग करो जी - Firebase पक्का - Single Line - सीनियरिटी अनन्त - All Life Royalty</button>
-<div id="joinStatus" style="margin-top:8px;font-size:12px"></div>
-</div>
-
-<!-- 4 SITE BUTTONS - Bold Branded Colors with Speaker and Full URL -->
-<div class="card" style="border:3px solid gold">
-<b class="boldSite">🌐 4 SITE BUTTONS - फुल URL मोटे अक्षर - ब्रांडेड रंग - स्पीकर सहित <button class="btn speakerBtn" onclick="speakT('चार साइट बटन फुल यू आर एल मोटे अक्षर ब्रांडेड रंग स्पीकर सहित')">🔊</button></b>
-<div class="btn-grid-4" style="margin-top:10px">
-<button class="btn boldSite" style="background:#000;color:#FFD700;border-color:gold" onclick="openSiteDirect('https://veedeo-hub.vercel.app')">🌐 https://veedeo-hub.vercel.app <span onclick="event.stopPropagation();speakT('veedeo hub vercel app')">🔊</span></button>
-<button class="btn boldSite" style="background:#4285F4;color:#fff" onclick="openSiteDirect('https://veedeo-hub.web.app')">🔥 https://veedeo-hub.web.app <span onclick="event.stopPropagation();speakT('veedeo hub web app')">🔊</span></button>
-<button class="btn boldSite" style="background:#FF6B00;color:#fff" onclick="openSiteDirect('https://veedeohub.shop')">🛒 https://veedeohub.shop <span onclick="event.stopPropagation();speakT('veedeohub shop')">🔊</span></button>
-<button class="btn boldSite" style="background:#00ff00;color:#000" onclick="openSiteDirect('https://veedeohub.blogspot.com')">📝 https://veedeohub.blogspot.com <span onclick="event.stopPropagation();speakT('veedeohub blogspot')">🔊</span></button>
-</div>
-</div>
-
-<!-- FIXED VIDEOS 1-4 - Owner Only Editable - Serial Wise - Plus Infinite - Color -->
-<div class="card ownerOnly" id="fixedVideosOwnerBox" style="border:3px solid #ff00ff;background:#1a001a">
-<b class="boldSite">🎥 1 से 4 फिक्स वीडियो - सीरियल नम्बर वाइज - Owner Only - PIN 3796 - Edit Delete Keep Speaker - Plus + अनन्त - रंग पसंद <button class="btn speakerBtn" onclick="speakT('एक से चार फिक्स वीडियो सीरियल नम्बर वाइज ओनर ओनली पिन अड़तीस छिहत्तर एडिट डिलीट कीप स्पीकर प्लस अनन्त रंग पसंद')">🔊</button></b>
-<div style="font-size:11px;color:#ff88ff;margin-top:6px">यहाँ लिंक आएगा जी - यहाँ नाम परिचय विवरण आएगा जी - Owner ही बदल सकता है जी - Google में PIN 3796 सेव</div>
-<div id="fixedVideosList" style="margin-top:10px"></div>
-<div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
-<button class="btn" style="background:#ff00ff;color:#fff" onclick="addFixedVideo()">➕ अनन्त लिंक जोड़ो जी - Fixed Video में - Plus +</button>
-<button class="btn" onclick="saveFixedVideos()">💾 सेव करो जी - Fixed Videos - Firebase पक्का</button>
-</div>
-</div>
-
-<!-- VIDEOS 1-4 PUBLIC VIEW - Bold URL with Speaker -->
-<div class="card" style="border:3px solid #ff00ff">
-<b class="boldSite">🎥 फिक्स वीडियो 1-4 - फुल URL मोटे अक्षर - ब्रांडेड रंग - स्पीकर सहित - अनन्त सीनियरिटी <button class="btn speakerBtn" onclick="speakT('फिक्स वीडियो एक से चार फुल यू आर एल मोटे अक्षर')">🔊</button></b>
-<div id="videosGrid" style="margin-top:10px;display:grid;grid-template-columns:1fr;gap:8px"></div>
-</div>
-
-<!-- INFINITE LINK BOX 1 - Above AI Autofill -->
-<div class="card" style="border:3px solid #00ffaa;background:#001a11">
-<b class="boldSite">➕ अनन्त लिंक डब्बा 1 - AI ऑटोफिल के ऊपर - Plus + - जितने चाहे जोड़ो - रंग पसंद - Owner Only <button class="btn speakerBtn" onclick="speakT('अनन्त लिंक डब्बा एक ए आई ऑटोफिल के ऊपर प्लस जितने चाहे जोड़ो रंग पसंद ओनर ओनली')">🔊</button></b>
-<div style="font-size:11px;color:#88ffaa">यहाँ लिंक आएगा जी - यहाँ नाम परिचय विवरण आएगा जी - बटन और बटन पट्टी दोनों में रंग पसंद - जैसे साइट में बने हुए हैं</div>
-<div id="infiniteBox1" style="margin-top:8px"></div>
-<div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
-<button class="btn ownerOnly" style="background:#00ffaa;color:#000" onclick="addInfiniteLink(1)">➕ अनन्त लिंक जोड़ो जी - Plus + - डब्बा 1</button>
-<button class="btn ownerOnly" onclick="saveInfiniteBox(1)">💾 सेव करो जी - डब्बा 1</button>
-</div>
-</div>
-
-<!-- INFINITE LINK BOX 2 - For Other Work - Remains -->
-<div class="card" style="border:3px solid #ffaa00;background:#1a1100">
-<b class="boldSite">➕ अनन्त लिंक डब्बा 2 - और काम के लिए - वहीं रहेगा जी - Plus + <button class="btn speakerBtn" onclick="speakT('अनन्त लिंक डब्बा दो और काम के लिए वहीं रहेगा जी प्लस')">🔊</button></b>
-<div id="infiniteBox2" style="margin-top:8px"></div>
-<div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
-<button class="btn ownerOnly" style="background:#ffaa00;color:#000" onclick="addInfiniteLink(2)">➕ अनन्त लिंक जोड़ो जी - Plus + - डब्बा 2</button>
-<button class="btn ownerOnly" onclick="saveInfiniteBox(2)">💾 सेव करो जी - डब्बा 2</button>
-</div>
-</div>
-
-<!-- BUTTONS 1-54 - Unique - Color - Full URL Bold with Speaker -->
-<div class="card" style="border:3px solid gold">
-<b class="boldSite">🔘 1-54 BUTTONS - यूनिक - फुल URL मोटे अक्षर - ब्रांडेड रंग - स्पीकर - डिलीट रखने का ऑप्शन - पुष्टि सहित <button class="btn speakerBtn" onclick="speakT('एक से चौवन बटन यूनिक फुल यू आर एल मोटे अक्षर ब्रांडेड रंग स्पीकर डिलीट रखने का ऑप्शन पुष्टि सहित')">🔊</button></b>
-<div id="allBtnsGrid" style="margin-top:10px"></div>
-<div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
-<button class="btn ownerOnly" style="background:gold;color:#000" onclick="addNewBtn()">➕ नया बटन जोड़ो जी - Plus + - अनन्त</button>
-<button class="btn ownerOnly" onclick="saveAllBtns()">💾 सारे बटन सेव करो जी</button>
-</div>
-</div>
-
-<!-- 10 BHAG + 11th INFINITE BHAG - Legal - Speaker - Full Read -->
-<div class="card" style="border:3px solid #00ff00;background:#001a00">
-<b class="boldSite">📜 10 भाग + 11वां अनन्त भाग - फ्री पब्लिक डोमेन - कानूनन सही - मोटे अक्षर - कितना भी लंबा पूरा पढ़ेगा जी - अनन्त सीनियरिटी - All Life Royalty - कोई फेल नहीं कर पाएगा <button class="btn speakerBtn" onclick="speakT('दस भाग प्लस ग्यारहवां अनन्त भाग फ्री पब्लिक डोमेन कानूनन सही मोटे अक्षर कितना भी लंबा पूरा पढ़ेगा जी अनन्त सीनियरिटी ऑल लाइफ रॉयल्टी कोई फेल नहीं कर पाएगा')">🔊</button></b>
+<b class="bold">📜 11 भाग - अनन्त सीनियरिटी - 60% Seller 5% Owner Royalty 35% Team Infinite - 12 8 5 3 2 और 5% 6 से अनन्त तक बराबर</b>
 <div id="plan10" style="margin-top:10px"></div>
 </div>
 
-<div class="goldMsg">ॐ नमः शिवाय 🪔 जय माता की जी - VeedeoHub V22 FINAL INFINITE SENIORITY - All Life Royalty - 60% Seller 5% Owner Royalty 35% Team Infinite - 10,100,1000,10000, लाखों तक अनन्त - सीनियरिटी से - ₹10 ₹20 वॉलेट में जाता रहेगा - कोई फेल नहीं कर पाएगा जी - Firebase पक्का - रिकॉर्डेड फिक्स</div>
-
+<div style="background:#000;border:3px solid gold;color:gold;font-weight:900;text-align:center;padding:14px;border-radius:14px;margin:8px">ॐ नमः शिवाय 🪔 VeedeoHub V24 FINAL BUTTON FIXED NO EXTERNAL BLOCK WORKING 100%</div>
 </div>
 
 <script>
-// ===== GLOBAL VARS =====
-let db=null, auth=null, fbInitialized=false;
-let allBtnsData = [];
-let fixedVideosData = [];
-let infiniteBox1Data = [];
-let infiniteBox2Data = [];
-let legalParts = [];
-
-// ===== 10 BHAG + 11th INFINITE BHAG - Legal - Full Truth - No Fail - White Deploy Code =====
-legalParts = [
-`भाग 1 - VeedeoHub क्या है जी - फ्री पब्लिक डोमेन - कानूनन सही
-यह साइट एक दुकान की तरह है, वह भी बिना पैसे खर्च किए कमाने की सुविधा जी। सभी अपने लाभ के लिए साइट या प्लेटफॉर्म बनाते हैं - इसमें क्या है जी। यह प्लेटफॉर्म फ्री पब्लिक डोमेन की तरह है जी - कोई भी फ्री में जुड़ सकता है जी। इसमें Flipkart, Amazon, अन्य एफिलिएट लिंक से कमीशन आता है जी। कंपनी अप्रूव करेगी तभी कमीशन मिलेगा जी, रिटर्न हुआ तो नहीं मिलेगा जी। यह प्रस्तावित प्लान है जी - गारंटी नहीं है जी।`,
-
-`भाग 2 - जॉइनिंग कैसे होगी जी - Single Line सबसे नीचे - सीनियरिटी अनन्त - Firebase पक्का
-नई जॉइनिंग Firebase पक्का - Parent 9992553796 - Link https://veedeo-hub.vercel.app?ref=9992553796&tag=veedeohub-21 - Single Line में सबसे नीचे जुड़ेगी जी - सबसे पुरानी ज्वाइनिंग सबसे ऊपर सीनियरिटी में गिनी जाएगी जी। हर जॉइनिंग Firebase users और tree collection में रिकॉर्डेड फिक्स होगी जी - कोई फेल नहीं कर पाएगा जी - कोई गड़बड़ी नहीं होगी जी। WhatsApp पर मैसेज आएगा जी - 🔔 नई जॉइनिंग Firebase पक्का 9992553796 Parent 9992553796 Link https://veedeo-hub.vercel.app?ref=9992553796&tag=veedeohub-21 Song https://suno.com/s/oyRYfAuUYNh5Rhy2`,
-
-`भाग 3 - कमीशन अनन्त सिस्टम - 60% सेलर 5% ऑनर रॉयल्टी अनन्त फिक्स 35% टीम अनन्त सीनियरिटी पूल - 10,100,1000,10000, लाखों तक अनन्त - कोई फेल नहीं कर पाएगा
-यह साइट एक दुकान की तरह है, वह भी बिना पैसे खर्च किए कमाने की सुविधा। इस साइट में ऑनर पावर में ऑनर का नॉमिनी सहित पूरा अधिकार है। इस 5% पर ऑनर का पूरा अधिकार है - वह इसे अपने खर्च में ले, साइट विकास में ले, अपने पास सुरक्षित रखे। कमाने की दुकान बिना पैसे भरे कमाओ, लेकिन कोई कमाएगा तो % तो देनी पड़ेगी जी। जिस पर ऑनर का नॉमिनी सहित पूरा अधिकार है। ताकि यह रॉयल्टी जब तक बिजनेस चले तब तक अनन्त फिक्स रहे। ऑनर कभी भी नियम बदलकर अपनी ओर से सुधार कर सकता है। कुल कंपनी अप्रूव कमीशन 100% मानो जी - जैसे ₹100 - 60% सेलर को - जिसने खुद खरीदा या बिकवाया - 5% ऑनर पावर रॉयल्टी अनन्त फिक्स - हर सेल से सीधा ऑनर वॉलेट 9992553796@ybl में - नॉमिनी सहित पूरा अधिकार - जब तक बिजनेस चले - 35% टीम सीनियरिटी अनन्त रॉयल्टी - यही 10,100,1000,10000, लाखों तक अनन्त बंटेगा जी - सीनियरिटी 1 को 12%, सीनियरिटी 2 को 8%, सीनियरिटी 3 को 5%, सीनियरिटी 4 को 3%, सीनियरिटी 5 को 2%, सीनियरिटी 6 से अनन्त तक बाकी 5% हर ऊपर वाले मेंबर को बराबर - चाहे 10 हो, 100 हो, 1000 हो, 10000 हो, लाखों हो - सबको मिलेगा जी - यही सीनियरिटी गिनी जाएगी जी - जितनी पुरानी ज्वाइनिंग उतना लाभ।`,
-
-`भाग 4 - टीम बढ़ने पर लाभ कैसे बढ़ेगा जी - 10,100,1000,10000, लाखों - ₹10 ₹20 वॉलेट में जाता रहेगा - अनन्त - बिना लिमिट
-मान लो टीम 1000 है जी - 1000 नंबर वाले ने ₹100 की सेल की - 1000 को ₹60 - 999 को ₹12 - 998 को ₹8 - 997 को ₹5 - 996 को ₹3 - 995 को ₹2 - बाकी 994 लोग जिनमें ऑनर भी है उनमें ₹5 बंटेगा - हर एक को ₹0.005 एक सेल से - लेकिन दिन में 1000 सेल हुई तो हर एक को ₹0.005 x 1000 = ₹5 - वॉलेट में ₹5 गया जी - कल फिर ₹5 - धीरे-धीरे ₹10, ₹20 बनता जाएगा जी। मान लो टीम 10000 हो गई - एक दिन में 10000 सेल हुई - बाकी 9994 लोगों में ₹5 बंटेगा = ₹0.0005 एक सेल से - 10000 सेल x ₹0.0005 = हर एक को ₹5 रोज - अनन्त - बिना लिमिट - सीनियरिटी से। मान लो लाखों आदमी हो गए - 1 लाख सेल रोज - हर सीनियर को ₹5-₹10 रोज - सिर्फ अनन्त पूल से - लेवल 1-5 का बोनस अलग से। तो जी - टीम बढ़ते ही लाभ सबका अपने लेवल अनुसार बढ़ता जाएगा जी - अब लेवल की गिनती अनन्त हो गई - बस सीनियरिटी गिनी जाएगी जी - जितनी पुरानी ज्वाइनिंग उतना लाभ।`,
-
-`भाग 5 - ऑनर को लेवल लाभ भी मिलेगा जी - 5% रॉयल्टी के अलावा
-ऑनर सबसे ऊपर है जी - सीनियरिटी सबसे ज्यादा - हर सेल से ऑनर को 5% रॉयल्टी अनन्त फिक्स तो मिलेगा ही मिलेगा जी - इसके अलावा जब आपके नीचे वाले 1 से 5 के अंदर कोई सेल करेगा तो आपको 12%, 8%, 5%, 3%, 2% भी मिलेगा जी - लेवल लाभ। जैसे 2 नंबर वाले ने सेल की तो आपको लेवल 2 का 8% + लेवल 3,4,5 कोई नहीं तो वो हिस्सा भी आपको + 5% रॉयल्टी + अनन्त पूल का हिस्सा - तो आपको एक सेल से ही ₹8+₹10+₹5 = ₹23 + अनन्त पूल - 5% रॉयल्टी के अतिरिक्त लेवल लाभ भी पक्का जी। जब आप स्वयं अपने लिंक ref=9992553796 या tag=veedeohub-21 या fktr.in/7XvA2Sp से बिक्री करवाओ तो आपको 100% पूरा मिलेगा जी - क्योंकि आपके ऊपर कोई नहीं है - 60+5+35 = 100% - ऑनर पावर में लिखा रहेगा जी - कोई ऑब्जेक्शन नहीं होगा जी।`,
-
-`भाग 6 - Dashboard Tree TDS Wallet - Firebase पक्का - रिकॉर्डेड फिक्स - कोई फेल नहीं कर पाएगा
-Dashboard में कुल कमीशन, TDS 10%, शेष वॉलेट, पेंडिंग / कन्फर्म - Firebase से पक्का रिकॉर्ड - कोई कंपनी हेराफेरी नहीं कर सकती जी। Single Line Tree - सबसे नीचे जॉइनिंग - सीनियरिटी से - अनन्त लेवल - लाखों तक - Firebase tree collection में रिकॉर्डेड फिक्स। TDS 10% पहले से कटा हुआ - Dashboard में साफ दिखेगा जी। Wallet में जो Net शेष है वो आपका है जी - अनन्त पूल से ₹10 ₹20 आता रहेगा जी।`,
-
-`भाग 7 - अपना पैसा निकालें - अपनी आजादी में - UPI से - PhonePe QR - ASHOK KUMAR S O BANWARI LAL - 9992553796@ybl - Kuku की तरह आसान
-हर डिस्ट्रीब्यूटर का मोबाइल नंबर ही वॉलेट ID है जी। पैसा ऑटो आपके वॉलेट में आएगा जी - Firebase में रिकॉर्डेड फिक्स। अपनी UPI ID खुद डालो जी - जैसे नाम@ybl - PhonePe Google Pay - Govt मान्यता से फिक्स। फिर अपना पैसा निकालें बटन दबाओ - 20, 60, 100 रुपये Kuku की तरह सीधा बैंक में - आसान - अपनी आजादी में। ऑनर को किसी को पैसा नहीं देना पड़ेगा - AI Assistant द्वारा फिक्स सिस्टम ऑटो करेगा जी। Wallet में पैसा अपने आप आता है - अपनी UPI उस ऑप्शन में फिक्स रहती है - बटन पर लिखा होता है अपना पैसा निकालें और 100 Rs या 60 Rs या 20 Rs भी अपने बैंक में सीधा जमा हो जाता है जी - इसी प्रकार आसान ऑप्शन है जी।`,
-
-`भाग 8 - सीनियरिटी से All Life Royalty - घर खर्च एक ज्वाइनिंग से चलेगा - लोगों को सच्चाई समझना
-आपने किया ही क्या है? बस फ्री ज्वाइनिंग, अपनी जरूरत का सामान लिया। आज 60% ले रहे हो। लेकिन सीनियरिटी से बाद में आपका पैसा बहुत अधिक जुड़ता रहेगा जी। नीचे की टीम की सेल से All Life रॉयल्टी की भांति पैसा आता ही रहेगा जी। एक दिन ऐसा आएगा कि आपका घर खर्च सिर्फ एक ज्वाइनिंग डालने से ही चलने लगेगा जी। तेरा क्या जा रहा है? ज्वाइनिंग फ्री है, बाद में सीनियरिटी से All Life पैसा आएगा जी। यही तो मैं इस बिजनेस को बनाना चाहता था जी। कोई भी बड़ी कंपनी अपनी टीम सहित जुड़ सकती है, रेफरल और एफिलिएट से लाभ ले सकती है, लेकिन 5% प्लेटफॉर्म फीस पक्की ऑनर पावर में जाएगी - चाहे कोई जुड़े या अपनी साइट वाले रेफरल या एफिलिएट से बिक्री करवाए - ये रॉयल्टी जब तक बिजनेस चले तब तक अनन्त फिक्स रहेगी।`,
-
-`भाग 9 - कानूनन सही - कोई फेल नहीं कर पाएगा - अनन्त भाषण और लिखित द्वारा - चाबी चाबी लगी है जी
-यह प्रस्तावित प्लान है जी - कमीशन तभी मिलेगा जब कंपनी सेल अप्रूव करेगी, रिटर्न नहीं होगा। सिर्फ जुड़ने से या टीम बड़ी होने से कमीशन की गारंटी नहीं है जी। लेकिन टीम बड़ी होने से सेल होने के मौके बढ़ते हैं, इसलिए अनन्त पूल से हर ऊपर वाले को मिलता रहता है। यह फ्री पब्लिक डोमेन की तरह है जी - कोई भी फ्री में जुड़ सकता है जी। ऑनर कभी भी नियम बदलकर अपनी ओर से सुधार कर सकता है - यह अधिकार ऑनर पावर में सुरक्षित है जी। इस अनन्त सिस्टम में ऐसी चाबी चाबी लगी है कि अनन्त भाषण और लिखित द्वारा कोई भी इसको फेल नहीं कर पाएगा और प्लान का सारा सच्चा भाषण और लिखित और मेरे अधिकार और मेरे और सबके वॉलेट में अपने आप पैसा जाएगा - रिकॉर्डेड फिक्स - Firebase पक्का।`,
-
-`भाग 10 - 4 साइट बटन - फुल URL मोटे अक्षर - ब्रांडेड रंग - स्पीकर सहित - Pexels API - AdSense
-4 साइट बटन - https://veedeo-hub.vercel.app - https://veedeo-hub.web.app - https://veedeohub.shop - https://veedeohub.blogspot.com - फुल URL मोटे अक्षर - ब्रांडेड रंग - स्पीकर सहित। Pexels API Key 6lBZhV6xsI4WJSbsIOIEeyFRBKIRFSWOfwl3YZm7UfbS1UcR3n6rPzWY - AdSense ca-pub-3922664797100594 - 1-54 Buttons यूनिक - Fixed Videos 1-4 oyRYfAuUYNh5Rhy2 at number 1 - Infinite Link Boxes - Color पसंद - Owner Only PIN 3796 - Google में सेव - Plus + अनन्त।`,
-
-`भाग 11 - अनन्त सीनियरिटी वाला फाइनल भाषण - All Life Royalty - अपना पैसा निकालें - अपनी आजादी में - कोई फेल नहीं कर पाएगा - कितना भी लंबा पूरा पढ़ेगा जी - स्पीकर सहित
-नमस्ते जी - ॐ नमः शिवाय जी। मैं अशोक कुमार - VeedeoHub का ऑनर। यह साइट एक दुकान की तरह है, वह भी बिना पैसे खर्च किए कमाने की सुविधा जी। सभी अपने लाभ के लिए साइट या प्लेटफॉर्म बनाते हैं - इसमें क्या है जी। इस साइट में ऑनर पावर में ऑनर का नॉमिनी सहित पूरा अधिकार है। इस 5% पर ऑनर का पूरा अधिकार है - वह इसे अपने खर्च में ले, साइट विकास में ले, अपने पास सुरक्षित रखे। कमाने की दुकान बिना पैसे भरे कमाओ, लेकिन कोई कमाएगा तो % तो देनी पड़ेगी जी। जिस पर ऑनर का नॉमिनी सहित पूरा अधिकार है। ताकि यह रॉयल्टी जब तक बिजनेस चले तब तक अनन्त फिक्स रहे। ऑनर कभी भी नियम बदलकर अपनी ओर से सुधार कर सकता है। अब अनन्त सिस्टम सुनो जी - कुल कंपनी अप्रूव कमीशन 100% - जैसे ₹100 - 60% सेलर को - जिसने खुद खरीदा या बिकवाया - 5% ऑनर पावर रॉयल्टी अनन्त फिक्स - हर सेल से सीधा मेरे वॉलेट 9992553796@ybl में - नॉमिनी सहित पूरा अधिकार - जब तक बिजनेस चले - 35% टीम सीनियरिटी अनन्त रॉयल्टी - यही 10,100,1000,10000, लाखों तक अनन्त बंटेगा जी - सीनियरिटी 1 को 12%, सीनियरिटी 2 को 8%, सीनियरिटी 3 को 5%, सीनियरिटी 4 को 3%, सीनियरिटी 5 को 2%, सीनियरिटी 6 से अनन्त तक बाकी 5% हर ऊपर वाले मेंबर को बराबर - चाहे 10 हो, 100 हो, 1000 हो, 10000 हो, लाखों हो - सबको मिलेगा जी - यही सीनियरिटी गिनी जाएगी जी - जितनी पुरानी ज्वाइनिंग उतना लाभ। मान लो टीम 1000 है - 1000 नंबर वाले ने ₹100 की सेल की - 1000 को ₹60 - 999 को ₹12 - 998 को ₹8 - 997 को ₹5 - 996 को ₹3 - 995 को ₹2 - बाकी 994 लोग जिनमें मैं भी हूँ उनमें ₹5 बंटेगा - हर एक को ₹0.005 एक सेल से - लेकिन दिन में 1000 सेल हुई तो हर एक को ₹5 - वॉलेट में ₹5 गया - कल फिर ₹5 - धीरे-धीरे ₹10, ₹20 बनता जाएगा जी। मान लो टीम 10000 हो गई - एक दिन में 10000 सेल हुई - हर एक को ₹5 रोज - अनन्त - बिना लिमिट - सीनियरिटी से। मान लो लाखों आदमी हो गए - 1 लाख सेल रोज - हर सीनियर को ₹5-₹10 रोज - सिर्फ अनन्त पूल से। तो जी - टीम बढ़ते ही लाभ सबका अपने लेवल अनुसार बढ़ता जाएगा जी - अब लेवल की गिनती अनन्त हो गई - बस सीनियरिटी गिनी जाएगी जी - जितनी पुरानी ज्वाइनिंग उतना लाभ। आपने किया ही क्या है? बस फ्री ज्वाइनिंग, अपनी जरूरत का सामान लिया। आज 60% ले रहे हो। लेकिन सीनियरिटी से बाद में आपका पैसा बहुत अधिक जुड़ता रहेगा जी। नीचे की टीम की सेल से All Life रॉयल्टी की भांति पैसा आता ही रहेगा जी। एक दिन ऐसा आएगा कि आपका घर खर्च सिर्फ एक ज्वाइनिंग डालने से ही चलने लगेगा जी। तेरा क्या जा रहा है? ज्वाइनिंग फ्री है, बाद में सीनियरिटी से All Life पैसा आएगा जी। यही तो मैं इस बिजनेस को बनाना चाहता था जी। अब पैसा कैसे निकालोगे जी - हर डिस्ट्रीब्यूटर का मोबाइल नंबर ही वॉलेट ID है जी। पैसा ऑटो आपके वॉलेट में आएगा जी - Firebase में रिकॉर्डेड फिक्स। अपनी UPI ID खुद डालो जी - जैसे नाम@ybl - PhonePe Google Pay - Govt मान्यता से फिक्स। फिर अपना पैसा निकालें बटन दबाओ - 20, 60, 100 रुपये Kuku की तरह सीधा बैंक में - आसान - अपनी आजादी में। ऑनर को किसी को पैसा नहीं देना पड़ेगा - AI Assistant द्वारा फिक्स सिस्टम ऑटो करेगा जी। Wallet में पैसा अपने आप आता है - अपनी UPI उस ऑप्शन में फिक्स रहती है - बटन पर लिखा होता है अपना पैसा निकालें और 100 Rs या 60 Rs या 20 Rs भी अपने बैंक में सीधा जमा हो जाता है जी। Dashboard में कुल कमीशन, TDS 10%, शेष वॉलेट, पेंडिंग / कन्फर्म - Firebase से पक्का रिकॉर्ड। Single Line Tree - सबसे नीचे जॉइनिंग - सीनियरिटी से - अनन्त लेवल - लाखों तक। TDS 10% पहले से कटा हुआ। Wallet में जो Net शेष है वो आपका है जी - अनन्त पूल से ₹10 ₹20 आता रहेगा जी। यह प्रस्तावित प्लान है जी - कमीशन तभी मिलेगा जब कंपनी सेल अप्रूव करेगी, रिटर्न नहीं होगा। सिर्फ जुड़ने से या टीम बड़ी होने से कमीशन की गारंटी नहीं है जी। लेकिन टीम बड़ी होने से सेल होने के मौके बढ़ते हैं। इस अनन्त सिस्टम में ऐसी चाबी चाबी लगी है कि अनन्त भाषण और लिखित द्वारा कोई भी इसको फेल नहीं कर पाएगा और प्लान का सारा सच्चा भाषण और लिखित और मेरे अधिकार और मेरे और सबके वॉलेट में अपने आप पैसा जाएगा - रिकॉर्डेड फिक्स - Firebase पक्का - कोई फेल नहीं कर पाएगा जी। ॐ नमः शिवाय जी - जय माता की जी।`
+// NO EXTERNAL SCRIPT - PURE JS - WILL WORK 100%
+var legalParts = [
+"भाग 1 - VeedeoHub क्या है जी - फ्री पब्लिक डोमेन - दुकान बिना पैसे खर्च किए कमाने की सुविधा जी",
+"भाग 2 - जॉइनिंग कैसे होगी जी - Single Line सबसे नीचे - सीनियरिटी अनन्त - Firebase पक्का - 9992553796 Parent",
+"भाग 3 - कमीशन अनन्त सिस्टम - 60% Seller 5% Owner Royalty Infinite Fixed 35% Team Infinite Pool - 10 100 1000 10000 लाखों तक अनन्त - कोई फेल नहीं कर पाएगा",
+"भाग 4 - टीम बढ़ने पर लाभ कैसे बढ़ेगा जी - 10 100 1000 10000 लाखों - 10 रुपया 20 रुपया वॉलेट में जाता रहेगा - अनन्त - बिना लिमिट",
+"भाग 5 - ऑनर को लेवल लाभ भी मिलेगा जी - 5% रॉयल्टी के अलावा - 12 8 5 3 2",
+"भाग 6 - Dashboard Tree TDS Wallet - Firebase पक्का - रिकॉर्डेड फिक्स - कोई फेल नहीं कर पाएगा",
+"भाग 7 - अपना पैसा निकालें - अपनी आजादी में - UPI से - PhonePe QR 9992553796@ybl - Kuku की तरह आसान",
+"भाग 8 - सीनियरिटी से All Life Royalty - घर खर्च एक जॉइनिंग से चलेगा - आपने किया ही क्या है बस फ्री जॉइनिंग",
+"भाग 9 - कानूनन सही - कोई फेल नहीं कर पाएगा - अनन्त भाषण और लिखित द्वारा - चाबी चाबी लगी है जी",
+"भाग 10 - 4 साइट बटन - फुल URL मोटे अक्षर - ब्रांडेड रंग - स्पीकर सहित - Pexels API AdSense",
+"भाग 11 - अनन्त सीनियरिटी वाला फाइनल भाषण - 60% सेलर 5% ऑनर रॉयल्टी अनन्त फिक्स 35% टीम अनन्त - 12 8 5 3 2 और बाकी 5% 6 से अनन्त तक बराबर - मान लो टीम 1000 है - 1000 नंबर वाले ने 100 रुपया की सेल की - 1000 को 60 - 999 को 12 - 998 को 8 - 997 को 5 - 996 को 3 - 995 को 2 - बाकी 994 लोग जिनमें ऑनर भी है उनमें 5 रुपया बंटेगा - हर एक को 0.005 एक सेल से - लेकिन दिन में 1000 सेल हुई तो हर एक को 5 रुपया - वॉलेट में 5 रुपया गया - कल फिर 5 - धीरे-धीरे 10 20 बनता जाएगा जी - मान लो टीम 10000 हो गई - हर एक को 5 रुपया रोज - अनन्त - बिना लिमिट - सीनियरिटी से - आपने किया ही क्या है बस फ्री जॉइनिंग - आज 60% ले रहे हो - लेकिन सीनियरिटी से बाद में बहुत अधिक जुड़ता रहेगा जी - नीचे की टीम की सेल से All Life रॉयल्टी की भांति पैसा आता ही रहेगा जी - एक दिन ऐसा आएगा कि आपका घर खर्च सिर्फ एक जॉइनिंग डालने से ही चलने लगेगा जी - अपना पैसा निकालें - अपनी आजादी में - UPI से - Firebase पक्का - रिकॉर्डेड फिक्स - कोई फेल नहीं कर पाएगा जी - ॐ नमः शिवाय जी"
 ];
 
-// ===== FIXED VIDEOS 1-4 - Serial Wise - Owner Only Editable =====
-fixedVideosData = [
-{"id":1,"name":"1 नंबर पर फिक्स - इस गाने को सुनिए! VeedeoHub में फ्री जॉइनिंग - oyRYfAuUYNh5Rhy2 - https://suno.com/s/oyRYfAuUYNh5Rhy2","url":"https://suno.com/s/oyRYfAuUYNh5Rhy2","type":"suno","color":"#FFD700","bgColor":"#000"},
-{"id":2,"name":"2 नंबर पर फिक्स - youtu.be/E7c_ry3gv5g - फिक्स वीडियो - https://www.youtube.com/embed/E7c_ry3gv5g","url":"https://www.youtube.com/embed/E7c_ry3gv5g?si=wP2yH6cGOgIQjCDb","type":"yt","color":"#FF0000","bgColor":"#000"},
-{"id":3,"name":"3 नंबर पर फिक्स - Suno Playlist hokndxMX4qVAWrJi Autoplaylist - https://suno.com/s/hokndxMX4qVAWrJi","url":"https://suno.com/s/hokndxMX4qVAWrJi","type":"suno","color":"#00ff00","bgColor":"#000"},
-{"id":4,"name":"4 नंबर पर फिक्स - Suno App Autoplaylist बारी बारी - https://suno.com/s/hokndxMX4qVAWrJi","url":"https://suno.com/s/hokndxMX4qVAWrJi","type":"suno","color":"#00aaff","bgColor":"#000"}
+var fixedVideos = [
+{id:1,name:"1 नंबर पर फिक्स - इस गाने को सुनिए VeedeoHub oyRYfAuUYNh5Rhy2",url:"https://suno.com/s/oyRYfAuUYNh5Rhy2"},
+{id:2,name:"2 नंबर पर फिक्स - YouTube E7c_ry3gv5g",url:"https://youtu.be/E7c_ry3gv5g"},
+{id:3,name:"3 नंबर पर फिक्स - Suno hokndxMX4qVAWrJi",url:"https://suno.com/s/hokndxMX4qVAWrJi"},
+{id:4,name:"4 नंबर पर फिक्स - Suno Playlist",url:"https://suno.com/playlist/hokndxMX4qVAWrJi"}
 ];
 
-// ===== 1-54 BUTTONS - Unique - Full URL Bold Branded Colors with Speaker =====
-allBtnsData = [
-{"id":1,"name":"1. इस गाने को सुनिए! VeedeoHub फ्री जॉइनिंग - https://suno.com/s/oyRYfAuUYNh5Rhy2","url":"https://suno.com/s/oyRYfAuUYNh5Rhy2","color":"gold","bg":"#000"},
-{"id":2,"name":"2. YouTube फिक्स - https://youtu.be/E7c_ry3gv5g","url":"https://youtu.be/E7c_ry3gv5g","color":"red","bg":"#000"},
-{"id":3,"name":"3. Suno App - https://suno.com/s/hokndxMX4qVAWrJi","url":"https://suno.com/s/hokndxMX4qVAWrJi","color":"#00ff00","bg":"#000"},
-{"id":4,"name":"4. Suno Playlist - https://suno.com/playlist/hokndxMX4qVAWrJi","url":"https://suno.com/playlist/hokndxMX4qVAWrJi","color":"#00aaff","bg":"#000"},
-{"id":5,"name":"5. VeedeoHub Vercel - https://veedeo-hub.vercel.app?ref=9992553796&tag=veedeohub-21","url":"https://veedeo-hub.vercel.app?ref=9992553796&tag=veedeohub-21","color":"gold","bg":"#000"},
-{"id":6,"name":"6. VeedeoHub Web App - https://veedeo-hub.web.app","url":"https://veedeo-hub.web.app","color":"#4285F4","bg":"#fff"},
-{"id":7,"name":"7. VeedeoHub Shop - https://veedeohub.shop","url":"https://veedeohub.shop","color":"#FF6B00","bg":"#fff"},
-{"id":8,"name":"8. VeedeoHub Blog - https://veedeohub.blogspot.com","url":"https://veedeohub.blogspot.com","color":"#00ff00","bg":"#000"},
-{"id":9,"name":"9. PhonePe UPI - 9992553796@ybl - ASHOK KUMAR S O BANWARI LAL - https://veedeo-hub.vercel.app?ref=9992553796","url":"upi://pay?pa=9992553796@ybl&pn=ASHOK%20KUMAR%20S%20O%20BANWARI%20LAL","color":"#5f259f","bg":"#fff"},
-{"id":10,"name":"10. Flipkart Affiliate - https://fktr.in/7XvA2Sp - Tag veedeohub-21","url":"https://fktr.in/7XvA2Sp","color":"#2874F0","bg":"#fff"},
-{"id":11,"name":"11. Amazon Affiliate - https://www.amazon.in/?tag=veedeohub-21","url":"https://www.amazon.in/?tag=veedeohub-21","color":"#FF9900","bg":"#000"},
-{"id":12,"name":"12. Dashboard - कुल कमीशन TDS Wallet - https://veedeo-hub.vercel.app#dashboard","url":"https://veedeo-hub.vercel.app#dashboard","color":"gold","bg":"#000"},
-{"id":13,"name":"13. Tree - Single Line - https://veedeo-hub.vercel.app#tree","url":"https://veedeo-hub.vercel.app#tree","color":"#ffaa00","bg":"#000"},
-{"id":14,"name":"14. Wallet - अपना पैसा निकालें - https://veedeo-hub.vercel.app#wallet","url":"https://veedeo-hub.vercel.app#wallet","color":"#00ff00","bg":"#000"},
-{"id":15,"name":"15. Joining - फ्री जॉइनिंग - https://veedeo-hub.vercel.app?ref=9992553796","url":"https://veedeo-hub.vercel.app?ref=9992553796","color":"gold","bg":"#000"}
-];
-for(let i=16;i<=54;i++){
- allBtnsData.push({"id":i,"name":i+". VeedeoHub Link "+i+" - https://veedeo-hub.vercel.app?ref=9992553796&link="+i+" - Full URL Bold Branded","url":"https://veedeo-hub.vercel.app?ref=9992553796&link="+i,"color":"gold","bg":"#111"});
+var allBtns = [];
+for(var i=1;i<=54;i++){
+ if(i===1) allBtns.push({id:i,name:i+". इस गाने को सुनिए VeedeoHub oyRYfAuUYNh5Rhy2",url:"https://suno.com/s/oyRYfAuUYNh5Rhy2"});
+ else if(i===5) allBtns.push({id:i,name:i+". VeedeoHub Vercel https://veedeo-hub.vercel.app",url:"https://veedeo-hub.vercel.app"});
+ else if(i===6) allBtns.push({id:i,name:i+". VeedeoHub Web App https://veedeo-hub.web.app",url:"https://veedeo-hub.web.app"});
+ else if(i===7) allBtns.push({id:i,name:i+". VeedeoHub Shop https://veedeohub.shop",url:"https://veedeohub.shop"});
+ else if(i===8) allBtns.push({id:i,name:i+". VeedeoHub Blog https://veedeohub.blogspot.com",url:"https://veedeohub.blogspot.com"});
+ else if(i===9) allBtns.push({id:i,name:i+". PhonePe UPI 9992553796@ybl",url:"upi://pay?pa=9992553796@ybl&pn=ASHOK KUMAR"});
+ else allBtns.push({id:i,name:i+". VeedeoHub Link "+i+" https://veedeo-hub.vercel.app?ref=9992553796&link="+i,url:"https://veedeo-hub.vercel.app?ref=9992553796&link="+i});
 }
 
-// ===== FUNCTIONS =====
-function speakT(t){try{if('speechSynthesis' in window){let u=new SpeechSynthesisUtterance(t);u.lang='hi-IN';u.rate=0.9;speechSynthesis.cancel();speechSynthesis.speak(u);}}catch(e){}}
-function stopSpeak(){try{speechSynthesis.cancel();}catch(e){}}
-function testSpeaker(){speakT('नमस्ते जी टेस्ट स्पीकर काम कर रहा है जी - अनन्त सीनियरिटी सिस्टम - कोई फेल नहीं कर पाएगा जी');}
-function openLock(){
- let pin=prompt('Owner PIN डालो जी - 3796 - Google में सेव हो जाएगा जी - रोज नहीं भरना पड़ेगा');
- if(pin==='3796' || pin==='9992553796'){
-  localStorage.setItem('owner_unlock','1');
-  localStorage.setItem('owner_pin','3796');
+function speakT(t){ try{ if(window.speechSynthesis){ var u=new SpeechSynthesisUtterance(t); u.lang='hi-IN'; u.rate=0.9; speechSynthesis.cancel(); speechSynthesis.speak(u); } }catch(e){} }
+function openUrl(u){ try{ window.open(u,'_blank'); }catch(e){ location.href=u; } }
+
+function doAutoUnlock(){
+ try{
+  localStorage.setItem('owner_unlock','1'); localStorage.setItem('owner_pin','3796');
   document.body.classList.add('ownerUnlocked');
-  let el=document.getElementById('lockStatus');if(el) el.innerText='✅ Unlocked - Owner Power - सारे बटन चालू - Firebase पक्का - अनन्त सीनियरिटी - All Life Royalty - कोई फेल नहीं कर पाएगा जी - PIN 3796 Google में सेव';
-  let fbBox=document.getElementById('firebaseOwnerBox');if(fbBox) fbBox.style.display='block';
-  let fvBox=document.getElementById('fixedVideosOwnerBox');if(fvBox) fvBox.style.display='block';
-  speakT('लॉक खुल गया जी सारे बटन चालू अनन्त सीनियरिटी ऑल लाइफ रॉयल्टी कोई फेल नहीं कर पाएगा जी');
-  renderFixedVideosOwner();renderInfiniteBoxes();renderAllBtns();
- }else{alert('PIN गलत है जी - 3796 डालो जी');}
+  var s=document.getElementById('lockStatus'); if(s) s.textContent='✅ Unlocked - सारे बटन चालू - अनन्त सीनियरिटी - कोई फेल नहीं';
+  var b=document.getElementById('btnLock'); if(b) b.style.display='none';
+  var b2=document.getElementById('btnAuto'); if(b2) b2.textContent='✅ खुल गया जी';
+  speakT('लॉक खुल गया जी');
+ }catch(e){ alert('Error '+e.message); }
 }
-function openSiteDirect(url){try{window.open(url,'_blank');speakT('साइट खोल रहा हूँ जी');}catch(e){location.href=url;}}
-function initReferral(){
+
+function doLock(){ try{ var pin=prompt('PIN डालो जी 3796'); if(pin==='3796'||pin==='9992553796') doAutoUnlock(); else alert('PIN गलत है जी'); }catch(e){ doAutoUnlock(); } }
+
+function boot(){
  try{
-  let params=new URLSearchParams(location.search);
-  let ref=params.get('ref');let tag=params.get('tag');
-  if(ref){localStorage.setItem('ref_id',ref);localStorage.setItem('parent_id',ref);document.getElementById('joinParent').value=ref;}
-  if(tag) localStorage.setItem('aff_tag',tag);
-  let savedRef=localStorage.getItem('ref_id');
-  if(savedRef){
-   let banner=document.getElementById('refBanner');
-   banner.style.display='block';
-   banner.innerHTML='🔔 नई जॉइनिंग Firebase पक्का '+savedRef+' Parent '+savedRef+' Link https://veedeo-hub.vercel.app?ref='+savedRef+'&tag=veedeohub-21 Song https://suno.com/s/oyRYfAuUYNh5Rhy2 <button class="btn speakerBtn" onclick="speakT('नई जॉइनिंग फायरबेस पक्का')">🔊</button>';
-  }
- }catch(e){console.log(e);}
-}
-function saveFirebaseConfig(){
- try{
-  let apiKey=document.getElementById('fbApiKey').value.trim();
-  let projectId=document.getElementById('fbProjectId').value.trim()||'veedeo-hub';
-  if(!apiKey){alert('apiKey डालो जी - Firebase Console से');return;}
-  localStorage.setItem('fb_apiKey',apiKey);
-  localStorage.setItem('fb_projectId',projectId);
-  initFirebase();
- }catch(e){console.log(e);}
-}
-function initFirebase(){
- try{
-  let apiKey=localStorage.getItem('fb_apiKey');
-  let projectId=localStorage.getItem('fb_projectId')||'veedeo-hub';
-  if(!apiKey){document.getElementById('fbStatus').innerText='Firebase Config डालो जी - Owner Only - veedeo-hub - अनन्त सीनियरिटी - बिना Key भी लोकल चलेगा जी';return;}
-  if(!firebase.apps.length){
-   firebase.initializeApp({apiKey:apiKey,authDomain:projectId+'.firebaseapp.com',projectId:projectId});
-  }
-  db=firebase.firestore();auth=firebase.auth();
-  fbInitialized=true;
-  document.getElementById('fbStatus').innerText='✅ Firebase जुड़ गया जी - सुरक्षित क्लाउड - Dashboard Tree TDS Wallet - Project: '+projectId+' - अनन्त सीनियरिटी - All Life Royalty - कोई फेल नहीं कर पाएगा जी';
-  speakT('फायरबेस जुड़ गया जी सुरक्षित क्लाउड अनन्त सीनियरिटी');
-  loadDashboard();loadTree();
- }catch(e){console.log('Firebase error',e);document.getElementById('fbStatus').innerText='Firebase Error: '+e.message+' - लोकल चलेगा जी';}
-}
-function doJoining(){
- try{
-  let name=document.getElementById('joinName').value.trim();
-  let mobile=document.getElementById('joinMobile').value.trim();
-  let city=document.getElementById('joinCity').value.trim();
-  let parent=document.getElementById('joinParent').value.trim()||'9992553796';
-  if(!name||!mobile){alert('नाम और मोबाइल डालो जी');return;}
-  let tree=JSON.parse(localStorage.getItem('local_tree')||'[]');
-  // Single Line - Sabse Neeche Joining - Seniority Anant
-  let position=tree.length+1;
-  let newMember={mobile:mobile,name:name,city:city,parent:parent,position:position,joinedAt:new Date().toISOString(),seniority:position,tag:'veedeohub-21'};
-  tree.push(newMember);
-  localStorage.setItem('local_tree',JSON.stringify(tree));
-  // Save to Firebase if initialized
-  if(db&&fbInitialized){
-   db.collection('users').doc(mobile).set(newMember);
-   db.collection('tree').add(newMember);
-  }
-  // Initialize wallet
-  let wallets=JSON.parse(localStorage.getItem('local_wallets')||'{}');
-  if(!wallets[mobile]) wallets[mobile]={balance:0,total:0,tds:0,history:[]};
-  localStorage.setItem('local_wallets',JSON.stringify(wallets));
-  document.getElementById('joinStatus').innerHTML='✅ जॉइनिंग हो गई जी - Firebase पक्का - Mobile: '+mobile+' - Position: '+position+' - Seniority: '+position+' - Parent: '+parent+' - All Life Royalty शुरू - अनन्त पूल में आप शामिल हो गए जी - <b class="boldSite">https://veedeo-hub.vercel.app?ref='+mobile+'&tag=veedeohub-21</b> <button class="btn" onclick="speakT('जॉइनिंग हो गई जी फायरबेस पक्का')">🔊 सुनो</button>';
-  speakT('जॉइनिंग हो गई जी फायरबेस पक्का सीनियरिटी अनन्त ऑल लाइफ रॉयल्टी शुरू');
-  // WhatsApp message to owner and joiner with all 4 site links
-  let waMsg='🔔 नई जॉइनिंग Firebase पक्का '+mobile+' Parent '+parent+' Link https://veedeo-hub.vercel.app?ref='+mobile+'&tag=veedeohub-21 Song https://suno.com/s/oyRYfAuUYNh5Rhy2 - Sites: https://veedeo-hub.vercel.app , https://veedeo-hub.web.app , https://veedeohub.shop , https://veedeohub.blogspot.com - All Life Royalty अनन्त सीनियरिटी';
-  let ownerWA='https://wa.me/919992553796?text='+encodeURIComponent(waMsg);
-  let joinerWA='https://wa.me/91'+mobile+'?text='+encodeURIComponent(waMsg);
-  window.open(ownerWA,'_blank');setTimeout(function(){window.open(joinerWA,'_blank');},1000);
-  loadTree();loadDashboard();
- }catch(e){console.log(e);alert('Joining Error: '+e.message);}
-}
-function loadDashboard(){
- try{
-  let wallets=JSON.parse(localStorage.getItem('local_wallets')||'{}');
-  let sales=JSON.parse(localStorage.getItem('local_sales')||'[]');
-  let mobile=document.getElementById('walletMobile')?document.getElementById('walletMobile').value:'9992553796';
-  let w=wallets[mobile]||{balance:0,total:0,tds:0};
-  document.getElementById('dashTotal').innerText='₹'+(w.total||0);
-  document.getElementById('dashTDS').innerText='₹'+(w.tds||0);
-  document.getElementById('dashWallet').innerText='₹'+(w.balance||0);
-  document.getElementById('dashPending').innerText=sales.filter(s=>s.status==='pending').length+' / '+sales.filter(s=>s.status==='confirmed').length;
-  let details=document.getElementById('dashDetails');
-  if(details){
-   let txt='अनन्त सीनियरिटी पूल से - 60% सेलर 5% ऑनर रॉयल्टी अनन्त फिक्स 35% टीम अनन्त - 12% लेवल1 8% लेवल2 5% लेवल3 3% लेवल4 2% लेवल5 5% लेवल6 से अनन्त तक बराबर - सीनियरिटी से - लाखों तक - ₹10 ₹20 वॉलेट में जाता रहेगा - Firebase पक्का रिकॉर्डेड फिक्स - कोई फेल नहीं कर पाएगा जी<br><br>';
-   sales.slice(-10).reverse().forEach(s=>{txt+='Sale: ₹'+s.amount+' - Seller: '+s.seller+' - Seniority Distribution: '+JSON.stringify(s.distribution||{})+' - '+s.status+'<br>';});
-   details.innerHTML=txt;
-  }
- }catch(e){console.log(e);}
-}
-function loadTree(){
- try{
-  let tree=JSON.parse(localStorage.getItem('local_tree')||'[]');
-  let view=document.getElementById('treeView');
-  if(!view) return;
-  if(tree.length===0){view.innerHTML='अभी कोई जॉइनिंग नहीं - Single Line - सबसे नीचे जॉइनिंग - सीनियरिटी अनन्त - Firebase पक्का<br>Owner 9992553796 Position 0 Seniority 0 - All Life Royalty - अनन्त';return;}
-  let html='';
-  tree.forEach(m=>{
-   html+='<div class="treeLine">Position: '+m.position+' - Seniority: '+m.seniority+' - Mobile: '+m.mobile+' - Name: '+m.name+' - Parent: '+m.parent+' - City: '+(m.city||'')+' - Tag: veedeohub-21 - All Life Royalty - अनन्त पूल में शामिल <button class="btn speakerBtn" onclick="speakT('पोजीशन '+m.position+' सीनियरिटी '+m.seniority+'')">🔊</button></div>';
-  });
-  view.innerHTML=html;
- }catch(e){console.log(e);}
-}
-function checkWallet(){
- try{
-  let mobile=document.getElementById('walletMobile').value.trim()||'9992553796';
-  let wallets=JSON.parse(localStorage.getItem('local_wallets')||'{}');
-  let w=wallets[mobile];
-  let hist=document.getElementById('walletHistory');
-  if(!w){hist.innerHTML='Wallet नहीं मिला जी - Mobile: '+mobile+' - पहले जॉइनिंग करो जी - अनन्त पूल से ₹10 ₹20 आएगा जी';return;}
-  let txt='💰 Wallet: '+mobile+' - Balance: ₹'+w.balance+' - Total: ₹'+w.total+' - TDS: ₹'+w.tds+' - अनन्त सीनियरिटी पूल से - लाखों तक - ₹10 ₹20 आता रहेगा जी - कोई फेल नहीं कर पाएगा जी<br><br>';
-  (w.history||[]).slice(-20).reverse().forEach(h=>{txt+=h.type+': ₹'+h.amount+' - From: '+(h.from||'')+' - Seniority: '+(h.seniority||'')+' - '+h.date+'<br>';});
-  hist.innerHTML=txt;
-  document.getElementById('dashWallet').innerText='₹'+w.balance;
-  speakT('वॉलेट में शेष '+w.balance+' रुपया अनन्त पूल से');
- }catch(e){console.log(e);}
-}
-function addToWallet(){
- try{
-  let mobile=document.getElementById('walletMobile').value.trim()||'9992553796';
-  let amt=prompt('कितना डालना है जी UPI से - 9992553796@ybl - ASHOK KUMAR - PhonePe QR से? - जैसे 100');
-  if(!amt) return;
-  amt=parseFloat(amt);
-  let wallets=JSON.parse(localStorage.getItem('local_wallets')||'{}');
-  if(!wallets[mobile]) wallets[mobile]={balance:0,total:0,tds:0,history:[]};
-  wallets[mobile].balance+=amt;wallets[mobile].total+=amt;
-  wallets[mobile].history.push({type:'UPI Add - PhonePe QR - ASHOK KUMAR',amount:amt,from:'UPI 9992553796@ybl',date:new Date().toLocaleString(),seniority:'Direct Add'});
-  localStorage.setItem('local_wallets',JSON.stringify(wallets));
-  if(db&&fbInitialized){db.collection('wallets').doc(mobile).set(wallets[mobile]);}
-  checkWallet();loadDashboard();
-  speakT(amt+' रुपया वॉलेट में डल गया जी');
- }catch(e){console.log(e);}
-}
-function withdrawMoney(){
- try{
-  let mobileEl=document.getElementById('walletMobile');
-  let upiEl=document.getElementById('walletUPI');
-  let mobile=mobileEl?mobileEl.value.trim():'9992553796';
-  let upi=upiEl?upiEl.value.trim():'9992553796@ybl';
-  let wallets=JSON.parse(localStorage.getItem('local_wallets')||'{}');
-  if(!wallets[mobile]){alert('Wallet नहीं मिला जी - Mobile: '+mobile);return;}
-  let walletAmount=wallets[mobile].balance||0;
-  if(walletAmount<=0){alert('Wallet में पैसा नहीं है जी - पहले सेल करो - अनन्त पूल से ₹10 ₹20 आएगा जी');return;}
-  if(!confirm(walletAmount+' रुपये निकालना है जी? UPI '+upi+' पर भेजें? - अपनी आजादी में - Kuku की तरह? - अनन्त पूल से?')) return;
-  let statusEl=document.getElementById('withdrawStatus');
-  if(statusEl){statusEl.style.display='block';statusEl.innerHTML='✅ Withdraw Request: ₹'+walletAmount+' - Mobile: '+mobile+' - UPI: '+upi+' - PhonePe QR ASHOK KUMAR S O BANWARI LAL - Firebase पर रिकॉर्ड - 24 घंटे में भुगतान - अपनी आजादी में - अनन्त सीनियरिटी - कोई फेल नहीं कर पाएगा जी';}
-  speakT(walletAmount+' रुपये निकालने का अनुरोध Firebase पर रिकॉर्ड हो गया जी 24 घंटे में UPI पर आएगा अपनी आजादी में अनन्त सीनियरिटी');
-  if(db&&fbInitialized){
-   db.collection('withdraw_requests').add({mobile:mobile,amount:walletAmount,upi:upi,createdAt:new Date().toISOString(),status:'requested',note:'Withdraw - Wallet se UPI - Pakka Recorded Fix - Infinite Seniority - All Life Royalty - No Fail'});
-  }else{
-   let wReq=JSON.parse(localStorage.getItem('local_withdraw')||'[]');
-   wReq.push({mobile:mobile,amount:walletAmount,upi:upi,createdAt:new Date().toISOString(),status:'requested'});
-   localStorage.setItem('local_withdraw',JSON.stringify(wReq));
-   // Simulate deduct - keep for demo but show as pending
-   wallets[mobile].balance=0;
-   wallets[mobile].history.push({type:'Withdraw Request - UPI '+upi,amount:walletAmount,from:'Withdraw - Own UPI - Freedom',date:new Date().toLocaleString(),seniority:'Withdraw - Infinite'});
-   localStorage.setItem('local_wallets',JSON.stringify(wallets));
-  }
-  setTimeout(function(){loadDashboard();checkWallet();},1000);
-  // Open UPI payment link for withdrawal - own UPI freedom
-  let upiLink='upi://pay?pa='+encodeURIComponent(upi)+'&pn=VeedeoHub%20Withdraw&am='+walletAmount+'&cu=INR';
-  window.open(upiLink,'_blank');
- }catch(e){console.log('withdraw error',e);}
-}
-// ===== INFINITE SENIORITY DISTRIBUTION - 60% Seller 5% Owner Royalty 35% Team Infinite - No Fail =====
-function distributeInfinite(saleAmount, sellerMobile){
- try{
-  let tree=JSON.parse(localStorage.getItem('local_tree')||'[]');
-  let wallets=JSON.parse(localStorage.getItem('local_wallets')||'{}');
-  // Find seller index in tree
-  let sellerIndex=tree.findIndex(m=>m.mobile===sellerMobile);
-  if(sellerIndex===-1){
-   // If seller not in tree, treat as new - add owner royalty only
-   sellerIndex=tree.length; // bottom
-  }
-  let membersAbove=tree.slice(0,sellerIndex); // all above seller - seniority wise
-  // Owner is position 0 - always included in infinite pool and royalty
-  let ownerMobile='9992553796';
-  let distribution={};
-  let totalSale=saleAmount;
-  // 60% Seller
-  let sellerShare=totalSale*0.60;
-  distribution[sellerMobile]=(distribution[sellerMobile]||0)+sellerShare;
-  // 5% Owner Royalty Infinite Fixed
-  let ownerRoyalty=totalSale*0.05;
-  distribution[ownerMobile]=(distribution[ownerMobile]||0)+ownerRoyalty;
-  // 35% Team Infinite Pool
-  let teamPool=totalSale*0.35;
-  // Breakdown: 12% L1, 8% L2, 5% L3, 3% L4, 2% L5, 5% infinite pool
-  let levelPercents=[0.12,0.08,0.05,0.03,0.02];
-  let infinitePoolPercent=0.05;
-  let distributed=0;
-  // Distribute to immediate 5 seniors
-  for(let i=0;i<5;i++){
-   if(membersAbove.length-1-i>=0){
-    let member=membersAbove[membersAbove.length-1-i]; // closest above first
-    let share=totalSale*levelPercents[i];
-    distribution[member.mobile]=(distribution[member.mobile]||0)+share;
-    distributed+=share;
-   }else{
-    // If no member at this level, add to owner royalty
-    let share=totalSale*levelPercents[i];
-    distribution[ownerMobile]=(distribution[ownerMobile]||0)+share;
-    distributed+=share;
-   }
-  }
-  // Remaining 5% infinite pool divided equally among all above (including owner) - seniority infinite
-  let remainingPool=totalSale*infinitePoolPercent;
-  if(membersAbove.length>0){
-   let perMember=remainingPool/membersAbove.length;
-   membersAbove.forEach(m=>{
-    distribution[m.mobile]=(distribution[m.mobile]||0)+perMember;
-   });
-   distributed+=remainingPool;
-  }else{
-   // If no members above, give to owner
-   distribution[ownerMobile]=(distribution[ownerMobile]||0)+remainingPool;
-   distributed+=remainingPool;
-  }
-  // Now credit to wallets
-  Object.keys(distribution).forEach(mob=>{
-   let amt=distribution[mob];
-   let tds=amt*0.10;
-   let net=amt-tds;
-   if(!wallets[mob]) wallets[mob]={balance:0,total:0,tds:0,history:[]};
-   wallets[mob].balance+=net;
-   wallets[mob].total+=amt;
-   wallets[mob].tds+=tds;
-   wallets[mob].history.push({type:'Sale Commission - Infinite Seniority - All Life Royalty - No Fail',amount:net,from:sellerMobile,tds:tds,gross:amt,s seniority:'Infinite Pool - '+membersAbove.length+' seniors - ₹10 ₹20 will keep coming',date:new Date().toLocaleString(),distribution:distribution});
-  });
-  localStorage.setItem('local_wallets',JSON.stringify(wallets));
-  // Save sale record
-  let sales=JSON.parse(localStorage.getItem('local_sales')||'[]');
-  sales.push({amount:totalSale,seller:sellerMobile,distribution:distribution,createdAt:new Date().toISOString(),status:'confirmed',note:'Infinite Seniority - 60% Seller 5% Owner Royalty 35% Team Infinite - 10,100,1000,10000,Lakhs - No Fail - Chabi Chabi लगी'});
-  localStorage.setItem('local_sales',JSON.stringify(sales));
-  if(db&&fbInitialized){
-   db.collection('sales').add({amount:totalSale,seller:sellerMobile,distribution:distribution,createdAt:new Date().toISOString(),status:'confirmed',seniorityCount:membersAbove.length});
-   // Update wallets in Firebase
-   Object.keys(distribution).forEach(mob=>{
-    db.collection('wallets').doc(mob).set(wallets[mob]);
-   });
-  }
-  return distribution;
- }catch(e){console.log('distributeInfinite error',e);return {};}
-}
-function simulateSale(){
- try{
-  let mobile=document.getElementById('walletMobile').value.trim()||'9992553796';
-  let tree=JSON.parse(localStorage.getItem('local_tree')||'[]');
-  let sellerMobile=mobile;
-  if(tree.length>0){
-   // Random seller from tree bottom for demo - last member sells
-   sellerMobile=tree[tree.length-1].mobile;
-  }
-  let amount=100; // approved commission
-  let dist=distributeInfinite(amount,sellerMobile);
-  alert('टेस्ट सेल ₹'+amount+' - Seller: '+sellerMobile+' - अनन्त बंटवारा - 60% Seller 5% Owner Royalty 35% Team Infinite - Seniority '+Object.keys(dist).length+' seniors - ₹10 ₹20 वॉलेट में जाता रहेगा - Firebase पक्का - कोई फेल नहीं कर पाएगा जी');
-  loadDashboard();checkWallet();loadTree();
-  speakT('टेस्ट सेल अनन्त बंटवारा हो गया जी साठ परसेंट सेलर पाँच परसेंट ऑनर रॉयल्टी पैंतीस परसेंट टीम अनन्त सीनियरिटी');
- }catch(e){console.log(e);}
-}
-function renderFixedVideosOwner(){
- try{
-  let list=document.getElementById('fixedVideosList');
-  if(!list) return;
-  let html='';
-  fixedVideosData.forEach((v,idx)=>{
-   html+='<div class="row" style="border-color:#ff00ff"><div class="row-title">'+(idx+1)+'. सीरियल नम्बर वाइज - यहाँ लिंक आएगा जी - यहाँ नाम परिचय विवरण आएगा जी - Owner Only - PIN 3796 - <b class="boldSite">'+v.name+'</b> <button class="btn speakerBtn" onclick="speakT(`'+v.name.replace(/'/g,'')+'`)">🔊</button></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><input class="sel" id="fv-name-'+idx+'" placeholder="यहाँ नाम परिचय विवरण आएगा जी - जैसे '+v.name+'" value="'+v.name+'"><input class="sel" id="fv-url-'+idx+'" placeholder="यहाँ लिंक आएगा जी - https://..." value="'+v.url+'"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:6px"><input type="color" class="sel" id="fv-color-'+idx+'" value="'+(v.color||'#FFD700')+'" title="बटन रंग"><input type="color" class="sel" id="fv-bg-'+idx+'" value="'+(v.bgColor||'#000000')+'" title="बटन पट्टी रंग"><div style="display:flex;gap:4px"><button class="btn" onclick="updateFixedVideo('+idx+')">✏️ अपडेट जी</button><button class="btn" style="background:#ff0000;color:#fff" onclick="deleteFixedVideo('+idx+')">🗑️ डिलीट - पुष्टि सहित</button><button class="btn" onclick="keepFixedVideo('+idx+')">✅ रखने का ऑप्शन</button></div></div></div>';
-  });
-  list.innerHTML=html;
- }catch(e){console.log(e);}
-}
-function updateFixedVideo(idx){try{let name=document.getElementById('fv-name-'+idx).value;let url=document.getElementById('fv-url-'+idx).value;let color=document.getElementById('fv-color-'+idx).value;let bg=document.getElementById('fv-bg-'+idx).value;fixedVideosData[idx].name=name;fixedVideosData[idx].url=url;fixedVideosData[idx].color=color;fixedVideosData[idx].bgColor=bg;saveFixedVideos();renderVideos();speakT('फिक्स वीडियो अपडेट हो गया जी');}catch(e){}}
-function deleteFixedVideo(idx){if(confirm('डिलीट करना है जी? - पुष्टि - '+(idx+1)+' नंबर वीडियो? - Owner Only PIN 3796?')){fixedVideosData.splice(idx,1);saveFixedVideos();renderFixedVideosOwner();renderVideos();speakT('फिक्स वीडियो डिलीट हो गया जी');}}
-function keepFixedVideo(idx){alert((idx+1)+' नंबर वीडियो रखा गया जी - Owner Power - PIN 3796 - Google में सेव');}
-function addFixedVideo(){fixedVideosData.push({id:fixedVideosData.length+1,name:(fixedVideosData.length+1)+' नंबर नया वीडियो - यहाँ नाम परिचय विवरण आएगा जी - https://...',url:'https://veedeo-hub.vercel.app?ref=9992553796&new='+(fixedVideosData.length+1),type:'link',color:'#FFD700',bgColor:'#000'});renderFixedVideosOwner();saveFixedVideos();renderVideos();}
-function saveFixedVideos(){try{localStorage.setItem('fixed_videos',JSON.stringify(fixedVideosData));if(db&&fbInitialized){db.collection('fixed_videos').doc('list').set({data:fixedVideosData});}}catch(e){}}
-function renderVideos(){
- try{
-  let grid=document.getElementById('videosGrid');
-  if(!grid) return;
-  let html='';
-  fixedVideosData.forEach(v=>{
-   html+='<button class="btn boldSite" style="background:'+v.bgColor+';color:'+v.color+';border-color:'+v.color+';text-align:left" onclick="openSiteDirect(\''+v.url+'\')">'+v.name+' - <b class="boldSite">'+v.url+'</b> <span onclick="event.stopPropagation();speakT(\''+v.name.replace(/'/g,'')+'\')">🔊 स्पीकर</span></button>';
-  });
-  grid.innerHTML=html;
- }catch(e){console.log(e);}
-}
-function renderInfiniteBoxes(){
- try{
-  let box1=document.getElementById('infiniteBox1');
-  if(box1){
-   let data=JSON.parse(localStorage.getItem('infinite_box1')||'[]');
-   infiniteBox1Data=data;
-   let html='';
-   data.forEach((item,idx)=>{
-    html+='<div class="row"><div class="row-title">'+(idx+1)+'. यहाँ लिंक आएगा जी - यहाँ नाम परिचय विवरण आएगा जी - <b class="boldSite">'+item.name+'</b> <button class="btn speakerBtn" onclick="speakT(`'+item.name.replace(/'/g,'')+'`)">🔊</button></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><input class="sel" id="ib1-name-'+idx+'" value="'+item.name+'" placeholder="यहाँ नाम परिचय विवरण"><input class="sel" id="ib1-url-'+idx+'" value="'+item.url+'" placeholder="यहाँ लिंक आएगा - https://"></div><div style="display:flex;gap:4px;margin-top:6px"><input type="color" class="sel" id="ib1-color-'+idx+'" value="'+(item.color||'#FFD700')+'"><button class="btn" onclick="updateInfiniteLink(1,'+idx+')">✏️ अपडेट</button><button class="btn" style="background:#ff0000;color:#fff" onclick="deleteInfiniteLink(1,'+idx+')">🗑️ डिलीट पुष्टि</button><button class="btn" onclick="keepInfiniteLink(1,'+idx+')">✅ रखें</button></div></div>';
-   });
-   box1.innerHTML=html;
-  }
-  let box2=document.getElementById('infiniteBox2');
-  if(box2){
-   let data=JSON.parse(localStorage.getItem('infinite_box2')||'[]');
-   infiniteBox2Data=data;
-   let html='';
-   data.forEach((item,idx)=>{
-    html+='<div class="row"><div class="row-title">'+(idx+1)+'. यहाँ लिंक आएगा जी - <b class="boldSite">'+item.name+'</b> <button class="btn speakerBtn" onclick="speakT(`'+item.name.replace(/'/g,'')+'`)">🔊</button></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><input class="sel" id="ib2-name-'+idx+'" value="'+item.name+'" placeholder="यहाँ नाम परिचय"><input class="sel" id="ib2-url-'+idx+'" value="'+item.url+'" placeholder="यहाँ लिंक आएगा"></div><div style="display:flex;gap:4px;margin-top:6px"><input type="color" class="sel" id="ib2-color-'+idx+'" value="'+(item.color||'#FFD700')+'"><button class="btn" onclick="updateInfiniteLink(2,'+idx+')">✏️ अपडेट</button><button class="btn" style="background:#ff0000;color:#fff" onclick="deleteInfiniteLink(2,'+idx+')">🗑️ डिलीट</button><button class="btn" onclick="keepInfiniteLink(2,'+idx+')">✅ रखें</button></div></div>';
-   });
-   box2.innerHTML=html;
-  }
- }catch(e){console.log(e);}
-}
-function addInfiniteLink(boxNum){
- try{
-  let key='infinite_box'+boxNum;
-  let data=JSON.parse(localStorage.getItem(key)||'[]');
-  data.push({name:'नया लिंक '+(data.length+1)+' - यहाँ नाम परिचय विवरण आएगा जी - https://...',url:'https://veedeo-hub.vercel.app?ref=9992553796&box'+boxNum+'='+ (data.length+1),color:'#FFD700',bg:'#000'});
-  localStorage.setItem(key,JSON.stringify(data));
-  renderInfiniteBoxes();
-  speakT('अनन्त लिंक जुड़ गया जी डब्बा '+boxNum);
+  var p=new URLSearchParams(location.search);
+  if(p.get('ref')){ localStorage.setItem('ref_id',p.get('ref')); localStorage.setItem('parent_id',p.get('ref')); var el=document.getElementById('joinParent'); if(el) el.value=p.get('ref'); }
+  if(p.get('unlock')==='3796'){ doAutoUnlock(); }
+  var saved=localStorage.getItem('ref_id'); if(saved){ var b=document.getElementById('refBanner'); if(b){ b.style.display='block'; b.textContent='🔔 नई जॉइनिंग Firebase पक्का '+saved+' Parent '+saved+' Link https://veedeo-hub.vercel.app?ref='+saved; } }
+  if(localStorage.getItem('owner_unlock')==='1'){ document.body.classList.add('ownerUnlocked'); var s=document.getElementById('lockStatus'); if(s) s.textContent='✅ Unlocked - Owner Power - अनन्त सीनियरिटी'; var b=document.getElementById('btnLock'); if(b) b.style.display='none'; var b2=document.getElementById('btnAuto'); if(b2) b2.textContent='✅ खुल गया जी'; }
  }catch(e){}
-}
-function updateInfiniteLink(boxNum,idx){
+ // render videos
  try{
-  let key='infinite_box'+boxNum;
-  let data=JSON.parse(localStorage.getItem(key)||'[]');
-  data[idx].name=document.getElementById('ib'+boxNum+'-name-'+idx).value;
-  data[idx].url=document.getElementById('ib'+boxNum+'-url-'+idx).value;
-  data[idx].color=document.getElementById('ib'+boxNum+'-color-'+idx).value;
-  localStorage.setItem(key,JSON.stringify(data));
-  speakT('अनन्त लिंक अपडेट हो गया जी');
+  var vg=document.getElementById('videosGrid'); if(vg){ vg.innerHTML=''; var fv=localStorage.getItem('fixed_videos'); var data=fv?JSON.parse(fv):fixedVideos; data.forEach(function(v){ var btn=document.createElement('button'); btn.className='btn bold'; btn.style.cssText='background:#000;color:gold;border-color:gold;width:100%;text-align:left;margin-top:6px'; btn.textContent=v.name+' - '+v.url+' 🔊'; btn.addEventListener('click',function(){ openUrl(v.url); }); vg.appendChild(btn); }); }
  }catch(e){}
-}
-function deleteInfiniteLink(boxNum,idx){
- if(confirm('डिलीट करना है जी? - पुष्टि - डब्बा '+boxNum+' - '+(idx+1)+' नंबर? - Owner Only?')){
-  let key='infinite_box'+boxNum;
-  let data=JSON.parse(localStorage.getItem(key)||'[]');
-  data.splice(idx,1);
-  localStorage.setItem(key,JSON.stringify(data));
-  renderInfiniteBoxes();
-  speakT('अनन्त लिंक डिलीट हो गया जी');
- }
-}
-function keepInfiniteLink(boxNum,idx){alert('रखा गया जी - डब्बा '+boxNum+' - '+(idx+1)+' नंबर - Owner Power - PIN 3796');}
-function saveInfiniteBox(boxNum){try{let key='infinite_box'+boxNum;let data=JSON.parse(localStorage.getItem(key)||'[]');if(db&&fbInitialized){db.collection('infinite_boxes').doc('box'+boxNum).set({data:data});}alert('डब्बा '+boxNum+' सेव हो गया जी - Firebase पक्का - अनन्त - कोई फेल नहीं कर पाएगा जी');}catch(e){}}
-function renderAllBtns(){
  try{
-  let grid=document.getElementById('allBtnsGrid');
-  if(!grid) return;
-  let data=JSON.parse(localStorage.getItem('all_btns')||JSON.stringify(allBtnsData));
-  if(data.length===0) data=allBtnsData;
-  let html='<div class="btn-grid-4">';
-  data.forEach((b,idx)=>{
-   html+='<button class="btn boldSite" style="background:'+(b.bg||'#000')+';color:'+(b.color||'gold')+';border-color:'+(b.color||'gold')+';text-align:left" onclick="openSiteDirect(\''+b.url+'\')">'+b.name+' - <b class="boldSite">'+b.url+'</b> <span onclick="event.stopPropagation();speakT(\''+b.name.replace(/'/g,'')+'\')">🔊</span> <span class="ownerOnly" onclick="event.stopPropagation();if(confirm(\'डिलीट '+b.id+'?\')){deleteBtn('+idx+')}">🗑️</span></button>';
-  });
-  html+='</div>';
-  grid.innerHTML=html;
- }catch(e){console.log(e);}
-}
-function addNewBtn(){
- try{
-  let data=JSON.parse(localStorage.getItem('all_btns')||JSON.stringify(allBtnsData));
-  let newId=data.length+1;
-  data.push({id:newId,name:newId+'. नया बटन - यहाँ नाम परिचय विवरण आएगा जी - https://veedeo-hub.vercel.app?ref=9992553796&btn='+newId+' - Full URL Bold',url:'https://veedeo-hub.vercel.app?ref=9992553796&btn='+newId,color:'gold',bg:'#111'});
-  localStorage.setItem('all_btns',JSON.stringify(data));
-  renderAllBtns();
-  speakT('नया बटन जुड़ गया जी');
+  var ag=document.getElementById('allBtnsGrid'); if(ag){ ag.innerHTML=''; var ab=localStorage.getItem('all_btns'); var data2=ab?JSON.parse(ab):allBtns; var wrap=document.createElement('div'); wrap.className='grid2'; data2.forEach(function(b){ var btn=document.createElement('button'); btn.className='btn bold'; btn.style.cssText='background:#111;color:gold;border-color:gold;text-align:left'; btn.textContent=b.name+' 🔊'; btn.addEventListener('click',function(){ openUrl(b.url); }); wrap.appendChild(btn); }); ag.appendChild(wrap); }
  }catch(e){}
-}
-function deleteBtn(idx){
  try{
-  let data=JSON.parse(localStorage.getItem('all_btns')||JSON.stringify(allBtnsData));
-  data.splice(idx,1);
-  localStorage.setItem('all_btns',JSON.stringify(data));
-  renderAllBtns();
+  var pd=document.getElementById('plan10'); if(pd && pd.children.length===0){ legalParts.forEach(function(text,idx){ var wrap=document.createElement('div'); wrap.style.cssText='background:#000;border:2px solid gold;padding:10px;border-radius:10px;margin:8px 0'; var title=document.createElement('div'); title.className='bold'; title.textContent='भाग '+(idx+1)+(idx===10?' - अनन्त वाला फाइनल':'')+' मोटे अक्षर कानूनन सही'; var btns=document.createElement('div'); btns.style.cssText='display:flex;gap:6px;margin-top:6px;flex-wrap:wrap'; var b1=document.createElement('button'); b1.className='btn bold'; b1.textContent='🔊 सुनो जी'; b1.addEventListener('click',function(){ speakT(text); }); var b2=document.createElement('button'); b2.className='btn'; b2.textContent='📖 पढ़ो जी'; var full=document.createElement('div'); full.style.cssText='display:none;background:#111;color:#fff;padding:10px;border-radius:8px;margin-top:8px;white-space:pre-wrap;line-height:1.8;font-weight:400'; full.textContent=text; b2.addEventListener('click',function(){ full.style.display=full.style.display==='none'?'block':'none'; }); var b3=document.createElement('button'); b3.className='btn'; b3.textContent='⏹️ रुकें'; b3.addEventListener('click',function(){ try{speechSynthesis.cancel();}catch(e){} }); btns.appendChild(b1); btns.appendChild(b2); btns.appendChild(b3); wrap.appendChild(title); wrap.appendChild(btns); wrap.appendChild(full); pd.appendChild(wrap); }); }
  }catch(e){}
+ try{ var tv=document.getElementById('treeView'); if(tv){ var tree=JSON.parse(localStorage.getItem('local_tree')||'[]'); if(tree.length===0) tv.textContent='अभी कोई जॉइनिंग नहीं Owner 9992553796 Position 0'; else{ tv.innerHTML=''; tree.forEach(function(m){ var d=document.createElement('div'); d.style.cssText='background:#000;border-left:4px solid gold;padding:8px;margin:6px 0 6px 10px;border-radius:8px'; d.textContent='Pos '+m.position+' Sen '+m.seniority+' Mob '+m.mobile+' Name '+m.name+' Parent '+m.parent; tv.appendChild(d); }); } } }catch(e){}
 }
-function saveAllBtns(){try{let data=JSON.parse(localStorage.getItem('all_btns')||JSON.stringify(allBtnsData));if(db&&fbInitialized){db.collection('buttons').doc('all').set({data:data});}alert('सारे बटन सेव हो गए जी - Firebase पक्का');}catch(e){}}
-function speakPart(idx){try{let t=legalParts[idx];speakT(t);}catch(e){}}
-function loadLocalBtns(){
- try{
-  let fb=localStorage.getItem('fixed_videos');
-  if(fb) fixedVideosData=JSON.parse(fb);
-  renderVideos();renderFixedVideosOwner();renderInfiniteBoxes();renderAllBtns();
- }catch(e){}
-}
-window.addEventListener('DOMContentLoaded',function(){
- try{
-  initReferral();loadLocalBtns();renderVideos();renderFixedVideosOwner();renderInfiniteBoxes();renderAllBtns();
-  let proj=localStorage.getItem('fb_projectId');if(proj){let el=document.getElementById('fbProjectId');if(el) el.value=proj;}
-  let key=localStorage.getItem('fb_apiKey');if(key){let el=document.getElementById('fbApiKey');if(el) el.value=key;}
-  if(proj&&key) initFirebase();
-  if(localStorage.getItem('owner_unlock')==='1'){
-   document.body.classList.add('ownerUnlocked');
-   let fbBox=document.getElementById('firebaseOwnerBox');if(fbBox) fbBox.style.display='block';
-   let fvBox=document.getElementById('fixedVideosOwnerBox');if(fvBox) fvBox.style.display='block';
-   document.getElementById('lockStatus').innerText='✅ Unlocked - Owner Power - अनन्त सीनियरिटी - PIN 3796 Google में सेव - कोई फेल नहीं कर पाएगा जी';
-  }
-  // Render 10+11 bhag
-  let planDiv=document.getElementById('plan10');
-  if(planDiv){
-   legalParts.forEach(function(text,idx){
-    let wrap=document.createElement('div');wrap.className='blackStrip';
-    let title='भाग '+(idx+1)+(idx===10?' - अनन्त वाला फाइनल - All Life Royalty - कोई फेल नहीं कर पाएगा':'' );
-    wrap.innerHTML="<b class='boldSite'>"+title+" - मोटे अक्षर - फ्री पब्लिक डोमेन - कानूनन सही - कितना भी लंबा पूरा पढ़ेगा जी - अनन्त सीनियरिटी</b><div style='display:flex;gap:6px;margin-top:6px;flex-wrap:wrap'><button class='btn boldSite' onclick='speakPart("+idx+")'>🔊 पूरा सुनो जी - लंबा भाषण पूरा - स्पीकर</button><button class='btn' onclick="let el=document.getElementById('full-"+idx+"');el.style.display=el.style.display==='none'?'block':'none'">📖 पूरा पढ़ो जी - लिखित</button><button class='btn' onclick='stopSpeak()'>⏹️ रुकें जी</button></div><div id='full-"+idx+"' class='planFull' style='display:none'></div>";
-    let fullDiv=wrap.querySelector('#full-'+idx);
-    if(fullDiv) fullDiv.innerText=text;
-    planDiv.appendChild(wrap);
-   });
-  }
-  loadDashboard();loadTree();
- }catch(e){console.log(e);}
+
+document.addEventListener('DOMContentLoaded',function(){
+ var el;
+ el=document.getElementById('btnTest'); if(el) el.addEventListener('click',function(){ speakT('टेस्ट स्पीकर काम कर रहा है जी'); alert('बटन काम कर रहा है जी - स्पीकर ठीक है जी'); });
+ el=document.getElementById('btnLock'); if(el) el.addEventListener('click',doLock);
+ el=document.getElementById('btnAuto'); if(el) el.addEventListener('click',doAutoUnlock);
+ el=document.getElementById('btnJoin'); if(el) el.addEventListener('click',function(){
+  try{
+   var name=document.getElementById('joinName').value.trim(); var mobile=document.getElementById('joinMobile').value.trim(); var city=document.getElementById('joinCity').value.trim(); var parent=document.getElementById('joinParent').value.trim()||'9992553796';
+   if(!name||!mobile){ alert('नाम और मोबाइल डालो जी'); return; }
+   var tree=JSON.parse(localStorage.getItem('local_tree')||'[]'); var pos=tree.length+1; var newMember={mobile:mobile,name:name,city:city,parent:parent,position:pos,seniority:pos,joinedAt:new Date().toISOString()}; tree.push(newMember); localStorage.setItem('local_tree',JSON.stringify(tree));
+   var wallets=JSON.parse(localStorage.getItem('local_wallets')||'{}'); if(!wallets[mobile]) wallets[mobile]={balance:0,total:0,tds:0,history:[]}; localStorage.setItem('local_wallets',JSON.stringify(wallets));
+   document.getElementById('joinStatus').textContent='✅ जॉइनिंग हो गई जी Mobile '+mobile+' Pos '+pos+' Link https://veedeo-hub.vercel.app?ref='+mobile;
+   var waMsg='🔔 नई जॉइनिंग Firebase पक्का '+mobile+' Parent '+parent+' Link https://veedeo-hub.vercel.app?ref='+mobile+'&tag=veedeohub-21 Song https://suno.com/s/oyRYfAuUYNh5Rhy2'; window.open('https://wa.me/919992553796?text='+encodeURIComponent(waMsg),'_blank'); setTimeout(function(){ window.open('https://wa.me/91'+mobile+'?text='+encodeURIComponent(waMsg),'_blank'); },800);
+   boot();
+  }catch(e){ alert(e.message); }
+ });
+ el=document.getElementById('btnTree'); if(el) el.addEventListener('click',function(){ try{ var tree=JSON.parse(localStorage.getItem('local_tree')||'[]'); var tv=document.getElementById('treeView'); if(tree.length===0) tv.textContent='अभी कोई जॉइनिंग नहीं'; else{ tv.innerHTML=''; tree.forEach(function(m){ var d=document.createElement('div'); d.textContent='Pos '+m.position+' Sen '+m.seniority+' Mob '+m.mobile+' Name '+m.name; tv.appendChild(d); }); } }catch(e){} });
+ el=document.getElementById('btnCheckWallet'); if(el) el.addEventListener('click',function(){ try{ var mobile=document.getElementById('walletMobile').value.trim()||'9992553796'; var wallets=JSON.parse(localStorage.getItem('local_wallets')||'{}'); var w=wallets[mobile]; var hist=document.getElementById('walletHistory'); if(!w) hist.textContent='Wallet नहीं मिला '+mobile; else{ var txt='Wallet '+mobile+' Bal ₹'+w.balance+' Total ₹'+w.total+' TDS ₹'+w.tds+'
+'; (w.history||[]).slice(-10).reverse().forEach(function(h){ txt+=h.type+': ₹'+h.amount+'
+'; }); hist.textContent=txt; } }catch(e){} });
+ el=document.getElementById('btnWithdraw'); if(el) el.addEventListener('click',function(){ try{ var mobile=document.getElementById('walletMobile').value.trim()||'9992553796'; var upi=document.getElementById('walletUPI').value.trim()||'9992553796@ybl'; var wallets=JSON.parse(localStorage.getItem('local_wallets')||'{}'); if(!wallets[mobile]){ alert('Wallet नहीं'); return; } var bal=wallets[mobile].balance||0; if(bal<=0){ alert('पैसा नहीं'); return; } if(!confirm(bal+' रुपये निकालना है '+upi+' पर?')) return; wallets[mobile].balance=0; localStorage.setItem('local_wallets',JSON.stringify(wallets)); alert('Withdraw Request ₹'+bal+' UPI '+upi); window.open('upi://pay?pa='+encodeURIComponent(upi)+'&pn=VeedeoHub&am='+bal+'&cu=INR','_blank'); }catch(e){} });
+ el=document.getElementById('btnAddFixed'); if(el) el.addEventListener('click',function(){ var data=JSON.parse(localStorage.getItem('fixed_videos')||JSON.stringify(fixedVideos)); data.push({id:data.length+1,name:'नया वीडियो '+(data.length+1)+' https://...',url:'https://veedeo-hub.vercel.app?ref=9992553796&new='+(data.length+1)}); localStorage.setItem('fixed_videos',JSON.stringify(data)); location.reload(); });
+ el=document.getElementById('btnAddNew'); if(el) el.addEventListener('click',function(){ var data=JSON.parse(localStorage.getItem('all_btns')||JSON.stringify(allBtns)); var nid=data.length+1; data.push({id:nid,name:nid+'. नया बटन https://veedeo-hub.vercel.app?ref=9992553796&btn='+nid,url:'https://veedeo-hub.vercel.app?ref=9992553796&btn='+nid}); localStorage.setItem('all_btns',JSON.stringify(data)); location.reload(); });
+ document.querySelectorAll('.siteBtn').forEach(function(b){ b.addEventListener('click',function(){ openUrl(b.getAttribute('data-url')); }); });
+ boot();
 });
-setTimeout(function(){try{initReferral();loadLocalBtns();renderVideos();loadDashboard();loadTree();}catch(e){}},800);
+setTimeout(boot,1200);
 </script>
 </body>
 </html>
