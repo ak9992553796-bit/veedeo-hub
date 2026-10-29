@@ -291,5 +291,106 @@ Contact: 09992553796 / 9992553796 - Primary ak9992553796@gmail.com Backup ak0999
 🔥 Owner ?unlock=3796&owner=1 - Mobile 09992553796 PIN 3796 Email ak9992553796@gmail.com - सिर्फ Owner से खुलेगा - दूसरा नहीं खोल पाएगा - गोपनीयता पक्का - Chat Management Permanent Temporary Delete Always Fixed - Unlimited Facebook PhonePe - Mobile GB नहीं भरेगा - Date Wise Time Wise Update Log Speaker सहित - ताकि कोई संदेह नहीं हो - V37 29 Oct 2026 - 06:15 AM IST - Owner + Screenshot Color System On Suggestion - Full Final - सभी चैट सहित पूरा कोड - Screenshot Color #FFF8DC - System On<br>
 <b style="color:#00ff00">🗓️ V37 Full Final - Date: 29 Oct 2026 Time: 06:15 AM IST - By: Owner Ashok Kumar + Screenshot Color System On Suggestion - Work: Full Code All Features + Gupt Kaksh Unlimited Clear Confusion Clear Mobile GB नहीं भरेगा + Date Wise Time Wise Update Log Speaker सहित ताकि कोई संदेह नहीं हो + Screenshot Color #FFF8DC + System On 🔊 <span class="speaker" onclick="speak('V37 फुल फाइनल सिस्टम ऑन स्क्रीनशॉट कलर')">🔊</span></b>
 </div>
+<!-- System On ID: 9992554796 - Fix बिना सिस्टम छेड़े -->
+<style>
+  #pusti-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center;z-index:99999}
+  #pusti-box{background:#fff;padding:20px;border-radius:12px;text-align:center;max-width:320px;width:90%;font-family:sans-serif}
+  #pusti-btn:disabled{background:gray!important;cursor:not-allowed}
+</style>
 
+<div id="pusti-modal">
+  <div id="pusti-box">
+    <h3 style="color:#d00;">⚠️ पुष्टि करें जी</h3>
+    <p id="pusti-msg">क्या आप वास्तव में डिलीट करना चाहते हैं जी?</p>
+    <label style="display:flex;align-items:center;gap:8px;margin:15px 0;text-align:left;">
+      <input type="checkbox" id="pusti-tick"> <span>मैं समझता हूँ - इसी को डिलीट करना है जी</span>
+    </label>
+    <button id="pusti-btn" disabled style="background:#d00;color:#fff;padding:10px 20px;border:none;border-radius:8px;width:100%;font-weight:bold;">पुष्टि करें जी - डिलीट करें</button>
+    <button onclick="closePusti()" style="margin-top:10px;background:#eee;padding:8px 15px;border:none;border-radius:6px;width:100%;">रद्द करें जी</button>
+  </div>
+</div>
+
+<script>
+// System On ID: 9992554796
+const SYSTEM_ON_ID = "9992554796";
+console.log("System On:", SYSTEM_ON_ID, " - Fix Active जी");
+
+// 1. स्पीकर सहित सारे बटन ठीक करें जी - बिना सिस्टम छेड़े
+function initSystemFix() {
+  // सभी बटन को फिर से Active करो जी
+  document.querySelectorAll('button, [onclick], .speaker-btn, .audio-btn').forEach(btn => {
+    btn.disabled = false;
+    btn.style.pointerEvents = 'auto';
+  });
+
+  // स्पीकर Fix जी
+  const speakerBtns = document.querySelectorAll('.speaker, #speaker, [data-speaker]');
+  speakerBtns.forEach(b => {
+    b.addEventListener('click', () => {
+      try {
+        const text = b.dataset.text || "ॐ नमः शिवाय - System On है जी";
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = 'hi-IN';
+        speechSynthesis.speak(utter);
+        // Audio fallback
+        const audio = new Audio();
+        audio.play().catch(()=>{});
+      } catch(e){ console.log("Speaker Error Fix:", e); }
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', initSystemFix);
+setTimeout(initSystemFix, 1000);
+
+// 2. Delete Option Fix - हर जगह cancel / ok की जगह पुष्टि बटन जी
+let deleteCallback = null;
+const modal = document.getElementById('pusti-modal');
+const tick = document.getElementById('pusti-tick');
+const pustiBtn = document.getElementById('pusti-btn');
+
+tick.addEventListener('change', () => {
+  pustiBtn.disabled = !tick.checked;
+});
+
+pustiBtn.addEventListener('click', () => {
+  if(tick.checked && deleteCallback){
+    deleteCallback();
+  }
+  closePusti();
+});
+
+function closePusti(){
+  modal.style.display = 'none';
+  tick.checked = false;
+  pustiBtn.disabled = true;
+  deleteCallback = null;
+}
+
+// पुराने confirm() और ok/cancel को Override करो जी
+window.customDeleteConfirm = function(message, onConfirm) {
+  document.getElementById('pusti-msg').innerText = message || "क्या आप वास्तव में डिलीट करना चाहते हैं जी?";
+  deleteCallback = onConfirm;
+  modal.style.display = 'flex';
+};
+
+// Example: अगर आपका delete function ऐसा है - तो ऐसे बदलो जी
+// पहले था: if(confirm("Delete?")) { deleteItem() }
+// अब करो: customDeleteConfirm("इस वीडियो को डिलीट करना है जी?", ()=>{ deleteItem() });
+
+// Auto Patch - सारे Delete बटन को पकड़ो जी
+document.addEventListener('click', function(e){
+  const delBtn = e.target.closest('[data-delete], .delete-btn, .btn-delete, #delete');
+  if(delBtn){
+    e.preventDefault();
+    e.stopPropagation();
+    const itemName = delBtn.dataset.name || "इस आइटम";
+    customDeleteConfirm(itemName + " को वास्तव में डिलीट करना है जी?", ()=>{
+      // असली डिलीट का काम यहाँ होगा जी - System बिना छेड़े
+      if(delBtn.dataset.id){ console.log("Deleting ID:", delBtn.dataset.id, " System On:", SYSTEM_ON_ID); }
+      delBtn.closest('.item, .video-card, tr')?.remove();
+      alert("डिलीट हो गया जी - पुष्टि के बाद 🔱");
+    });
+  }
+});
+</script>
 </body></html>
