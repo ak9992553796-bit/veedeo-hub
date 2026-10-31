@@ -26,12 +26,12 @@ console.log("Core Fixed - ID 9992553796 - Data Safe - Firebase Unlimited");
 
 <!-- AdSense Head में सबसे ऊपर ही रहेगा -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922664797100594" crossorigin="anonymous"></script>
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VeedeoHub V70 FINAL CORRECT - Golden Sentences Added - ID:9992553796 ✓</title>
+<title>VeedeoHub V71 FINAL CORRECT - Golden Sentences Added - ID:9992553796 ✓</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922664797100594" crossorigin="anonymous">
 const AMAZON_BEST_SELLERS = [
   {name: "Amazon B0GZB61NNR - आयुर्वेद बुक - Best Seller 1", url: "https://www.amazon.in/dp/B0GZB61NNR?ref=9992553796&tag=veedeohub-21"},
@@ -48,71 +48,63 @@ function rotateAmazonLinks(){
   let el=document.getElementById("rotating_links_live");
   if(!el) return;
   let p=AMAZON_BEST_SELLERS[amazonIdx];
-  el.innerHTML=`<span class="gold bold">🔄 चलता घूमता - Google Circle + Server - Amazon Only - ${amazonIdx+1}/8</span><br><span class="white bold no-copy">📌 ${p.name} - ${p.url} - ID:9992553796 ✓ सही - tag=veedeohub-21 - ref=9992553796 - घूम रहा है जी - ऑनलाइन टैग बारी बारी से - कमीशन पक्का</span>`;
+  el.innerHTML=`<span class="gold bold">🔄 चलता घूमता - Google Circle + Server - Amazon Only - ${amazonIdx+1}/8</span><br><span class="white bold">📌 ${p.name} - ${p.url} - ID:9992553796 ✓ सही - tag=veedeohub-21 - ref=9992553796 - घूम रहा है जी - ऑनलाइन टैग बारी बारी से - कमीशन पक्का</span>`;
   amazonIdx=(amazonIdx+1)%AMAZON_BEST_SELLERS.length;
 }
 setInterval(rotateAmazonLinks, 3000);
 rotateAmazonLinks();
 
 
-// Fix for FB in-app browser - speaker and site stop issue
+// V71 FIX - FB in-app browser - speaker and site stop - non-breaking
 (function(){
-  let isFB = /FBAN|FBAV|FB_IAB|FB4A/i.test(navigator.userAgent);
-  if(isFB){
-    console.log('FB in-app browser detected - applying fixes जी');
-    // Ensure speechSynthesis works only on user gesture
-    let originalSpeak = window.speak;
-    window.speak = function(t){
-      try{
-        t=t.replace(/https?:\/\/[^\s]+/g,"").replace(/www\.[^\s]+/g,"");
-        if('speechSynthesis' in window){
-          // FB requires user gesture - speech will work only after user taps
-          let u=new SpeechSynthesisUtterance(t);
-          u.lang='hi-IN';
-          // Resume if paused (FB often pauses)
-          if(speechSynthesis.paused) speechSynthesis.resume();
-          speechSynthesis.speak(u);
-        }
-      }catch(e){ console.log('Speak error in FB', e); }
-    };
-  }
-  // Ensure site doesn't stop - catch errors in render
-  window.addEventListener('error', function(e){
-    console.log('Site error caught - continuing जी', e.message);
-    e.preventDefault();
-    return true;
-  });
-  // Ensure localStorage works in FB (sometimes blocked)
   try{
-    localStorage.setItem('test','1');
-    localStorage.removeItem('test');
-  }catch(e){
-    console.log('localStorage blocked in FB - using memory fallback जी');
-    window._memoryStorage = {};
-    window.localStorage = {
-      getItem: (k)=> window._memoryStorage[k] || null,
-      setItem: (k,v)=> { window._memoryStorage[k]=v; },
-      removeItem: (k)=> { delete window._memoryStorage[k]; }
-    };
-  }
+    let isFB = /FBAN|FBAV|FB_IAB|FB4A|FBAN\/Messenger/i.test(navigator.userAgent);
+    if(isFB){
+      console.log('FB detected - applying safe fixes');
+      // Ensure localStorage doesn't throw
+      try{ localStorage.setItem('_test','1'); localStorage.removeItem('_test'); }catch(e){
+        window._memStore={};
+        let origLocalStorage = window.localStorage;
+        try{
+          Object.defineProperty(window,'localStorage',{value:{
+            getItem:(k)=>window._memStore[k]||null,
+            setItem:(k,v)=>{window._memStore[k]=String(v);},
+            removeItem:(k)=>{delete window._memStore[k];},
+            clear:()=>{window._memStore={};}
+          },writable:true});
+        }catch(e){}
+      }
+      // Unlock speech on first user interaction
+      let speechUnlocked=false;
+      function unlockSpeech(){
+        if(speechUnlocked) return;
+        try{
+          if('speechSynthesis' in window){
+            speechSynthesis.cancel();
+            let u=new SpeechSynthesisUtterance('');
+            u.volume=0;
+            speechSynthesis.speak(u);
+            speechUnlocked=true;
+          }
+        }catch(e){}
+        document.removeEventListener('touchstart',unlockSpeech);
+        document.removeEventListener('click',unlockSpeech);
+      }
+      document.addEventListener('touchstart',unlockSpeech,{once:true});
+      document.addEventListener('click',unlockSpeech,{once:true});
+    }
+    window.addEventListener('error',function(e){
+      console.log('Caught error, continuing:',e.message);
+    });
+  }catch(e){ console.log('FB fix error',e); }
 })();
-
-
-document.addEventListener('click', function enableSpeech(){
-  if('speechSynthesis' in window){
-    let u=new SpeechSynthesisUtterance('');
-    speechSynthesis.speak(u);
-    speechSynthesis.cancel();
-  }
-  document.removeEventListener('click', enableSpeech);
-}, {once: true});
 
 </script>
 <script id="VEEDO-CORE-FIXED-V58-9992553796">
 const VEEDO_OWNER_ID="9992553796";
 const VEEDO_CORE_VERSION="V58-CORE-FIXED-ALL-LIFE";
 const COLL={
- users:"veedeo_users_v68",
+ users:"veedeo_users_v71",
  tree:"veedeo_tree_v59",
  wallet:"veedeo_wallet_history_v59",
  tds:"veedeo_tds_v59",
@@ -142,64 +134,56 @@ function rotateAmazonLinks(){
   let el=document.getElementById("rotating_links_live");
   if(!el) return;
   let p=AMAZON_BEST_SELLERS[amazonIdx];
-  el.innerHTML=`<span class="gold bold">🔄 चलता घूमता - Google Circle + Server - Amazon Only - ${amazonIdx+1}/8</span><br><span class="white bold no-copy">📌 ${p.name} - ${p.url} - ID:9992553796 ✓ सही - tag=veedeohub-21 - ref=9992553796 - घूम रहा है जी - ऑनलाइन टैग बारी बारी से - कमीशन पक्का</span>`;
+  el.innerHTML=`<span class="gold bold">🔄 चलता घूमता - Google Circle + Server - Amazon Only - ${amazonIdx+1}/8</span><br><span class="white bold">📌 ${p.name} - ${p.url} - ID:9992553796 ✓ सही - tag=veedeohub-21 - ref=9992553796 - घूम रहा है जी - ऑनलाइन टैग बारी बारी से - कमीशन पक्का</span>`;
   amazonIdx=(amazonIdx+1)%AMAZON_BEST_SELLERS.length;
 }
 setInterval(rotateAmazonLinks, 3000);
 rotateAmazonLinks();
 
 
-// Fix for FB in-app browser - speaker and site stop issue
+// V71 FIX - FB in-app browser - speaker and site stop - non-breaking
 (function(){
-  let isFB = /FBAN|FBAV|FB_IAB|FB4A/i.test(navigator.userAgent);
-  if(isFB){
-    console.log('FB in-app browser detected - applying fixes जी');
-    // Ensure speechSynthesis works only on user gesture
-    let originalSpeak = window.speak;
-    window.speak = function(t){
-      try{
-        t=t.replace(/https?:\/\/[^\s]+/g,"").replace(/www\.[^\s]+/g,"");
-        if('speechSynthesis' in window){
-          // FB requires user gesture - speech will work only after user taps
-          let u=new SpeechSynthesisUtterance(t);
-          u.lang='hi-IN';
-          // Resume if paused (FB often pauses)
-          if(speechSynthesis.paused) speechSynthesis.resume();
-          speechSynthesis.speak(u);
-        }
-      }catch(e){ console.log('Speak error in FB', e); }
-    };
-  }
-  // Ensure site doesn't stop - catch errors in render
-  window.addEventListener('error', function(e){
-    console.log('Site error caught - continuing जी', e.message);
-    e.preventDefault();
-    return true;
-  });
-  // Ensure localStorage works in FB (sometimes blocked)
   try{
-    localStorage.setItem('test','1');
-    localStorage.removeItem('test');
-  }catch(e){
-    console.log('localStorage blocked in FB - using memory fallback जी');
-    window._memoryStorage = {};
-    window.localStorage = {
-      getItem: (k)=> window._memoryStorage[k] || null,
-      setItem: (k,v)=> { window._memoryStorage[k]=v; },
-      removeItem: (k)=> { delete window._memoryStorage[k]; }
-    };
-  }
+    let isFB = /FBAN|FBAV|FB_IAB|FB4A|FBAN\/Messenger/i.test(navigator.userAgent);
+    if(isFB){
+      console.log('FB detected - applying safe fixes');
+      // Ensure localStorage doesn't throw
+      try{ localStorage.setItem('_test','1'); localStorage.removeItem('_test'); }catch(e){
+        window._memStore={};
+        let origLocalStorage = window.localStorage;
+        try{
+          Object.defineProperty(window,'localStorage',{value:{
+            getItem:(k)=>window._memStore[k]||null,
+            setItem:(k,v)=>{window._memStore[k]=String(v);},
+            removeItem:(k)=>{delete window._memStore[k];},
+            clear:()=>{window._memStore={};}
+          },writable:true});
+        }catch(e){}
+      }
+      // Unlock speech on first user interaction
+      let speechUnlocked=false;
+      function unlockSpeech(){
+        if(speechUnlocked) return;
+        try{
+          if('speechSynthesis' in window){
+            speechSynthesis.cancel();
+            let u=new SpeechSynthesisUtterance('');
+            u.volume=0;
+            speechSynthesis.speak(u);
+            speechUnlocked=true;
+          }
+        }catch(e){}
+        document.removeEventListener('touchstart',unlockSpeech);
+        document.removeEventListener('click',unlockSpeech);
+      }
+      document.addEventListener('touchstart',unlockSpeech,{once:true});
+      document.addEventListener('click',unlockSpeech,{once:true});
+    }
+    window.addEventListener('error',function(e){
+      console.log('Caught error, continuing:',e.message);
+    });
+  }catch(e){ console.log('FB fix error',e); }
 })();
-
-
-document.addEventListener('click', function enableSpeech(){
-  if('speechSynthesis' in window){
-    let u=new SpeechSynthesisUtterance('');
-    speechSynthesis.speak(u);
-    speechSynthesis.cancel();
-  }
-  document.removeEventListener('click', enableSpeech);
-}, {once: true});
 
 </script>
 <style>
@@ -224,7 +208,7 @@ input,textarea,select{font-weight:900;padding:12px;width:95%;margin:6px 0;border
 @keyframes circleRotate {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
 @keyframes marquee {0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
 .rotate-circle{animation:circleRotate 20s linear infinite;}
-</style>
+.no-copy-link{user-select:none;-webkit-user-select:none;} .btn-url-hidden{display:none !important;} .btn-card{user-select:none;-webkit-user-select:none;} .btn-card button{user-select:none; pointer-events:auto;} </style>
 </head>
 <body>
 
@@ -237,26 +221,26 @@ input,textarea,select{font-weight:900;padding:12px;width:95%;margin:6px 0;border
 <input id="j_city" placeholder="शहर लिखो जी - Joining Form Top पर है जी">
 <input id="j_mobile" placeholder="Mobile Wallet ID - 9992553796 ✓ - यही Referral Code">
 <button onclick="doJoin()" style="background:gold;color:#000;width:100%;font-size:18px;">Join करो जी 🔊 फ्री - सुरक्षित क्लाउड पर पक्का सेव</button>
-<p id="ref_link" class="white bold no-copy" style="word-break:break-all;">Link बनेगा जी: https://veedeo-hub.vercel.app?ref=Mobile&tag=veedeohub-21</p>
+<p id="ref_link" class="white bold" style="word-break:break-all;">Link बनेगा जी: https://veedeo-hub.vercel.app?ref=Mobile&tag=veedeohub-21</p>
 <button onclick="speak('All Life Veedeohub में फ्री जॉइनिंग करें जी। आदतें ही जीवन का आधार हैं। अच्छी या बुरी आदतें सोच पर निर्भर हैं, इसलिए हमेशा सकारात्मक रहें जी। अब आप इस संदेश के बारे में अपने आप से सवाल पूछ सकते हैं जी की आपको क्या चाहिए और क्या करना है। आदतें ही जीवन का आधार हैं। सकारात्मक सोच बनाए रखें जी। आपका Mobile ही ID है, Wallet है, Referral Code है जी - 9992553796 सही वाला ही। बिना पैसे के शुरुआत, सिर्फ मेहनत से सहारा जी, All Life Free।')" class="speaker">🔊 सुनो जी</button>
 </div>
 
 <div class="floor">
 <h2 class="gold">📊 DASHBOARD - कुल कमीशन - TDS - शेष - पेंडिंग - पेड - सुरक्षित क्लाउड से पक्का</h2>
-<div id="dash" class="white bold no-copy">कुल कमीशन ₹0 | TDS 10% ₹0 | शेष ₹0 | 0 Pending / 0 Confirm - कोई रिकॉर्ड खत्म नहीं होगा - Firebase veedeo_users_v68 - Dashboard पूरा विवरण - Mobile ही ID Wallet Referral है जी</div>
+<div id="dash" class="white bold">कुल कमीशन ₹0 | TDS 10% ₹0 | शेष ₹0 | 0 Pending / 0 Confirm - कोई रिकॉर्ड खत्म नहीं होगा - Firebase veedeo_users_v71 - Dashboard पूरा विवरण - Mobile ही ID Wallet Referral है जी</div>
 <button onclick="speak(document.getElementById('dash').innerText)" class="speaker">🔊 Dashboard पूरा विवरण सुनो जी - पीला बटन</button>
 <h2 class="gold">🌳 SINGLE LINE TREE - सबसे नीचे वाला ही अगला जोड़ेगा - सबसे नीचे जॉइनिंग</h2>
-<div id="tree" class="white bold no-copy">Tree खाली - फॉर्म से जॉइन करो जी - Single Line में सबसे नीचे जुड़ेगा - सबसे नीचे वाला ही अगला जोड़ेगा - Firebase veedeo_tree_v59 - 1000 बार कोड बदलो तब भी Safe - Tree पूरा विवरण</div>
+<div id="tree" class="white bold">Tree खाली - फॉर्म से जॉइन करो जी - Single Line में सबसे नीचे जुड़ेगा - सबसे नीचे वाला ही अगला जोड़ेगा - Firebase veedeo_tree_v59 - 1000 बार कोड बदलो तब भी Safe - Tree पूरा विवरण</div>
 <button onclick="speak(document.getElementById('tree').innerText)" class="speaker2">🔊 Tree पूरा विवरण सुनो जी - हरा बटन</button>
 <h2 class="gold">💳 WALLET + TDS + यू पी आई (UPI) - ऑटोमैटिक जमा / निकासी - रिकॉर्डेड पेज बनता रहेगा - पूरा विवरण</h2>
 <div id="wallet_log" class="white">Wallet Auto Record: यू पी आई (UPI) 9992553796@ybl - जमा होना और निकालना रिकॉर्डेड पेज बनता रहेगा - veedeo_wallet_history_v59 - Wallet पूरा विवरण - यू पी आई (UPI) द्वारा ऑटोमैटिक पैसे निकालने और हरेक का उसके वॉलेट में पैसा जमा होने का Option ऑटोमैटिक बनता है जी और उसमें पैसे जमा होना और निकालना का रिकॉर्डेड पेज भी बनता रहे जी - TDS 10% सरकारी नियम - veedeo_tds_v59 में पक्का सेव</div>
 <div id="tds_log" class="white">TDS Record: veedeo_tds_v59 - सरकारी नियम 10% - TDS कटेगा - पक्का सेव - TDS पूरा विवरण - Dashboard में कुल कमीशन TDS शेष Pending Paid सब दिखेगा जी - Wallet Mobile ही है यू पी आई (UPI) 9992553796@ybl - पैसा भेजो और पैसा निकालो दोनों में टिक + पुष्टि अंदर ही Browser OK Cancel नहीं - यू पी आई (UPI) द्वारा ऑटोमैटिक पैसे निकालने और वॉलेट में जमा होने का Option ऑटोमैटिक बनता है जी और रिकॉर्डेड पेज बनता रहेगा</div>
-<div class="white bold no-copy">
+<div class="white bold">
 <button onclick="autoCredit()" style="background:gold;color:#000;">💰 Auto Credit - हरेक के Wallet में जमा - यू पी आई (UPI) से - ऑटोमैटिक - पूरा विवरण सुनो</button>
 <button onclick="autoWithdraw()" style="background:#00FF7F;color:#000;">💸 Auto Withdraw - 20/60/100 पर - यू पी आई (UPI) 9992553796@ybl - ऑटोमैटिक - पूरा विवरण</button>
 <button onclick="showWalletHistory()" style="background:#fff;color:#000;">📜 Wallet History दिखाओ जी - पूरा रिकॉर्ड - सफेद बटन</button>
 </div>
-<div id="wallet_auto_log" class="white bold no-copy">Wallet Auto Log: अभी कोई जमा निकासी नहीं - Firebase Unlimited - Wallet Auto Record पूरा विवरण - जमा होना और निकालना रिकॉर्डेड पेज बनता रहेगा</div>
+<div id="wallet_auto_log" class="white bold">Wallet Auto Log: अभी कोई जमा निकासी नहीं - Firebase Unlimited - Wallet Auto Record पूरा विवरण - जमा होना और निकालना रिकॉर्डेड पेज बनता रहेगा</div>
 <button onclick="speak(document.getElementById('wallet_log').innerText + ' ' + document.getElementById('tds_log').innerText + ' ' + document.getElementById('wallet_auto_log').innerText)" class="speaker">🔊 Wallet TDS यू पी आई (UPI) पूरा विवरण सुनो जी - पीला बटन</button>
 </div>
 
@@ -306,15 +290,15 @@ input,textarea,select{font-weight:900;padding:12px;width:95%;margin:6px 0;border
 </div>
 </div>
 </div>
-<p class="white bold no-copy">Server: Firebase veedeo_users_v68 + Vercel + Netlify + GitHub - सब पर ref=Mobile - Amazon पर ही tag=veedeohub-21 ऑनलाइन टैग बारी बारी से सभी अधिक बिकने वाले प्रोडक्ट्स पर लगता रहेगा जी - कुछ दिनों में सारे प्रोडक्ट्स कवर - कमीशन पक्का - Amazon Best Sellers - https://www.amazon.in/dp/B0GZB61NNR?ref=9992553796&tag=veedeohub-21 - ID:9992553796 ✓ - tag=veedeohub-21 - Amazon पर ही ऑनलाइन टैग - बारी बारी से - घूमता चलता - Google Circle ब्राउज़र पर घूमता, Server पर चलता घूमता - पहले की भाँति पक्का</p>
+<p class="white bold">Server: Firebase veedeo_users_v71 + Vercel + Netlify + GitHub - सब पर ref=Mobile - Amazon पर ही tag=veedeohub-21 ऑनलाइन टैग बारी बारी से सभी अधिक बिकने वाले प्रोडक्ट्स पर लगता रहेगा जी - कुछ दिनों में सारे प्रोडक्ट्स कवर - कमीशन पक्का - Amazon Best Sellers - https://www.amazon.in/dp/B0GZB61NNR?ref=9992553796&tag=veedeohub-21 - ID:9992553796 ✓ - tag=veedeohub-21 - Amazon पर ही ऑनलाइन टैग - बारी बारी से - घूमता चलता - Google Circle ब्राउज़र पर घूमता, Server पर चलता घूमता - पहले की भाँति पक्का</p>
 
-<div id="rotating_links_live" class="white bold no-copy" style="background:#000;border:2px dashed gold;padding:8px;border-radius:10px;word-break:break-all;">Loading घूमता Link जी... पूरा विवरण - ID 9992553796 ✓ सही</div>
+<div id="rotating_links_live" class="white bold" style="background:#000;border:2px dashed gold;padding:8px;border-radius:10px;word-break:break-all;">Loading घूमता Link जी... पूरा विवरण - ID 9992553796 ✓ सही</div>
 <button onclick="speak('Google Circle और Server पर Tag Referral Affiliate Link चलता घूमता है जी - Amazon Best Sellers - Amazon Book B0GZB61NNR - सभी अधिक बिकने वाले प्रोडक्ट्स पर ऑनलाइन टैग बारी बारी से - कुछ दिनों में सारे कवर - कमीशन पक्का - सिर्फ Amazon पर tag veedeohub-21 - ID 9992553796 सही - ref Mobile और tag veedeohub-21 घूमता है जी - पहले की भाँति पक्का - पूरा विवरण')" class="speaker">🔊 Google Circle घूमता पूरा विवरण सुनो जी - पीला बटन</button>
 <button onclick="window.open(document.getElementById('rotating_links_live').innerText.split('🔗 ')[1]||'https://veedeo-hub.vercel.app?ref=9992553796&tag=veedeohub-21','_blank')" style="background:gold;color:#000;width:100%;">🛒 अभी घूमता Link खोलो जी - पीला - पूरा विवरण के साथ</button>
 </div>
 </div>
 <div style="text-align:center;margin-top:12px;">
-<div class="white bold no-copy">Google Circle = ब्राउज़र पर घूमता पूरा विवरण | Server = Firebase Vercel Netlify GitHub पर ref=9992553796&tag=veedeohub-21 चलता घूमता पूरा विवरण - पहले की भाँति पक्का</div>
+<div class="white bold">Google Circle = ब्राउज़र पर घूमता पूरा विवरण | Server = Firebase Vercel Netlify GitHub पर ref=9992553796&tag=veedeohub-21 चलता घूमता पूरा विवरण - पहले की भाँति पक्का</div>
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:8px;">
 <button onclick="window.open('https://fktr.in/7XvA2Sp?ref='+getRef()+'','_blank')" style="background:gold;color:#000;">🔗 Flipkart चलता पूरा विवरण</button>
 <button onclick="window.open('https://www.amazon.in/dp/B0GZB61NNR?ref='+getRef()+'&tag=veedeohub-21','_blank')" style="background:#00FF7F;color:#000;">🛒 Amazon चलता पूरा विवरण</button>
@@ -334,7 +318,7 @@ input,textarea,select{font-weight:900;padding:12px;width:95%;margin:6px 0;border
 <div id="btnContainer"></div>
 <div style="text-align:center;background:#111;padding:12px;border-radius:12px;border:2px solid gold;">
 <button class="page-btn" onclick="prevPage()">⬅️ पीछे - 10 बटन पहले - पीला - पूरा विवरण</button>
-<span id="pageInfo" class="white bold no-copy" style="font-size:18px;">1-10 / 54 - पेजिनेशन 10-10 - सभी स्पीकर पूरा विवरण बोलेंगे जी</span>
+<span id="pageInfo" class="white bold" style="font-size:18px;">1-10 / 54 - पेजिनेशन 10-10 - सभी स्पीकर पूरा विवरण बोलेंगे जी</span>
 <button class="page-btn2" onclick="nextPage()">आगे - 10 बटन बाद - हरा - पूरा विवरण ➡️</button>
 <br>
 <button onclick="showAllButtons()" style="background:#FF69B4;color:#fff;font-size:16px;">📜 सारे 54 बटन स्क्रॉल से दिखाओ जी - बिना पेजिनेशन - स्क्रॉल वाला Option - पूरा विवरण</button>
@@ -353,7 +337,7 @@ input,textarea,select{font-weight:900;padding:12px;width:95%;margin:6px 0;border
 <div class="gold bold" style="font-size:20px;">📝 ब्लॉग 1: आदतें ही जीवन का आधार हैं - VeedeoHub All Life Free System - ID:9992553796 ✓ - पूरा विवरण</div>
 <div class="white" style="font-size:12px;">Date: 31 Oct 2026 | Author: Ashok Kumar Ex Maruti 141003 S/o Dr B L Rao | Category: Motivation + Affiliate Business | Tag: veedeohub-21 | Ref: 9992553796 | पूरा विवरण</div>
 <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=360" class="thumb">
-<p class="white bold no-copy">नमस्ते जी, मैं Ashok Kumar, Mohammad Pur Ahir, Tauru, Nuh, Haryana 122105 से जी। आज मैं आपको बताऊंगा जी कि आदतें ही जीवन का आधार हैं जी - पूरा विवरण।</p>
+<p class="white bold">नमस्ते जी, मैं Ashok Kumar, Mohammad Pur Ahir, Tauru, Nuh, Haryana 122105 से जी। आज मैं आपको बताऊंगा जी कि आदतें ही जीवन का आधार हैं जी - पूरा विवरण।</p>
 <p class="white">
 All Life Veedeohub में फ्री जॉइनिंग करें जी - Mobile = ID = Wallet = Referral - 9992553796 ✓ ही सही है जी। ये All Life Free Domain है जी, Public Domain Free, No Copyright।<br><br>
 <b>भाग 1: अच्छी आदतें क्या हैं जी? - पूरा विवरण:</b> रोज सुबह 5 बजे उठना, सकारात्मक सोचना, अपने आप से सवाल पूछना - आज मैं कौन सी अच्छी आदत डालूंगा जी?<br><br>
@@ -386,7 +370,7 @@ All Life Veedeohub में फ्री जॉइनिंग करें ज
 <input id="admin_name_top" placeholder="Admin नाम - जैसे Ashok Kumar - पूरा विवरण"><input id="admin_mobile_top" placeholder="Admin Mobile - जैसे 9992553796 - पूरा विवरण"><input id="admin_city_top" placeholder="Admin शहर - जैसे Tauru - पूरा विवरण">
 <input id="nominee_name_top" placeholder="Nominee नाम - पूरा विवरण"><input id="nominee_mobile_top" placeholder="Nominee Mobile - पूरा विवरण"><input id="nominee_city_top" placeholder="Nominee शहर - पूरा विवरण">
 <button onclick="saveAdminNomineeTop()" style="background:gold;color:#000;width:100%;">💾 Admin Nominee सेव - नाम Mobile शहर से ही रहेगा जी - पूरा विवरण बोलेगा</button>
-<div id="admin_display_top" class="white bold no-copy">Admin Nominee - अभी खाली - नाम Mobile शहर से ही रहेगा जी - सभी स्पीकर पूरा विवरण बोलेंगे जी</div>
+<div id="admin_display_top" class="white bold">Admin Nominee - अभी खाली - नाम Mobile शहर से ही रहेगा जी - सभी स्पीकर पूरा विवरण बोलेंगे जी</div>
 <button onclick="speak(document.getElementById('admin_display_top').innerText)" class="speaker">🔊 Admin Nominee पूरा विवरण सुनो जी</button>
 </div>
 
@@ -399,7 +383,7 @@ All Life Veedeohub में फ्री जॉइनिंग करें ज
 
 <div id="sudhar_kaksh" style="background:#111;border:4px solid gold;padding:14px;margin:14px;border-radius:14px;">
 <h2 class="gold">🔐 सुधार कक्ष - Owner Antaryami Private - ID:9992553796 - PIN 3796 - सभी स्पीकर पूरा विवरण बोलेंगे जी - रंगीन बटन सहित</h2>
-<p class="white bold no-copy">Mobile 9992553796 + PIN 3796 + Email ak9992553796@gmail.com तीनों सही तभी खुलेगा जी - Pexels Key ENV में - Pixabay पेंडिंग - सभी स्पीकर पूरा विवरण बोलेंगे जी</p>
+<p class="white bold">Mobile 9992553796 + PIN 3796 + Email ak9992553796@gmail.com तीनों सही तभी खुलेगा जी - Pexels Key ENV में - Pixabay पेंडिंग - सभी स्पीकर पूरा विवरण बोलेंगे जी</p>
 <input id="s_mobile" placeholder="Mobile 9992553796 डालो जी - पूरा विवरण"><input id="s_pin" placeholder="PIN 3796 डालो जी - पूरा विवरण" type="password"><input id="s_email" placeholder="Email ak9992553796@gmail.com डालो जी - पूरा विवरण">
 <button onclick="openSudhar()" style="background:gold;color:#000;width:100%;font-size:18px;">🔓 सुधार कक्ष खोलो जी - पीला बटन - पूरा विवरण बोलेगा</button>
 <div id="sudhar_content" style="display:none;background:#fff;color:#000;padding:14px;border-radius:12px;margin-top:14px;" class="bold">
@@ -437,14 +421,14 @@ All Life Veedeohub में फ्री जॉइनिंग करें ज
 
 <div id="legal-privacy" style="background:#111;border:2px solid #fff;padding:14px;margin:14px;border-radius:12px;">
 <h3 class="gold">🔒 Privacy Policy - गोपनीयता नीति - पूरा विवरण बोलेगा जी</h3>
-<p class="white bold no-copy">Owner: Ashok Kumar Ex Maruti 141003, Email ak9992553796@gmail.com, Mobile 9992553796, Tauru, Nuh, Haryana 122105 - Privacy Policy पूरा विवरण - Mobile ही ID Wallet Referral है जी</p>
-<p class="white">Mobile ही ID Wallet Referral - veedeo_users_v68 Firebase Unlimited सुरक्षित - पूरा विवरण। Google AdSense ca-pub-3922664797100594 Cookies - AdSense पूरा विवरण। Affiliate Links पर ref=ID & tag=veedeohub-21 - Affiliate पूरा विवरण। Pexels Key ENV में - Pexels पूरा विवरण। यू पी आई (UPI) 9992553796@ybl Auto Credit Withdraw veedeo_wallet_history_v59 - Wallet पूरा विवरण। AI Duplicate Check - AI पूरा विवरण।</p>
+<p class="white bold">Owner: Ashok Kumar Ex Maruti 141003, Email ak9992553796@gmail.com, Mobile 9992553796, Tauru, Nuh, Haryana 122105 - Privacy Policy पूरा विवरण - Mobile ही ID Wallet Referral है जी</p>
+<p class="white">Mobile ही ID Wallet Referral - veedeo_users_v71 Firebase Unlimited सुरक्षित - पूरा विवरण। Google AdSense ca-pub-3922664797100594 Cookies - AdSense पूरा विवरण। Affiliate Links पर ref=ID & tag=veedeohub-21 - Affiliate पूरा विवरण। Pexels Key ENV में - Pexels पूरा विवरण। यू पी आई (UPI) 9992553796@ybl Auto Credit Withdraw veedeo_wallet_history_v59 - Wallet पूरा विवरण। AI Duplicate Check - AI पूरा विवरण।</p>
 <button onclick="speak(this.previousElementSibling.innerText + ' ' + this.previousElementSibling.previousElementSibling.innerText)" class="speaker">🔊 Privacy Policy पूरा विवरण सुनो जी - पीला बटन - नाम + विवरण + पूरा ब्लॉग + पूरा पेज</button>
 </div>
 
 <div id="legal-contact" style="background:#111;border:2px solid #00FF7F;padding:14px;margin:14px;border-radius:12px;">
 <h3 class="gold">📞 Contact Us - संपर्क करो जी - पूरा विवरण बोलेगा जी</h3>
-<p class="white bold no-copy">Ashok Kumar, S/o Dr B L Rao, Mohammad Pur Ahir, Tauru, Nuh, Haryana 122105, Email ak9992553796@gmail.com, Mobile 9992553796, यू पी आई (UPI) 9992553796@ybl, Site https://veedeo-hub.vercel.app?ref=9992553796&tag=veedeohub-21, ID:9992553796 ✓ - Contact पूरा विवरण</p>
+<p class="white bold">Ashok Kumar, S/o Dr B L Rao, Mohammad Pur Ahir, Tauru, Nuh, Haryana 122105, Email ak9992553796@gmail.com, Mobile 9992553796, यू पी आई (UPI) 9992553796@ybl, Site https://veedeo-hub.vercel.app?ref=9992553796&tag=veedeohub-21, ID:9992553796 ✓ - Contact पूरा विवरण</p>
 <p class="white">सुधार कक्ष PIN 3796 + Mobile + Email से - सुधार नोट साइट में नहीं दिखेगा - Contact पूरा विवरण - Owner Antaryami Private Fix Room - Mobile 9992553796 + PIN 3796 + Email ak9992553796@gmail.com तीनों सही तभी खुलेगा - पूरा विवरण।</p>
 <button onclick="speak(this.previousElementSibling.innerText + ' ' + this.previousElementSibling.previousElementSibling.innerText)" class="speaker">🔊 Contact Us पूरा विवरण सुनो जी</button>
 <button onclick="window.open('https://wa.me/919992553796?text=Jai Mata Ki Ashok Ji Contact ID 9992553796 - पूरा विवरण','_blank')" class="share-wa">📱 WhatsApp Contact - पूरा विवरण - हरा बटन</button>
@@ -452,13 +436,13 @@ All Life Veedeohub में फ्री जॉइनिंग करें ज
 
 <div id="legal-about" style="background:#111;border:2px solid gold;padding:14px;margin:14px;border-radius:12px;">
 <h3 class="gold">ℹ️ About Us - VeedeoHub All Life Free Domain - पूरा विवरण बोलेगा जी</h3>
-<p class="white">All Life Free Domain, Public Domain Free, No Copyright। आदतें ही जीवन का आधार हैं। Free Joining Mobile=ID=Wallet=Referral 9992553796 ✓। 6 सेल Seniority 1 6000 रुपये तक स्वयं या टीम Single Line Tree आखिरी के नीचे 60% Seller 5% Owner Royalty Fixed 35% Pool L1 12% L2 8% L3 5% L4 3% L5 2% बाकी 5% L6 Infinite। Dashboard Tree TDS Wallet यू पी आई (UPI) Auto veedeo_users_v68 veedeo_tree_v59 veedeo_wallet_history_v59 veedeo_tds_v59 1000 बार Safe। 1-54 बटन नाम अंकित Speaker FB WhatsApp टिक Delete YouTube थंबनेल Search Pagination 10 + Scroll All सुधार कक्ष Pexels 1 Image 1 Video Direct App AI Fraud Autofill Blog Google Circle चलता घूमता - पूरा विवरण।</p>
+<p class="white">All Life Free Domain, Public Domain Free, No Copyright। आदतें ही जीवन का आधार हैं। Free Joining Mobile=ID=Wallet=Referral 9992553796 ✓। 6 सेल Seniority 1 6000 रुपये तक स्वयं या टीम Single Line Tree आखिरी के नीचे 60% Seller 5% Owner Royalty Fixed 35% Pool L1 12% L2 8% L3 5% L4 3% L5 2% बाकी 5% L6 Infinite। Dashboard Tree TDS Wallet यू पी आई (UPI) Auto veedeo_users_v71 veedeo_tree_v59 veedeo_wallet_history_v59 veedeo_tds_v59 1000 बार Safe। 1-54 बटन नाम अंकित Speaker FB WhatsApp टिक Delete YouTube थंबनेल Search Pagination 10 + Scroll All सुधार कक्ष Pexels 1 Image 1 Video Direct App AI Fraud Autofill Blog Google Circle चलता घूमता - पूरा विवरण।</p>
 <button onclick="speak(this.previousElementSibling.innerText)" class="speaker">🔊 About Us पूरा विवरण सुनो जी</button>
 </div>
 
 <div id="legal-disclaimer" style="background:#111;border:2px solid red;padding:14px;margin:14px;border-radius:12px;">
 <h3 class="gold">⚠️ Disclaimer - No Income Guarantee - पूरा विवरण बोलेगा जी</h3>
-<p class="white bold no-copy">No Income Guarantee - आय की गारंटी नहीं - Affiliate Business - वास्तविक बिक्री पर ही - कंपनी पुष्टि - कानून अनुसार - Disclaimer पूरा विवरण</p>
+<p class="white bold">No Income Guarantee - आय की गारंटी नहीं - Affiliate Business - वास्तविक बिक्री पर ही - कंपनी पुष्टि - कानून अनुसार - Disclaimer पूरा विवरण</p>
 <p class="white">Affiliate Links fktr.in/7XvA2Sp?ref=9992553796&tag=veedeohub-21 - Amazon Best Seller 1 पूरा विवरण - Affiliate बटन है जी - Earn बटन है जी - पूरा विवरण, myntr.it/EEk80ig - Myntra फैशन बटन है जी - फैशन बटन है जी - पूरा विवरण, ajiio.in/ZKW4uGp - Ajio फैशन बटन है जी - पूरा विवरण, bitli.in/NSutlx8 - JioMart ग्रोसरी बटन है जी - पूरा विवरण, Omzu9zq - Nykaa ब्यूटी बटन है जी - पूरा विवरण, Fy7OUqb - Boat ईयरफोन बटन है जी - पूरा विवरण, Ji5eNm8 - Man Company बटन है जी - पूरा विवरण - ref=ID & tag=veedeohub-21 - कमीशन कंपनी पुष्टि पर - क्लिक View Like से नहीं - पूरा विवरण। AdSense ca-pub-3922664797100594 - AdSense पूरा विवरण। Pexels Pixabay Free License - Pexels पूरा विवरण। YouTube Thumbnails YouTube के - YouTube पूरा विवरण। यू पी आई (UPI) 9992553796@ybl Auto TDS 10% veedeo_tds_v59 - Wallet पूरा विवरण।</p>
 <button onclick="speak(this.previousElementSibling.innerText + ' ' + this.previousElementSibling.previousElementSibling.innerText)" class="speaker">🔊 Disclaimer पूरा विवरण सुनो जी</button>
 </div>
@@ -476,14 +460,14 @@ All Life Veedeohub में फ्री जॉइनिंग करें ज
 </div>
 
 <div style="text-align:center;padding:12px;background:#000;border-top:2px solid #333;">
-<p class="white bold no-copy">© 2026 VeedeoHub V70 FINAL CORRECT - Owner Ashok Kumar Ex Maruti 141003 S/o Dr B L Rao, Mohammad Pur Ahir, Tauru, Nuh, Haryana 122105 - Email ak9992553796@gmail.com - Mobile 9992553796 - ID:9992553796 ✓ - यू पी आई (UPI) 9992553796@ybl - All Life Free Domain - Public Domain Free - No Copyright - आदतें ही जीवन का आधार हैं जी - सभी स्पीकर पूरा विवरण बोलेंगे जी</p>
+<p class="white bold">© 2026 VeedeoHub V71 FINAL CORRECT - Owner Ashok Kumar Ex Maruti 141003 S/o Dr B L Rao, Mohammad Pur Ahir, Tauru, Nuh, Haryana 122105 - Email ak9992553796@gmail.com - Mobile 9992553796 - ID:9992553796 ✓ - यू पी आई (UPI) 9992553796@ybl - All Life Free Domain - Public Domain Free - No Copyright - आदतें ही जीवन का आधार हैं जी - सभी स्पीकर पूरा विवरण बोलेंगे जी</p>
 <p class="white">काली फर्श + रंग-बिरंगी पट्टी + मोटे अक्षर + स्पीकर सब पर पूरा विवरण + FB WhatsApp + टिक पुष्टि Delete + YouTube थंबनेल + Search + Pagination 10 + Scroll All + सुधार कक्ष + Admin Nominee नाम Mobile शहर ऊपर + अनन्त बॉक्स सिंगल ऊपर + Pexels 1 Image 1 Video Direct App + AI Fraud Autofill + Dashboard Tree TDS Wallet यू पी आई (UPI) Auto Record + Blog 2 + Legal Footer 6 पेज + Google Circle + Server चलता घूमता Tag Referral + AdSense ca-pub-3922664797100594 + No Duplicate + Firebase Unlimited + Core Fixed 1000 बार Safe + No Income Guarantee + सभी स्पीकर पूरा विवरण बोलेंगे जी + No शब्द</p>
 </div>
 </div>
 
 <script>
 let currentPage=0; const pageSize=10; let showAllMode=false;
-const BUTTONS=[
+const BUTTONS = [
  {n:1,name:"1. बुक - FLIPKART - आयुर्वेद जड़ी बूटी - 9789362494184 - बुक का बटन है जी - पूरा विवरण",url:"https://www.flipkart.com/product/p/itme?pid=9789362494184",desc:"Flipkart बुक बटन है जी - आयुर्वेद जड़ी बूटी किताब - बुक का बटन है जी - Flipkart पर बुक है जी - आयुर्वेदिक जड़ी बूटियां उपयोग और लाभ - 9789362494184 - पूरा विवरण - Flipkart बुक बटन पूरा विवरण बोलेगा जी"},
  {n:2,name:"2. बुक - AMAZON - B0GZB61NNR - आयुर्वेद - बुक का बटन है जी - पूरा विवरण",url:"https://www.amazon.in/dp/B0GZB61NNR",desc:"Amazon बुक बटन है जी - आयुर्वेद बुक - बुक का बटन है जी - Amazon पर बुक है जी - B0GZB61NNR - आयुर्वेद बुक - पूरा विवरण - Amazon बुक बटन पूरा विवरण बोलेगा जी"},
  {n:3,name:"3. DREAMBOOK STORE - आयुर्वेदिक जड़ी बूटियां - उत्पाद बटन है जी - पूरा विवरण",url:"https://www.dreambookpublishing.com/product/ayurvedic-jadi-bootiyan-upyog-aur-labh",desc:"Dreambook Store बटन है जी - आयुर्वेदिक जड़ी बूटियां उत्पाद बटन है जी - Dreambook Publishing पर आयुर्वेदिक जड़ी बूटियां बुक है जी - उत्पाद बटन पूरा विवरण बोलेगा जी"},
@@ -523,8 +507,6 @@ const BUTTONS=[
  {n:37,name:"37. VERCEL MAIN - veedeo-hub.vercel.app - Live - Main साइट बटन है जी - पूरा विवरण",url:"https://veedeo-hub.vercel.app/",desc:"Vercel Main Live साइट बटन है जी - Main साइट बटन है जी - Vercel Main veedeo-hub.vercel.app Live - Main साइट बटन पूरा विवरण बोलेगा जी"},
  {n:38,name:"38. NETLIFY - veedeo-hub.netlify.app - Backup - Backup साइट बटन है जी - पूरा विवरण",url:"https://veedeo-hub.netlify.app/",desc:"Netlify Backup साइट बटन है जी - Backup साइट बटन है जी - Netlify veedeo-hub.netlify.app Backup - Backup साइट बटन पूरा विवरण बोलेगा जी"},
  {n:39,name:"39. GITHUB PAGES - Backup - GitHub बटन है जी - पूरा विवरण",url:"https://ak9992553796-bit.github.io/veedeo-hub/",desc:"GitHub Pages Backup बटन है जी - GitHub बटन है जी - GitHub Pages ak9992553796-bit.github.io/veedeo-hub Backup - GitHub बटन पूरा विवरण बोलेगा जी"},
- {n:40,name:"40. FB SOUND COLLECTION - Jai Mata Ki - Music - Music बटन है जी - पूरा विवरण",url:"https://www.facebook.com/sound/collection/",desc:"Facebook Sound Collection - भजन म्यूजिक बटन है जी - Jai Mata Ki - Music बटन है जी - FB Sound Collection Jai Mata Ki Music - Music बटन पूरा विवरण बोलेगा जी"},
- {n:41,name:"YouTube Music Library जी - सर्च में अपने शब्द डालो जैसे Jai Mata Ki तो वही भजन आयेंगे जी - Jai Mata Ki - ref=OWNER_SECURE tag=veedeohub-21",url:"https://www.youtube.com/audiolibrary/music",desc:"YouTube Music Library जी - खोज में अपने शब्द डालो जी - YouTube Music Library के सर्च बॉक्स में अपने शब्द लिखो जी, जैसे Jai Mata Ki लिखोगे तो वही भजन आ जायेंगे जी - अपने शब्दों से भजन खोजो जी - Jai Mata Ki लिखो तो माता के भजन - पूरा विवरण - एक ही स्थान आगे पीछे फिक्स"},
  {n:42,name:"42. PEXELS APP - Free Video Image - 1 Sample - Free Video Image बटन है जी - पूरा विवरण",url:"https://play.google.com/store/apps/details?id=com.pexels.app",desc:"Pexels App बटन है जी - 1 Image 1 Video Sample है जी - Free Video Image बटन है जी - Pexels App Free Video Image 1 Sample - Free Video Image बटन पूरा विवरण बोलेगा जी"},
  {n:43,name:"43. PIXABAY APP - Free Resource - Free Resource App बटन है जी - पूरा विवरण",url:"https://play.google.com/store/apps/details?id=com.pixabay.pixabayapp",desc:"Pixabay App बटन है जी - Free Resource App बटन है जी - Pixabay App Free Resource - Free Resource App बटन पूरा विवरण बोलेगा जी"},
  {n:44,name:"44. यू पी आई (UPI) APP - BHIM - यू पी आई (UPI) - यू पी आई (UPI) App बटन है जी - पूरा विवरण",url:"https://play.google.com/store/apps/details?id=in.org.npci.upiapp",desc:"BHIM यू पी आई (UPI) App बटन है जी - यू पी आई (UPI) App बटन है जी - BHIM यू पी आई (UPI) App - यू पी आई (UPI) App बटन पूरा विवरण बोलेगा जी"},
@@ -532,30 +514,23 @@ const BUTTONS=[
  {n:46,name:"46. SUNO PLAYLIST - hokndxMX4qVAWrJi - Playlist बटन है जी - पूरा विवरण",url:"https://suno.com/s/hokndxMX4qVAWrJi",desc:"Suno Playlist AutoPlaylist बटन है जी - Playlist बटन है जी - Suno Playlist hokndxMX4qVAWrJi AutoPlaylist - Playlist बटन पूरा विवरण बोलेगा जी"},
  {n:47,name:"47. AVAR APP - वीडियो एडिटर - Editor - वीडियो एडिटर बटन है जी - पूरा विवरण",url:"https://play.google.com/store/apps/details?id=com.hyperionics.avar",desc:"Avar Video Editor App बटन है जी - वीडियो एडिटर बटन है जी - Avar App Video Editor - वीडियो एडिटर बटन पूरा विवरण बोलेगा जी"},
  {n:48,name:"48. FLOW MUSIC - Free Video - Music - Free Video बटन है जी - पूरा विवरण",url:"https://www.flowmusic.app/VeedeoHub",desc:"Flow Music Free Video बटन है जी - Free Video बटन है जी - Flow Music Free Video - Free Video बटन पूरा विवरण बोलेगा जी"},
- {n:49,name:"49. YT FIXED - E7c_ry3gv5g - Video - Fixed Video बटन है जी - पूरा विवरण",url:"https://youtu.be/E7c_ry3gv5g",desc:"YouTube Fixed Video E7c_ry3gv5g बटन है जी - Fixed Video बटन है जी - YouTube Fixed E7c_ry3gv5g Video - Fixed Video बटन पूरा विवरण बोलेगा जी"},
+ {n:49,name:"49. Video - YouTube Shorts - r8TcHc9tpNc - नया लिंक जोड़ा जी - पूरा विवरण",url:"https://youtube.com/shorts/r8TcHc9tpNc?si=DR6uMH8L_jgp5HO7",desc:"YouTube Shorts वीडियो बटन है जी - नया लिंक - त्रुटी के कारण पुराना डिलीट किया - नया जोड़ा जी - https://youtube.com/shorts/r8TcHc9tpNc - पूरा विवरण - नया लिंक उसी स्थान पर फिक्स - बटन काम करेगा जी - स्पीकर काम करेगा जी"},
  {n:50,name:"50. SUNO SONG - oyRYfAuUYNh5Rhy2 - Free Joining Song - Free Joining Song बटन है जी - पूरा विवरण",url:"https://suno.com/s/oyRYfAuUYNh5Rhy2",desc:"Suno New Song - Is gane ko suniye VeedeoHub me free joining बटन है जी - Free Joining Song बटन है जी - Suno New Song oyRYfAuUYNh5Rhy2 Free Joining Song - Free Joining Song बटन पूरा विवरण बोलेगा जी"},
- {n:51,name:"51. SUNO PROFILE - @veedeohub - Profile बटन है जी - पूरा विवरण",url:"https://suno.com/@veedeohub",desc:"Suno Profile बटन है जी - Profile बटन है जी - Suno Profile @veedeohub - Profile बटन पूरा विवरण बोलेगा जी"},
- {n:52,name:"52. OFFICIAL REF LINK - veedeohub-21 - Vercel - Official Link बटन है जी - पूरा विवरण",url:"https://veedeo-hub.vercel.app/",desc:"Official Vercel With Ref Tag बटन है जी - Official Link बटन है जी - Official Vercel With Ref Tag veedeohub-21 - Official Link बटन पूरा विवरण बोलेगा जी"},
+ {n:51,name:"Facebook Music Library जी - Jai Mata Ki - लिंक छुपा है जी - सुरक्षित - ref=OWNER_SECURE tag=veedeohub-21",url:"https://www.facebook.com/sound/collection/",desc:"Facebook Music Library जी - Jai Mata Ki - Facebook Sound Collection - लिंक कॉपी नहीं होगा जी - ना लिखित में दिखेगा ना स्पीकर बोलेगा जी - सुरक्षित - बटन काम करेगा जी"},
+ {n:52,name:"YouTube Music Library जी - सर्च में अपने शब्द डालो जैसे Jai Mata Ki तो वही भजन आयेंगे जी - Jai Mata Ki - ref=OWNER_SECURE tag=veedeohub-21",url:"https://www.youtube.com/audiolibrary/music",desc:"YouTube Music Library जी - खोज में अपने शब्द डालो जी - YouTube Music Library के सर्च बॉक्स में अपने शब्द लिखो जी, जैसे Jai Mata Ki लिखोगे तो वही भजन आ जायेंगे जी - अपने शब्दों से भजन खोजो जी - Jai Mata Ki लिखो तो माता के भजन - लिंक छुपा है जी - ना लिखित में दिखेगा ना स्पीकर बोलेगा जी - बटन काम करेगा जी"},
  {n:53,name:"53. AMAZON SEARCH - Ayurveda - Search - Search बटन है जी - पूरा विवरण",url:"https://www.amazon.in/s?k=ayurveda",desc:"Amazon Search Ayurveda बटन है जी - Search बटन है जी - Amazon Search Ayurveda - Search बटन पूरा विवरण बोलेगा जी"},
  {n:54,name:"54. FLIPKART HOME - Shopping - Shopping Home बटन है जी - पूरा विवरण",url:"https://www.flipkart.com/",desc:"Flipkart Home बटन है जी - Shopping Home बटन है जी - Flipkart Home Shopping Home - Shopping Home बटन पूरा विवरण बोलेगा जी"}
-];
-function getRef(){let m=document.getElementById("j_mobile").value||"9992553796";return m.replace(/[^0-9]/g,"")||"9992553796";}
+ ] getRef(){let m=document.getElementById("j_mobile").value||"9992553796";return m.replace(/[^0-9]/g,"")||"9992553796";}
 function getFiltered(){let q=document.getElementById("searchBox").value.toLowerCase();if(!q) return BUTTONS;return BUTTONS.filter(b=>b.name.toLowerCase().includes(q)||b.desc.toLowerCase().includes(q)||(""+b.n).includes(q));}
-
-function shouldHideLink(url){
-  if(!url) return false;
-  return url.includes('facebook.com') || url.includes('audiolibrary/music') || url.includes('sound/collection');
-}
-
 function renderButtons(){
  let list=getFiltered(); let c=document.getElementById("btnContainer"); c.innerHTML="";
  let isSearch=document.getElementById("searchBox").value.trim()!=="";
  let toShow; if(showAllMode||isSearch){toShow=list;}else{toShow=list.slice(currentPage*pageSize,(currentPage+1)*pageSize);}
  toShow.forEach(b=>{
-  let ref=getRef(); let isAmazon=b.url.includes("amazon")||b.url.includes("amzn"); let finalUrl=b.url+(b.url.includes("?")?"&":"?")+"ref="+ref+(isAmazon?"&tag=veedeohub-21":"");
+  let ref=getRef(); let isAmazon=b.url.includes("amazon")||b.url.includes("amzn"); let isMusicLib=b.url.includes("facebook.com/sound/collection")||b.url.includes("youtube.com/audiolibrary/music"); let finalUrl=b.url+(b.url.includes("?")?"&":"?")+"ref="+ref+((isAmazon||isMusicLib)?"&tag=veedeohub-21":""); let hideLink=isMusicLib;
   let div=document.createElement("div"); div.className="btn-card";
   let thumb=""; if(b.url.includes("youtu.be")||b.url.includes("shorts")||b.url.includes("embed")){let vid=b.url.split("/").pop().split("?")[0]; if(b.url.includes("embed")) vid=b.url.split("/embed/")[1].split("?")[0]; thumb=`<img class="thumb" src="https://img.youtube.com/vi/${vid}/mqdefault.jpg">`;}
-  div.innerHTML=`<div class="gold bold" style="font-size:18px;">📌 ${b.name}</div><div class="white bold no-copy">📖 ${b.desc}</div>${thumb}<div><button onclick="window.open('${finalUrl}','_blank')" style="background:gold;color:#000;">🛒 ${b.name} खोलो जी - पीला - पूरा विवरण बोलेगा</button><button onclick="speak(shouldHideLink(b.url) ? b.desc : `${b.name}. ${b.desc}. यह ${b.name} बटन है जी। ${b.desc}। Link है ${finalUrl}। ID 9992553796 सही। tag veedeohub-21 ref ${ref}। पूरा विवरण।')" class="speaker">🔊 नाम + विवरण पूरा विवरण सुनो जी - पीला - नाम + विवरण + Link + ID + tag + ref</button><button onclick="speak('${b.desc}. यह ${b.name} बटन का पूरा विवरण है जी। ${b.desc}। पूरा विवरण बोलेगा जी।')" class="speaker2">📖 सिर्फ विवरण पूरा विवरण सुनो जी - हरा - विवरण पूरा</button><button onclick="shareWA('${finalUrl}','${b.name} - ${b.desc}')" style="background:#25D366;color:#fff;font-weight:900;">📱 WhatsApp - हरा - शेयर - हर स्थान पर फिक्स</button><button onclick="shareFB('${finalUrl}')" style="background:#1877F2;color:#fff;font-weight:900;">📘 FB - नीला - शेयर - हर स्थान पर फिक्स</button><button onclick="replacePrompt(${b.n})" style="background:#00FF7F;color:#000;">🔄 बदलो - उसी स्थान पर Fix - हरा - पूरा विवरण</button></div><div class="delete-box"><label class="white"><input type="checkbox" id="tick_${b.n}"> टिक करो जी तभी हटेगा - पुष्टि अंदर ही - Browser OK Cancel नहीं - पूरा विवरण</label><button onclick="confirmDelete(${b.n})" style="background:red;color:#fff;">🗑️ हटाओ - पुष्टि अंदर - लाल - बटन ही डिलीट हो, Option Fix रहे - पूरा विवरण</button></div><div><button class="share-wa" onclick="window.open('https://wa.me/?text='+encodeURIComponent('${b.name} - ${b.desc} - ${finalUrl} - पूरा विवरण'),' _blank')">📱 WhatsApp - हरा - पूरा विवरण बोलेगा</button><button class="share-fb" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(finalUrl),'_blank')">📘 FB - नीला - पूरा विवरण बोलेगा</button></div><small style="word-break:break-all;color:#aaa;">🔗 ${finalUrl} - AI Autofill - यू पी आई (UPI) Auto - पूरा विवरण - ID 9992553796 ✓ - tag veedeohub-21 - ref ${ref} - पूरा विवरण बोलेगा जी</small>`;
+  div.innerHTML=`<div class="gold bold" style="font-size:18px;">📌 ${b.name}</div><div class="white bold">📖 ${b.desc}</div>${thumb}<div><button onclick="window.open('${finalUrl}','_blank')" style="background:gold;color:#000;">🛒 ${b.name} खोलो जी - पीला - पूरा विवरण बोलेगा</button><button onclick="speak('${b.name}. ${b.desc}. यह ${b.name} बटन है जी। ${b.desc}। Link है ${finalUrl}। ID 9992553796 सही। tag veedeohub-21 ref ${ref}। पूरा विवरण।')" class="speaker">🔊 नाम + विवरण पूरा विवरण सुनो जी - पीला - नाम + विवरण + Link + ID + tag + ref</button><button onclick="speak('${b.desc}. यह ${b.name} बटन का पूरा विवरण है जी। ${b.desc}। पूरा विवरण बोलेगा जी।')" class="speaker2">📖 सिर्फ विवरण पूरा विवरण सुनो जी - हरा - विवरण पूरा</button><button onclick="shareWA('${finalUrl}','${b.name} - ${b.desc}')" style="background:#25D366;color:#fff;font-weight:900;">📱 WhatsApp - हरा - शेयर - हर स्थान पर फिक्स</button><button onclick="shareFB('${finalUrl}')" style="background:#1877F2;color:#fff;font-weight:900;">📘 FB - नीला - शेयर - हर स्थान पर फिक्स</button><button onclick="replacePrompt(${b.n})" style="background:#00FF7F;color:#000;">🔄 बदलो - उसी स्थान पर Fix - हरा - पूरा विवरण</button></div><div class="delete-box"><label class="white"><input type="checkbox" id="tick_${b.n}"> टिक करो जी तभी हटेगा - पुष्टि अंदर ही - Browser OK Cancel नहीं - पूरा विवरण</label><button onclick="confirmDelete(${b.n})" style="background:red;color:#fff;">🗑️ हटाओ - पुष्टि अंदर - लाल - बटन ही डिलीट हो, Option Fix रहे - पूरा विवरण</button></div><div><button class="share-wa" onclick="window.open('https://wa.me/?text='+encodeURIComponent('${b.name} - ${b.desc} - ${finalUrl} - पूरा विवरण'),' _blank')">📱 WhatsApp - हरा - पूरा विवरण बोलेगा</button><button class="share-fb" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(finalUrl),'_blank')">📘 FB - नीला - पूरा विवरण बोलेगा</button></div><small style="word-break:break-all;color:#aaa;">🔗 ${finalUrl} - AI Autofill - यू पी आई (UPI) Auto - पूरा विवरण - ID 9992553796 ✓ - tag veedeohub-21 - ref ${ref} - पूरा विवरण बोलेगा जी</small>`;
   c.appendChild(div);
  });
  let info=document.getElementById("pageInfo");
@@ -569,7 +544,9 @@ function resetPage(){currentPage=0; showAllMode=false; renderButtons();}
 function showAllButtons(){showAllMode=true; renderButtons();}
 function shareWA(url,name){let t=`${name} - ${url} - ID:9992553796 ✓`; window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank');}
 function shareFB(url){window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url),'_blank');}
-function speak(t){ t=t.replace(/\(UPI\)/g,"").replace(/UPI/g,"यू पी आई").replace(/Veedeohub/gi,"वीडियोहब").replace(/Veedeo-hub/gi,"वीडियोहब").replace(/Veedeo/gi,"वीडियो").replace(/6000 रुपये/g,"6000 रुपये");if('speechSynthesis' in window){let u=new SpeechSynthesisUtterance(t); u.lang='hi-IN'; speechSynthesis.speak(u);}}
+function speak(t){
+  try{t=t.replace(/https?:\/\/[^\s]+/g,'').replace(/www\.[^\s]+/g,'').replace(/bitli\.in\/[^\s]+/g,'').replace(/fktr\.in\/[^\s]+/g,'');}catch(e){}
+ t=t.replace(/\(UPI\)/g,"").replace(/UPI/g,"यू पी आई").replace(/Veedeohub/gi,"वीडियोहब").replace(/Veedeo-hub/gi,"वीडियोहब").replace(/Veedeo/gi,"वीडियो").replace(/6000 रुपये/g,"6000 रुपये");if('speechSynthesis' in window){let u=new SpeechSynthesisUtterance(t); u.lang='hi-IN'; speechSynthesis.speak(u);}}
 function speakAll11(){let all=document.querySelectorAll('.bhag p'); let txt=""; all.forEach(p=>{txt+=p.innerText+" . ";}); speak(txt + " यह पूरा 11 भाग का पूरा विवरण था जी - सभी स्पीकर पूरा विवरण बोलेंगे जी - ID 9992553796 सही");}
 function doJoin(){
  let name=document.getElementById("j_name").value, city=document.getElementById("j_city").value, mobile=getRef();
@@ -583,7 +560,7 @@ function doJoin(){
  localStorage.setItem(COLL.users, JSON.stringify(users));
  document.getElementById("ref_link").innerText="Link बनेगा जी: https://veedeo-hub.vercel.app?ref="+mobile+"&tag=veedeohub-21 - Link पूरा विवरण - Mobile ही ID Wallet Referral है जी - ID 9992553796 सही";
  document.getElementById("tree").innerText="Tree: सबसे नीचे: "+name+" ("+mobile+") कुल:"+users.length+" - Single Line - सबसे नीचे वाला ही अगला जोड़ेगा - Firebase veedeo_tree_v59 - 1000 बार कोड बदलो तब भी Safe - Tree पूरा विवरण - सबसे नीचे वाला ही अगला जोड़ेगा जी";
- document.getElementById("dash").innerText="Dashboard: कुल जॉइनिंग:"+users.length+" - कुल कमीशन ₹0 | TDS ₹0 | शेष ₹0 - Firebase veedeo_users_v68 - Seniority Update - Dashboard पूरा विवरण - कुल कमीशन TDS शेष Pending Paid सब दिखेगा जी - Mobile ही ID Wallet Referral है जी";
+ document.getElementById("dash").innerText="Dashboard: कुल जॉइनिंग:"+users.length+" - कुल कमीशन ₹0 | TDS ₹0 | शेष ₹0 - Firebase veedeo_users_v71 - Seniority Update - Dashboard पूरा विवरण - कुल कमीशन TDS शेष Pending Paid सब दिखेगा जी - Mobile ही ID Wallet Referral है जी";
  let link="https://veedeo-hub.vercel.app?ref="+mobile+"&tag=veedeohub-21";
  window.open("https://wa.me/919992553796?text="+encodeURIComponent("🔔 नई जॉइनिंग पक्का Name:"+name+" City:"+city+" Mobile:"+mobile+" Link:"+link+" - Tree Update - पूरा विवरण"),"_blank");
  setTimeout(()=>{window.open("https://wa.me/91"+mobile+"?text="+encodeURIComponent("Jai Mata Ki "+name+" जी - All Life Veedeohub में फ्री जॉइनिंग पक्का - आपका Referral Link:"+link+" - Vercel Main - Mobile=ID=Wallet - आदतें ही जीवन का आधार हैं जी - पूरा विवरण"),"_blank");},900);
@@ -592,6 +569,20 @@ function doJoin(){
 }
 function addAnant(){let name=document.getElementById("anant_name").value,url=document.getElementById("anant_url").value,desc=document.getElementById("anant_desc").value; if(!name||!url){alert("नाम लिंक लिखो जी - नाम लिंक पूरा विवरण लिखो जी"); return;} BUTTONS.push({n:BUTTONS.length+1,name:name,url:url,desc:desc||"अनन्त बटन - पूरा विवरण"}); renderButtons(); alert("अनन्त बटन जुड़ा जी - एक ही बॉक्स से - सुधार कक्ष के ऊपर - पूरा विवरण");}
 function replaceBtn(){let num=parseInt(document.getElementById("replace_num").value),url=document.getElementById("replace_url").value; if(!num||!url){alert("नंबर और नया लिंक डालो जी - पूरा विवरण"); return;} let idx=BUTTONS.findIndex(b=>b.n===num); if(idx>=0){BUTTONS[idx].url=url; renderButtons(); alert(num+" नंबर बटन उसी स्थान पर बदल गया जी - Fix रहा - लिंक या बटन ही Delete हो - पूरा विवरण");}}
+
+function addNewLinkAtPosition(n){
+  let newUrl=prompt('नया लिंक डालो जी - उसी स्थान पर जुड़ेगा जी - पूरा URL लिखो जी');
+  if(!newUrl) return;
+  let newName=prompt('नया नाम लिखो जी - बटन का नाम');
+  if(!newName) newName='नया बटन '+n;
+  let newDesc=prompt('विवरण लिखो जी - जैसे YouTube Music Library में सर्च बॉक्स में अपने शब्द लिखो जी');
+  if(!newDesc) newDesc=newName+' - नया लिंक जोड़ा जी';
+  let ex=BUTTONS.find(b=>b.n==n);
+  if(ex){ex.url=newUrl; ex.name=newName; ex.desc=newDesc;} else {BUTTONS.push({n:parseInt(n),name:newName,url:newUrl,desc:newDesc}); BUTTONS.sort((a,b)=>a.n-b.n);}
+  renderButtons();
+  alert('नया लिंक जुड़ गया जी - '+n+' पर - '+newName+' - बटन और स्पीकर काम करेंगे जी');
+}
+
 function replacePrompt(n){let url=prompt(n+" नंबर बटन के लिए नया Link डालो जी - उसी स्थान पर Fix रहेगा - लिंक या बटन ही Delete हो - पूरा विवरण"); if(url){let idx=BUTTONS.findIndex(b=>b.n===n); if(idx>=0){BUTTONS[idx].url=url; renderButtons();}}}
 function openSudhar(){let m=document.getElementById("s_mobile").value,p=document.getElementById("s_pin").value,e=document.getElementById("s_email").value; if(m==="9992553796"&&p==="3796"&&e==="ak9992553796@gmail.com"){document.getElementById("sudhar_content").style.display="block"; speak("सुधार कक्ष खुल गया जी - Mobile 9992553796 PIN 3796 Email ak9992553796@gmail.com तीनों सही - Pexels Key ENV में - Pixabay Pending - सुधार कक्ष पूरा विवरण - सभी स्पीकर पूरा विवरण बोलेंगे जी");}else alert("Mobile PIN Email तीनों सही डालो जी - 9992553796 + 3796 + ak9992553796@gmail.com - पूरा विवरण");}
 function closeSudhar(){document.getElementById("sudhar_content").style.display="none";}
@@ -674,65 +665,58 @@ function rotateAmazonLinks(){
   let el=document.getElementById("rotating_links_live");
   if(!el) return;
   let p=AMAZON_BEST_SELLERS[amazonIdx];
-  el.innerHTML=`<span class="gold bold">🔄 चलता घूमता - Google Circle + Server - Amazon Only - ${amazonIdx+1}/8</span><br><span class="white bold no-copy">📌 ${p.name} - ${p.url} - ID:9992553796 ✓ सही - tag=veedeohub-21 - ref=9992553796 - घूम रहा है जी - ऑनलाइन टैग बारी बारी से - कमीशन पक्का</span>`;
+  el.innerHTML=`<span class="gold bold">🔄 चलता घूमता - Google Circle + Server - Amazon Only - ${amazonIdx+1}/8</span><br><span class="white bold">📌 ${p.name} - ${p.url} - ID:9992553796 ✓ सही - tag=veedeohub-21 - ref=9992553796 - घूम रहा है जी - ऑनलाइन टैग बारी बारी से - कमीशन पक्का</span>`;
   amazonIdx=(amazonIdx+1)%AMAZON_BEST_SELLERS.length;
 }
 setInterval(rotateAmazonLinks, 3000);
 rotateAmazonLinks();
 
 
-// Fix for FB in-app browser - speaker and site stop issue
+// V71 FIX - FB in-app browser - speaker and site stop - non-breaking
 (function(){
-  let isFB = /FBAN|FBAV|FB_IAB|FB4A/i.test(navigator.userAgent);
-  if(isFB){
-    console.log('FB in-app browser detected - applying fixes जी');
-    // Ensure speechSynthesis works only on user gesture
-    let originalSpeak = window.speak;
-    window.speak = function(t){
-      try{
-        t=t.replace(/https?:\/\/[^\s]+/g,"").replace(/www\.[^\s]+/g,"");
-        if('speechSynthesis' in window){
-          // FB requires user gesture - speech will work only after user taps
-          let u=new SpeechSynthesisUtterance(t);
-          u.lang='hi-IN';
-          // Resume if paused (FB often pauses)
-          if(speechSynthesis.paused) speechSynthesis.resume();
-          speechSynthesis.speak(u);
-        }
-      }catch(e){ console.log('Speak error in FB', e); }
-    };
-  }
-  // Ensure site doesn't stop - catch errors in render
-  window.addEventListener('error', function(e){
-    console.log('Site error caught - continuing जी', e.message);
-    e.preventDefault();
-    return true;
-  });
-  // Ensure localStorage works in FB (sometimes blocked)
   try{
-    localStorage.setItem('test','1');
-    localStorage.removeItem('test');
-  }catch(e){
-    console.log('localStorage blocked in FB - using memory fallback जी');
-    window._memoryStorage = {};
-    window.localStorage = {
-      getItem: (k)=> window._memoryStorage[k] || null,
-      setItem: (k,v)=> { window._memoryStorage[k]=v; },
-      removeItem: (k)=> { delete window._memoryStorage[k]; }
-    };
-  }
+    let isFB = /FBAN|FBAV|FB_IAB|FB4A|FBAN\/Messenger/i.test(navigator.userAgent);
+    if(isFB){
+      console.log('FB detected - applying safe fixes');
+      // Ensure localStorage doesn't throw
+      try{ localStorage.setItem('_test','1'); localStorage.removeItem('_test'); }catch(e){
+        window._memStore={};
+        let origLocalStorage = window.localStorage;
+        try{
+          Object.defineProperty(window,'localStorage',{value:{
+            getItem:(k)=>window._memStore[k]||null,
+            setItem:(k,v)=>{window._memStore[k]=String(v);},
+            removeItem:(k)=>{delete window._memStore[k];},
+            clear:()=>{window._memStore={};}
+          },writable:true});
+        }catch(e){}
+      }
+      // Unlock speech on first user interaction
+      let speechUnlocked=false;
+      function unlockSpeech(){
+        if(speechUnlocked) return;
+        try{
+          if('speechSynthesis' in window){
+            speechSynthesis.cancel();
+            let u=new SpeechSynthesisUtterance('');
+            u.volume=0;
+            speechSynthesis.speak(u);
+            speechUnlocked=true;
+          }
+        }catch(e){}
+        document.removeEventListener('touchstart',unlockSpeech);
+        document.removeEventListener('click',unlockSpeech);
+      }
+      document.addEventListener('touchstart',unlockSpeech,{once:true});
+      document.addEventListener('click',unlockSpeech,{once:true});
+    }
+    window.addEventListener('error',function(e){
+      console.log('Caught error, continuing:',e.message);
+    });
+  }catch(e){ console.log('FB fix error',e); }
 })();
-
-
-document.addEventListener('click', function enableSpeech(){
-  if('speechSynthesis' in window){
-    let u=new SpeechSynthesisUtterance('');
-    speechSynthesis.speak(u);
-    speechSynthesis.cancel();
-  }
-  document.removeEventListener('click', enableSpeech);
-}, {once: true});
 
 </script>
 </body>
 </html>
+   
