@@ -1,28 +1,169 @@
-<!-- VEEDO CORE HEADER FIXED - V48 - ID:9992553796 - NEVER DELETE - सफेद अक्षरों वाला -->
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Manmohak Aurat - V74 FINAL FIXED</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <style>
-  .veedo-fixed-core{display:none} /* ये हेडर यूजर को नहीं दिखेगा, सिर्फ सिस्टम के लिए */
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Noto Sans Devanagari,sans-serif;padding:16px;line-height:1.6;overflow-x:hidden}
+.header{text-align:center;border-bottom:2px solid #ff1493;padding:16px 0;margin-bottom:20px;position:sticky;top:0;background:#000;z-index:10}
+.header h1{color:#ff1493;font-size:22px}
+.lang-toggle{margin:12px auto;display:flex;gap:8px;justify-content:center}
+.lang-toggle button{padding:6px 14px;border-radius:20px;border:1px solid #ff1493;background:transparent;color:#fff;cursor:pointer}
+.lang-toggle button.active{background:#ff1493;color:#fff}
+.joining-section{max-width:600px;margin:0 auto 20px auto;text-align:center}
+#joinBtn{width:100%;padding:16px;background:linear-gradient(135deg,#ff1493,#ff69b4);color:#fff;border:none;border-radius:12px;font-size:18px;font-weight:700;cursor:pointer;box-shadow:0 4px 15px rgba(255,20,147,0.4)}
+.buttons-grid{max-width:600px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn-item{padding:14px 10px;background:#111;border:1px solid #333;border-radius:10px;color:#fff;text-align:center;cursor:pointer;transition:0.2s;font-size:14px}
+.btn-item:hover{border-color:#ff1493;transform:translateY(-2px)}
+.btn-item:active{transform:scale(0.97)}
+.pagination{max-width:600px;margin:24px auto;display:flex;justify-content:space-between;align-items:center}
+.pagination button{padding:8px 16px;background:#222;border:1px solid #444;color:#fff;border-radius:8px;cursor:pointer}
+#avatarModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:100;align-items:center;justify-content:center;padding:20px}
+#avatarModal.open{display:flex}
+.modal-box{background:#111;border:2px solid #ff1493;border-radius:16px;max-width:380px;width:100%;padding:20px;text-align:center;position:relative}
+.avatar-img-wrap{width:180px;height:180px;margin:0 auto 16px auto;border-radius:50%;overflow:hidden;border:3px solid #ff1493;position:relative}
+.avatar-img-wrap img{width:100%;height:100%;object-fit:cover}
+.avatar-img-wrap.speaking{animation:pulseTalk 0.9s infinite}
+@keyframes pulseTalk{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,20,147,0.7)}50%{transform:scale(1.05);box-shadow:0 0 0 12px rgba(255,20,147,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,20,147,0)}}
+.close-modal{position:absolute;top:8px;right:12px;background:transparent;border:none;color:#fff;font-size:22px;cursor:pointer}
+.talk-btn{margin-top:12px;padding:10px 18px;background:#ff1493;color:#fff;border:none;border-radius:20px;cursor:pointer;font-weight:600}
+.ad-box{max-width:600px;margin:20px auto;padding:12px;background:#0a0a0a;border:1px dashed #333;text-align:center;color:#777;font-size:12px;border-radius:8px}
 </style>
-<script id="VEEDO-CORE-HEADER-FIXED-V48-9992553796">
-// ====== FIXED CORE - कभी मत बदलो - सिर्फ नीचे वाला कोड बदलेगा ======
-const VEEDO_OWNER_ID = "9992553796";
-const VEEDO_CORE_VERSION = "V48-CORE-FIXED-ALL-LIFE";
-const VEEDO_COLLECTIONS = {
-  users: "veedeo_users_v48",
-  tree: "veedeo_tree_v48", 
-  wallet: "veedeo_wallet_history_v48",
-  tds: "veedeo_tds_v48",
-  sales: "veedeo_sales_v48"
-};
-// Firebase Init - यहाँ आपका Firebase Config आएगा - Key Env में रखो
-// ये Core Data को Local + Cloud दोनों में पक्का रखेगा
-// नया जॉइनिंग, Dashboard, Tree, TDS सब इसी Core से जुड़ेगा
-// नाम - सुधार कक्ष (पहले गुप्त कक्ष था)
-// गुप्त कक्ष का नाम बदल कर सुधार कक्ष किया गया है जी
-if(!localStorage.getItem("veedo_core_lock")){
-  localStorage.setItem("veedo_core_lock", VEEDO_CORE_VERSION + "_" + VEEDO_OWNER_ID);
-}
-console.log("Core Fixed - ID 9992553796 - Data Safe - Firebase Unlimited");
-</script>
+</head>
+<body>
+<div class="header">
+<h1>💖 मनमोहक औरत V74 💖</h1>
+<div class="lang-toggle">
+<button id="btn-hi" class="active" onclick="setLang('hi')">हिन्दी</button>
+<button id="btn-en" onclick="setLang('en')">English</button>
+</div>
+</div>
 
-<!-- AdSense Head में सबसे ऊपर ही रहेगा -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922664797100594" crossorigin="anonymous"></script>
+<div class="joining-section">
+<button id="joinBtn" onclick="openModal(0)">🔥 Joining Button 0 - Channel Join Karo Ji 🔥</button>
+<p style="margin-top:8px;font-size:12px;color:#aaa" id="joinDesc">पहले ये जॉइन बटन दबाओ जी, फिर बाकी जादू देखो</p>
+</div>
+
+<div class="ad-box">AdSense Ad Unit - 320x100</div>
+
+<div class="buttons-grid" id="buttons"></div>
+
+<div class="pagination">
+<button onclick="prevPage()">← Prev</button>
+<span id="pageInfo">Page 1 / 6</span>
+<button onclick="nextPage()">Next →</button>
+</div>
+
+<div class="ad-box">AdSense Ad Unit - Footer</div>
+
+<div id="avatarModal">
+<div class="modal-box">
+<button class="close-modal" onclick="closeModal()">✕</button>
+<div class="avatar-img-wrap" id="avatarWrap">
+<img id="avatarImg" src="./avatar_pink.webp" alt="Aurat Avatar" onerror="this.src='./avatar_red.webp'">
+</div>
+<h3 id="modalTitle" style="color:#ff69b4;margin-bottom:8px">नमस्ते जी!</h3>
+<p id="modalDesc" style="font-size:14px;color:#ddd">मैं आपकी मनमोहक औरत हूँ जी, इस बटन के बारे में बता रही हूँ।</p>
+<button class="talk-btn" id="modalTalkBtn" onclick="speakModal()">🎙️ सुनो जी - मैं बोलूँगी</button>
+</div>
+</div>
+
+<script>
+let currentLang='hi';
+const totalButtons=54;
+const perPage=9;
+let currentPage=1;
+let currentBtnIndex=0;
+const buttonTexts={
+hi: Array.from({length:54},(_,i)=> i===0 ? 'Joining - Channel Join' : 'बटन ' + (i+1) + ' - मनमोहक बात ' + (i+1)),
+en: Array.from({length:54},(_,i)=> i===0 ? 'Joining - Join Channel' : 'Button ' + (i+1) + ' - Charming Talk ' + (i+1))
+};
+const modalMessages={
+hi: Array.from({length:54},(_,i)=> 'नमस्ते जी, मैं बटन नंबर ' + (i+1) + ' वाली औरत हूँ जी। ये बटन बहुत खास है जी, दबाते ही जादू होगा जी!'),
+en: Array.from({length:54},(_,i)=> 'Hello ji, I am the charming lady of button number ' + (i+1) + '. This button is very special ji!')
+};
+
+function setLang(l){
+currentLang=l;
+document.getElementById('btn-hi').classList.toggle('active',l==='hi');
+document.getElementById('btn-en').classList.toggle('active',l==='en');
+renderButtons();
+if(document.getElementById('avatarModal').classList.contains('open')){
+updateModalContent();
+}
+}
+
+function renderButtons(){
+const grid=document.getElementById('buttons');
+grid.innerHTML='';
+const start=(currentPage-1)*perPage;
+const end=Math.min(start+perPage,totalButtons);
+for(let i=start;i<end;i++){
+if(i===0 && currentPage!==1) continue;
+const div=document.createElement('div');
+div.className='btn-item';
+div.textContent=buttonTexts[currentLang][i];
+div.onclick=()=>openModal(i);
+grid.appendChild(div);
+}
+document.getElementById('pageInfo').textContent='Page '+currentPage+' / '+Math.ceil(totalButtons/perPage);
+}
+
+function openModal(index){
+currentBtnIndex=index;
+updateModalContent();
+document.getElementById('avatarModal').classList.add('open');
+const isPink = index % 2 === 0;
+document.getElementById('avatarImg').src = isPink ? './avatar_pink.webp' : './avatar_red.webp';
+setTimeout(()=>speakModal(),400);
+}
+
+function updateModalContent(){
+document.getElementById('modalTitle').textContent = currentLang==='hi' ? 'बटन ' + (currentBtnIndex+1) + ' - सुनो जी 💋' : 'Button ' + (currentBtnIndex+1) + ' - Listen ji 💋';
+document.getElementById('modalDesc').textContent = modalMessages[currentLang][currentBtnIndex];
+}
+
+function closeModal(){
+document.getElementById('avatarModal').classList.remove('open');
+stopSpeaking();
+}
+
+function speakModal(){
+const text=modalMessages[currentLang][currentBtnIndex];
+speakText(text);
+}
+
+function speakText(t){
+if(!('speechSynthesis' in window)) return;
+window.speechSynthesis.cancel();
+const u=new SpeechSynthesisUtterance(t);
+u.lang = currentLang==='hi' ? 'hi-IN' : 'en-IN';
+u.rate=0.9;
+u.pitch=1.2;
+const wrap=document.getElementById('avatarWrap');
+wrap.classList.add('speaking');
+u.onend=()=>wrap.classList.remove('speaking');
+u.onerror=()=>wrap.classList.remove('speaking');
+window.speechSynthesis.speak(u);
+}
+
+function stopSpeaking(){
+window.speechSynthesis.cancel();
+document.getElementById('avatarWrap').classList.remove('speaking');
+}
+
+function prevPage(){
+if(currentPage>1){currentPage--;renderButtons();window.scrollTo({top:0,behavior:'smooth'});}
+}
+function nextPage(){
+if(currentPage < Math.ceil(totalButtons/perPage)){currentPage++;renderButtons();window.scrollTo({top:0,behavior:'smooth'});}
+}
+
+renderButtons();
+document.getElementById('avatarModal').addEventListener('click',function(e){if(e.target===this) closeModal();});
+</script>
+</body>
+</html>
