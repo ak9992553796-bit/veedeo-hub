@@ -21,12 +21,9 @@ button{font-weight:900;padding:14px 18px;margin:6px;border-radius:14px;cursor:po
 .page-btn{background:gold;color:#000;padding:14px 24px;margin:8px;font-size:19px;border:3px solid #fff}
 #deleteConfirmModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:9999;justify-content:center;align-items:center}
 #deleteConfirmModal .modal-box{background:#111;border:3px solid gold;padding:22px;border-radius:18px;width:92%;max-width:600px}
-#guideDidi{position:fixed;bottom:20px;right:10px;width:138px;height:auto;border:3px solid gold;border-radius:18px;z-index:9998;cursor:pointer;box-shadow:0 0 18px gold;background:#000;overflow:hidden;padding:0;line-height:0}
-#guideDidi img{width:100%;height:auto;object-fit:contain;display:block;transition:transform 0.25s} .talking{transform:scale(1.06)}
-@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-/* fixed googleCircle removed */
-#googleCircle span{font-size:11px;font-weight:900;color:#FFD700;}
-#guideDidiTalking{position:fixed;bottom:130px;right:15px;background:#111;border:2px solid gold;padding:12px;border-radius:14px;max-width:300px;display:none;z-index:9998}
+/*  removed - user requested no photo */
+/* removed */
+/* removed */
 .pin-input{width:100%;box-sizing:border-box;background:#000;color:#FFD700;border:3px solid gold;font-weight:900;padding:18px;font-size:20px;border-radius:14px;margin:10px 0}
 </style>
 </head>
@@ -44,23 +41,6 @@ button{font-weight:900;padding:14px 18px;margin:6px;border-radius:14px;cursor:po
 </div>
 <p id="ref_link" class="white" style="font-size:18px;word-break:break-all;margin-top:14px;">Link बनेगा जी</p>
 <button onclick="speakClean('All Life Veedeohub में फ्री जॉइनिंग करें जी')" class="speaker">🔊 सुनो जी</button>
-</div>
-
-
-<div id="google_circle_section" style="background:#000;border:4px solid gold;padding:16px;margin:14px;border-radius:16px;text-align:center;">
-<div style="display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;">
-<div id="google_circle_big" style="width:96px;height:96px;border:5px solid gold;border-top:5px solid #00FF7F;border-radius:50%;animation:spin 1.8s linear infinite;display:flex;justify-content:center;align-items:center;background:#111;box-shadow:0 0 16px gold;flex-shrink:0;">
-<span style="font-size:13px;font-weight:900;color:#FFD700;">GOOGLE<br>Live</span>
-</div>
-<div style="flex:1;min-width:260px;">
-<h3 class="gold" style="font-size:20px;margin:6px;">🔄 Live है</h3>
-<div id="rotating_links_live" style="color:#FFD700;font-weight:900;font-size:18px;background:#111;border:2px solid #00FF7F;padding:12px;border-radius:12px;min-height:56px;display:flex;align-items:center;justify-content:center;text-align:center;">
-Live है - Amazon Book - ID:9992553796 ✓
-</div>
-<p class="white" style="font-size:14px;margin:6px;">हर 2.5 सेकेंड में अगले प्रोडक्ट पर Tag - Ref + Tag - veedeohub-21 - Server Auto</p>
-</div>
-</div>
-<button onclick="speakClean(document.getElementById('rotating_links_live').innerText)" class="speaker">🔊 सुनो जी - Google सर्कल Server Tag</button>
 </div>
 
 <div class="strip2">
@@ -97,6 +77,23 @@ Live है - Amazon Book - ID:9992553796 ✓
 <div class="btn-card brand-youtube"><div class="gold" style="font-size:20px;">वीडियो 5 - ब्राह्मी</div><img class="thumb" src="https://img.youtube.com/vi/NU4k5HiQn7A/mqdefault.jpg"><button onclick="window.open('https://youtu.be/NU4k5HiQn7A','_blank')" style="background:gold;color:#000;width:100%">🔗 वीडियो 5 खोलो जी</button><button onclick="speakClean('वीडियो पांच')" class="speaker">🔊 सुनो जी - 5</button></div>
 </div>
 
+
+
+<div id="google_circle_section" style="background:#000;border:4px solid gold;padding:16px;margin:14px;border-radius:16px;text-align:center;">
+<div style="display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;">
+<div id="google_circle_big" style="width:96px;height:96px;border:5px solid gold;border-top:5px solid #00FF7F;border-radius:50%;animation:spin 1.8s linear infinite;display:flex;justify-content:center;align-items:center;background:#111;box-shadow:0 0 16px gold;flex-shrink:0;">
+<span style="font-size:13px;font-weight:900;color:#FFD700;">GOOGLE<br>Live</span>
+</div>
+<div style="flex:1;min-width:260px;">
+<h3 class="gold" style="font-size:20px;margin:6px;">🔄 Live है</h3>
+<div id="rotating_links_live" style="color:#FFD700;font-weight:900;font-size:18px;background:#111;border:2px solid #00FF7F;padding:12px;border-radius:12px;min-height:56px;display:flex;align-items:center;justify-content:center;text-align:center;">
+Live है - Amazon Book - ID:9992553796 ✓
+</div>
+<p class="white" style="font-size:14px;margin:6px;">हर 2.5 सेकेंड में अगले प्रोडक्ट पर Tag - Ref + Tag - veedeohub-21 - Server Auto</p>
+</div>
+</div>
+<button onclick="speakClean(document.getElementById('rotating_links_live').innerText)" class="speaker">🔊 सुनो जी - Google सर्कल Server Tag</button>
+</div>
 
 <div class="strip">
 <h2 class="gold" style="font-size:26px;text-align:center;">🔊 नया जॉइनिंग के लिए भाषण - 11 भाग - पूरा प्लान - सुनहरे अक्षरों में</h2>
@@ -241,9 +238,23 @@ TDS जरूरी नहीं कि 10% ही कटेगा जी, य�
 </div>
 </div>
 
+<div style="background:#000;padding:14px;margin:14px;border:3px solid gold;border-radius:16px;">
+<h2 class="gold" style="font-size:24px;">🔗 1 से 50 बटन - 10-10 पेज</h2>
+<input id="searchBox" class="big-input" placeholder="बटन खोजो जी" onkeyup="resetPage();renderButtons()">
+<div id="btnContainer"></div>
+<div style="text-align:center;background:#111;padding:14px;border-radius:14px;border:2px solid gold;">
+<button class="page-btn" onclick="prevPage()">⬅️ पीछे</button><span id="pageInfo" class="white" style="font-size:20px;font-weight:900">1-10 / 50</span><button class="page-btn" onclick="nextPage()">आगे ➡️</button><br>
+<button onclick="showAllButtons()" style="background:#FF69B4;color:#fff;font-size:18px;">📜 सारे बटन स्क्रॉल से दिखाओ</button>
+<button onclick="resetPage();renderButtons()" style="background:#fff;color:#000;font-size:18px;">🔄 फिर से 10-10 पेज</button>
+</div>
+<button onclick="speakClean('1 से 50 बटन हैं जी')" class="speaker">🔊 सुनो जी</button>
+</div>
 
-<div style="background:#330000;border:2px solid red;padding:12px;margin:14px;border-radius:12px;">
-<button onclick="if(confirm('50 बटन पूरे Reset करने हैं जी?')){ localStorage.removeItem('veedeo_buttons_v68'); BUTTONS=[...DEFAULT_BUTTONS]; saveButtons(); renderButtons(); alert('50 बटन Reset हो गए जी'); }" style="background:red;color:#fff;width:100%;font-size:18px;">🔄 50 बटन पूरे Reset करो - अगर 4 ही दिख रहे हैं जी</button>
+<div class="strip2">
+<h2 class="gold" style="font-size:22px;">➕ अनन्त लिंक जोड़ो</h2>
+<input id="anant_name" class="big-input" placeholder="बटन नाम"><input id="anant_url" class="big-input" placeholder="Link https://..."><input id="anant_desc" class="big-input" placeholder="विवरण">
+<button onclick="addAnant()" style="background:gold;color:#000;width:100%;font-size:20px;padding:18px;">➕ अनन्त बटन जोड़ो जी</button>
+<div id="anant_log" class="white" style="font-size:16px;">Firebase में रिकॉर्डेड रहेगा</div>
 </div>
 
 <div id="blog_section" style="background:#0d1b2a;padding:18px;margin:14px;border:3px solid #00FF7F;border-radius:16px;">
@@ -291,9 +302,6 @@ TDS जरूरी नहीं कि 10% ही कटेगा जी, य�
 </div>
 </div>
 
-<div id="guideDidi" onclick="toggleGuideDidi()"><img src="guide_didi_clean.png" onerror="this.onerror=null;this.src='guide_didi_talking.png'; this.onerror=null; this.src='guide_didi_talking.gif'" id="guideDidiImg" alt=""></div>
-<div id="guideDidiTalking"><p class="white" style="font-size:14px">नमस्ते जी! मैं गाइड दीदी 🙏 — हर बटन पर 🔊 दबाओ, मैं बोलूंगी जी!</p><button onclick="speakClean('नमस्ते जी मैं गाइड दीदी')" class="speaker">🔊 सुनो जी</button></div>
-
 <div style="background:#0a0a0a;padding:20px;margin:20px 0 0 0;border-top:4px solid gold;">
 <h2 class="gold" style="text-align:center;">📜 कानूनन जानकारी</h2>
 <div style="text-align:center;margin:12px 0;">
@@ -317,7 +325,7 @@ function speakClean(t){
  let clean=t.replace(/https?:\/\/[^\s]+/gi,"").replace(/www\.[^\s]+/gi,"").replace(/\b[a-z0-9]+\.[a-z]{2,}[^\s]*\b/gi,"").replace(/HIDDEN_\d+/gi,"").trim();
  if(clean.length<2) clean="विवरण सुनो जी";
  if('speechSynthesis' in window){ let u=new SpeechSynthesisUtterance(clean.substring(0,4000)); u.lang='hi-IN'; speechSynthesis.speak(u); }
- let img=document.getElementById("guideDidiImg"); if(img){ img.classList.add('talking'); setTimeout(()=>img.classList.remove('talking'),600); }
+ let img=document.getElementById("removed"); if(img){ img.style.transform="scale(1.15)"; setTimeout(()=>img.style.transform="scale(1)",300); }
 }
 function speakAll11(){ let txt=""; document.querySelectorAll(".bhag p").forEach(p=>txt+=p.innerText+" "); speakClean(txt); }
 function getRef(){ let m=document.getElementById("j_mobile")?.value||"9992553796"; return m.replace(/[^0-9]/g,"")||"9992553796"; }
@@ -348,7 +356,9 @@ function doJoin(){
  let joinerMobile = m.startsWith("91") ? m : "91"+m;
  setTimeout(()=>{ window.open("https://wa.me/"+joinerMobile+"?text="+encodeURIComponent(userMsg),"_blank"); },1400);
  setTimeout(()=>{ window.open("https://wa.me/?text="+encodeURIComponent(userMsg),"_blank"); },2200);
- speakClean("फ्री जॉइनिंग हो गई जी, आपका साइट सहित रेफरल लिंक बन गया जी, आपके और Owner दोनों के WhatsApp पर ऑटोमैटिक चला गया जी"); }
+ speakClean("फ्री जॉइनिंग हो गई जी, आपका साइट सहित रेफरल लिंक बन गया जी, आपके और Owner दोनों के WhatsApp पर ऑटोमैटिक चला गया जी");
+}
+function autoCredit(){ document.getElementById("wallet_auto_log").innerText="Auto Credit "+new Date().toLocaleString(); let w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]"); w.push({type:"credit",time:new Date().toISOString()}); localStorage.setItem("veedeo_wallet_history_v68",JSON.stringify(w)); }
 function autoWithdraw(){ document.getElementById("wallet_auto_log").innerText="Auto Withdraw "+new Date().toLocaleString(); let w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]"); w.push({type:"withdraw",time:new Date().toISOString()}); localStorage.setItem("veedeo_wallet_history_v68",JSON.stringify(w)); }
 function showWalletHistory(){ let w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]"); alert("History: "+JSON.stringify(w).substring(0,900)); }
 function openSudhar(){
@@ -373,37 +383,6 @@ const OFFICIAL_LINKS=[
 {n:4,name:"4. Web App - Firebase Live",url:"https://veedeo-hub.web.app",desc:"Firebase Live साइट",brand:"brand-default"}
 ];
 function renderOfficial4(){ let c=document.getElementById("official4Container"); if(!c) return; c.innerHTML=""; OFFICIAL_LINKS.forEach(b=>{ let ref=getRef(); let finalUrl=b.url+(b.url.includes("?")?"&":"?")+"ref="+ref; let div=document.createElement("div"); div.className="official-card "+b.brand; div.innerHTML="<div class='gold' style='font-size:20px;'>📌 "+b.name+"</div><div class='white' style='font-size:15px;'>"+b.desc+"</div><div><button onclick=\"window.open('"+finalUrl+"','_blank')\" style='background:#00FF7F;color:#000;width:100%;'>🔗 खोलो जी - "+b.n+"</button><button onclick=\"speakClean('"+b.desc+"')\" class='speaker'>🔊 सुनो जी - "+b.n+"</button><button onclick=\"window.open('https://wa.me/?text='+encodeURIComponent('"+b.name+" - "+finalUrl+"'),'_blank')\" class='share-wa'>📱 WA Share</button><button onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('"+finalUrl+"'),'_blank')\" class='share-fb'>📘 FB Share</button></div>"; c.appendChild(div); }); }
-
-
-const AMAZON_BEST_SELLERS=[
-"1. Amazon Book B0GZB61NNR - आयुर्वेद बुक",
-"2. Flipkart Book 9789362494184 - जड़ी बूटी बुक",
-"3. Dreambook Store - आयुर्वेदिक जड़ी बूटियां",
-"4. Myntra EEk80ig - Fashion",
-"5. Ajio ZKW4uGp - Fashion",
-"6. JioMart NSutlx8 - Grocery",
-"7. Nykaa Omzu9zq - Beauty",
-"8. Mamaearth Natural - Beauty",
-"9. Boat Fy7OUqb - Earphone",
-"10. The Man Company Ji5eNm8 - Grooming",
-"11. CityMall TPL_CMO - Shopping",
-"12. Blinkit Fast Delivery - Grocery",
-"13. Zepto 10 Min - Grocery",
-"14. 1MG Medicine - Health",
-"15. Meesho Cheap Shopping",
-"16. Amazon Search Ayurveda",
-"17. Flipkart Home Shopping"
-];
-let rotIdx=0;
-function rotateTags(){
- let el=document.getElementById('rotating_links_live');
- if(!el) return;
- let ref=getRef();
- let prod=AMAZON_BEST_SELLERS[rotIdx % AMAZON_BEST_SELLERS.length];
- el.innerHTML="📦 "+prod+"<br>🔗 Tag: ?ref="+ref+"&tag=veedeohub-21 - ID:9992553796 ✓ - 2.5 Sec";
- rotIdx++;
-}
-setInterval(rotateTags,2500);
 
 const HIDDEN_LINKS={"36":"aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NvdW5kL2NvbGxlY3Rpb24v","37":"aHR0cHM6Ly93d3cueW91dHViZS5jb20vYXVkaW9saWJyYXJ5L211c2lj"};
 
@@ -475,7 +454,7 @@ function nextPage(){ let list=getFiltered(); if((currentPage+1)*pageSize < list.
 function showAllButtons(){ showAllMode=true; renderButtons(); }
 function resetPage(){ currentPage=0; showAllMode=false; }
 function addAnant(){ let n=document.getElementById("anant_name").value.trim(); let u=document.getElementById("anant_url").value.trim(); let d=document.getElementById("anant_desc").value.trim(); if(!u) return alert("Link लिखो जी"); BUTTONS.push({n:BUTTONS.length+1,name:n||"नया बटन "+(BUTTONS.length+1),url:u,desc:d||"नया बटन"}); saveButtons(); renderButtons(); document.getElementById("anant_log").innerText="जोड़ दिया जी - नम्बर "+BUTTONS.length; document.getElementById("anant_name").value=""; document.getElementById("anant_url").value=""; document.getElementById("anant_desc").value=""; }
-function toggleGuideDidi(){ let box=document.getElementById("guideDidiTalking"); if(box.style.display==="none"||box.style.display===""){ box.style.display="block"; speakClean("नमस्ते जी मैं गाइड दीदी"); } else{ box.style.display="none"; } }
+/* guide function removed */ }
 document.addEventListener("DOMContentLoaded",()=>{ renderOfficial4(); renderButtons(); let users=JSON.parse(localStorage.getItem("veedeo_users_v68")||"[]"); let tree=JSON.parse(localStorage.getItem("veedeo_tree_v68")||"[]"); if(users.length>0){ document.getElementById("dash").innerText="Users: "+users.length+" Tree: "+tree.length; document.getElementById("tree").innerText="Tree: "+tree.join(" -> "); } });
 </script>
 </body>
