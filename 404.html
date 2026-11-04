@@ -21,11 +21,11 @@ button{font-weight:900;padding:14px 18px;margin:6px;border-radius:14px;cursor:po
 .page-btn{background:gold;color:#000;padding:14px 24px;margin:8px;font-size:19px;border:3px solid #fff}
 #deleteConfirmModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:9999;justify-content:center;align-items:center}
 #deleteConfirmModal .modal-box{background:#111;border:3px solid gold;padding:22px;border-radius:18px;width:92%;max-width:600px}
-#guideDidi{position:fixed;bottom:20px;right:15px;width:96px;height:96px;border-radius:50%;border:3px solid gold;z-index:9998;cursor:pointer;box-shadow:0 0 16px gold;background:#000;overflow:hidden}
-#guideDidi img{width:100%;height:100%;object-fit:cover;transition:transform 0.2s} .talking{animation:talk 0.4s infinite}
+#guideDidi{position:fixed;bottom:20px;right:10px;width:138px;height:auto;border:3px solid gold;border-radius:18px;z-index:9998;cursor:pointer;box-shadow:0 0 18px gold;background:#000;overflow:hidden;padding:0;line-height:0}
+#guideDidi img{width:100%;height:auto;object-fit:contain;display:block;transition:transform 0.25s} .talking{transform:scale(1.06)}
 @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-#googleCircle{position:fixed;top:85px;right:15px;width:74px;height:74px;border:4px solid gold;border-top:4px solid #00FF7F;border-radius:50%;animation:spin 2s linear infinite;z-index:9997;background:#000;display:flex;justify-content:center;align-items:center;box-shadow:0 0 12px gold}
-#googleCircle span{font-size:11px;font-weight:900;color:#FFD700;animation:spin 2s linear infinite reverse}
+/* fixed googleCircle removed */
+#googleCircle span{font-size:11px;font-weight:900;color:#FFD700;}
 #guideDidiTalking{position:fixed;bottom:130px;right:15px;background:#111;border:2px solid gold;padding:12px;border-radius:14px;max-width:300px;display:none;z-index:9998}
 .pin-input{width:100%;box-sizing:border-box;background:#000;color:#FFD700;border:3px solid gold;font-weight:900;padding:18px;font-size:20px;border-radius:14px;margin:10px 0}
 </style>
@@ -44,6 +44,23 @@ button{font-weight:900;padding:14px 18px;margin:6px;border-radius:14px;cursor:po
 </div>
 <p id="ref_link" class="white" style="font-size:18px;word-break:break-all;margin-top:14px;">Link बनेगा जी</p>
 <button onclick="speakClean('All Life Veedeohub में फ्री जॉइनिंग करें जी')" class="speaker">🔊 सुनो जी</button>
+</div>
+
+
+<div id="google_circle_section" style="background:#000;border:4px solid gold;padding:16px;margin:14px;border-radius:16px;text-align:center;">
+<div style="display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;">
+<div id="google_circle_big" style="width:96px;height:96px;border:5px solid gold;border-top:5px solid #00FF7F;border-radius:50%;animation:spin 1.8s linear infinite;display:flex;justify-content:center;align-items:center;background:#111;box-shadow:0 0 16px gold;flex-shrink:0;">
+<span style="font-size:13px;font-weight:900;color:#FFD700;">GOOGLE<br>Live</span>
+</div>
+<div style="flex:1;min-width:260px;">
+<h3 class="gold" style="font-size:20px;margin:6px;">🔄 Live है</h3>
+<div id="rotating_links_live" style="color:#FFD700;font-weight:900;font-size:18px;background:#111;border:2px solid #00FF7F;padding:12px;border-radius:12px;min-height:56px;display:flex;align-items:center;justify-content:center;text-align:center;">
+Live है - Amazon Book - ID:9992553796 ✓
+</div>
+<p class="white" style="font-size:14px;margin:6px;">हर 2.5 सेकेंड में अगले प्रोडक्ट पर Tag - Ref + Tag - veedeohub-21 - Server Auto</p>
+</div>
+</div>
+<button onclick="speakClean(document.getElementById('rotating_links_live').innerText)" class="speaker">🔊 सुनो जी - Google सर्कल Server Tag</button>
 </div>
 
 <div class="strip2">
@@ -80,39 +97,153 @@ button{font-weight:900;padding:14px 18px;margin:6px;border-radius:14px;cursor:po
 <div class="btn-card brand-youtube"><div class="gold" style="font-size:20px;">वीडियो 5 - ब्राह्मी</div><img class="thumb" src="https://img.youtube.com/vi/NU4k5HiQn7A/mqdefault.jpg"><button onclick="window.open('https://youtu.be/NU4k5HiQn7A','_blank')" style="background:gold;color:#000;width:100%">🔗 वीडियो 5 खोलो जी</button><button onclick="speakClean('वीडियो पांच')" class="speaker">🔊 सुनो जी - 5</button></div>
 </div>
 
+
 <div class="strip">
-<h2 class="gold" style="font-size:24px;">🔊 नया जॉइनिंग के लिए भाषण - 11 भाग</h2>
-<div class="bhag"><h3 class="gold">भाग 1 - फ्री जॉइनिंग</h3><p class="white" style="font-size:18px;">नमस्ते जी, मैं Ashok Kumar, Mohammad Pur Ahir, Tauru, Nuh, Haryana 122105 से जी। आपसे कोई पैसे नहीं लिए जा रहे हैं जी। VeedeoHub All Life Free Domain है जी, Public Domain Free, No Copyright। आपकी अच्छी या बुरी आदतें आपकी सोच पर निर्भर हैं, इसलिए हमेशा सकारात्मक रहें जी। Mobile ही आपका ID, Wallet, Referral है जी। Free Joining Form Top पर है जी, वहीं से जॉइन करो जी।</p><button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 1</button></div>
-<div class="bhag"><h3 class="gold">भाग 2 - Mobile = ID = Wallet = Referral</h3><p class="white" style="font-size:18px;">आपका Mobile Number ही आपका ID Number, वही Wallet, वही Referral Code है जी। Link बनेगा https://veedeo-hub.vercel.app?ref=आपकाMobile&tag=veedeohub-21। यही Single Identity सिस्टम फ्रॉड रोकता है जी। डुप्लीकेट Mobile, गलत Link, Spam Auto Check AI से होगा जी। UPI 9992553796@ybl Auto Credit Withdraw veedeo_wallet_history_v68 में रिकॉर्डेड रहेगा जी।</p><button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 2</button></div>
-<div class="bhag"><h3 class="gold">भाग 3 - 6 सेल = सीनियरिटी 1</h3><p class="white" style="font-size:18px;">कुल 6 सेल, चाहे स्वयं करें या टीम से, 6000 रुपये तक Commissionable Sale - आपका ID नंबर 1 सीनियरिटी में आ जाएगा जी।</p><button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 3</button></div>
-<div class="bhag"><h3 class="gold">भाग 4 - Single Line Tree</h3><p class="white" style="font-size:18px;">Left Right Leg नहीं है जी। Single Line Tree है जी। जो आखिरी में जुड़ा है, नया जॉइनिंग उसी के नीचे जुड़ेगा जी। Tree veedeo_tree_v68 में सुरक्षित है जी।</p><button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 4</button></div>
-<div class="bhag"><h3 class="gold">भाग 5 - कमीशन 60% Seller - 5% Owner - 35% Pool</h3><p class="white" style="font-size:18px;">हर वास्तविक बिक्री पर 60% Seller को Direct मिलेगा जी। 5% Owner Royalty Infinite Fixed। 35% Team Seniority Pool में जाएगा जी। केवल वास्तविक बिक्री पर ही, क्लिक View Like से नहीं जी।</p><button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 5</button></div>
-<div class="bhag"><h3 class="gold">भाग 6 - Pool बंटवारा</h3><p class="white" style="font-size:18px;">35% Pool में से L1 को 12%, L2 को 8%, L3 को 5%, L4 को 3%, L5 को 2%, बाकी 5% L6 से Infinite बराबर बंटेगा जी।</p><button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 6</button></div>
-<div class="bhag"><h3 class="gold">भाग 7 - संस्था टीम जॉइनिंग</h3><p class="white" style="font-size:18px;">कोई भी संस्था, टीम, ग्रुप, दुकान, अपनी संस्था के नाम, मोबाइल, शहर से जॉइन कर सकती है जी। Mobile से ही ID बन जाएगी जी।</p><button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 7</button></div>
-<div class="bhag"><h3 class="gold">भाग 8 - Dashboard Wallet TDS</h3><p class="white" style="font-size:18px;">Dashboard में कुल कमीशन, TDS, शेष, पेंडिंग, पेड सब दिखेगा जी। Wallet Mobile ही है, UPI 9992553796@ybl। TDS 10% सरकारी नियम अनुसार कटेगा जी। Wallet Auto Record veedeo_wallet_history_v68 में होगा जी, Dashboard, Tree, TDS सबका रिकॉर्डेड पेज बनता रहेगा जी।</p><button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 8</button></div>
-<div class="bhag"><h3 class="gold">भाग 9 - वास्तविक बिक्री पर ही</h3><p class="white" style="font-size:18px;">केवल क्लिक, View, Like से कमीशन नहीं जी। केवल कंपनियों की वास्तविक बिक्री, कंपनी की पुष्टि, कानून अनुसार ही भुगतान। कमाई की गारंटी नहीं है जी, यह Affiliate Business है। Affiliate Links पर ref=ID & tag=veedeohub-21 लगता है जी - Amazon, Flipkart, Myntra, AJIO, JioMart, Nykaa, Mamaearth, Boat, Man Company - कमीशन कंपनी पुष्टि पर ही।</p><button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 9</button></div>
-<div class="bhag"><h3 class="gold">भाग 10 - 1 से 50 बटन</h3><p class="white" style="font-size:18px;">साइट में 1 से 50 तक लगातार बटन हैं जी, हर बटन पर नाम अंकित है, Speaker दबाओ तो विवरण बोलेगा जी। हर बटन पर FB WhatsApp शेयर। Delete में पुष्टि अंदर ही, PIN डालने पर ही Delete होगा जी। Pagination 10-10 बटन, सारे 50 स्क्रॉल से भी देख सकते हो जी। Pexels 1 Image 1 Video Sample है जी।</p><button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 10</button></div>
-<div class="bhag"><h3 class="gold">भाग 11 - अंतिम - अभी जॉइन करो</h3><p class="white" style="font-size:18px;">क्या मैं भी बिना पैसे के, सिर्फ 6 सेल की छोटी सी मेहनत से, All Life Free System में अपनी जगह बनाना चाहता हूँ जी? अगर हाँ, तो अभी फॉर्म भरो जी। आदतें ही जीवन का आधार हैं जी। ॐ नमः शिवाय 🪔। Free Joining All Life।</p><button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 11</button></div>
-<button onclick="speakAll11()" style="background:gold;color:#000;width:100%;font-size:20px;border:3px solid #fff;padding:18px;">🔊 पूरा 11 भाग एक साथ सुनो जी</button>
+<h2 class="gold" style="font-size:26px;text-align:center;">🔊 नया जॉइनिंग के लिए भाषण - 11 भाग - पूरा प्लान - सुनहरे अक्षरों में</h2>
+
+<div class="bhag" style="border-left:6px solid gold;">
+<h3 class="gold" style="font-size:22px;">भाग 1 - फ्री जॉइनिंग - All Life Free Domain - आदतें ही जीवन का आधार हैं जी</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+नमस्ते जी, मैं अशोक कुमार, मोहम्मद पुर अहीर, तावडू, नूंह, हरियाणा 122105 से जी। आपसे कोई पैसे नहीं लिए जा रहे हैं जी। VeedeoHub All Life Free Domain है जी, Public Domain Free, No Copyright। आपकी अच्छी या बुरी आदतें आपकी सोच पर निर्भर हैं जी, इसलिए हमेशा सकारात्मक रहें जी। नकारात्मक सोच से जीवन में रुकावट आती है जी, सकारात्मक सोच से रास्ता खुलता है जी। Mobile ही आपका ID है जी, वही Wallet है जी, वही Referral है जी - ID 9992553796 ही सही है जी। Free Joining Form सबसे ऊपर है जी, वहीं से जॉइन करो जी। कोई फीस नहीं जी, आजीवन फ्री जी, कोई पैकेज नहीं जी, कोई रिन्यूअल नहीं जी। आदतें ही जीवन का आधार हैं जी, अच्छी आदत बनाओ जी, रोज 6 सेल की आदत जी।
+</p>
+<button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 1</button>
 </div>
 
-<div style="background:#000;padding:14px;margin:14px;border:3px solid gold;border-radius:16px;">
-<h2 class="gold" style="font-size:24px;">🔗 1 से 50 बटन - 10-10 पेज</h2>
-<input id="searchBox" class="big-input" placeholder="बटन खोजो जी" onkeyup="resetPage();renderButtons()">
-<div id="btnContainer"></div>
-<div style="text-align:center;background:#111;padding:14px;border-radius:14px;border:2px solid gold;">
-<button class="page-btn" onclick="prevPage()">⬅️ पीछे</button><span id="pageInfo" class="white" style="font-size:20px;font-weight:900">1-10 / 50</span><button class="page-btn" onclick="nextPage()">आगे ➡️</button><br>
-<button onclick="showAllButtons()" style="background:#FF69B4;color:#fff;font-size:18px;">📜 सारे बटन स्क्रॉल से दिखाओ</button>
-<button onclick="resetPage();renderButtons()" style="background:#fff;color:#000;font-size:18px;">🔄 फिर से 10-10 पेज</button>
-</div>
-<button onclick="speakClean('1 से 50 बटन हैं जी')" class="speaker">🔊 सुनो जी</button>
+<div class="bhag">
+<h3 class="gold" style="font-size:22px;">भाग 2 - Mobile = ID = Wallet = Referral - 9992553796 ✓ ही सही है जी</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+आपका Mobile Number ही आपका ID Number है जी, वही आपका Wallet है जी, वही आपका Referral Code है जी। Link बनेगा जी https://veedeo-hub.vercel.app?ref=आपकाMobile&tag=veedeohub-21। यही Single Identity System फ्रॉड को रोकता है जी। डुप्लीकेट Mobile, गलत Link, Spam सब Auto Check AI से होगा जी। एक व्यक्ति एक Mobile एक ID जी। UPI 9992553796@ybl पर Auto Credit Withdraw होगा जी और सब veedeo_wallet_history_v68 में रिकॉर्डेड रहेगा जी। Joining गायब नहीं होगी जी, Firebase में सुरक्षित रहेगी जी, veedeo_users_v68 में। Mobile बदलना हो तो सुधार कक्ष में PIN डालकर बदल सकते हो जी।
+</p>
+<button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 2</button>
 </div>
 
-<div class="strip2">
-<h2 class="gold" style="font-size:22px;">➕ अनन्त लिंक जोड़ो</h2>
-<input id="anant_name" class="big-input" placeholder="बटन नाम"><input id="anant_url" class="big-input" placeholder="Link https://..."><input id="anant_desc" class="big-input" placeholder="विवरण">
-<button onclick="addAnant()" style="background:gold;color:#000;width:100%;font-size:20px;padding:18px;">➕ अनन्त बटन जोड़ो जी</button>
-<div id="anant_log" class="white" style="font-size:16px;">Firebase में रिकॉर्डेड रहेगा</div>
+<div class="bhag">
+<h3 class="gold" style="font-size:22px;">भाग 3 - 6 सेल = सीनियरिटी 1 - 6000 रुपये तक Commissionable Sale जी</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+कुल 6 सेल, चाहे आप स्वयं करें या आपकी टीम से हो, 6000 रुपये तक Commissionable Sale होते ही आपका ID नंबर 1 सीनियरिटी में आ जाएगा जी। उसके बाद आपकी Team Seniority Pool में गिनती शुरू हो जाएगी जी। ये छोटी सी मेहनत आपको Lifetime के लिए सीनियर बना देगी जी। 6 सेल का मतलब 6 अलग-अलग Customer को वास्तविक प्रोडक्ट बेचना जी, चाहे Amazon, Flipkart, Myntra, Ajio कहीं से भी। सेल का मतलब वास्तविक बिक्री जी, क्लिक नहीं जी। 6000 रुपये तक की बिक्री पर सीनियरिटी 1 मिलेगी जी, फिर आपका Pool में हिस्सा शुरू होगा जी।
+</p>
+<button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 3</button>
+</div>
+
+<div class="bhag">
+<h3 class="gold" style="font-size:22px;">भाग 4 - Single Line Tree - सबसे नीचे वाला ही अगला जोड़ेगा जी - Left Right Leg नहीं है जी</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+Left Right Leg वाला System नहीं है जी। Single Line Tree है जी। जो आखिरी में जुड़ा है जी, नया जॉइनिंग उसी के नीचे जुड़ेगा जी। Tree का रिकॉर्ड veedeo_tree_v68 में सुरक्षित है जी। कोई ऊपर नीचे नहीं कर सकता जी, Automatic System है जी। इससे सबको बराबर मौका मिलता है जी। कोई लेग मेंटेन नहीं जी, कोई मैचिंग नहीं जी। सीधा Single Line, सबसे नीचे वाला ही अगला जोड़ेगा जी। Tree का लिखित उदाहरण नीचे तालिका के बाद दिया है जी।
+</p>
+<button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 4</button>
+</div>
+
+<div class="bhag">
+<h3 class="gold" style="font-size:22px;">भाग 5 - कमीशन 60% Seller को Direct - 5% Owner Royalty Infinite Fixed - 35% Pool जी</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+हर वास्तविक बिक्री पर 60% Seller को Direct मिलेगा जी। 5% Owner Royalty Infinite Fixed मिलेगा जी, जो हमेशा Fixed रहेगा जी, कभी घटेगा बढ़ेगा नहीं जी। 35% Team Seniority Pool में जाएगा जी। केवल वास्तविक बिक्री पर ही कमीशन मिलेगा जी, सिर्फ क्लिक, View, Like से नहीं मिलेगा जी। कंपनी की पुष्टि के बाद ही मिलेगा जी। Affiliate System से कंपनी कमीशन देती है जी, Amazon, Flipkart, Myntra, Ajio, JioMart, Nykaa, Mamaearth, Boat, Man Company सभी से। Seller मतलब जिसकी ID से बिक्री हुई है जी, उसी को 60% Direct।
+</p>
+<button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 5</button>
+</div>
+
+<div class="bhag">
+<h3 class="gold" style="font-size:22px;">भाग 6 - Pool बंटवारा - L1 12% L2 8% L3 5% L4 3% L5 2% बाकी 5% L6 से Infinite जी</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+35% Pool में से L1 को 12%, L2 को 8%, L3 को 5%, L4 को 3%, L5 को 2%, बाकी 5% L6 से Infinite तक बराबर बंटेगा जी। ये बंटवारा Automatic होगा जी, Firebase में रिकॉर्ड होगा जी। जितनी बड़ी Team उतना बड़ा Pool Benefit जी। L1 मतलब आपके Direct नीचे वाला सीनियर, L2 उसके नीचे वाला, ऐसे Infinite तक। Pool का पैसा हर वास्तविक बिक्री पर निकलेगा जी। Seller को 60% मिलने के बाद बचा 35% Pool में ही बंटेगा जी। नीचे तालिका में लिखित में दिखाया है जी कैसे अनंत सिस्टम से सबको कमीशन आएगा जी।
+</p>
+<button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 6</button>
+</div>
+
+<div class="bhag">
+<h3 class="gold" style="font-size:22px;">भाग 7 - संस्था, ग्रुप, टीम, या अन्य - नाम Mobile शहर से ही ID - पेमेंट उनकी ID पर ही</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+कोई भी संस्था, ग्रुप, टीम, या अन्य, अपने संस्था के नाम, मोबाइल, शहर से जॉइन कर सकती है जी। Mobile से ही ID बन जाएगी जी। संस्था का नाम ही पहचान होगी जी। एक Mobile से एक ही ID बनेगी जी, डुप्लीकेट नहीं जी। उनका पेमेंट भुगतान उनकी ID पर ही जाएगा जी, UPI पर Auto Credit होगा जी। वो अपनी टीम में किस प्रकार बांटते हैं वो उनका काम बनेगा जी, उनकी जिम्मेवारी होगी जी। क्योंकि वास्तविक बिक्री पर एफिलिएट सिस्टम से कंपनी कमीशन और TDS काटकर संस्था, ग्रुप, टीम, या अन्य को दे चुकी होगी जी। Company का काम Affiliate Commission देना है जी, आगे टीम में बांटना संस्था, ग्रुप, टीम की जिम्मेवारी है जी। इससे संस्था, ग्रुप, टीम को भी All Life Free System में अपनी जगह बनाने का मौका मिलता है जी।
+</p>
+<button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 7</button>
+</div>
+
+<div class="bhag">
+<h3 class="gold" style="font-size:22px;">भाग 8 - Dashboard Wallet TDS UPI Auto - रिकॉर्डेड पेज बनता रहेगा जी - जॉइनिंग गायब नहीं होगी जी</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+Dashboard में कुल कमीशन, TDS, शेष, पेंडिंग, पेड सब दिखेगा जी। Wallet Mobile ही है जी, UPI 9992553796@ybl। TDS सरकारी नियम अनुसार कटेगा जी, जरूरी नहीं कि 10% ही कटेगा, सरकार के नियम अनुसार कम अधिक जो है वो लागू रहेगा जी। Wallet Auto Record veedeo_wallet_history_v68 में होगा जी, TDS veedeo_tds_v68 में, Tree veedeo_tree_v68 में, Users veedeo_users_v68 में, Sales veedeo_sales_v68 में। सबका रिकॉर्डेड पेज बनता रहेगा जी, चाहे Dashboard हो, Tree हो, TDS हो, Wallet हो। जॉइनिंग गायब नहीं होगी जी, Firebase Unlimited है जी। Auto Credit, Auto Withdraw 20, 60, 100 पर होगा जी।
+</p>
+<button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 8</button>
+</div>
+
+<div class="bhag">
+<h3 class="gold" style="font-size:22px;">भाग 9 - वास्तविक बिक्री पर ही - कमाई की गारंटी नहीं - Affiliate Disclosure - ID:9992553796 ✓</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+केवल क्लिक, View, Like से कमीशन नहीं जी। केवल कंपनियों की वास्तविक बिक्री, कंपनी की पुष्टि, कानून अनुसार ही भुगतान होगा जी। कमाई की गारंटी नहीं है जी, यह Affiliate Business है जी। Affiliate Links पर ref=ID और tag=veedeohub-21 लगता है जी - Amazon, Flipkart, Myntra, AJIO, JioMart, Nykaa, Mamaearth, Boat, Man Company - कमीशन कंपनी की पुष्टि पर ही मिलेगा जी, Extra Charge Customer को नहीं जी। Return, Cancel पर कमीशन वापस होगा जी। Affiliate Disclosure जरूरी है जी, AdSense के लिए भी जरूरी है जी।
+</p>
+<button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 9</button>
+</div>
+
+<div class="bhag">
+<h3 class="gold" style="font-size:22px;">भाग 10 - 1 से 50 बटन - Search Speaker FB WhatsApp Pagination 10-10 - Pexels 1 Image 1 Video Sample - ब्रांडेड</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+साइट में 1 से 50 तक लगातार बटन हैं जी, हर बटन पर नाम अंकित है जी। Speaker दबाओ तो विवरण बोलेगा जी, https नहीं बोलेगा जी। हर बटन पर FB WhatsApp शेयर है जी। Delete में पुष्टि अंदर ही है जी, PIN डालने पर ही Delete होगा जी, नीचे वाला बटन ऑटोमैटिक ऊपर आ जाएगा जी, नंबर वाइज शिफ्ट होगा जी। Pagination 10-10 बटन है जी, सारे 50 स्क्रॉल से भी देख सकते हो जी। Pexels 1 Image 1 Video Sample है जी। Search Box से बटन खोज सकते हो जी। 4 Official Links ऊपर हैं जी - Vercel MAIN LIVE, GitHub, Netlify, Web App। अनंत लिंक जोड़ सकते हो जी, Firebase में रिकॉर्ड होगा जी। Guide Didi हर जगह बोलेगी जी।
+</p>
+<button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 10</button>
+</div>
+
+<div class="bhag">
+<h3 class="gold" style="font-size:22px;">भाग 11 - अंतिम - खुद से सवाल - अभी जॉइन करो जी - All Life Free - ॐ नमः शिवाय जी</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+क्या मैं भी बिना पैसे के, सिर्फ 6 सेल की छोटी सी मेहनत से, All Life Free System में अपनी जगह बनाना चाहता हूँ जी? अगर हाँ, तो अभी फॉर्म भरो जी। आदतें ही जीवन का आधार हैं जी। सकारात्मक सोच ही सफलता की कुंजी है जी। कोई रिस्क नहीं जी, फ्री जॉइनिंग है जी। आज नहीं तो कल करना ही पड़ेगा जी, अभी कर लो जी। ॐ नमः शिवाय जी। All Life Free Joining करो जी, अभी करो जी। Free Domain है जी, No Copyright, Public Domain।
+</p>
+<button onclick="speakClean(this.previousElementSibling.innerText)" class="speaker">🔊 सुनो जी - भाग 11</button>
+</div>
+
+<div class="bhag" style="border:3px solid #00FF7F;background:#001a00;">
+<h3 class="gold" style="font-size:24px;text-align:center;">📊 प्लान की तालिका - अनंत सिस्टम से कमीशन कैसे आएगा जी - अपनी ID की सेल पर लिखित में</h3>
+<div style="overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;background:#111;color:#FFD700;font-weight:900;font-size:16px;">
+<tr style="background:gold;color:#000;"><th style="border:2px solid #fff;padding:10px;">विवरण</th><th style="border:2px solid #fff;padding:10px;">रुपये / %</th><th style="border:2px solid #fff;padding:10px;">किसको मिलेगा जी</th></tr>
+<tr><td style="border:2px solid gold;padding:10px;">मान लो एक प्रोडक्ट बिक्री - Commissionable Sale</td><td style="border:2px solid gold;padding:10px;">₹1000 पर कंपनी कमीशन ₹200 मान लो जी</td><td style="border:2px solid gold;padding:10px;">कंपनी से Affiliate कमीशन</td></tr>
+<tr><td style="border:2px solid gold;padding:10px;">Seller Direct - जिसकी ID से बिका जी - आपकी ID की सेल</td><td style="border:2px solid gold;padding:10px;">60% = ₹120</td><td style="border:2px solid gold;padding:10px;">आपको Direct - अपनी ID की सेल पर लिखित में</td></tr>
+<tr><td style="border:2px solid gold;padding:10px;">Owner Royalty Infinite Fixed</td><td style="border:2px solid gold;padding:10px;">5% = ₹10</td><td style="border:2px solid gold;padding:10px;">Owner ID 9992553796 Fixed</td></tr>
+<tr><td style="border:2px solid gold;padding:10px;">Team Seniority Pool</td><td style="border:2px solid gold;padding:10px;">35% = ₹70</td><td style="border:2px solid gold;padding:10px;">Pool में बंटेगा जी</td></tr>
+<tr><td style="border:2px solid gold;padding:10px;">L1 - आपका Direct सीनियर</td><td style="border:2px solid gold;padding:10px;">Pool का 12% = ₹8.40</td><td style="border:2px solid gold;padding:10px;">L1 को</td></tr>
+<tr><td style="border:2px solid gold;padding:10px;">L2</td><td style="border:2px solid gold;padding:10px;">Pool का 8% = ₹5.60</td><td style="border:2px solid gold;padding:10px;">L2 को</td></tr>
+<tr><td style="border:2px solid gold;padding:10px;">L3</td><td style="border:2px solid gold;padding:10px;">Pool का 5% = ₹3.50</td><td style="border:2px solid gold;padding:10px;">L3 को</td></tr>
+<tr><td style="border:2px solid gold;padding:10px;">L4</td><td style="border:2px solid gold;padding:10px;">Pool का 3% = ₹2.10</td><td style="border:2px solid gold;padding:10px;">L4 को</td></tr>
+<tr><td style="border:2px solid gold;padding:10px;">L5</td><td style="border:2px solid gold;padding:10px;">Pool का 2% = ₹1.40</td><td style="border:2px solid gold;padding:10px;">L5 को</td></tr>
+<tr><td style="border:2px solid gold;padding:10px;">L6 से Infinite</td><td style="border:2px solid gold;padding:10px;">Pool का बाकी 5% = ₹3.50 बराबर</td><td style="border:2px solid gold;padding:10px;">L6 से Infinite सबमें बराबर - अनंत सिस्टम</td></tr>
+</table>
+</div>
+<p class="gold" style="font-size:16px;margin-top:12px;">ऊपर तालिका में अपनी ID की सेल पर लिखित में दिखाया है जी - ₹1000 की बिक्री पर ₹200 कमीशन में से ₹120 आपको Direct, बाकी Pool में अनंत तक बंटेगा जी - यही अनंत सिस्टम है जी।</p>
+</div>
+
+<div class="bhag" style="border:3px solid gold;background:#111;">
+<h3 class="gold" style="font-size:22px;text-align:center;">🌳 ट्री का लिखित उदाहरण - Single Line Tree</h3>
+<p class="gold" style="font-size:18px;line-height:30px;white-space:pre-wrap;">
+ट्री लिखित में उदाहरण जी:
+
+1. 9992553796 - Owner - पहला - Top पर जी
+2. 9876543210 - पहला जॉइनिंग - 9992553796 के नीचे जुड़ा जी
+3. 9123456780 - दूसरा जॉइनिंग - 9876543210 के नीचे जुड़ा जी
+4. 9812345670 - तीसरा जॉइनिंग - 9123456780 के नीचे जुड़ा जी
+5. 9765432100 - चौथा जॉइनिंग - 9812345670 के नीचे जुड़ा जी
+6. 9654321000 - नया जॉइनिंग - हमेशा सबसे नीचे वाले 9765432100 के नीचे जुड़ेगा जी
+
+Single Line Tree में हमेशा सबसे नीचे वाला ही अगला जोड़ेगा जी - Left Right नहीं जी - सीधा लाइन जी - Tree veedeo_tree_v68 में लिखित में सुरक्षित रहेगा जी - Dashboard पर Tree दिखेगा जी - Tree: 9992553796 -> 9876543210 -> 9123456780 -> 9812345670 -> 9765432100 -> 9654321000
+
+अगर 9654321000 की ID से कोई बिक्री होती है जी तो Pool का 12% 9765432100 को, 8% 9812345670 को, 5% 9123456780 को, 3% 9876543210 को, 2% 9992553796 को, बाकी 5% L6 से Infinite - यही अनंत सिस्टम है जी।
+</p>
+</div>
+
+<div class="bhag" style="border:3px solid #FF69B4;background:#1a001a;">
+<h3 class="gold" style="font-size:22px;text-align:center;">💰 TDS का विवरण - सरकारी नियम अनुसार - जरूरी नहीं 10% ही</h3>
+<p class="gold" style="font-size:18px;line-height:28px;">
+TDS जरूरी नहीं कि 10% ही कटेगा जी, ये सरकार के नियम अनुसार कम अधिक जो है वो लागू रहेगा जी। अभी 10% मानकर चल रहे हैं जी, लेकिन सरकार का नियम बदलेगा तो TDS भी कम अधिक हो सकता है जी। TDS का पैसा सरकार को जाता है जी, PAN पर जमा होता है जी। TDS veedeo_tds_v68 में रिकॉर्डेड रहेगा जी। TDS कटने के बाद बाकी पैसा Wallet में आएगा जी, UPI 9992553796@ybl पर Auto Credit। TDS Certificate साल के अंत में मिलेगा जी। इसलिए Dashboard में कुल कमीशन, TDS, शेष अलग-अलग दिखाया है जी। TDS सरकारी नियम है जी, कंपनी या Owner का नहीं जी।
+</p>
+</div>
+
+<button onclick="speakAll11()" style="background:gold;color:#000;width:100%;font-size:20px;border:3px solid #fff;padding:18px;">🔊 पूरा 11 भाग + तालिका + ट्री + TDS एक साथ सुनो जी</button>
+</div>
+
+
+</div>
+</div>
+
+
+<div style="background:#330000;border:2px solid red;padding:12px;margin:14px;border-radius:12px;">
+<button onclick="if(confirm('50 बटन पूरे Reset करने हैं जी?')){ localStorage.removeItem('veedeo_buttons_v68'); BUTTONS=[...DEFAULT_BUTTONS]; saveButtons(); renderButtons(); alert('50 बटन Reset हो गए जी'); }" style="background:red;color:#fff;width:100%;font-size:18px;">🔄 50 बटन पूरे Reset करो - अगर 4 ही दिख रहे हैं जी</button>
 </div>
 
 <div id="blog_section" style="background:#0d1b2a;padding:18px;margin:14px;border:3px solid #00FF7F;border-radius:16px;">
@@ -160,8 +291,7 @@ button{font-weight:900;padding:14px 18px;margin:6px;border-radius:14px;cursor:po
 </div>
 </div>
 
-<div id="googleCircle" onclick="speakClean('Tag लग रहा है जी - रेफरल टैग सर्वर पर घूम रहा है जी')"><span>TAG ✓</span></div>
-<div id="guideDidi" onclick="toggleGuideDidi()"><img src="guide_didi_talking.png" onerror="this.onerror=null;this.src='guide_didi_talking.gif'" id="guideDidiImg" alt="Guide Didi"></div>
+<div id="guideDidi" onclick="toggleGuideDidi()"><img src="guide_didi_clean.png" onerror="this.onerror=null;this.src='guide_didi_talking.png'; this.onerror=null; this.src='guide_didi_talking.gif'" id="guideDidiImg" alt=""></div>
 <div id="guideDidiTalking"><p class="white" style="font-size:14px">नमस्ते जी! मैं गाइड दीदी 🙏 — हर बटन पर 🔊 दबाओ, मैं बोलूंगी जी!</p><button onclick="speakClean('नमस्ते जी मैं गाइड दीदी')" class="speaker">🔊 सुनो जी</button></div>
 
 <div style="background:#0a0a0a;padding:20px;margin:20px 0 0 0;border-top:4px solid gold;">
@@ -187,7 +317,7 @@ function speakClean(t){
  let clean=t.replace(/https?:\/\/[^\s]+/gi,"").replace(/www\.[^\s]+/gi,"").replace(/\b[a-z0-9]+\.[a-z]{2,}[^\s]*\b/gi,"").replace(/HIDDEN_\d+/gi,"").trim();
  if(clean.length<2) clean="विवरण सुनो जी";
  if('speechSynthesis' in window){ let u=new SpeechSynthesisUtterance(clean.substring(0,4000)); u.lang='hi-IN'; speechSynthesis.speak(u); }
- let img=document.getElementById("guideDidiImg"); if(img){ img.style.transform="scale(1.15)"; setTimeout(()=>img.style.transform="scale(1)",300); }
+ let img=document.getElementById("guideDidiImg"); if(img){ img.classList.add('talking'); setTimeout(()=>img.classList.remove('talking'),600); }
 }
 function speakAll11(){ let txt=""; document.querySelectorAll(".bhag p").forEach(p=>txt+=p.innerText+" "); speakClean(txt); }
 function getRef(){ let m=document.getElementById("j_mobile")?.value||"9992553796"; return m.replace(/[^0-9]/g,"")||"9992553796"; }
@@ -208,14 +338,17 @@ function doJoin(){
  document.getElementById("dash").innerText="Users: "+users.length+" Tree: "+tree.length+" - Dashboard Tree TDS सब रिकॉर्डेड पेज बनता रहेगा जी";
  document.getElementById("tree").innerText="Tree: "+tree.join(" -> ");
  let refLink="https://veedeo-hub.vercel.app?ref="+m+"&tag=veedeohub-21";
- document.getElementById("ref_link").innerText="Link बना जी: "+refLink;
- let userMsg="ॐ नमः शिवाय जी, आपका VeedeoHub में फ्री जॉइनिंग हो गया जी। आपका रेफरल लिंक: "+refLink;
- let ownerMsg="नया जॉइनिंग जी: नाम "+n+" शहर "+c+" Mobile "+m+" - रेफरल लिंक "+refLink+" - Date "+new Date().toLocaleString();
- setTimeout(()=>{ window.open("https://wa.me/919992553796?text="+encodeURIComponent(ownerMsg),"_blank"); },500);
- setTimeout(()=>{ if(confirm("रेफरल लिंक बन गया जी: "+refLink+"\nWhatsApp पर भेजना है जी?")){ window.open("https://wa.me/?text="+encodeURIComponent(userMsg),"_blank"); } },1200);
- speakClean("फ्री जॉइनिंग हो गई जी, आपका रेफरल लिंक बन गया जी, Vercel साइट सहित लिंक Owner को WhatsApp पर चला गया जी");
-}
-function autoCredit(){ document.getElementById("wallet_auto_log").innerText="Auto Credit "+new Date().toLocaleString(); let w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]"); w.push({type:"credit",time:new Date().toISOString()}); localStorage.setItem("veedeo_wallet_history_v68",JSON.stringify(w)); }
+ let fullLinkText = "https://veedeo-hub.vercel.app/?ref="+m+"&tag=veedeohub-21";
+ document.getElementById("ref_link").innerText="Link बना जी: "+refLink+" - साइट सहित";
+ document.getElementById("ref_link").style.color="#00FF7F";
+ document.getElementById("ref_link").style.fontSize="18px";
+ let userMsg="ॐ नमः शिवाय जी 🙏\nआपका VeedeoHub में फ्री जॉइनिंग हो गया जी।\n\nआपका नाम: "+n+"\nशहर: "+c+"\nMobile ID: "+m+"\n\nआपका साइट सहित रेफरल लिंक:\n"+fullLinkText+"\n\nइस लिंक से जॉइन कराओ जी, कमीशन आपकी ID पर आएगा जी।\nAll Life Free Domain - आदतें ही जीवन का आधार हैं जी।";
+ let ownerMsg="🔔 नया जॉइनिंग जी\n\nनाम: "+n+"\nशहर: "+c+"\nMobile ID: "+m+"\nरेफरल लिंक: "+fullLinkText+"\nDate: "+new Date().toLocaleString()+"\n\nVercel साइट सहित लिंक बन गया जी।";
+ setTimeout(()=>{ window.open("https://wa.me/919992553796?text="+encodeURIComponent(ownerMsg),"_blank"); },600);
+ let joinerMobile = m.startsWith("91") ? m : "91"+m;
+ setTimeout(()=>{ window.open("https://wa.me/"+joinerMobile+"?text="+encodeURIComponent(userMsg),"_blank"); },1400);
+ setTimeout(()=>{ window.open("https://wa.me/?text="+encodeURIComponent(userMsg),"_blank"); },2200);
+ speakClean("फ्री जॉइनिंग हो गई जी, आपका साइट सहित रेफरल लिंक बन गया जी, आपके और Owner दोनों के WhatsApp पर ऑटोमैटिक चला गया जी"); }
 function autoWithdraw(){ document.getElementById("wallet_auto_log").innerText="Auto Withdraw "+new Date().toLocaleString(); let w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]"); w.push({type:"withdraw",time:new Date().toISOString()}); localStorage.setItem("veedeo_wallet_history_v68",JSON.stringify(w)); }
 function showWalletHistory(){ let w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]"); alert("History: "+JSON.stringify(w).substring(0,900)); }
 function openSudhar(){
@@ -240,6 +373,37 @@ const OFFICIAL_LINKS=[
 {n:4,name:"4. Web App - Firebase Live",url:"https://veedeo-hub.web.app",desc:"Firebase Live साइट",brand:"brand-default"}
 ];
 function renderOfficial4(){ let c=document.getElementById("official4Container"); if(!c) return; c.innerHTML=""; OFFICIAL_LINKS.forEach(b=>{ let ref=getRef(); let finalUrl=b.url+(b.url.includes("?")?"&":"?")+"ref="+ref; let div=document.createElement("div"); div.className="official-card "+b.brand; div.innerHTML="<div class='gold' style='font-size:20px;'>📌 "+b.name+"</div><div class='white' style='font-size:15px;'>"+b.desc+"</div><div><button onclick=\"window.open('"+finalUrl+"','_blank')\" style='background:#00FF7F;color:#000;width:100%;'>🔗 खोलो जी - "+b.n+"</button><button onclick=\"speakClean('"+b.desc+"')\" class='speaker'>🔊 सुनो जी - "+b.n+"</button><button onclick=\"window.open('https://wa.me/?text='+encodeURIComponent('"+b.name+" - "+finalUrl+"'),'_blank')\" class='share-wa'>📱 WA Share</button><button onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('"+finalUrl+"'),'_blank')\" class='share-fb'>📘 FB Share</button></div>"; c.appendChild(div); }); }
+
+
+const AMAZON_BEST_SELLERS=[
+"1. Amazon Book B0GZB61NNR - आयुर्वेद बुक",
+"2. Flipkart Book 9789362494184 - जड़ी बूटी बुक",
+"3. Dreambook Store - आयुर्वेदिक जड़ी बूटियां",
+"4. Myntra EEk80ig - Fashion",
+"5. Ajio ZKW4uGp - Fashion",
+"6. JioMart NSutlx8 - Grocery",
+"7. Nykaa Omzu9zq - Beauty",
+"8. Mamaearth Natural - Beauty",
+"9. Boat Fy7OUqb - Earphone",
+"10. The Man Company Ji5eNm8 - Grooming",
+"11. CityMall TPL_CMO - Shopping",
+"12. Blinkit Fast Delivery - Grocery",
+"13. Zepto 10 Min - Grocery",
+"14. 1MG Medicine - Health",
+"15. Meesho Cheap Shopping",
+"16. Amazon Search Ayurveda",
+"17. Flipkart Home Shopping"
+];
+let rotIdx=0;
+function rotateTags(){
+ let el=document.getElementById('rotating_links_live');
+ if(!el) return;
+ let ref=getRef();
+ let prod=AMAZON_BEST_SELLERS[rotIdx % AMAZON_BEST_SELLERS.length];
+ el.innerHTML="📦 "+prod+"<br>🔗 Tag: ?ref="+ref+"&tag=veedeohub-21 - ID:9992553796 ✓ - 2.5 Sec";
+ rotIdx++;
+}
+setInterval(rotateTags,2500);
 
 const HIDDEN_LINKS={"36":"aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NvdW5kL2NvbGxlY3Rpb24v","37":"aHR0cHM6Ly93d3cueW91dHViZS5jb20vYXVkaW9saWJyYXJ5L211c2lj"};
 
@@ -295,7 +459,7 @@ const DEFAULT_BUTTONS=[
 {n:49,name:"49. AMAZON SEARCH",url:"https://www.amazon.in/s?k=ayurveda",desc:"Amazon Search Ayurveda",brand:"brand-amazon"},
 {n:50,name:"50. FLIPKART HOME",url:"https://www.flipkart.com/",desc:"Flipkart Home",brand:"brand-flipkart"}
 ];
-let BUTTONS=[]; let stored=localStorage.getItem("veedeo_buttons_v68"); if(stored){ try{ BUTTONS=JSON.parse(stored); }catch(e){ BUTTONS=[...DEFAULT_BUTTONS]; } if(!BUTTONS||BUTTONS.length==0) BUTTONS=[...DEFAULT_BUTTONS]; } else BUTTONS=[...DEFAULT_BUTTONS];
+let BUTTONS=[]; let stored=localStorage.getItem("veedeo_buttons_v68"); if(stored){ try{ BUTTONS=JSON.parse(stored); }catch(e){ BUTTONS=[...DEFAULT_BUTTONS]; } if(!BUTTONS||BUTTONS.length<10) BUTTONS=[...DEFAULT_BUTTONS]; } else BUTTONS=[...DEFAULT_BUTTONS]; if(BUTTONS.length<10) BUTTONS=[...DEFAULT_BUTTONS];
 function saveButtons(){ localStorage.setItem("veedeo_buttons_v68",JSON.stringify(BUTTONS)); localStorage.setItem("veedeo_buttons_v48",JSON.stringify(BUTTONS)); }
 function renumberButtons(){ BUTTONS.forEach((b,i)=>{ b.n=i+1; }); }
 let currentPage=0; const pageSize=10; let showAllMode=false; let pendingDeleteIndex=null;
