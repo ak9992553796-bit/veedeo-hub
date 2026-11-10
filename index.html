@@ -450,7 +450,7 @@ const FIREBASE_CONFIG={apiKey:"AIzaSyDkBLI4ew5wJjLE306Vm1GBbMAk5no3Mjc",
   storageBucket: "veedeohub-ashok.firebasestorage.app",
   messagingSenderId: "869448602845",
   appId: "1:869448602845:web:70f02632202e3c33a5f734"
-};,authDomain:"veedeo-hub.firebaseapp.com",databaseURL:"https://veedeo-hub-default-rtdb.firebaseio.com",projectId:"veedeo-hub",storageBucket:"veedeo-hub.appspot.com",messagingSenderId:"PASTE_SENDER_ID",appId:"PASTE_APP_ID"};
+};authDomain:"veedeo-hub.firebaseapp.com",databaseURL:"https://veedeo-hub-default-rtdb.firebaseio.com",projectId:"veedeo-hub",storageBucket:"veedeo-hub.appspot.com",messagingSenderId:"PASTE_SENDER_ID",appId:"PASTE_APP_ID"};
 let FB_DB=null;try{if(window.firebase&&FIREBASE_CONFIG.apiKey.indexOf("PASTE")<0){firebase.initializeApp(FIREBASE_CONFIG);FB_DB=firebase.database();}}catch(e){}
 function fbSave(path,data){try{if(FB_DB)FB_DB.ref(path).set(data);}catch(e){}}
 function fbPush(path,data){try{if(FB_DB)FB_DB.ref(path).push(data);}catch(e){}}
