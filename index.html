@@ -40,7 +40,7 @@ textarea.big-input{min-height:100px}
 .speakOnOffSmall{background:#fff !important;color:#000 !important;font-size:13px !important;padding:6px 10px !important;border:2px solid gold !important;border-radius:999px !important}
 @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 </style>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script></head>
+</head>
 <body oncontextmenu="return false" oncopy="return false" oncut="return false">
 <div id="topFixedBar">
 <div class="gold" style="font-size:22px;text-align:center;line-height:1.6;">ॐ नमः शिवाय 🪔 🙏</div>
@@ -442,13 +442,30 @@ Dashboard में कुल कमीशन, TDS, शेष, पेंडि�
 <div style="text-align:center;padding:12px;background:#000;border-top:2px solid #333;"><p class="white">© 2026 VeedeoHub V84 FULL SPEAK ALL OPEN FULL - Owner Ashok Kumar - Mobile 9992553796 - ID:9992553796 ✓ - ॐ नमः शिवाय 🪔</p></div>
 </div>
 <script>
-if(!localStorage.getItem("veedo_pin_v68")) localStorage.setItem("veedo_pin_v68","3796");
-const const FIREBASE_CONFIG={apiKey:"XXX",authDomain:"veedeohub-ashok.firebaseapp.com",databaseURL:"https://veedeohub-ashok-default-rtdb.firebaseio.com",projectId:"veedeohub-ashok",storageBucket:"veedeohub-ashok.appspot.com",messagingSenderId:"XXX",appId:"XXX"};
-};authDomain:"veedeo-hub.firebaseapp.com",databaseURL:"https://veedeo-hub-default-rtdb.firebaseio.com",projectId:"veedeo-hub",storageBucket:"veedeo-hub.appspot.com",messagingSenderId:"PASTE_SENDER_ID",appId:"PASTE_APP_ID"};
-let FB_DB=null;try{if(window.firebase&&FIREBASE_CONFIG.apiKey.indexOf("PASTE")<0){firebase.initializeApp(FIREBASE_CONFIG);FB_DB=firebase.database();}}catch(e){}
+// *** FIREBASE CONFIG - SIRF YAHAN 3 XXX BADALNE HAIN JI - BAKI KUCH MAT CHHEDNA JI ***
+// 1. apiKey wali XXX -> WhatsApp wali ApiKey (AIza...)
+// 2. messagingSenderId wali XXX -> WhatsApp wala Sender number
+// 3. appId wali XXX -> WhatsApp wala AppId (1:...:web:...)
+// Agar XXX rahega to bhi site + button chalenge ji, sirf Firebase nahi judega ji - code band NAHI hoga ji
+const FIREBASE_CONFIG={apiKey:"XXX",authDomain:"veedeohub-ashok.firebaseapp.com",databaseURL:"https://veedeohub-ashok-default-rtdb.firebaseio.com",projectId:"veedeohub-ashok",storageBucket:"veedeohub-ashok.appspot.com",messagingSenderId:"XXX",appId:"XXX"};
+let FB_DB=null;try{if(window.firebase&&FIREBASE_CONFIG.apiKey.indexOf("PASTE")<0&&FIREBASE_CONFIG.apiKey.indexOf("XXX")<0){firebase.initializeApp(FIREBASE_CONFIG);FB_DB=firebase.database();}}catch(e){}
 function fbSave(path,data){try{if(FB_DB)FB_DB.ref(path).set(data);}catch(e){}}
 function fbPush(path,data){try{if(FB_DB)FB_DB.ref(path).push(data);}catch(e){}}
 function fbSaveLink(type,idx,url){fbPush("veedeo_links/"+type+"/"+idx,{url:url,time:new Date().toISOString()});}
+</script>
+<script>
+if(!localStorage.getItem("veedo_pin_v68")) localStorage.setItem("veedo_pin_v68","3796");
+// *** FIREBASE FIX - MAIL WALA DB - 4 DIN WALA ALERT - V1 FIX FINAL - RANG/LEKH NAHI BADLA JI ***
+// DB Name mail me: veedeohub-ashok-default-rtdb
+// databaseURL sahi kar diya hai ji: https://veedeohub-ashok-default-rtdb.firebaseio.com
+// apiKey / appId / senderId: Firebase Console > Project Settings > Your apps > Web app se COPY karke upar wale alag script me 3 XXX ki jagah PASTE karo ji
+// Bina apiKey ke Firebase connect NAHI hoga ji, sirf Local me chalega ji - isliye upar wale alag script me 3 XXX badalne hain ji
+// Rules alag se Firebase Console me paste karne hain ji - niche wali 2 files dekho ji
+// FIREBASE CONFIG upar wale alag script me hai ji - yahan mat chhedna ji
+
+
+
+
 function restoreOldJoins(){let users=JSON.parse(localStorage.getItem("veedeo_users_v68")||"[]");if(FB_DB){FB_DB.ref("veedeo_users").once("value").then(function(snap){let val=snap.val();if(val){let arr=Object.values(val);arr.forEach(function(u){if(u&&u.mobile&&!users.find(function(x){return x.mobile==u.mobile;}))users.push(u);});localStorage.setItem("veedeo_users_v68",JSON.stringify(users));let tree=users.map(function(u){return u.mobile;});localStorage.setItem("veedeo_tree_v68",JSON.stringify(tree));let d=document.getElementById("dash");if(d)d.innerText="Users: "+users.length+" - Tree: "+tree.length;let r=document.getElementById("ref_link");if(r)r.innerText="✅ पुराने जॉइन वापस: "+users.length+" मेंबर";alert("✅ पुराने जॉइन वापस आ गए जी: "+users.length);}else{alert("Firebase में पुराने जॉइन नहीं मिले जी - Local: "+users.length);}}).catch(function(e){alert("Firebase नहीं जुड़ा जी - Local: "+users.length);});}else{let r=document.getElementById("ref_link");if(r)r.innerText="✅ पुराने जॉइन (Local): "+users.length;alert("✅ पुराने जॉइन वापस (Local): "+users.length+" - Firebase Config पेस्ट करो जी");}}
 function replaceAnyLink(type,idx){let oldUrl="";if(type=="OFF")oldUrl=OFFICIAL_LINKS[idx].url;else if(type=="FIX"){if(idx==0){alert("1 नंबर TOP FIX ही है जी - TOP FIX से बदलो जी");return;}oldUrl=FIX_VIDEOS[idx].url;}else if(type=="BTN"){let bi=BUTTONS.findIndex(function(b){return b.n==idx;});if(bi<0)return;oldUrl=BUTTONS[bi].url;idx=bi;}else if(type=="TOP")oldUrl=TOP_FIX.url;showTwoButton("दूसरा लिंक जोड़ना / बदलना है जी? "+oldUrl,function(){if(type=="OFF"){OFFICIAL_LINKS.splice(idx,1);renderOfficial4();}else if(type=="FIX"){FIX_VIDEOS.splice(idx,1);saveFixVideos();renderFixVideos();}else if(type=="BTN"){BUTTONS.splice(idx,1);renumber();saveButtons();renderButtons();}else if(type=="TOP"){TOP_FIX.url="";localStorage.setItem("veedeo_topfix_v77",JSON.stringify(TOP_FIX));renderFixVideos();}alert("🗑️ हट गया जी");},function(nl){let nu=nl;if(!nu||nu==oldUrl)return;if(type=="OFF"){OFFICIAL_LINKS[idx].url=nu;renderOfficial4();}else if(type=="FIX"){FIX_VIDEOS[idx].url=nu;let m=nu.match(/youtu\.be\/([^?]+)/);if(m)FIX_VIDEOS[idx].thumb=m[1];saveFixVideos();renderFixVideos();}else if(type=="BTN"){BUTTONS[idx].url=nu;saveButtons();renderButtons();}else if(type=="TOP"){TOP_FIX.url=nu;localStorage.setItem("veedeo_topfix_v77",JSON.stringify(TOP_FIX));renderFixVideos();}fbSaveLink(type,idx,nu);alert("✅ बदल गया जी");});}
 function aiFillAnyLink(type,idx){let name="",url="",desc="";if(type=="OFF"){name=OFFICIAL_LINKS[idx].name;url=OFFICIAL_LINKS[idx].url;desc=OFFICIAL_LINKS[idx].desc;}else if(type=="FIX"){name=FIX_VIDEOS[idx].name;url=FIX_VIDEOS[idx].url;desc=FIX_VIDEOS[idx].desc;}else if(type=="BTN"){let bi=BUTTONS.findIndex(function(b){return b.n==idx;});if(bi<0)return;name=BUTTONS[bi].name;url=BUTTONS[bi].url;desc=BUTTONS[bi].desc;idx=bi;}else if(type=="TOP"){name=TOP_FIX.name;url=TOP_FIX.url;desc=TOP_FIX.desc;}let sel=document.getElementById("edit_target");if(sel){populateEditSelect();sel.value=(type=="TOP"?"TOP":type+":"+idx);}document.getElementById("edit_name").value=name;document.getElementById("edit_url").value=url;document.getElementById("edit_desc").value=desc;let lg=document.getElementById("edit_log");if(lg)lg.innerText="🤖 AI Autofill हो गया जी";alert("🤖 AI Autofill हो गया जी");}
