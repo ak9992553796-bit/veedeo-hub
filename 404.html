@@ -50,6 +50,7 @@ textarea.big-input{min-height:100px}
 <div style="background:#000;color:#FFD700;border:2px solid gold;border-radius:14px;padding:10px 12px;margin:12px auto;max-width:1000px;text-align:center;font-size:15px;line-height:1.5;">⚠️ <b>नोट जी - 1 नंबर डुप्लीकेट नहीं है जी:</b> ऊपर वाला पीला बटन ही 1 नंबर बटन है जी - नीचे दोबारा 1 नंबर नहीं बनाया गया है जी - नीचे सिर्फ 2,3,4,5,6 नंबर हैं जी।</div>
 <div id="affiliateNote" style="background:#000;color:#FFD700;border:2px solid gold;border-radius:14px;padding:10px 12px;margin:12px auto;max-width:1000px;text-align:center;font-size:15px;line-height:1.5;">📢 <b>नोट जी:</b> अभी सिर्फ Amazon Affiliate से ही लाभ % आएगा जी - आपकी Joining पर आपके Tag से जी। बाकी कंपनियों की Permission बाकी है जी। Permission मिलने पर उन कंपनियों से भी कंपनी नियमानुसार लाभ % आएगा जी। तब Owner + सभी Member सबको लाभ में जोड़ दिया जाएगा जी।</div>
 <div id="firebase_status" class="white" style="font-size:12px;margin-top:4px;background:#111;border:1px solid #00FF7F;padding:6px;border-radius:8px;">Firebase: चेक हो रहा है जी...</div>
+<div style="background:#111;border:1px solid gold;border-radius:8px;padding:10px;margin-top:8px;text-align:left;"><div class="white" style="font-size:13px;">🔑 Firebase Key - कोड में मत डालो जी, यहीं डालो जी - कोड टूटेगा नहीं जी</div><input id="fb_apiKey" class="big-input" placeholder="ApiKey - AIza..." style="font-size:14px;padding:10px;"><input id="fb_sender" class="big-input" placeholder="Sender ID - नंबर" style="font-size:14px;padding:10px;"><input id="fb_appId" class="big-input" placeholder="AppId - 1:...:web:..." style="font-size:14px;padding:10px;"><div style="text-align:center;"><button onclick="saveFirebaseKeyFromSite()" style="background:gold;color:#000;">💾 Key Save करो जी - साइट से ही जी</button></div><div id="fb_key_status" class="white" style="font-size:12px;margin-top:6px;">Key साइट से डालोगे जी तो कोड में हाथ नहीं लगेगा जी - बटन बंद नहीं होंगे जी</div></div>
 </div>
 <div class="strip" style="border-color:#fff;background:#111;">
 <h2 class="gold" style="text-align:center;">⏸️ Speech Stop - स्पीकर रोकें जी - छोटा बटन - On/Off</h2>
@@ -443,19 +444,34 @@ Dashboard में कुल कमीशन, TDS, शेष, पेंडि�
 <div style="text-align:center;padding:12px;background:#000;border-top:2px solid #333;"><p class="white">© 2026 VeedeoHub V84 FULL SPEAK ALL OPEN FULL - Owner Ashok Kumar - Mobile 9992553796 - ID:9992553796 ✓ - ॐ नमः शिवाय 🪔</p></div>
 </div>
 <script>
-// *** FIREBASE CONFIG - SIRF YAHAN 3 XXX BADALNE HAIN JI - BAKI KUCH MAT CHHEDNA JI ***
-// 1. apiKey wali XXX -> WhatsApp wali ApiKey (AIza...)
-// 2. messagingSenderId wali XXX -> WhatsApp wala Sender number
-// 3. appId wali XXX -> WhatsApp wala AppId (1:...:web:...)
-// Agar XXX rahega to bhi site + button chalenge ji, sirf Firebase nahi judega ji - code band NAHI hoga ji
-const FIREBASE_CONFIG={apiKey:"XXX",authDomain:"veedeohub-ashok.firebaseapp.com",databaseURL:"https://veedeohub-ashok-default-rtdb.firebaseio.com",projectId:"veedeohub-ashok",storageBucket:"veedeohub-ashok.appspot.com",messagingSenderId:"XXX",appId:"XXX"};
+// *** FIREBASE CONFIG - ALAG SCRIPT JI - ISME GALTI HO BHI JAYE TO BUTTON BAND NAHI HONGE JI ***
+// Key code me mat dalo ji - upar wale box me dalo ji - wahan se apne aap save hogi ji
+var _fbSaved=null;try{_fbSaved=JSON.parse(localStorage.getItem("veedeo_firebase_key")||"null");}catch(e){_fbSaved=null;}
+const FIREBASE_CONFIG={apiKey:(_fbSaved&&_fbSaved.apiKey)||"XXX",authDomain:"veedeohub-ashok.firebaseapp.com",databaseURL:"https://veedeohub-ashok-default-rtdb.firebaseio.com",projectId:"veedeohub-ashok",storageBucket:"veedeohub-ashok.appspot.com",messagingSenderId:(_fbSaved&&_fbSaved.sender)||"XXX",appId:(_fbSaved&&_fbSaved.appId)||"XXX"};
 let FB_DB=null;try{if(window.firebase&&FIREBASE_CONFIG.apiKey.indexOf("PASTE")<0&&FIREBASE_CONFIG.apiKey.indexOf("XXX")<0){firebase.initializeApp(FIREBASE_CONFIG);FB_DB=firebase.database();}}catch(e){}
 function fbSave(path,data){try{if(FB_DB)FB_DB.ref(path).set(data);}catch(e){}}
 function fbPush(path,data){try{if(FB_DB)FB_DB.ref(path).push(data);}catch(e){}}
 function fbSaveLink(type,idx,url){fbPush("veedeo_links/"+type+"/"+idx,{url:url,time:new Date().toISOString()});}
+function saveFirebaseKeyFromSite(){try{var a=document.getElementById('fb_apiKey').value.trim();var s=document.getElementById('fb_sender').value.trim();var ap=document.getElementById('fb_appId').value.trim();if(!a||!s||!ap){alert('Teeno box bharo ji - ApiKey, Sender, AppId');return;}localStorage.setItem("veedeo_firebase_key",JSON.stringify({apiKey:a,sender:s,appId:ap}));var st=document.getElementById('fb_key_status');if(st)st.innerText='✅ Key save ho gayi ji - ab page reload hoga ji, Firebase jud jayega ji';alert('✅ Key save ho gayi ji - page reload hoga ji');location.reload();}catch(e){alert('Key save nahi hui ji - fir try karo ji');}}
+</script>
+<script>
+// *** SAFE - agar bada script kabhi atke to bhi speaker + top button chalenge ji ***
+var SAFE_CHUNKS=[];var SAFE_IDX=0;var SAFE_PAUSED=false;var SAFE_ACTIVE=false;var SAFE_REQ=false;
+function safeSpeakNext(){try{if(SAFE_PAUSED)return;if(SAFE_IDX>=SAFE_CHUNKS.length){SAFE_ACTIVE=false;SAFE_PAUSED=false;return;}var u=new SpeechSynthesisUtterance(SAFE_CHUNKS[SAFE_IDX]);u.lang='hi-IN';u.rate=0.95;u.onend=function(){if(SAFE_REQ){SAFE_REQ=false;return;}if(SAFE_PAUSED)return;SAFE_IDX++;safeSpeakNext();};u.onerror=function(){if(SAFE_REQ){SAFE_REQ=false;return;}if(SAFE_PAUSED)return;SAFE_IDX++;safeSpeakNext();};speechSynthesis.speak(u);}catch(e){}}
+function speakText(txt){try{if(!('speechSynthesis' in window))return;try{speechSynthesis.cancel();}catch(e){}SAFE_PAUSED=false;SAFE_REQ=false;SAFE_ACTIVE=true;txt=(txt||"").toString().replace(/https?:\/\/\S+/g," ").trim();if(!txt){SAFE_ACTIVE=false;return;}var parts=txt.split(/(?<=[।.!?])\s+/);var chunks=[];var cur="";parts.forEach(function(p){if((cur+" "+p).length>180){if(cur)chunks.push(cur);cur=p;}else{cur=(cur+" "+p).trim();}});if(cur)chunks.push(cur);SAFE_CHUNKS=chunks.length?chunks:[txt];SAFE_IDX=0;safeSpeakNext();}catch(e){}}
+function toggleSpeakPause(){try{if(SAFE_PAUSED){SAFE_PAUSED=false;SAFE_REQ=false;safeSpeakNext();return;}if(SAFE_ACTIVE&&SAFE_CHUNKS.length>0){SAFE_PAUSED=true;SAFE_REQ=true;try{speechSynthesis.cancel();}catch(e){}return;}}catch(e){}}
+function updateSpeakPauseBtn(){}
+function stopSpeak(){try{speechSynthesis.cancel();}catch(e){}SAFE_PAUSED=false;SAFE_ACTIVE=false;SAFE_IDX=0;}
+function openTopFix(){try{window.open('https://youtu.be/35_w_w0b7g8?si=7pXTxsRkxb-Tpn4m','_blank');}catch(e){}}
 </script>
 <script>
 if(!localStorage.getItem("veedo_pin_v68")) localStorage.setItem("veedo_pin_v68","3796");
+// *** FIREBASE FIX - MAIL WALA DB - 4 DIN WALA ALERT - V1 FIX FINAL - RANG/LEKH NAHI BADLA JI ***
+// DB Name mail me: veedeohub-ashok-default-rtdb
+// databaseURL sahi kar diya hai ji: https://veedeohub-ashok-default-rtdb.firebaseio.com
+// apiKey / appId / senderId: Firebase Console se COPY karke upar wale box me PASTE karo ji - code me mat chhedo ji
+// Bina apiKey ke Firebase connect NAHI hoga ji, sirf Local me chalega ji - Key upar wale box me ya alag script me 3 XXX ki jagah dalo ji
+// Rules alag se Firebase Console me paste karne hain ji - niche wali 2 files dekho ji
 // FIREBASE CONFIG upar wale alag script me hai ji - yahan mat chhedna ji
 
 
@@ -475,8 +491,6 @@ function updateSpeakPauseBtn(){var txt2=SPEAK_PAUSED?'▶️ Resume - वही�
 function toggleSpeakPause(){try{if(!('speechSynthesis' in window))return;if(SPEAK_PAUSED){SPEAK_PAUSED=false;SPEAK_PAUSE_REQ=false;speakNextChunk();updateSpeakPauseBtn();return;}if(SPEAK_ACTIVE&&SPEAK_CHUNKS.length>0){SPEAK_PAUSED=true;SPEAK_PAUSE_REQ=true;try{speechSynthesis.cancel();}catch(e){}updateSpeakPauseBtn();return;}var st=document.getElementById('speakPauseStatus');if(st)st.innerText='अभी कोई भाषण नहीं चल रहा है जी - पहले सुनो जी दबाओ जी';}catch(e){}}
 function stopSpeak(){try{speechSynthesis.cancel();}catch(e){}SPEAK_PAUSED=false;SPEAK_ACTIVE=false;SPEAK_PAUSE_REQ=false;SPEAK_IDX=0;updateSpeakPauseBtn();}
 function injectSpeakOnOff(){try{var btns=document.querySelectorAll('button');for(var i=0;i<btns.length;i++){var b=btns[i];var oc=b.getAttribute('onclick')||'';if(oc.indexOf('toggleSpeakPause')>=0){b.classList.add('speakOnOffBtn');continue;}if(oc.indexOf('speak')<0&&oc.indexOf('Speak')<0)continue;if(b.classList.contains('speakOnOffBtn'))continue;var nxt=b.nextElementSibling;if(nxt&&nxt.classList&&nxt.classList.contains('speakOnOffBtn'))continue;var nb=document.createElement('button');nb.className='speakOnOffBtn';nb.style.cssText='background:#fff;color:#000;font-size:13px;padding:6px 10px;border:2px solid gold;border-radius:999px;';nb.setAttribute('onclick','toggleSpeakPause()');nb.innerText=SPEAK_PAUSED?'▶️ Resume - वहीं से फिर बोलो जी':'⏸️ On/Off - रोको / फिर वहीं से बोलो जी';if(b.parentNode)b.parentNode.insertBefore(nb,b.nextSibling);}}catch(e){}}
-var _speakObs=null;function startSpeakOnOffObserver(){try{if(_speakObs)return;_speakObs=new MutationObserver(function(){injectSpeakOnOff();});_speakObs.observe(document.body,{childList:true,subtree:true});}catch(e){}}
-document.addEventListener("DOMContentLoaded",function(){try{injectSpeakOnOff();startSpeakOnOffObserver();}catch(e){}});
 function shareFB(link){try{window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(link),'_blank');}catch(e){}}
 function shareWA(msg){try{window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');}catch(e){}}
 function shareSiteFB(){shareFB('https://veedeo-hub.vercel.app?ref='+getRef()+'&tag=veedeohub-21');}
@@ -581,7 +595,11 @@ function showAutoSaleHistory(){try{var sarr=JSON.parse(localStorage.getItem("vee
 function showMyAutoWallet(){try{claimGuestPendingV85();var me="";try{me=getRef();}catch(e){}var w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]");var mine=me?w.filter(function(x){return (x.mobile||"")==me||(x.mobile||"").slice(-10)==(me||"").slice(-10); }):w;var pend=mine.filter(function(x){return x.type=="credit"&&(x.status||"").indexOf("Pending")>=0;}).reduce(function(s,x){return s+(x.net||0);},0);var availGross=mine.filter(function(x){return x.type=="credit"&&((x.status||"").indexOf("Available")>=0);}).reduce(function(s,x){return s+(x.net||0);},0);var wd=mine.filter(function(x){return x.type=="withdraw";}).reduce(function(s,x){return s+(x.amount||0);},0);var avail=_round2V85(availGross-wd);if(avail<0)avail=0;var el=document.getElementById("auto_wallet_log");if(el)el.innerText="Mera Wallet - Mobile "+(me||"खाली")+" - Pending ₹"+_round2V85(pend)+" - Available ₹"+avail+" - Withdraw किया ₹"+wd+" - Pending = Amazon से पैसा आने तक, Available = अब निकाल सकते हो जी";}catch(e){}}
 function withdrawAutoWallet(){try{claimGuestPendingV85();var me="";try{me=getRef();}catch(e){}if(!me||me.length<10){alert("पहले Joining करो जी - Mobile से Wallet बनेगा जी");return;}me=me.slice(-10);var w=JSON.parse(localStorage.getItem("veedeo_wallet_history_v68")||"[]");var mine=w.filter(function(x){return (x.mobile||"").slice(-10)==me;});var availGross=mine.filter(function(x){return x.type=="credit"&&((x.status||"").indexOf("Available")>=0);}).reduce(function(s,x){return s+(x.net||0);},0);var wd=mine.filter(function(x){return x.type=="withdraw";}).reduce(function(s,x){return s+(x.amount||0);},0);var avail=_round2V85(availGross-wd);if(avail<=0){alert("Available पैसा ₹0 है जी - Pending पैसा Amazon से आने पर ही निकलेगा जी");return;}var upi=me+"@ybl";var rec={type:"withdraw",amount:avail,mobile:me,upi:upi,time:new Date().toISOString(),note:"Withdraw Request - Owner UPI से भेजेगा जी - Auto Bantwara"};w.push(rec);localStorage.setItem("veedeo_wallet_history_v68",JSON.stringify(w));try{fbPush("veedeo_wallet",rec);}catch(e){}try{window.open("upi://pay?pa="+upi+"&pn=VeedeoHub&am="+avail+"&cu=INR&tn=VeedeoHub Withdraw","_blank");}catch(e){}alert("✅ Withdraw Request बन गई जी - ₹"+avail+" - UPI "+upi+" - Owner को पता चल जाएगा जी - Owner एक बटन से भेजेगा जी");showMyAutoWallet();}catch(e){alert("गलती हो गई जी");}}
 document.addEventListener("DOMContentLoaded",function(){try{claimGuestPendingV85();}catch(e){}});
-document.addEventListener("DOMContentLoaded",()=>{try{dedupAll();}catch(e){}renderOfficial4();renderButtons();renderFixVideos();renderBlogs();let users=JSON.parse(localStorage.getItem("veedeo_users_v68")||"[]");let tree=JSON.parse(localStorage.getItem("veedeo_tree_v68")||"[]");if(users.length>0){document.getElementById("dash").innerText="Users: "+users.length+" Tree: "+tree.length+" - पुराने ज्वाइनिंग वाले बरकरार हैं जी";document.getElementById("tree").innerText="Tree: "+tree.join(" -> ");}});
+try{var _oR1=renderOfficial4;renderOfficial4=function(){_oR1.apply(this,arguments);try{injectSpeakOnOff();}catch(e){}};}catch(e){}
+try{var _oR2=renderButtons;renderButtons=function(){_oR2.apply(this,arguments);try{injectSpeakOnOff();}catch(e){}};}catch(e){}
+try{var _oR3=renderFixVideos;renderFixVideos=function(){_oR3.apply(this,arguments);try{injectSpeakOnOff();}catch(e){}};}catch(e){}
+try{var _oR4=renderBlogs;renderBlogs=function(){_oR4.apply(this,arguments);try{injectSpeakOnOff();}catch(e){}};}catch(e){}
+document.addEventListener("DOMContentLoaded",()=>{try{dedupAll();}catch(e){}renderOfficial4();renderButtons();renderFixVideos();renderBlogs();try{injectSpeakOnOff();}catch(e){}setTimeout(function(){try{injectSpeakOnOff();}catch(e){}},1500);let users=JSON.parse(localStorage.getItem("veedeo_users_v68")||"[]");let tree=JSON.parse(localStorage.getItem("veedeo_tree_v68")||"[]");if(users.length>0){document.getElementById("dash").innerText="Users: "+users.length+" Tree: "+tree.length+" - पुराने ज्वाइनिंग वाले बरकरार हैं जी";document.getElementById("tree").innerText="Tree: "+tree.join(" -> ");}});
 document.addEventListener('copy',e=>{e.preventDefault();return false;});
 </script>
 <button id="speakFloatOnOff" class="speakOnOffBtn" onclick="toggleSpeakPause()">⏸️ On/Off - रोको / फिर वहीं से बोलो जी</button>
