@@ -434,7 +434,14 @@ Dashboard में कुल कमीशन, TDS, शेष, पेंडि�
 <script>
 if(!localStorage.getItem("veedo_pin_v68")) localStorage.setItem("veedo_pin_v68","3796");
 
-const FIREBASE_CONFIG={apiKey:"PASTE_YOUR_APIKEY",authDomain:"veedeo-hub.firebaseapp.com",databaseURL:"https://veedeo-hub-default-rtdb.firebaseio.com",projectId:"veedeo-hub",storageBucket:"veedeo-hub.appspot.com",messagingSenderId:"PASTE_SENDER_ID",appId:"PASTE_APP_ID"};
+const FIREBASE_CONFIG={apiKey:"AIzaSyDkBLI4ew5wJjLE306Vm1GBbMAk5no3Mjc",
+  authDomain: "veedeohub-ashok.firebaseapp.com",
+  databaseURL: "https://veedeohub-ashok-default-rtdb.firebaseio.com",
+  projectId: "veedeohub-ashok",
+  storageBucket: "veedeohub-ashok.firebasestorage.app",
+  messagingSenderId: "869448602845",
+  appId: "1:869448602845:web:70f02632202e3c33a5f734"
+}; ,authDomain:"veedeo-hub.firebaseapp.com",databaseURL:"https://veedeo-hub-default-rtdb.firebaseio.com",projectId:"veedeo-hub",storageBucket:"veedeo-hub.appspot.com",messagingSenderId:"PASTE_SENDER_ID",appId:"PASTE_APP_ID"};
 let FB_DB=null;try{if(window.firebase&&FIREBASE_CONFIG.apiKey.indexOf("PASTE")<0){firebase.initializeApp(FIREBASE_CONFIG);FB_DB=firebase.database();}}catch(e){}
 function fbSave(path,data){try{if(FB_DB)FB_DB.ref(path).set(data);}catch(e){}}
 function fbPush(path,data){try{if(FB_DB)FB_DB.ref(path).push(data);}catch(e){}}
