@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "veedeo-hub",
+    "site": "veedeohub",
     "public": ".",
     "ignore": [
       "firebase.json",
